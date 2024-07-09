@@ -1,0 +1,100 @@
+static violation rules:
+-----------------------
+1. The header should be named as a type it declares.
+Example:
+// Person.h
+class Person {
+    // class definition
+};
+
+2. camel case, pascal case,
+Example:
+-> CamelCase:
+CamelCase is typically used for variables, function names, and sometimes for member functions.
+The first letter is lowercase, and the first letter of each subsequent concatenated word is capitalized.
+// Variables
+int employeeCount;
+double interestRate;
+// Functions
+void calculateInterest();
+
+-> PascalCase:
+// Class names
+class BankAccount {
+    // class definition
+};
+// Struct names
+struct EmployeeRecord {
+    // struct definition
+};
+// Typedefs
+typedef unsigned long TimeStamp;
+
+3. data member should be private(Member data in non-POD class types shall be private.)
+Example:
+
+private:
+    // Private data members
+    std::string ownerName;
+    double balance;
+	
+	
+4. declared function is not called
+Example:
+
+#include <iostream>
+// Function declaration
+void declaredButNotCalled();
+
+int main() {
+    std::cout << "This function will not be called." << std::endl;
+
+    // Note: The declaredButNotCalled() function is not called here
+
+    return 0;
+}
+
+// Function definition
+void declaredButNotCalled() {
+    std::cout << "This message will never be displayed because the function is not called." << std::endl;
+}
+
+5. every class should have Rule of 5(copy, copy, move and assignment operators)
+The Rule of Five in C++ is a best practice guideline which states that if a class requires a user-defined destructor, copy constructor, copy assignment operator, move constructor, or move assignment operator, 
+it should probably explicitly define all five of these special member functions. This helps manage resources properly and avoid common pitfalls related to resource management, especially with dynamic memory.
+
+6. Do not use trailing whitespace. and line should not cross 110 characters
+
+7. The header should be named as a type it declares.
+Example: Person.h
+#ifndef PERSON_H
+#define PERSON_H
+#endif // PERSON_H
+
+8. Braced-initialization {}, without equals sign, shall be used for variable initialization.
+Example:
+// Constructor
+Person::Person(const char* name, int age) : name{nullptr}, age{age}
+
+9. Use of magic literal.
+Example:
+A "magic literal" refers to the use of hard-coded values directly in the code, which can make the code harder to understand and maintain. These literals can be replaced with named constants to improve readability and maintainability.
+// Define constants for default ages
+const int DEFAULT_AGE = 30;
+const int JANE_DOE_AGE = 25;
+const int MIKE_SMITH_AGE = 40;
+
+10. Return value of function discarded.
+Example:
+int calculateSomething() {
+    // Some calculation
+    return 42;
+}
+
+int main() {
+    calculateSomething(); // Warning: Return value of function 'calculateSomething' is not used
+    return 0;
+}
+
+11. Last if in the if-cascade has no else.
+12 .Last else in the if-cascade must not be empty or contain a comment.

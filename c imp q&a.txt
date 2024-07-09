@@ -1,0 +1,801 @@
+                                                c - language
+                                               ---------------
+-->dennis ritchie developed the c language in 1970 at bell laboratories
+--> c is middle level language
+-->c is a procedural and structural oriented language.
+-->there are only 32 keywords avalibale in c
+-->c data types int ,char ,float,double.
+-->ranges of data types 
+       data types            size         range
+        int                 4 bytes      -2g to +28
+        char                1 byte       -128 to +127
+        float               4 bytes      
+        double              8 bytes
+        short int           2 bytes      -32768 to 32767
+        long int            8 bytes
+        long long int       8 bytes  
+        long double         10 bytes
+
+-->In c 3 types of constants 
+numerical-deciamal(0-9),octal(0-7),hex decimal(0-F)
+character-'A','9','$'
+string-"a"
+
+-->Ascii(american standard code for information interchange)
+    -A-Z(65-90)
+    -a-z(97-122)
+    -0-9(48-57)
+    -;-(59)
+    -space - /(32-47)
+--> variable is name that can be store value.
+-->enidianness is how given data is going to be store
+    (MSB)000000001010(LSB)
+   -->little enidian is LSB is store in a lower address(intel follow)
+   -->big enidian is LSB is store in a higher address(mordrala folow)
+-->set bit num=num|(1<<pos)
+-->clera bit num=num&~(1<<pos)
+-->compiment bit num=num^(1<<pos)
+-->binary(0or1) num=num&(1<<pos)
+
+-----------------------------------------------------------------------------------------------------------------------
+--> control statement
+- iteration(for,while,do while lopps)
+ -->non interation
+     -->conditional(if,else if,nested,swith)
+     -->uncondiational(goto,break,return,continue)
+-----------------------------------------------------------------------------------------------------------------------
+-->functions(set of instruction placed together to perform specipic task is called function)
+-->header fies are stores function declarations
+-->library are stores function definations
+-->argument
+   the calling function sends some values to the called function for commmunication.
+    these value is called argument.
+-->Actual arguments:
+   The arguments that are passed in a function call are called actual arguments.
+-->Formal arguments:
+   The formal arguments are the parameters/arguments in a function declaration. 
+-->call by value(the values pass the actual argument)ex;fun(a,b)
+-->call by reference(the address pass the actual arguments)ex:fun(&a,&b).
+ -->What is a static function?
+    A function’s definition prefixed with static keyword is called as a static function. 
+    You would make afunction static if it should be called only within the same source code.
+----------------------------------------------------------------------------------------------------------------------
+-->recursion(Function calling itself is called as recursion)
+  to use of recursion makes the code more compact and elegant.
+-----------------------------------------------------------------------------------------------------------------------
+-->Storage classes(each variable one more attributes konw as storage class,
+     use of storage class our program efficent and fast)
+    -->local variable(in side block) stores in a stack section
+    -->global variable(out side block) stores in a data section
+4 types of storage  classes
+  Auto     grabage    stack         inside function/block     LOACAL varibale
+  static   zero       datasection   inside/outside            local/global
+  extern   zero       data section  outside                   local/global
+  register grabage    register      inside                    local
+-->global variable and functions have external linkage
+-->staic global varibales and static functions have internal linkage
+-->heap section store dynamic memory allocation
+
+-------------------------------------------------------------------------------------------------------------------------
+-->pointers:
+--> What is a pointer variable?
+   pointer is a variable that stores the address of another variable. 
+--> When would you use a pointer to a function?
+    In C, we can use function pointers to avoid code redundancy.
+--> What is a void pointer?
+    void pointer is pointing to all data types . which doesn't have any specific type.
+-->What is a null pointer?
+   NULL pointer is holding as an address of the pointer is called NULL pointer.         
+-->what is double pointer
+   The first pointer is used to store the address of the varibale.second pointer store the address of first pointer
+ex:int a=5;int *p=&a;int **pp=*p;
+-->what is dangling pointer?
+ pointer is holding to the freed memory address pointer is called as dangling pointer.
+ (to avoid dangling pointer make pointer as a null)
+-->memory leak(memory leak occure when programmer create a memory in heap section and forgot to delete)
+-->array of pointer(int *p[5];p is a array of 5 integar pointers)ex:int a=10,b=20;int *p[3];p[0]=&a;p[1]=&b;
+-->pointer of array(int (*p)[3];p is a pointer pointing to an array of 3 integar)ex:int a[3]={1,2,3);int (*p)[3];p=a;
+-->const qualifier:
+   -->const int *p/int const *p (value not increment(++*p)/address will increment(*p++)/(*++p))
+    -->int *const p(only value will increment /address not increment) 
+    -->const int p (it is read only not modify value)
+-->STRING :(string is collection of characters ended with \0)
+-->string pointer:char *p="pavan";/char p[]="pabam";
+-->ARRAY(Array is collection of all data types store in contigeous memory location.)
+-->2d array(2d array is nothing but colection of 1d array)
+------------------------------------------------------------------------------------------------------------------------
+-->what is cmd argument?
+   The arguments which we pass to the main() function while executing the program are called as
+   command line arguments. (EX: void main(int argc,char **argv);
+------------------------------------------------------------------------------------------------------------------------
+-->DMC:we could not increse or decrease the size of memory during the execution of program, To overcome these problem we 
+       should be able to allocate memory at runtime.
+   4 types of DMC
+   -->malloc : malloc is used to allocate memory(int *p;p=malloc(20)) return type is (void*)
+   -->calloc :calloc  is used to allocaten multiple block of memory(p=calloc(5,sizeof(int)) ,return type of (void*)
+   -->realloc:realloc is used to increase or decrease size of the memory block(p=realloc(p,newsize)) ,return type(void*)
+   --<free: free is used to release the memory space allocated dynamically:(free(p);,return type is NULL
+-->Is it better to use malloc() or calloc()?
+      1. Number of arguments differ.
+     2. By default, memory allocated by malloc() contains garbage values. Whereas memory allocated by calloc()
+      contains all zeros.
+--> What is static memory allocation and dynamic memory allocation ?
+    Static Memory is allocated for declared variables by the compiler. The memory is allocated during compile time.
+    Memory allocation done at the time of execution(run time) is known as dynamic memory allocation.
+.........................................................................................................................
+--> structure: structure is collection of different data types of data,which are in contigeous memory locations 
+--> union: union is collection of different data types of data,which are in same memory locations.
+-->what is use of self-referential structure?
+    structure containing the same structure pointer variable as its element is called as self-referential structure.
+-->what is bit field?
+    bit filed is method of allocating memory in form of bits.
+-->what is structure padding?
+   structure padding is to adding the memory.structure holes is extra and unread memory .
+-->what is enun?
+   Enumerations are list of integer constants with name. Enumerators are defined with the keyword enum.
+--> what is diff b/w the structure and union? 
+.You can use a struct keyword to define a structure.	                                 You can use a union keyword to define a union.
+.Every member within structure is assigned a unique memory location.	                 In union, a memory location is shared by all the data members.
+.Changing the value of one data member will not affect other data members in structure.	 Changing the value of one data member will change the value of other data members in union
+.The total size of the structure is the sum of the size of every data member.	         The total size of the union is the size of the largest data member.
+-->what is use of typedef?
+   define a new name for an existing data type(typedef data_type new_type;/typedef int marks;)
+.......................................................................................................................................................................................
+MACRO:
+-->.What is a macro, and how do you use it?
+   A macro is a fragment of code that is given a name. You can define a macro in C using the #define preprocessor directive.
+   Here's an example.
+   #define c 299792458  // speed of light
+   Here, when we use c in our program, it is replaced with 299792458.
+--> What is a pragma?
+    pragma is used to avoid the multiple same header fiels.it also used to avoid structure padding.
+-->What are the standard predefined macros?
+    _DATA_,_FILE_,_TIME_,_LINE_.
+-->Is it better to use a macro or a function?
+
+  1)Macro is Preprocessed	                                         Function is Compiled
+  2)No Type Checking is done in Macro	                         Type Checking is Done in Function
+  3)Using Macro increases the code length	                         Using Function keeps the code length unaffected
+  4)Speed of Execution using Macro is Faster	                 Speed of Execution using Function is Slower
+  5)Before Compilation, macro name is replaced by macro value      During function call, transfer of control takes place
+  6)Macros are useful when small code is repeated many times       Functions are useful when large code is to be written
+  7)Macro does not check any Compile-Time Errors	                 Function checks Compile-Time Errors  
+-->what is diff b/w macro and typedef?
+    . #define macro name mcarobody(#defined pf printf )      typedef old name new name;(typedef int char;)
+    . macro is used to communicate the preprocessor          typedef is used to communicate the translator
+    . it is used for data type,symbol replace with           only data types
+     array symbol.  
+    . replacement take place                                 no replacement take place 
+......................................................................................................................................
+-->what is compilation stages?
+ans: 
+.pre processor stage: The preprocessor takes the source code as an input, and it removes all the comments from the source code.
+The preprocessor takes the preprocessor directive and interprets it.
+                                               or
+. The preprocessor provides the ability for the inclusion of header files, macro expansions, conditional compilation, and line control.
+commed is : cc -e file name.c -o file name.i
+.translator stage: to check the syntax error 
+commed is : cc -s file name.i -o file name.s
+.assmbler stage : it conver to the assmbly code into machine under standable code.
+commed is: cc -c file name.s -o file name.o
+.linker stage :in this stage the machine understandable code is given to linker and it produce executable code 
+commed is: cc filename .c
+..........................................................................................................................................
+-- What is the purpose of main( ) function?
+    In C, program execution starts from the main() function. Every C program must contain a main() function. The
+     main function may contain any number of statements. These statements are executed sequentially in the order
+     which they are written.
+------------------------------------------------------------------------------------------------------------------------
+--> Which expression always return true? Which always return false?
+    expression if (a=0) always return false. expression if (a=1) always return true.
+----------------------------------------------------------------------------------------------------------------------
+-->why n++ executes faster than n+1?
+   In case of n++, you will have 2 memory access only (read n, inc n, write n )
+    In case of n=n+1, you will have 3 memory access (read n, read const, add n and const, write n)
+......................................................................................................................
+--> Is using exit() the same as using return?
+    No. The exit() function is used to exit your program and return control to the operating system
+.........................................................................................................................
+--> What is the difference between NULL and NUL?
+    NULL is a macro defined in <stddef. h> for the null pointer.
+    NUL is the name of the first character in the ASCII character set. It corresponds to a zero value.
+.........................................................................................................................
+-->How can I convert a string to a number?
+    You can use atoi() function to convert your string value to a integer.(ex:char p[]="pavan";int i; i=atoi(p);
+------------------------------------------------------------------------------------------------------------------------
+-->How can I convert a number to a string?
+    You can use itoa() function to convert your integer value to a string. 
+........................................................................................................................
+-->what is typecasting?
+    Typecasting, or type conversion, is a method of changing an entity from one data type to another.
+-------------------------------------------------------------------------------------------------------------------------
+--> what is volataile? example.
+ans: It is used to tell the compiler, that the value may change at any time. These are some properties of volatile.
+.The volatile keyword cannot remove the memory assignment
+.It cannot cache the variables in register.
+.The value cannot change in order of assignment.
+Let us see, how we can use the volatile keyword.
+1)volatile int a;
+2)int volatile a;(ex:i++)
+-----------------------------------------------------------------------------------------------------------------------
+-->explain purpouse of sprintf?
+    prints the formatted output onto the character array
+...........................................................................................................................
+
+Program to print numbers from 1 to 10 using recursion
+#include <stdio.h>
+void printNumber(int count){
+   printf("%d\n", count );
+   count+=1;
+   if(count<=10)
+      printNumber(count);
+}
+int main(){
+   printNumber(1);
+   return 0;
+}
+.....................................................
+To check for equality of two numbers without using arithmetic or comparison operator
+#include<iostream>
+using namespace std;
+int main(){
+   int a = 132;
+   int b = 132;
+   if ( (a ^ b) )
+      cout<<"a is not equal to b";
+   else
+      cout<<"a is else to b";
+      return 0;
+}
+...............................................................
+print something without using a semicolon. 
+#include <stdio.h>
+int main(){
+   if(printf("Hello "))
+   return 0;
+}
+.............................................................
+ Program to find the sum of two numbers without using + operator
+#include<iostream>
+using namespace std;
+int main(){
+   int x = 5;
+   int y = 5;
+   int sum = x - (-y);
+   cout<<"The numbers are x = "<<x<<" y = "<<y<<endl;
+   cout<<"Their sum = "<<sum;
+   return 0;
+}
+..................................................................
+To check if the given number is even without using arithmetic or relational operators.
+
+#include<iostream>
+using namespace std;
+int main(){
+   int a = 154;
+   if(a & 0x01) {
+      cout<<a<<" is an odd number";
+   } else{
+      cout<<a<<" is an even number";
+   }
+   printf("\n");
+   return 0;
+}
+..............................................................
+ Program to divide a number by 4 without using / operator.
+
+#include<iostream>
+using namespace std;
+int main(){
+   int n = 128;
+   cout<<n<<"divided by 4 = ";
+   n = n >> 2;
+   cout<< n;
+   return 0;
+}
+.....................................................................
+How to find size of structure data type without using sizeof operator in c programming language  
+
+
+#include<stdio.h>
+
+struct student{
+    int roll;
+    char name[100];
+    float marks;
+};
+
+int main(){
+
+  struct student *ptr = 0;
+
+  ptr++;
+  printf("Size of the structure student:  %d",ptr);
+
+  return 0;
+}
+.......................................................................
+// C program to avoid structure
+// padding using pragma pack
+#include <stdio.h>
+  
+// To force compiler to use 1 byte packaging
+#pragma pack(1)
+struct s {
+    int i;
+    char ch;
+    double d;
+};
+  
+int main()
+{
+    struct s A;
+    printf("Size of A is: %ld", sizeof(A));
+}
+Output:
+Size of A is: 13
+.............................................................
+how to aviod multiple header files in c
+File "grandparent.h"
+#ifndef GRANDPARENT_H
+#define GRANDPARENT_H
+
+struct foo {
+    int member;
+};
+
+#endif /* GRANDPARENT_H */
+File "parent.h"
+#include "grandparent.h"
+File "child.c"
+#include "grandparent.h"
+#include "parent.h"
+Result
+struct foo {
+    int member;
+};
+.............................................................
+#include<stdio.h>
+#define macro(a,b,c) a##b##c
+void main()
+{
+        printf("%d\n",macro(45,45,45));
+        }
+o/p=454545
+.................................................................................................................
+main()
+{
+union{
+int x;
+char c[2];
+}var;
+var.x=1;
+if(var.c[0]==1)
+printf("little endian\n");
+else
+printf("big endian\n");
+}
+..........................................................................................................
+
+set a bit in given pos of the number
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string st; 
+    do{
+    int num,pos;
+    cout<<"Enter the number : ";
+    cin>>num;
+    cout<< "Enter the pos : " ;
+    cin>>pos;
+
+    int set_num = num | (1 << pos);
+    //expain:
+    10 | (1<<2)
+    10 | (1*2 shifts of 2)
+    10 | (1*4)
+    10 | 4
+    OR : 1010
+         0100
+         -----
+         1110 = 14
+         -----
+    cout << "set_num : "<<set_num << endl;
+    
+    cout << "Do you want continue : yes/no : ";
+    cin>> st;
+    }while(st =="yes");
+
+    cout<< "Exit";
+   return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------
+Clear a bit in given pos of the number
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string st; 
+    do{
+    int num,pos;
+    cout<<"Enter the number : ";
+    cin>>num;
+    cout<< "Enter the pos : " ;
+    cin>>pos;
+
+    int Clear_num = num &~ (1 << pos);
+    expain:
+    10 &~ (1<<3)
+    10 &~ (1*2 shifts of 3)
+    10 &~ (1*8)
+    10 &~ 8(1000)
+    10 & 0111
+    AND : 1010
+          0111
+          -----
+          0010 = 2
+          -----
+    cout << "Clear_num : "<<set_num << endl;
+    
+    cout << "Do you want continue : yes/no : ";
+    cin>> st;
+    }while(st =="yes");
+
+    cout<< "Exit";
+   return 0;
+}
+------------------------------------------------------------------------------------------------------
+Given number how many set and clear are present.
+
+#include <iostream>
+using namespace std;
+#define number_of_bits 8
+int main()
+{
+    string st; 
+    do{
+    int num,count=0;
+    cout<<"Enter the number : ";
+    cin>>num;
+    for(int pos = 0 ; pos < number_of_bits ; pos++) {
+    if(num & (1 << pos))
+    count++;
+    }
+    expain:
+    10 & (1<<3)
+    10 & (1*2 shifts of 2)
+    10 & (1*4)
+    10 & 4
+    10 & 0100
+    AND : 1010
+          0100
+          -----
+          0000 = 0
+          -----
+    cout << "set_count : "<<count << endl;
+    cout << "clear_count : "<<number_of_bits-count << endl;
+    cout << "Do you want continue : yes/no : ";
+    cin>> st;
+    }while(st =="yes");
+
+    cout<< "Exit";
+   return 0;
+}
+
+ -------------------------------------------------------------------------------------------------
+
+wrt binary to decimal converter 
+
+#include <iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+    string st; 
+    do{
+    string binary; 
+    int decimal=0;
+    cout<<"Enter the binary : ";
+    cin>>binary;
+    int length = binary.length();
+    for(int i = 0 ; i < length; i++) {
+    if(binary[i] == '1'){
+    if(i=='0')
+    i=1;
+    else
+    decimal = decimal + (1 << i);
+    }
+    }
+    cout << "decimal_value : "<<decimal << endl;
+    cout << "Do you want continue : yes/no : ";
+    cin>> st;
+    }while(st =="yes");
+
+    cout<< "Exit";
+   return 0;
+}
+
+
+ -------------------------------------------------------------------------------------------------
+
+wrt decimal to binary converter 
+
+#include <iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+    string st; 
+    do{
+    int binaryNum[32],i=0,n; 
+    cout<<"Enter the number : ";
+    cin>>n;
+    while (n > 0) { 
+        // storing remainder in binary array 
+        binaryNum[i] = n % 2; 
+        n = n / 2; // remove the last value 
+        i++; 
+    } 
+   cout << " printing binary array in reverse order : " ; 
+    for (int j = i - 1; j >= 0; j--) 
+        cout << binaryNum[j]; 
+    cout << "\n Do you want continue : yes/no : ";
+    cin>> st;
+    }while(st =="yes");
+
+    cout<< "Exit";
+   return 0;
+}
+
+---------------------------------------------------------------------------------------------------------
+
+Given number is prime or not ?
+#include <iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+int num,count=0;
+cout<< " enter the number : ";
+cin >> num;
+
+for (int i =1;i<=num;i++){
+    if (num%i==0){
+        count++;
+    }
+    
+}
+
+if (count == 2)
+cout << " prime ";
+else
+cout << " not prime ";
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+static violation rules:
+-----------------------
+The header should be named as a type it declares.
+camel case, pascal case,
+data member should be private(Member data in non-POD class types shall be private.)
+declared function is not called
+every class should have Rule of 5(copy, copy, move and assignment operators)
+Do not use trailing whitespace. and line should not cross 110 characters
+The header should be named as a type it declares.
+Braced-initialization {}, without equals sign, shall be used for variable initialization.
+Use of magic literal.
+auto keyword
+An immutable variable shall be const/constexpr qualified.
+Return value of function discarded.
+Last if in the if-cascade has no else.
+Last else in the if-cascade must not be empty or contain a comment.
+
+
+num ^ 1<<pos;
+num|(1<<pos)//set
+num&~(1<<pos)//clear
+num&(1<<pos)//set or clear or ;
+num>> pos & 1
+
+//prime range 1 to 100
+#include<stdio.h>
+
+int main(){
+   
+   
+   int num = 2,i;
+   int count =0;
+   
+   for(num =1; num <=100 ; num++)
+   {
+   count =0;
+   for(i =1; i<=num;i++){
+       
+       if (num%i == 0)
+       count ++;
+       
+   }
+   
+   if(count ==2 )
+   printf("prime = %d\n", num);
+   
+   }
+
+#include<stdio.h>
+
+int main(){
+   
+   
+//Aram strong == 153 qube == same (1 amd 153)
+int num = 153,num1,r;
+int sum;
+
+ for(num = 1; num <=153 ; num ++)
+ {
+
+for(sum =0, num1=num;num1;num1 =num1/10)
+{
+r=num1%10;
+sum =sum + r*r*r;
+}
+
+if(num == sum )
+printf("sum = %d",sum);
+
+   }
+}
+
+  
+// palindrome or reverse 
+#include<stdio.h>
+
+int main(){
+   
+   
+
+int num = 11,num1,r;
+int sum;
+
+
+for(sum =0, num1=num;num1;num1 =num1/10)
+{
+r=num1%10;
+sum =sum * 10 + r;
+}
+
+if(num == sum )
+printf("sum = %d",sum);
+
+
+}
+
+
+
+right >> shift 
+ex : num >> 1 
+formula = num/2 (shifts) 
+00001010
+00000101
+
+
+left>> shift 
+ex : num << 1 
+formula = num * 2 (shifts) 
+
+//prefect number 
+#include<stdio.h>
+
+int main(){
+  
+int num = 6;
+int sum,i;
+
+
+for(i =1, sum =0;i < num ;i++)
+{
+if(num % i == 0)
+sum =sum + i;
+}
+
+if(num == sum )
+printf("prefect ");
+
+
+}
+
+// factoriyal
+#include<stdio.h>
+
+int main(){
+  
+int num = 4;
+int i,f;
+
+
+for(i=1,f =1 ; i<=num ; i++)
+f =f * i;
+
+
+printf("factoriyal = %d  ", f);
+
+
+}
+
+// reverse bits 00001010 == 01010000
+#include<stdio.h>
+
+int main(){
+  
+int num,pos,i,j,m,n;
+printf("enter the num \n ");
+scanf("%d",&num);
+
+for(pos = 31 ; pos>=0 ;pos--)
+{
+int ret =num>>pos&1;
+printf ( "%d ",ret );
+}
+
+for(i = 0,j=31 ; j>i ;j--,i++){
+    
+    
+    m = num>>i&1;
+    n = num>>j&1;
+    
+    
+    if(m!=n){
+        
+        num = num ^ 1 << i;
+         num = num ^ 1 << j;
+    }
+}
+printf("\n");
+
+for(pos = 31 ; pos>=0 ;pos--)
+{
+int ret =num>>pos&1;
+printf ( "%d ",ret );
+}
+
+
+// swap nibble 
+#include<stdio.h>
+
+int main(){
+  
+int num,pos,i,j,m,n;
+printf("enter the num \n ");
+scanf("%d",&num);
+
+for(pos = 7 ; pos>=0 ;pos--)
+{
+int ret =num>>pos&1;
+printf ( "%d ",ret );
+}
+
+for(i = 0,j=4 ; i<4 ;j++,i++){
+    
+    
+    m = num>>i&1;
+    n = num>>j&1;
+    
+    
+    if(m!=n){
+        
+        num = num ^ 1 << i;
+         num = num ^ 1 << j;
+    }
+}
+printf("\n");
+
+for(pos = 7 ; pos>=0 ;pos--)
+{
+int ret =num>>pos&1;
+printf ( "%d ",ret );
+}
+                                                                                                                                               vf
