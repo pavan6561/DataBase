@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstanceToPortMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>RequiredUpdateRequestCanoeInstanceToPortPrototypeMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/statemanager/rootSwComponentPrototype_ucm_sm_stub</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/statemanager_ucm_stub/RPortPrototype_sm_ucm_stub</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/statemanager</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/UpdateRequest_Canoe_Required</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

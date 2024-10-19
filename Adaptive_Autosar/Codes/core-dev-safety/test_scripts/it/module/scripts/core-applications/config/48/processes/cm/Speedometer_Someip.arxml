@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>Speedometer_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLengthOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLengthOne</EVENT-REF>
+              <EVENT-ID>301</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength2MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLength2MSBFirst</EVENT-REF>
+              <EVENT-ID>302</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength2MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLength2MSBLast</EVENT-REF>
+              <EVENT-ID>305</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength4MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLength4MSBFirst</EVENT-REF>
+              <EVENT-ID>303</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayNoByteOrder</EVENT-REF>
+              <EVENT-ID>308</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Array_NoLengthField_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_Array_NoLengthField</EVENT-REF>
+              <EVENT-ID>307</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength2MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorLength2MSBFirst</EVENT-REF>
+              <EVENT-ID>311</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Array2D_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_Array2D</EVENT-REF>
+              <EVENT-ID>309</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength2MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorLength2MSBLast</EVENT-REF>
+              <EVENT-ID>314</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayByteOrderMSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayByteOrderMSBF</EVENT-REF>
+              <EVENT-ID>304</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength4MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLength4MSBLast</EVENT-REF>
+              <EVENT-ID>306</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorByteOrderMSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorByteOrderMSBF</EVENT-REF>
+              <EVENT-ID>313</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength4MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorLength4MSBLast</EVENT-REF>
+              <EVENT-ID>315</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLengthOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorLengthOne</EVENT-REF>
+              <EVENT-ID>310</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength4MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorLength4MSBFirst</EVENT-REF>
+              <EVENT-ID>312</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Vector_NoLengthField_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_Vector_NoLengthField</EVENT-REF>
+              <EVENT-ID>316</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_VectorNoByteOrder</EVENT-REF>
+              <EVENT-ID>317</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLengthZero_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer/Event_ArrayLengthZero</EVENT-REF>
+              <EVENT-ID>318</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/Speedometer</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_s9unIG49EeyrVN41OiNwNw">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>120</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLengthOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLength2MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLength2MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLength4MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_Array_NoLengthField_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_Array2D_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayByteOrderMSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLength4MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorLength2MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorLength2MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorByteOrderMSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorLength4MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorLengthOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorLength4MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_Vector_NoLengthField_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_VectorNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip/Event_ArrayLengthZero_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>104</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>Speedometer_Canoe_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLengthOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLengthOne</EVENT-REF>
+              <EVENT-ID>301</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength2MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLength2MSBFirst</EVENT-REF>
+              <EVENT-ID>302</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength2MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLength2MSBLast</EVENT-REF>
+              <EVENT-ID>305</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength4MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLength4MSBFirst</EVENT-REF>
+              <EVENT-ID>303</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayNoByteOrder</EVENT-REF>
+              <EVENT-ID>308</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Array_NoLengthField_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_Array_NoLengthField</EVENT-REF>
+              <EVENT-ID>307</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength2MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorLength2MSBFirst</EVENT-REF>
+              <EVENT-ID>311</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Array2D_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_Array2D</EVENT-REF>
+              <EVENT-ID>309</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength2MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorLength2MSBLast</EVENT-REF>
+              <EVENT-ID>314</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayByteOrderMSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayByteOrderMSBF</EVENT-REF>
+              <EVENT-ID>304</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLength4MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLength4MSBLast</EVENT-REF>
+              <EVENT-ID>306</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorByteOrderMSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorByteOrderMSBF</EVENT-REF>
+              <EVENT-ID>313</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength4MSBLast_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorLength4MSBLast</EVENT-REF>
+              <EVENT-ID>315</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLengthOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorLengthOne</EVENT-REF>
+              <EVENT-ID>310</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorLength4MSBFirst_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorLength4MSBFirst</EVENT-REF>
+              <EVENT-ID>312</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_Vector_NoLengthField_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_Vector_NoLengthField</EVENT-REF>
+              <EVENT-ID>316</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_VectorNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_VectorNoByteOrder</EVENT-REF>
+              <EVENT-ID>317</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tSzTgG4iEeyrVN41OiNwNw">
+              <SHORT-NAME>Event_ArrayLengthZero_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Speedometer_Canoe/Event_ArrayLengthZero</EVENT-REF>
+              <EVENT-ID>318</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/Speedometer_Canoe</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_s9unIG49EeyrVN41OiNwNw">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>120</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLengthOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLength2MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLength2MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLength4MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_Array_NoLengthField_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_Array2D_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayByteOrderMSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLength4MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorLength2MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorLength2MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorByteOrderMSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorLength4MSBLast_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorLengthOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorLength4MSBFirst_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_Vector_NoLengthField_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_VectorNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/Event_ArrayLengthZero_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>104</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1ca57afb-4f0e-4102-83cc-086713134a2b">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_ProvidedSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoCp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Speedometer_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoSp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroupsField</SHORT-NAME>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>104</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_RequiredSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-EVENT-GROUPS>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Speedometer_Canoe_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientEventGroupTimingConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroupsField</SHORT-NAME>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+          </REQUIRED-EVENT-GROUPS>
+          <REQUIRED-SERVICE-INSTANCE-ID>106</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c44a0145-6c8c-41f7-8587-fabbb26003fd">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_Provided_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/Speedometer_qt_cm_instance3_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3004</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_Required_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/Speedometer_qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>0</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="49440f8e-db7d-491a-98a4-f09f363c892a">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_ProvidedSomeipInstance_PSpeedometer_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance3/PSpeedometer</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance3</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/Speedometer_qt_cm_instance3_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>Speedometer_qt_cm_instance3_RequiredSomeipInstance_RSpeedometer_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance3/RSpeedometer</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance3</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/Speedometer_qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b9104bff-79c0-4121-9750-1a803f64ee27">
+      <SHORT-NAME>SomeipSdTimingConfigs</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+          <SHORT-NAME>SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.0</MAX-VALUE>
+            <MIN-VALUE>0.0</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <TIME-TO-LIVE>10</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

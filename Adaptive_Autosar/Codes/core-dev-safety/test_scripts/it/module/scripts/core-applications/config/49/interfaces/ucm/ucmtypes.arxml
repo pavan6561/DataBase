@@ -1,0 +1,2158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <ELEMENTS>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>returnStringStructure</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_YHoVcHz4Eeyp_PP2h4gM3A">
+              <SHORT-NAME>Name</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_YHoVcXz4Eeyp_PP2h4gM3A">
+              <SHORT-NAME>Version</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_YHoVcnz4Eeyp_PP2h4gM3A">
+              <SHORT-NAME>State</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ucm</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ApApplicationErrors</SHORT-NAME>
+              <ELEMENTS>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>AuthenticationFailed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Software Package authentication failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>8</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>BlockInconsistent</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Consistency check for transferred block failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>25</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>CancelFailed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Cancel failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>16</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>IncompatibleDelta</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Delta package dependency check failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>29</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>IncompatiblePackageVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The version of the Software Package to be processed is not compatible with the current version of UCM.</L-2>
+                  </DESC>
+                  <ERROR-CODE>24</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>IncorrectBlock</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The block counter value is not as expected.</L-2>
+                  </DESC>
+                  <ERROR-CODE>2</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>IncorrectBlockSize</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The size of the block exceeds the provided block size from TransferStart or TransferVehiclePackage</L-2>
+                  </DESC>
+                  <ERROR-CODE>30</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>IncorrectSize</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The size of the Software Package exceeds the provided size in TransferStart.</L-2>
+                  </DESC>
+                  <ERROR-CODE>3</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>InsufficientComputationPower</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Insufficient computation power to perform the requested operation.</L-2>
+                  </DESC>
+                  <ERROR-CODE>28</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>InsufficientData</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">TransferExit has been called but total transferred data size does not match expected data size provided with TransferStart call.</L-2>
+                  </DESC>
+                  <ERROR-CODE>6</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>InsufficientMemory</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Insufficient memory to perform operation.</L-2>
+                  </DESC>
+                  <ERROR-CODE>1</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>InvalidPackageManifest</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Package manifest could not be read.</L-2>
+                  </DESC>
+                  <ERROR-CODE>13</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>InvalidTransferId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The Transfer ID is invalid.</L-2>
+                  </DESC>
+                  <ERROR-CODE>4</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>MissingDependencies</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Activate cannot be performed because of missing dependencies.</L-2>
+                  </DESC>
+                  <ERROR-CODE>21</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>NewCampaignDisabled</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">New campaigns are disabled, calling AllowCampaign will enable new campaigns.</L-2>
+                  </DESC>
+                  <ERROR-CODE>31</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>NotAbleToRevertPackages</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">RevertProcessedSwPackages failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>15</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>NotAbleToRollback</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Rollback failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>18</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>OldVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Software Package version is too old.</L-2>
+                  </DESC>
+                  <ERROR-CODE>9</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>OperationNotPermitted</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The operation is not supported in the current context.</L-2>
+                  </DESC>
+                  <ERROR-CODE>5</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>PackageInconsistent</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Package integrity check failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>7</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>PreActivationFailed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Error during preActivation step.</L-2>
+                  </DESC>
+                  <ERROR-CODE>19</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>ProcessSwPackageCancelled</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The processing operation has been interrupted by a Cancel() call.</L-2>
+                  </DESC>
+                  <ERROR-CODE>22</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>ProcessedSoftwarePackageInconsistent</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The processed Software Package integrity check has failed.</L-2>
+                  </DESC>
+                  <ERROR-CODE>23</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>ServiceBusy</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Another processing is already ongoing and therefore the current processing request has to be rejected.</L-2>
+                  </DESC>
+                  <ERROR-CODE>12</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>TransferInterrupted</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Transfer has been interrupted.</L-2>
+                  </DESC>
+                  <ERROR-CODE>26</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>UnexpectedPackage</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The Software Package name does not correspond to the RequestedPackage field value.</L-2>
+                  </DESC>
+                  <ERROR-CODE>32</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>UpdateSessionRejected</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Start of an update session was rejected by State Management</L-2>
+                  </DESC>
+                  <ERROR-CODE>33</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+                <AP-APPLICATION-ERROR>
+                  <SHORT-NAME>VerificationFailed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Error during verification step.</L-2>
+                  </DESC>
+                  <ERROR-CODE>27</ERROR-CODE>
+                  <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/ucm/pkgmgr/UCMErrorDomain</ERROR-DOMAIN-REF>
+                </AP-APPLICATION-ERROR>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>datatypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                  <ELEMENTS>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>ActionType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kUpdate</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Update of a SoftwareCluster.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kUpdate</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kInstall</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Installation of a new SoftwareCluster.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kInstall</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kRemove</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Removal of a SoftwareCluster.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kRemove</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CampaignFailureType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kUCMError</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM error</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kUCMError</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kInvalidVehiclePackageManifest</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Vehicle Package manifest is invalid</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kInvalidVehiclePackageManifest</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kSubordinateNotAvailableOnTheNetwork</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM subordinate not reachable</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kSubordinateNotAvailableOnTheNetwork</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVehicleStateManagerCommunicationError</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Communication error with Vehicle State Manager</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x04</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x04</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVehicleStateManagerCommunicationError</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVehicleDriverInterfaceCommunicationError</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Communication error with Vehicle Driver Interface</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x05</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x05</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVehicleDriverInterfaceCommunicationError</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kCampaignCancelled</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Campaign was cancelled</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x06</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x06</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kCampaignCancelled</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CampaignStateType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kIdle</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM Master is ready to start a software update campaign.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kIdle</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kSyncing</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM master is providing the list of installed SWCLs (GetSwClusterInfo) or computing the list of SWCLs to install (SwPackageInventory).</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kSyncing</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVehiclePackageTransferring</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">A vehicle package is being transferred to UCM Master.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVehiclePackageTransferring</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kSoftwarePackageTransferring</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM Master is transferring software packages to the UCM subordinates.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kSoftwarePackage_Transferring</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcessing</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">The processing of software packages on UCM subordinates is ongoing. The transferring of software packages may still occur.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x04</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x04</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kProcessing</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kActivating</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">The activation of SWCLs on UCM subordinates is ongoing.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x05</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x05</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kActivating</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVehicleChecking</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM Master is performing post-activation checks (OEM specific).</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x06</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x06</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVehicleChecking</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kCancelling</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM Master is rolling-back the activated SWCLs on the UCM subordinates.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x07</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x07</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kCancelling</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>PackageManagerStatusType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kIdle</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM is ready to start processing if software packages are present.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kIdle</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kReady</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM has processed one or several packages and waits for additional packages, activation or reversion of processed packages.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kReady</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcessing</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM is currently in the middle of processing a Software Package, i.e. a client has called ProcessSwPackage.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kProcessing</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kActivating</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM is performing the dependency check and preparing the activation of the processed Software packages.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kActivating</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kActivated</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software changes introduced with processed Software Packages has been activated and executed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x04</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x04</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kActivated</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kRollingBack</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM is reverting changes introduced with processed packages.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x05</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x05</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kRollingBack</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kRolledBack</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software changes introduced with processed Software Packages has been deactivated and original software is executed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x06</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x06</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kRolledBack</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kCleaningUp</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Making sure that the system is in a clean state.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x07</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x07</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kCleaningUp</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVerifying</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM (via State Management) is checking that the processed packages have been properly restarted.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x08</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x08</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVerifying</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>ResultType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kSuccessfull</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM’s action was successful.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kSuccessfull</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kFailed</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM’s action failed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kFailed</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>SoftwarePackageStepType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kTransfer</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software Package transfer</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kTransfer</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcess</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software Package processing</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kProcess</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kPreActivate</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software Cluster pre activation</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kPreActivate</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kVerify</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software Cluster verification</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kVerify</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>SwClusterStateType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kPresent</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">State of a SoftwareCluster that is installed on the adaptive platform and installation has finished.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kPresent</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kAdded</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">State of a SoftwareCluster that has been newly installed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kAdded</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kUpdated</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">State of a SoftwareCluster that has been updated.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kUpdated</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kRemoved</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">State of a SoftwareCluster that has been removed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kRemoved</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>SwPackageStateType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kTransferring</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software package is being transferred, i.e. not completely received.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kTransferring</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kTransferred</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software package is completely transferred and ready to be processed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kTransferred</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcessing</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software package is currently being processed.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kProcessing</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcessed</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software package processing finished.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kProcessed</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kProcessingStream</SHORT-LABEL>
+                            <LOWER-LIMIT>0x04</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x04</UPPER-LIMIT>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>TransferStateType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kIdle</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">UCM Master is ready to start a software update campaign.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kIdle</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kTransferring</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Vehicle or Software Packages are being transferred.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kTransferring</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kUpdating</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">Software Clusters are being updated in the vehicle.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kUpdating</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>kCancelling</SHORT-LABEL>
+                            <DESC>
+                              <L-2 L="EN">An error occurred, campaign is being cancelled, reverting changes.</L-2>
+                            </DESC>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>kCancelling</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>ActionType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x02</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>CampaignFailureType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x06</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>CampaignStateType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x10</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>PackageManagerStatusType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x08</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>ResultType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x01</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>SoftwarePackageStepType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x03</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>SwClusterStateType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x03</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>SwPackageStateType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x03</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                    <DATA-CONSTR>
+                      <SHORT-NAME>TransferStateType</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                            <UPPER-LIMIT>0x03</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CPPImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>ActionType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the UCM action.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/ActionType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/ActionType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>ByteVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Byte vector representing raw data.</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <ARRAY-SIZE>2000</ARRAY-SIZE>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>CampaignErrorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Campaign Error</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>CampaignFailure</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Campaign failure</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/CampaignFailureType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>UCMStepError</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Error from UCM at what Software Package Step</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/UCMStepErrorType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>CampaignFailureType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Campaign failure</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/CampaignFailureType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/CampaignFailureType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>CampaignHistoryType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Campaign history</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>CampaignError</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Campaign Error</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/CampaignErrorType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>HistoryVector</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">History Vector</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/HistoryVectorType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>CampaignStateType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the status of Campaign.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/CampaignStateType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/CampaignStateType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>GetHistoryType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Time refers to the activation time of the software cluster. It is represented in milliseconds of UCM’s action resolution since 01.01.1970 (UTC).</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Time</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Date and time of UCM’s action resolution.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Name</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Name of the SoftwareCluster</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Version</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Version of the SoftwareCluster</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/StrongRevisionLabelString</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Action</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">What action was performed by UCM</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/ActionType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Resolution</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">What action was performed by UCM</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/ResultType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>GetHistoryVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a list of UCM actions</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/GetHistoryType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>HistoryVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">History of an UCM</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>id</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">UCM's identifier</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/UCMIdentifierType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>HistoryVector</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Returned value of UCM Subordinate from GetHistoryMethod</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/GetHistoryVectorType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>PackageManagerStatusType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the state of UCM.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/PackageManagerStatusType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/PackageManagerStatusType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>ResultType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the result of UCM action.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/ResultType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/ResultType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SafetyPolicyType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">The type of the Safety Policy.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SoftwarePackageStepType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">UCM Software Package step at which error occured</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/SoftwarePackageStepType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/SoftwarePackageStepType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>StrongRevisionLabelString</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a generic string data type</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwClusterInfoType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the information of a SoftwareCluster.</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Name</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Name of the SoftwareCluster</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Version</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">SoftwareCluster version</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/StrongRevisionLabelString</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>State</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">State of the SoftwareCluster</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwClusterStateType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwClusterInfoVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a dynamic size array of SoftwareClusters</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwClusterInfoType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwClusterStateType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the state of a SoftwareCluster on the adaptive platform.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/SwClusterStateType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/SwClusterStateType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwDescType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Contains general information related to SoftwareCluster that can be used by Vehicle Driver Application or Human Interface.</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Name</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">SoftwareCluster name</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Version</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">SoftwareCluster version</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/StrongRevisionLabelString</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>TypeApproval</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">TypeApproval carries the homologation information that may be specific for a given country.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>License</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">License has the full text of a license of the enclosing SoftwareCluster.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>ReleaseNotes</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">ReleaseNotes for the explanations of changes since the previous version.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Size</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Size of compressed Software Package or of Software Cluster.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwDescVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a dynamic size array of SoftwareCluster description</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwDescType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwInfoName</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">SoftwareCluster name.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwNameType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">SoftwareCluster (SoftwarePackage) name.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwNameVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a dynamic size array of Software Cluster names.</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwNameVersionType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the information of a Software Package (Software Cluster) name and version.</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Name</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Software name</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Version</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Software version</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/StrongRevisionLabelString</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwNameVersionVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a dynamic size array of Software Name and Version</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameVersionType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwPackageInfoType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the information of a Software Package.</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Name</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">SoftwarePackage name.</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>Version</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">SoftwarePackage version</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/StrongRevisionLabelString</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>TransferID</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">TransferID of the Software Package</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>ConsecutiveBytesReceived</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Received Software Package size (in bytes)</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>ConsecutiveBlocksReceived</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Received Software Package Block number</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>State</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">State of the Software Package</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwPackageStateType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwPackageInfoVectorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a dynamic size array of Software Packages</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwPackageInfoType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SwPackageStateType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the state of a Software Package on the Platform.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/SwPackageStateType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/SwPackageStateType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>TransferIdType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents a handle identifier used to reference a particular transfer request.</L-2>
+                      </DESC>
+                      <CATEGORY>ARRAY</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <ARRAY-SIZE>16</ARRAY-SIZE>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>BlockSizeType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the size of a data block handled by TransferData method.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>TransferStateType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Represents the state of an update from OTA Client perspective.</L-2>
+                      </DESC>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/ucm/datatypes/CompuMethods/TransferStateType</COMPU-METHOD-REF>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/ara/ucm/datatypes/DataConstrs/TransferStateType</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>UCMIdentifierType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">UCM Module Instantiation Identifier.</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>UCMStepErrorType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">UCM Error</L-2>
+                      </DESC>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>pkgmgr</SHORT-NAME>
+                          <SYMBOL>pkgmgr</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>id</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">UCM's identifier</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/UCMIdentifierType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Error occured at this Software Package Step as modelled in Vehicle Package</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SoftwarePackageStepType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>ReturnedError</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Error returned from UCMErrorDomain</L-2>
+                          </DESC>
+                          <TYPE-REFERENCE>
+                            <INPLACE>false</INPLACE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="155bc750-ed13-481d-ab7a-3c9b0209c838">
+              <SHORT-NAME>pkgmgr</SHORT-NAME>
+              <ELEMENTS>
+                <AP-APPLICATION-ERROR-DOMAIN>
+                  <SHORT-NAME>UCMErrorDomain</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ucm</SHORT-NAME>
+                      <SYMBOL>ucm</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>pkgmgr</SHORT-NAME>
+                      <SYMBOL>pkgmgr</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <VALUE>42</VALUE>
+                </AP-APPLICATION-ERROR-DOMAIN>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="6b0858cc-8924-4c30-a0c3-ec1572013967">
+                  <SHORT-NAME>ApApplicationErrors</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

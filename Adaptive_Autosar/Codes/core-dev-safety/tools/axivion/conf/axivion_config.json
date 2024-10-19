@@ -1,0 +1,9 @@
+{
+    "#": "Note: The first list entry is evaluated last!",
+    "_Layers": [
+        "rule_config_cpp.py",
+        "rule_config_cpp.json",
+        "config_allman_braces.py",
+        "logger_fix.py"
+    ]
+}

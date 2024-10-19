@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>phm_core</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/phm_core</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/phm_core</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/MachineState/Startup</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/phm_core_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="e72804ee-efee-4bd3-8710-48c64d0770f2">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>phm_core</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_kbRXILlBEeulpPW2DaW2zw">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="a1eaeca9-7706-488d-9666-45e7434629c1">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>phm_core</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/phm_core</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

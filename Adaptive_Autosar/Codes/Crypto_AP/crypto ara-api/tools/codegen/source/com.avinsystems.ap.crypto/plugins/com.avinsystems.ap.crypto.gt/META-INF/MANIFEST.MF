@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: crypto Code Generator
+Bundle-SymbolicName: com.avinsystems.ap.crypto.gt;singleton:=true
+Bundle-Version: 2.0.0.qualifier
+Bundle-Vendor: AVINSYSTEMS
+Bundle-Activator: com.avinsystems.ap.crypto.gt.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: com.avinsystems.ap.crypto.gt
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.avinsystems.ap.gt.core

@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>DisplaySpeed</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <EVENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="_H_20cCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_struct</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/RadarObjects</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_vector</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/VectorCppIdt</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_array</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ArrayCppIdt</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_ArD9MFdwEeyaR_r6rZtywQ">
+              <SHORT-NAME>Event_struct_serialize</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_Serialize</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_qO5fIF4zEey6jvaNCICSOQ">
+              <SHORT-NAME>EventByteOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_ByteOrder</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_qO5fIV4zEey6jvaNCICSOQ">
+              <SHORT-NAME>EventLengthField</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_LengthField</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_2uiN0F5uEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_Order</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/StructLengthOrder</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_r_dq8F6NEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_DynamicTrue</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamic_true</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_u6mmYF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_DynamicFalse</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamic_false</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_miZ30GFrEey_pvrZZioDng">
+              <SHORT-NAME>Event_Length</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/LengthTypeOne</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_bwDoIGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>Event_TLV</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TLVLength</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_7P2YYGcrEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length2MSBF</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length2MSBF</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_7P2_cGcrEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length2MSBL</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length2MSBL</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_7P2_cWcrEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length4MSBF</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length4MSBF</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_7P2_cmcrEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length4MSBL</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length4MSBL</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_SomeIpSeg</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/VectorSomeipSeg</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_txpL0JLmEey4SIFKuXdDLw">
+              <SHORT-NAME>Event_SameData</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSameData</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </EVENTS>
+          <FIELDS>
+            <FIELD UUID="_KznVgCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Condition</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Position</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Identifier</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_distance</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Status</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_distance</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_LTQq8FdwEeyaR_r6rZtywQ">
+              <SHORT-NAME>PowerStruct</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_position_serialize</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_1dMjkF4zEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_Byte</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_1dMjkV4zEey6jvaNCICSOQ">
+              <SHORT-NAME>StructOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_order</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_sjWzQF5uEey6jvaNCICSOQ">
+              <SHORT-NAME>StructLength</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/StructLengthData</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_x0b6QF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTrue</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamictrue_Data</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_17XTYF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicFalse</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DynamicFalseData</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_rhSzsGFrEey_pvrZZioDng">
+              <SHORT-NAME>LengthOne</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeLength</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_gavOkGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>TLVDataLength</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TLVDataType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_yxzTAJLmEey4SIFKuXdDLw">
+              <SHORT-NAME>FieldSubscribe</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/FieldSubscribe</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_MV9SACpVEey24q8HwY-K5A">
+              <SHORT-NAME>InitMonitor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAECpYEey24q8HwY-K5A">
+                  <SHORT-NAME>FaultDetection</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Distances</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAESpYEey24q8HwY-K5A">
+                  <SHORT-NAME>HandleMessage</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_analysis</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEipYEey24q8HwY-K5A">
+                  <SHORT-NAME>EnableStatus</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_analysis</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFCpYEey24q8HwY-K5A">
+                  <SHORT-NAME>ExecuteReset</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Distances</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFSpYEey24q8HwY-K5A">
+                  <SHORT-NAME>PrepareForReset</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_analysis</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFipYEey24q8HwY-K5A">
+                  <SHORT-NAME>NetworkRequest</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_analysis</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidConfigString</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidParameter</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/GenericFailure</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_MV95FSpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_struct</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNUyECpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Struct_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Duration</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNWAMCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Struct_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Duration</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C26ICpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_vector</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Vector_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_control</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Vector_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_control</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_array</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Array_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_control</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Array_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_control</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidConfigString</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidParameter</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/GenericFailure</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_G-edcENjEeyeH-0-lCKGeQ">
+              <SHORT-NAME>Echo_array</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_MzdT0ENjEeyeH-0-lCKGeQ">
+                  <SHORT-NAME>text_array</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ArrayCppIdt</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>true</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_BGwk0ERjEeyAfaA_k2XrAg">
+              <SHORT-NAME>SubscriptionState</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_E0YtIERjEeyAfaA_k2XrAg">
+                  <SHORT-NAME>SubscriptionState_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSubscriptionStates</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_E0YtIURjEeyAfaA_k2XrAg">
+                  <SHORT-NAME>SubscriptionState_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSubscriptionStates</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_7I_T8ERkEeyAfaA_k2XrAg">
+              <SHORT-NAME>SampleCount</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_-asVQERkEeyAfaA_k2XrAg">
+                  <SHORT-NAME>Sample_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_-as8UERkEeyAfaA_k2XrAg">
+                  <SHORT-NAME>Sample_out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="__kdbUGPBEeyIUohiENsegg">
+              <SHORT-NAME>DataElement_TLV</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HyksQGPCEeyIUohiENsegg">
+                  <SHORT-NAME>InTLV</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeTLV</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HyksQWPCEeyIUohiENsegg">
+                  <SHORT-NAME>OutTLV</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeTLV</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>DisplaySpeed_Canoe</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <EVENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="_H_20cCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_struct</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/RadarObjects</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_vector</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/VectorCppIdt</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_array</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ArrayCppIdt</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_ArD9MFdwEeyaR_r6rZtywQ">
+              <SHORT-NAME>Event_struct_serialize</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_Serialize</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_qO5fIF4zEey6jvaNCICSOQ">
+              <SHORT-NAME>EventByteOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_ByteOrder</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_qO5fIV4zEey6jvaNCICSOQ">
+              <SHORT-NAME>EventLengthField</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_LengthField</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_2uiN0F5uEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_Order</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/StructLengthOrder</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_r_dq8F6NEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_DynamicTrue</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamic_true</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_u6mmYF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>Event_DynamicFalse</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamic_false</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_miZ30GFrEey_pvrZZioDng">
+              <SHORT-NAME>Event_Length</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/LengthTypeOne</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_bwDoIGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>Event_TLV</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TLVLength</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_URzZ8GcsEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length2MSBF</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length2MSBF</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_URzZ8WcsEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length2MSBL</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length2MSBL</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_UR0BAGcsEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length4MSBF</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length4MSBF</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_UR0BAWcsEeyks-ikMB_nTA">
+              <SHORT-NAME>Event_Length4MSBL</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Length4MSBL</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_SomeIpSeg</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/VectorSomeipSeg</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__L3nAJLmEey4SIFKuXdDLw">
+              <SHORT-NAME>Event_SameData</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSameData</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </EVENTS>
+          <FIELDS>
+            <FIELD UUID="_KznVgCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Condition</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Position</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Identifier</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_distance</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Status</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_distance</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_LTQq8FdwEeyaR_r6rZtywQ">
+              <SHORT-NAME>PowerStruct</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_position_serialize</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_1dMjkF4zEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_Byte</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_1dMjkV4zEey6jvaNCICSOQ">
+              <SHORT-NAME>StructOrder</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Struct_order</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_sjWzQF5uEey6jvaNCICSOQ">
+              <SHORT-NAME>StructLength</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/StructLengthData</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_x0b6QF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTrue</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Dynamictrue_Data</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_17XTYF6NEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicFalse</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DynamicFalseData</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_rhSzsGFrEey_pvrZZioDng">
+              <SHORT-NAME>LengthOne</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeLength</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_gavOkGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>TLVDataLength</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TLVDataType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_CtghwJLnEey4SIFKuXdDLw">
+              <SHORT-NAME>FieldSubscribe</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/FieldSubscribe</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_MV9SACpVEey24q8HwY-K5A">
+              <SHORT-NAME>InitMonitor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAECpYEey24q8HwY-K5A">
+                  <SHORT-NAME>FaultDetection</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Distances</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAESpYEey24q8HwY-K5A">
+                  <SHORT-NAME>HandleMessage</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_analysis</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEipYEey24q8HwY-K5A">
+                  <SHORT-NAME>EnableStatus</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_analysis</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFCpYEey24q8HwY-K5A">
+                  <SHORT-NAME>ExecuteReset</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Distances</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFSpYEey24q8HwY-K5A">
+                  <SHORT-NAME>PrepareForReset</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_analysis</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFipYEey24q8HwY-K5A">
+                  <SHORT-NAME>NetworkRequest</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_analysis</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidConfigString</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidParameter</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/GenericFailure</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_MV95FSpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_struct</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNUyECpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Struct_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Duration</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNWAMCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Struct_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Duration</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C26ICpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_vector</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Vector_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_control</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Vector_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Vector_control</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_array</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Array_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_control</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Array_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Array_control</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidConfigString</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidParameter</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/GenericFailure</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_ZojaIENnEeyeH-0-lCKGeQ">
+              <SHORT-NAME>Echo_array</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cXpdoENnEeyeH-0-lCKGeQ">
+                  <SHORT-NAME>text_array</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ArrayCppIdt</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_HihccERlEeyAfaA_k2XrAg">
+              <SHORT-NAME>SubscriptionState</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_M6fmsERlEeyAfaA_k2XrAg">
+                  <SHORT-NAME>SubscriptionState_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSubscriptionStates</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_M6gNwERlEeyAfaA_k2XrAg">
+                  <SHORT-NAME>SubscriptionState_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/EventSubscriptionStates</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_HihccURlEeyAfaA_k2XrAg">
+              <SHORT-NAME>SampleCount</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bQYHIERlEeyAfaA_k2XrAg">
+                  <SHORT-NAME>Sample_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bQYHIURlEeyAfaA_k2XrAg">
+                  <SHORT-NAME>Sample_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="__kdbUGPBEeyIUohiENsegg">
+              <SHORT-NAME>DataElement_TLV</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HyksQGPCEeyIUohiENsegg">
+                  <SHORT-NAME>InTLV</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeTLV</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HyksQWPCEeyIUohiENsegg">
+                  <SHORT-NAME>OutTLV</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/DataTypeTLV</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b72b63c4-4d67-4a59-890d-29b483ed7aa3">
+      <SHORT-NAME>TransformationPropsSets</SHORT-NAME>
+      <ELEMENTS>
+        <TRANSFORMATION-PROPS-SET>
+          <SHORT-NAME>StructTransformationPropsSet</SHORT-NAME>
+          <TRANSFORMATION-PROPSS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_Qa25wFP1EeygEZxsig1bWQ">
+              <SHORT-NAME>StructLegth2MSBF</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_Ag2FYFP7EeygEZxsig1bWQ">
+              <SHORT-NAME>NoLengthApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_LRVUYF4rEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrderApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_FvFXUF4sEey6jvaNCICSOQ">
+              <SHORT-NAME>NoByteOrderApSomeipTransformationProps</SHORT-NAME>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_OKD3MF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DymanicFalseApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <IS-DYNAMIC-LENGTH-FIELD-SIZE>false</IS-DYNAMIC-LENGTH-FIELD-SIZE>
+              <SIZE-OF-ARRAY-LENGTH-FIELD>4</SIZE-OF-ARRAY-LENGTH-FIELD>
+              <SIZE-OF-STRING-LENGTH-FIELD>4</SIZE-OF-STRING-LENGTH-FIELD>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_cyBmIF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTrueApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <IS-DYNAMIC-LENGTH-FIELD-SIZE>true</IS-DYNAMIC-LENGTH-FIELD-SIZE>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_chMRkGFrEey_pvrZZioDng">
+              <SHORT-NAME>StructLength1ApSomeipTransformationProps</SHORT-NAME>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>1</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_wRAjsGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>TLVApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_63S-UGMhEeysOvx3aW6tqw">
+              <SHORT-NAME>OptionalApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_bDRjMGcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength2MSBL</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_bDSKQGcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength4MSBF</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_bDSKQWcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength4MSBL</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+          </TRANSFORMATION-PROPSS>
+        </TRANSFORMATION-PROPS-SET>
+        <TRANSFORMATION-PROPS-SET>
+          <SHORT-NAME>StructCanoeTransformationPropsSet</SHORT-NAME>
+          <TRANSFORMATION-PROPSS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_Qa25wFP1EeygEZxsig1bWQ">
+              <SHORT-NAME>StructLegth2MSBF</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_Ag2FYFP7EeygEZxsig1bWQ">
+              <SHORT-NAME>NoLengthApSomeipTransformationProps</SHORT-NAME>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_LRVUYF4rEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrderApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_FvFXUF4sEey6jvaNCICSOQ">
+              <SHORT-NAME>NoByteOrderApSomeipTransformationProps</SHORT-NAME>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>1</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_OKD3MF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DymanicFalseApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <IS-DYNAMIC-LENGTH-FIELD-SIZE>false</IS-DYNAMIC-LENGTH-FIELD-SIZE>
+              <SIZE-OF-ARRAY-LENGTH-FIELD>4</SIZE-OF-ARRAY-LENGTH-FIELD>
+              <SIZE-OF-STRING-LENGTH-FIELD>4</SIZE-OF-STRING-LENGTH-FIELD>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_cyBmIF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTrueApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <IS-DYNAMIC-LENGTH-FIELD-SIZE>true</IS-DYNAMIC-LENGTH-FIELD-SIZE>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_chMRkGFrEey_pvrZZioDng">
+              <SHORT-NAME>StructLength1ApSomeipTransformationProps</SHORT-NAME>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>1</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_wRAjsGIyEeye1qpLNtLNkA">
+              <SHORT-NAME>TLVApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_63S-UGMhEeysOvx3aW6tqw">
+              <SHORT-NAME>OptionalApSomeipTransformationProps</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_KfMs4GcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength2MSBL</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>2</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_RukdoGcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength4MSBF</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+            <AP-SOMEIP-TRANSFORMATION-PROPS UUID="_RukdoWcrEeyks-ikMB_nTA">
+              <SHORT-NAME>StructLength4MSBL</SHORT-NAME>
+              <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-LAST</BYTE-ORDER>
+              <SIZE-OF-STRUCT-LENGTH-FIELD>4</SIZE-OF-STRUCT-LENGTH-FIELD>
+            </AP-SOMEIP-TRANSFORMATION-PROPS>
+          </TRANSFORMATION-PROPSS>
+        </TRANSFORMATION-PROPS-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b59a1b68-4165-470d-83d1-72ee115c1d34">
+      <SHORT-NAME>TransformationPropsToServiceInterfaceMappingSets</SHORT-NAME>
+      <ELEMENTS>
+        <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+          <SHORT-NAME>StructTransformationPropsToServiceInterfaceElementMappingSet</SHORT-NAME>
+          <MAPPINGS>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_89o1oFQAEeygEZxsig1bWQ">
+              <SHORT-NAME>TLVStructmappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_TLV</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/TLVDataLength</FIELD-REF>
+              </FIELD-REFS>
+              <METHOD-REFS>
+                <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_TLV</METHOD-REF>
+              </METHOD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/DataIdTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/TLVApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_lS5Y0F4rEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrdermappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/EventLengthField</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/ByteOrder</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/ByteOrderApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_2beDUF4rEey6jvaNCICSOQ">
+              <SHORT-NAME>NoByteOrdermappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Order</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/StructLength</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/NoByteOrderApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_DwdmIF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicFalsemappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_DynamicFalse</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/DynamicFalse</FIELD-REF>
+              </FIELD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/DynamicFalseTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/DymanicFalseApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_hYYGMF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTruemappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_DynamicTrue</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/DynamicTrue</FIELD-REF>
+              </FIELD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/DynamicTrueTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/DynamicTrueApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_T5ud8GGWEeyGSLdi5iEkPQ">
+              <SHORT-NAME>StructLength1mappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/LengthOne</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength1ApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_zDMI0GMhEeysOvx3aW6tqw">
+              <SHORT-NAME>Optionalmappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/EventByteOrder</EVENT-REF>
+              </EVENT-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/OptionalTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/OptionalApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_QgBVsGfBEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length2MSBF</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBF</EVENT-REF>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_struct_serialize</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLegth2MSBF</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_FGWswGfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length2MSBL</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBL</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength2MSBL</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_FGXT0GfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length4MSBF</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBF</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength4MSBF</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_FGX64GfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length4MSBL</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBL</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength4MSBL</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+          </MAPPINGS>
+        </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+        <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+          <SHORT-NAME>StructCanoeTransformationPropsToServiceInterfaceElementMappingSet</SHORT-NAME>
+          <MAPPINGS>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_89o1oFQAEeygEZxsig1bWQ">
+              <SHORT-NAME>TLVStructmappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_TLV</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/TLVDataLength</FIELD-REF>
+              </FIELD-REFS>
+              <METHOD-REFS>
+                <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed_Canoe/DataElement_TLV</METHOD-REF>
+              </METHOD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/CanoeDataIDTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/TLVApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_lS5Y0F4rEey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrdermappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/EventLengthField</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/ByteOrder</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/ByteOrderApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_2beDUF4rEey6jvaNCICSOQ">
+              <SHORT-NAME>NoByteOrdermappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Order</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/StructLength</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/NoByteOrderApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_DwdmIF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicFalsemappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_DynamicFalse</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/DynamicFalse</FIELD-REF>
+              </FIELD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/CanoeDynamicFalseTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/DymanicFalseApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_hYYGMF46Eey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTruemappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_DynamicTrue</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/DynamicTrue</FIELD-REF>
+              </FIELD-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/CanoeDynamicTrueTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/DynamicTrueApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_T5ud8GGWEeyGSLdi5iEkPQ">
+              <SHORT-NAME>StructLength1mappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length</EVENT-REF>
+              </EVENT-REFS>
+              <FIELD-REFS>
+                <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/LengthOne</FIELD-REF>
+              </FIELD-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength1ApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_zDMI0GMhEeysOvx3aW6tqw">
+              <SHORT-NAME>Optionalmappings</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/EventByteOrder</EVENT-REF>
+              </EVENT-REFS>
+              <TLV-DATA-ID-DEFINITION-REFS>
+                <TLV-DATA-ID-DEFINITION-REF DEST="TLV-DATA-ID-DEFINITION-SET">/TlvDataIdDefinitionSet/CanoeOptionalTlvDataIdDefinitionSet</TLV-DATA-ID-DEFINITION-REF>
+              </TLV-DATA-ID-DEFINITION-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/OptionalApSomeipTransformationProps</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_c53AMGfBEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length2MSBF</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length2MSBF</EVENT-REF>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_struct_serialize</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLegth2MSBF</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_YfJGYGfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length2MSBL</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length2MSBL</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength2MSBL</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_YfJtcGfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length4MSBF</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length4MSBF</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength4MSBF</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+            <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING UUID="_YfJtcWfXEeyfvNFKqbyAYg">
+              <SHORT-NAME>Length4MSBL</SHORT-NAME>
+              <EVENT-REFS>
+                <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length4MSBL</EVENT-REF>
+              </EVENT-REFS>
+              <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength4MSBL</TRANSFORMATION-PROPS-REF>
+            </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+          </MAPPINGS>
+        </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="df117c20-12b2-43a8-bc5e-49a103bd170b">
+      <SHORT-NAME>SomeipDataPrototypeTransformationProps</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>StructLength2MSBF</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBF</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLegth2MSBF</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>NoLengthSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_struct_serialize</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/NoLengthApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>ByteOrderSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/StructOrder</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/ByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>NoByteOrderSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/EventLengthField</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/ByteOrder</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/NoByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>NoByteOrder</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/StructLength</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Order</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/NoByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>StructLength1SomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/LengthOne</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength1ApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeStructLength2MSBF</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length2MSBF</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLegth2MSBF</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeNoLengthSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_struct_serialize</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/NoLengthApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeByteOrderSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/StructOrder</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/ByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeNoByteOrderSomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/EventLengthField</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/ByteOrder</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/NoByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeNoByteOrder</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/StructLength</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Order</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/NoByteOrderApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeStructLength1SomeipDataPrototypeTransformationProps</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <ROOT-DATA-PROTOTYPE-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed_Canoe/LengthOne</ROOT-DATA-PROTOTYPE-REF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength1ApSomeipTransformationProps</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>StructLength2MSBL</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBL</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength2MSBL</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeStructLength2MSBL</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length2MSBL</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength2MSBL</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>StructLength4MSBF</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBF</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength4MSBF</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>StructLength4MSBL</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBL</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructTransformationPropsSet/StructLength4MSBL</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeStructLength4MSBF</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length4MSBF</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength4MSBF</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+        <SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+          <SHORT-NAME>CanoeStructLength4MSBL</SHORT-NAME>
+          <DATA-PROTOTYPES>
+            <DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+              <DATA-PROTOTYPE-IREF>
+                <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/Event_Length4MSBL</TARGET-DATA-PROTOTYPE-REF>
+              </DATA-PROTOTYPE-IREF>
+            </DATA-PROTOTYPE-IN-SERVICE-INTERFACE-REF>
+          </DATA-PROTOTYPES>
+          <NETWORK-REPRESENTATION/>
+          <SOMEIP-TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/TransformationPropsSets/StructCanoeTransformationPropsSet/StructLength4MSBL</SOMEIP-TRANSFORMATION-PROPS-REF>
+        </SOMEIP-DATA-PROTOTYPE-TRANSFORMATION-PROPS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="332a7e3e-10b3-4b9d-a905-c95e96e32231">
+      <SHORT-NAME>TlvDataIdDefinitionSet</SHORT-NAME>
+      <ELEMENTS>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>DataIdTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVDataType/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVLength/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>3</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type8</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>4</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type16</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>5</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type32</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>6</ID>
+              <TLV-ARGUMENT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/DataElement_TLV/InTLV</TLV-ARGUMENT-REF>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type64</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>7</ID>
+              <TLV-ARGUMENT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/DataElement_TLV/OutTLV</TLV-ARGUMENT-REF>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/structSubElement</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>8</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVLength/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>9</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVDataType/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>DynamicFalseTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DynamicFalseData/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DynamicFalseData/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>CanoeDataIDTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVLength/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVDataType/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>3</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type8</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>4</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type16</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>5</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type32</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>6</ID>
+              <TLV-ARGUMENT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/DataElement_TLV/InTLV</TLV-ARGUMENT-REF>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/Type64</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>7</ID>
+              <TLV-ARGUMENT-REF DEST="ARGUMENT-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed_Canoe/DataElement_TLV/OutTLV</TLV-ARGUMENT-REF>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DataTypeTLV/structSubElement</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>7</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVLength/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>8</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/TLVDataType/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>CanoeDynamicFalseTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DynamicFalseData/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/DynamicFalseData/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>OptionalTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Struct_ByteOrder/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Struct_ByteOrder/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>DynamicTrueTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Dynamictrue_Data/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Dynamictrue_Data/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>CanoeOptionalTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Struct_ByteOrder/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Struct_ByteOrder/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+        <TLV-DATA-ID-DEFINITION-SET>
+          <SHORT-NAME>CanoeDynamicTrueTlvDataIdDefinitionSet</SHORT-NAME>
+          <TLV-DATA-ID-DEFINITIONS>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>1</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Dynamictrue_Data/subElements1</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+            <TLV-DATA-ID-DEFINITION>
+              <ID>2</ID>
+              <TLV-SUB-ELEMENT-REF DEST="CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT">/CppImplementationDataTypes/Dynamictrue_Data/subElements2</TLV-SUB-ELEMENT-REF>
+            </TLV-DATA-ID-DEFINITION>
+          </TLV-DATA-ID-DEFINITIONS>
+        </TLV-DATA-ID-DEFINITION-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_tsync_instance1</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_uba2QCpnEey3k7EH3OJDcQ">
+              <SHORT-NAME>PPort_TimeBaseConsumer</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TimeBaseApp</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_00jF0F5MEey1YouZghwS0g">
+              <SHORT-NAME>RUTCConsumerPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-CONSUMER-INTERFACE">/TSyncInterface/utc_consumer_interface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_Sl38YHRNEeyUW8Ew5H4zVw">
+              <SHORT-NAME>RGPSConsumerPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-CONSUMER-INTERFACE">/TSyncInterface/gps_consumer_interface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_Sl38YXRNEeyUW8Ew5H4zVw">
+              <SHORT-NAME>RISTOfsConsumerPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-CONSUMER-INTERFACE">/TSyncInterface/ist_ofs_consumer_interface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_I4JdYHROEeyUW8Ew5H4zVw">
+              <SHORT-NAME>PKSTProviderPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-PROVIDER-INTERFACE">/TSyncInterface/kst_provider_interface</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_I4JdYXROEeyUW8Ew5H4zVw">
+              <SHORT-NAME>PESTProviderPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-PROVIDER-INTERFACE">/TSyncInterface/est_provider_interface</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_I4JdYnROEeyUW8Ew5H4zVw">
+              <SHORT-NAME>PCETOfsProviderPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-PROVIDER-INTERFACE">/TSyncInterface/cet_ofs_provider_interface</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_I4JdY3ROEeyUW8Ew5H4zVw">
+              <SHORT-NAME>PPSTOfsProviderPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-PROVIDER-INTERFACE">/TSyncInterface/pst_ofs_provider_interface</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_eg_K0IsHEeySfNZHw6r1Ug">
+              <SHORT-NAME>RJSTConsumerPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-CONSUMER-INTERFACE">/TSyncInterface/jst_consumer_interface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_eg_K0YsHEeySfNZHw6r1Ug">
+              <SHORT-NAME>RMITOfsConsumerPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SYNCHRONIZED-TIME-BASE-CONSUMER-INTERFACE">/TSyncInterface/mit_ofs_consumer_interface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>tsync_core</SHORT-NAME>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="8d561471-8dcb-4cc9-a53e-eefcf72f2823">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>qt_tsync_instance1</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_ZexSoCpmEey3k7EH3OJDcQ">
+            <SHORT-NAME>tsync_instance_1_rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_tsync_instance1</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+        <EXECUTABLE>
+          <SHORT-NAME>tsync_core</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_fukYQGGGEeyn6-XufWPVAA">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/tsync_core</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="71c7cdb4-12c7-46ca-a66a-e6f73d007ab9">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_tsync_instance1</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_tsync_instance1</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>tsync_coreProcessDesign</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/tsync_core</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="a2735910-1ff1-47e7-88c5-e99b5a397c80">
+      <SHORT-NAME>DataTypes</SHORT-NAME>
+      <ELEMENTS>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnTimeWithStatus</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_PWc9sFfrEeyahsFJPRSInQ">
+              <SHORT-NAME>syncStatus</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_PWc9sVfrEeyahsFJPRSInQ">
+              <SHORT-NAME>leapJump</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_uPeq4FfsEeytSqtPqn9BbA">
+              <SHORT-NAME>userData</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ByteArray</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_2QhwMFfsEeytSqtPqn9BbA">
+              <SHORT-NAME>updateCount</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnTimeSlaveMeasurementType</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVAIydEeyPGvHScZZCKw">
+              <SHORT-NAME>preciseOriginTimeStampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVAYydEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceGlobalTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVAoydEeyPGvHScZZCKw">
+              <SHORT-NAME>syncIngressTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVA4ydEeyPGvHScZZCKw">
+              <SHORT-NAME>correctionFieldOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVBIydEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceLocalTimestamp</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_MBxVBYydEeyPGvHScZZCKw">
+              <SHORT-NAME>pDelayOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnTimeMasterMeasurementType</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_0Kg6EIyeEeyPGvHScZZCKw">
+              <SHORT-NAME>preciseOriginTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_0Kg6EYyeEeyPGvHScZZCKw">
+              <SHORT-NAME>syncEgressTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_0Kg6EoyeEeyPGvHScZZCKw">
+              <SHORT-NAME>sequenceIdOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnPdelayInitiatorMeasurementType</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONJYsIyjEeyPGvHScZZCKw">
+              <SHORT-NAME>requestOriginTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONJYsYyjEeyPGvHScZZCKw">
+              <SHORT-NAME>responseReceiptTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJsIyjEeyPGvHScZZCKw">
+              <SHORT-NAME>requestRecieptTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJsYyjEeyPGvHScZZCKw">
+              <SHORT-NAME>responseOriginTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJsoyjEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceLocalTimeStampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJs4yjEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceGlobalTimeStampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJtIyjEeyPGvHScZZCKw">
+              <SHORT-NAME>pDelayOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ONTJtYyjEeyPGvHScZZCKw">
+              <SHORT-NAME>sequenceIdOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnPdelayResponderMeasurementType</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tarrYIymEeyPGvHScZZCKw">
+              <SHORT-NAME>requestRecieptTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tarrYYymEeyPGvHScZZCKw">
+              <SHORT-NAME>responseOriginTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tarrYoymEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceLocalTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tarrY4ymEeyPGvHScZZCKw">
+              <SHORT-NAME>referenceGlobalTimestampOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataTypes/TimeStamp</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tarrZIymEeyPGvHScZZCKw">
+              <SHORT-NAME>sequenceIdOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ReturnTimePrecisionMeasurementType</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU8IyoEeyPGvHScZZCKw">
+              <SHORT-NAME>glbSecondsOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU8YyoEeyPGvHScZZCKw">
+              <SHORT-NAME>glbNanoSecondsOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU8oyoEeyPGvHScZZCKw">
+              <SHORT-NAME>timebaseStatusOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU84yoEeyPGvHScZZCKw">
+              <SHORT-NAME>virtualLocalTimeLowOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU9IyoEeyPGvHScZZCKw">
+              <SHORT-NAME>rateDeviationOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU9YyoEeyPGvHScZZCKw">
+              <SHORT-NAME>locSecondsOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU9oyoEeyPGvHScZZCKw">
+              <SHORT-NAME>locNanoSecondsOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_rtWU94yoEeyPGvHScZZCKw">
+              <SHORT-NAME>pathDelayOutput</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>TimeStamp</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>tsync</SHORT-NAME>
+              <SYMBOL>tsync</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>types</SHORT-NAME>
+              <SYMBOL>types</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

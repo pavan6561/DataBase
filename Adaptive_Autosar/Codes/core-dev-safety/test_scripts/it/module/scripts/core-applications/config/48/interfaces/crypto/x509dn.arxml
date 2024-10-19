@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>X509DN</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>qt</SHORT-NAME>
+              <SYMBOL>qt</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>crypto</SHORT-NAME>
+              <SYMBOL>crypto</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>x509</SHORT-NAME>
+              <SYMBOL>x509</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>dn</SHORT-NAME>
+              <SYMBOL>dn</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_XHMoEHLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>GetAttribute</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_YIwWkHPTEeyjtZN1Le4MAw">
+                  <SHORT-NAME>dnId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_YIwWkXPTEeyjtZN1Le4MAw">
+                  <SHORT-NAME>AttributeId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_YIwWknPTEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnString</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InsufficientCapacity</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UnknownIdentifier</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_XHMoEXLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>GetDnString</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dEYtoHPUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>dnId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dEYtoXPUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnString</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InsufficientCapacity</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_XHMoEnLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>SetAttribute</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mkl4kHPUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>dnId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mkl4kXPUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>AttributeId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mkl4knPUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>attribute</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mkl4k3PUEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UnknownIdentifier</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UnexpectedValue</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_XHMoE3LEEeyW1vzBGjZdjA">
+              <SHORT-NAME>SetDn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mELdsHPVEeyjtZN1Le4MAw">
+                  <SHORT-NAME>dnId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mEUnoHPVEeyjtZN1Le4MAw">
+                  <SHORT-NAME>dn</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_mEUnoXPVEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_5wy5UHLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>VerifyMyProvider</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0HPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>objectId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0HPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>cert</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0HPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>formatId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0XPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_5wy5UHLEFeyW1vzBGjZdjA">
+              <SHORT-NAME>ExportPublicly</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0HPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>objectId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0HPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>formatId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_CUhG0XPWEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnByteArray</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InsufficientCapacity</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UnknownIdentifier</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UnsupportedFormat</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

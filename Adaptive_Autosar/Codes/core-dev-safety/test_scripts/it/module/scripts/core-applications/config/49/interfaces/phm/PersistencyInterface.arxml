@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PersistencyInterface</SHORT-NAME>
+      <ELEMENTS>
+        <PERSISTENCY-KEY-VALUE-STORAGE>
+          <SHORT-NAME>qt_phm_instance1_persistance</SHORT-NAME>
+          <UPDATE-STRATEGY>KEEP-EXISTING</UPDATE-STRATEGY>
+          <URI>/opt/qt_phm_instance1/var/restartaction.json</URI>
+        </PERSISTENCY-KEY-VALUE-STORAGE>
+        <PERSISTENCY-KEY-VALUE-STORAGE>
+          <SHORT-NAME>qt_phm_instance3_persistance</SHORT-NAME>
+          <UPDATE-STRATEGY>KEEP-EXISTING</UPDATE-STRATEGY>
+          <URI>/opt/qt_phm_instance3/var/restartaction.json</URI>
+        </PERSISTENCY-KEY-VALUE-STORAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>StartupConfigSets</SHORT-NAME>
+      <ELEMENTS>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>MachineState</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/MachineState/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_yb82ELbwEeu7WMWLj3a7kA">
+              <SHORT-NAME>Startup</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_61lagLbwEeu7WMWLj3a7kA">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_61mBkLbwEeu7WMWLj3a7kA">
+              <SHORT-NAME>Restart</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_61mooLbwEeu7WMWLj3a7kA">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_p-b2EPpuEeuGS9Z9Bz6PQg">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <STARTUP-CONFIG-SET>
+          <SHORT-NAME>Processes</SHORT-NAME>
+          <STARTUP-CONFIGS>
+            <STARTUP-CONFIG UUID="_P5P9YLb4Eeu7WMWLj3a7kA">
+              <SHORT-NAME>qt_phm_instance1_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_phm_instance1/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_4bDyULhwEeuAtZinUxB_CA">
+              <SHORT-NAME>qt_stateManager_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_statemanager/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>11</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_12-JgLizEeut5OH6OKLhUQ">
+              <SHORT-NAME>phm_core_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>PHM_CONFIGURATION</KEY>
+                  <VALUE>/opt/phm-core/etc/phm.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/phm-core/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>10</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_12-wkLizEeut5OH6OKLhUQ">
+              <SHORT-NAME>ara_dlt_daemon_startupconfig</SHORT-NAME>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>9</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_Sorj0MgqEeunSY11ainFVQ">
+              <SHORT-NAME>qt_crypto_instance1_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_crypto_instance1/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>13</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_yQW8MM0MEeuTn7oZDczp2g">
+              <SHORT-NAME>qt_ucm_instance1_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_ucm_instance1/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>14</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_10bP4M28EeuZ_5kBHZLOdQ">
+              <SHORT-NAME>ara_someip_routing_daemon_startupconfig</SHORT-NAME>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>8</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_a9zvgPpuEeuGS9Z9Bz6PQg">
+              <SHORT-NAME>qt_cm_instance1_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_cm_instance1/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>17</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_a9zvgPpuEeuGS9Z9Bz6PQg">
+              <SHORT-NAME>qt_cm_instance2_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_cm_instance2/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>17</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_a9zvgPpuEeuGS9Z9Bz6PQg">
+              <SHORT-NAME>qt_cm_instance3_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_cm_instance3/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>17</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_60UpEN5qEeuVDOmvTyYkPQ">
+              <SHORT-NAME>package_manager_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>UCM_CONFIG_JSON</KEY>
+                  <VALUE>/opt/package_manager/etc/ucm_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/package_manager/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>UCM_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>package_manager/rootSwComponentPrototype/PPortPackageManagement</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>UCM_KVS_CURRENTSTATUS</KEY>
+                  <VALUE>package_manager/rootSwComponentPrototype/SwPackageCurrentStatusPRPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>UCM_KVS_TRANSFERSTATUS</KEY>
+                  <VALUE>package_manager/rootSwComponentPrototype/SwPackageTransferStatusPRPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>UCM_CRYPTO_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>package_manager/rootSwComponentPrototype/package_manager/RPortCryptoProviderUCMPrototype</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>10</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_LoUX8N-uEeuWAPwjMaZRug">
+              <SHORT-NAME>update_adapter_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/updateadapter/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>10</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_P5P9YLb4Eeu7WMWLj3a7kA">
+              <SHORT-NAME>qt_phm_instance2_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_phm_instance2/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>20</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_43l7QBYQEeyDU9U1nRPqqA">
+              <SHORT-NAME>crypto_core_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/crypto-core/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>CRYPTO_CONFIGURATION</KEY>
+                  <VALUE>/opt/crypto-core/etc/crypto_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>25</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_kgjuwCtbEeyVmNRzifljWw">
+              <SHORT-NAME>statemanager</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>SM_PERSISTENCY</KEY>
+                  <VALUE>/opt/statemanager/var/statemanagerdata</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/statemanager/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>31</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_uurKUDWoEeyd0rbu-tPd-A">
+              <SHORT-NAME>qt_phm_instance3_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_phm_instance3/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>15</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_ujIO4FHGEeygf4_6TxtoVw">
+              <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VSOMEIP_CONFIGURATION</KEY>
+                  <VALUE>/opt/vehicle_package_manager/etc/vsomeip.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VPM_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehiclePackageManagementPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VDA_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehicleDriverApplicationPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VSM_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehicleStateManagementPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_a9zvgPpuEeuGS9Z9Bz6PQg">
+              <SHORT-NAME>qt_cm_instance4_startupconfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_cm_instance4/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>17</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_b5kzcFG-Eeygf4_6TxtoVw">
+              <SHORT-NAME>qt_ota_client</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_ota_client/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_ujIO4FHGEeygf4_6TxtoVw">
+              <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VSOMEIP_CONFIGURATION</KEY>
+                  <VALUE>/opt/vehicle_package_manager/etc/vsomeip.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VPM_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehiclePackageManagementPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VDA_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehicleDriverApplicationPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>VSM_INSTANCE_SPECIFIER</KEY>
+                  <VALUE>vehicle_package_manager/vehicle_package_manager_root/VehicleStateManagementPPort</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_SRDt0FWfEeyXgrh5l-En2g">
+              <SHORT-NAME>qt_driver_application</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_driver_application/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>13</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_VNot4HqlEeyqF9_TMPmkrQ">
+              <SHORT-NAME>qt_vehicle_state_manager</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_vehicle_state_manager/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>13</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+          </STARTUP-CONFIGS>
+        </STARTUP-CONFIG-SET>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>PHMApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/PHMApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_II3yABeHEeyZyuewolmYqw">
+              <SHORT-NAME>PHM_Instance1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5AIBeHEeyZyuewolmYqw">
+              <SHORT-NAME>PHM_Instance2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5nMBeHEeyZyuewolmYqw">
+              <SHORT-NAME>PHM_Instance_1_2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_O0KlUBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_9abYsBeOEeyZyuewolmYqw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_QycxsDWpEeyd0rbu-tPd-A">
+              <SHORT-NAME>PHM_Instance3</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>CryptoApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/CryptoApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_II3yABeHEeyZyuewolmYqw">
+              <SHORT-NAME>Crypto_Instance1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5AIBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Crypto_Instance2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5nMBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Crypto_Instance_1_2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_O0KlUBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="__o-T4BeOEeyZyuewolmYqw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>ComApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/ComApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_II3yABeHEeyZyuewolmYqw">
+              <SHORT-NAME>Com_Instance1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5AIBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Com_Instance2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5nMBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Com_Instance3</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_O0KlUBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_BD9EIBePEeyZyuewolmYqw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>UCMApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/UCMApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_II3yABeHEeyZyuewolmYqw">
+              <SHORT-NAME>Ucm_Instance1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5AIBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Ucm_Instance2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_II5nMBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Ucm_Instance_1_2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_O0KlUBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_CVbTEBePEeyZyuewolmYqw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>ProcessStateMachine</SHORT-NAME>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_Ch3CABeOEeyZyuewolmYqw">
+              <SHORT-NAME>Running</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_Ch3CAReOEeyZyuewolmYqw">
+              <SHORT-NAME>Terminated</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>UCMPackageManagerStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/UCMPackageManagerStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_O0KlUBeHEeyZyuewolmYqw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_CVbTEBePEeyZyuewolmYqw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_hBvScDGFEeyCxtYq1cS3eg">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>UcmMasterApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/UcmMasterApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_vt_1oFG9Eeygf4_6TxtoVw">
+              <SHORT-NAME>Ucm_Master_Application1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_vt_1oVG9Eeygf4_6TxtoVw">
+              <SHORT-NAME>Ucm_Master_Application2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_vt_1olG9Eeygf4_6TxtoVw">
+              <SHORT-NAME>Ucm_Master_Application_1_2</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_vt_1o1G9Eeygf4_6TxtoVw">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_88q2YFG9Eeygf4_6TxtoVw">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2acb243f-9c01-469f-b9b7-718ee6927cf4">
+      <SHORT-NAME>FunctionGroupSets</SHORT-NAME>
+      <ELEMENTS>
+        <FUNCTION-GROUP-SET>
+          <SHORT-NAME>FunctionGroupSet</SHORT-NAME>
+          <FUNCTION-GROUPS>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_xRE4gAY7Eeyp6ej63zL5bg">
+              <SHORT-NAME>MachineFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/MachineState</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_vTjBwBeHEeyZyuewolmYqw">
+              <SHORT-NAME>PHMApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/PHMApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_vTjo0BeHEeyZyuewolmYqw">
+              <SHORT-NAME>CryptoApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/CryptoApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_vTjo0ReHEeyZyuewolmYqw">
+              <SHORT-NAME>ComApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/ComApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_h7TjYBeJEeyZyuewolmYqw">
+              <SHORT-NAME>UCMApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UCMApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_lY3DsDGFEeyCxtYq1cS3eg">
+              <SHORT-NAME>UCMPackageManagerStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UCMPackageManagerStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_Vp5kADh2Eey0Eq1kyCQn7A">
+              <SHORT-NAME>TSyncApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/TSyncApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_9J0XAFG8Eeygf4_6TxtoVw">
+              <SHORT-NAME>UcmMasterApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UcmMasterApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </FUNCTION-GROUPS>
+        </FUNCTION-GROUP-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

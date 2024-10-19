@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>ApplicationPackageManagement_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_T1gt4M0NEeuTn7oZDczp2g">
+              <SHORT-NAME>TransferPackages</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/TransferPackage</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_T1gt4c0NEeuTn7oZDczp2g">
+              <SHORT-NAME>ProcessSwPackage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/ProcessSwPackage</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_T1hU8M0NEeuTn7oZDczp2g">
+              <SHORT-NAME>Activate</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/Activate</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_dHmgAOSVEeuCnPm06up4Cw">
+              <SHORT-NAME>Finish</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/Finish</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_dHmgAeSVEeuCnPm06up4Cw">
+              <SHORT-NAME>Cancel</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/Cancel</METHOD-REF>
+              <METHOD-ID>5</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_lz9skAAHEeytisivi61wZQ">
+              <SHORT-NAME>TransferStart</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/TransferStart</METHOD-REF>
+              <METHOD-ID>6</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_lz-ToAAHEeytisivi61wZQ">
+              <SHORT-NAME>TransferData</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/TransferData</METHOD-REF>
+              <METHOD-ID>7</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_lz-ToQAHEeytisivi61wZQ">
+              <SHORT-NAME>TransferExit</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/TransferExit</METHOD-REF>
+              <METHOD-ID>8</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_lz-TogAHEeytisivi61wZQ">
+              <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/DeleteTransfer</METHOD-REF>
+              <METHOD-ID>9</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_0WbTgAGTEey9nes2YtKouQ">
+              <SHORT-NAME>LoadBinaryPackage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/LoadBinaryPackage</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_PdQWwAWNEeyELcobdTOAeg">
+              <SHORT-NAME>RollBack</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/RollBack</METHOD-REF>
+              <METHOD-ID>11</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_SSm90AWOEeyELcobdTOAeg">
+              <SHORT-NAME>RevertRollbackSwPackages</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/RevertProcessedSwPackages</METHOD-REF>
+              <METHOD-ID>12</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_GevAoAl_Eey_2aH-Vo1MLQ">
+              <SHORT-NAME>GetSwPackages</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetSwPackages</METHOD-REF>
+              <METHOD-ID>13</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3y9Z8DGlEeykOfOHG9j12A">
+              <SHORT-NAME>CurrentStatus</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/CurrentStatus</METHOD-REF>
+              <METHOD-ID>14</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3y9Z8TGlEeykOfOHG9j12A">
+              <SHORT-NAME>GetHistory</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetHistory</METHOD-REF>
+              <METHOD-ID>15</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3y9Z8jGlEeykOfOHG9j12A">
+              <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetSwClusterInfo</METHOD-REF>
+              <METHOD-ID>16</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3y9Z8zGlEeykOfOHG9j12A">
+              <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetSwProcessProgress</METHOD-REF>
+              <METHOD-ID>17</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_S7TzwDbqEeySiI7rw4GO0Q">
+              <SHORT-NAME>IsProcessingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/IsProcessingSet</METHOD-REF>
+              <METHOD-ID>18</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_S7TzwTbqEeySiI7rw4GO0Q">
+              <SHORT-NAME>IsCleaningUpSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/IsCleaningUpSet</METHOD-REF>
+              <METHOD-ID>19</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_S7TzwjbqEeySiI7rw4GO0Q">
+              <SHORT-NAME>IsRollingBackSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/IsRollingBackSet</METHOD-REF>
+              <METHOD-ID>20</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_S7TzwzbqEeySiI7rw4GO0Q">
+              <SHORT-NAME>IsActivatingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/IsActivatingSet</METHOD-REF>
+              <METHOD-ID>21</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_TBq_YFwWEey5AqR8ZasOhQ">
+              <SHORT-NAME>GetSwClusterChangeInfo</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetSwClusterChangeInfo</METHOD-REF>
+              <METHOD-ID>22</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_eKV-UJR8EeyMX7WQw_Aqvg">
+              <SHORT-NAME>GetSwClusterDescription</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetSwClusterDescription</METHOD-REF>
+              <METHOD-ID>23</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_eKV-UZR8EeyMX7WQw_Aqvg">
+              <SHORT-NAME>GetId</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationPackageManagement/GetId</METHOD-REF>
+              <METHOD-ID>24</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationPackageManagement</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>20</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ProcessDesigns</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_cm_instance2</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_cm_instance2</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="48b11895-d94d-4ee2-bfa2-3e8f947c1189">
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>qt_cm_instance2</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance2</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_cm_instance2</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/ComApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/ComApplicationStates/Com_Instance2</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroups2</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/qt_cm_instance2_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

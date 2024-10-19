@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="30" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0.001" name="AllTests">
+  <testsuite name="vector_test" tests="30" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="NewlyCreatedVectorIsEmpty" status="run" time="0" classname="vector_test" TEST_ID="8ebb8b11-d044-459e-b9a1-4a3076c8d49c" />
+    <testcase name="NewlyCreatedVectorHasSizeZero" status="run" time="0" classname="vector_test" TEST_ID="f850b288-df04-43b8-b317-bec76c6c4924" />
+    <testcase name="Capacity" status="run" time="0" classname="vector_test" TEST_ID="e0a244d5-6e01-4cbb-9f9a-ac07cad81a5c" />
+    <testcase name="NewVectorWithElementsCTorWithZeroElements" status="run" time="0" classname="vector_test" TEST_ID="618cd7f7-42d7-49e0-a504-3894e34a28f8" />
+    <testcase name="NewVectorWithElementsCTorWithSomeElements" status="run" time="0" classname="vector_test" TEST_ID="65fd89f4-167e-4844-8264-484d2a57c035" />
+    <testcase name="NewVectorWithElementsCTorWithCapacityElements" status="run" time="0.001" classname="vector_test" TEST_ID="9987c1cb-2266-4bad-b91d-0b171dd87f40" />
+    <testcase name="NewVectorWithElementsCTorWithMoreThanCapacityElements" status="run" time="0" classname="vector_test" TEST_ID="a22a3329-d4c1-4ecf-a94f-69a990a35658" />
+    <testcase name="EmplaceBackSuccessfullWhenSpaceAvailable" status="run" time="0" classname="vector_test" TEST_ID="98d17e04-0d2b-4575-a1f0-7b3cd918c54d" />
+    <testcase name="EmplaceBackFailsWhenSpaceNotAvailable" status="run" time="0" classname="vector_test" TEST_ID="199e6fc7-5bc4-4896-b211-e04fc668ccd0" />
+    <testcase name="PushBackSuccessfullWhenSpaceAvailableLValue" status="run" time="0" classname="vector_test" TEST_ID="42102325-91fa-45aa-a5cb-2bce785d11c1" />
+    <testcase name="PushBackFailsWhenSpaceNotAvailableLValue" status="run" time="0" classname="vector_test" TEST_ID="e47a9f1b-a039-4740-a4b5-ba81886c1330" />
+    <testcase name="PushBackSuccessfullWhenSpaceAvailableRValue" status="run" time="0" classname="vector_test" TEST_ID="47988e05-9c67-4b34-bdee-994552df3fa7" />
+    <testcase name="PushBackFailsWhenSpaceNotAvailableRValue" status="run" time="0" classname="vector_test" TEST_ID="07790d09-110d-4cc7-84d9-3ff28e494c8f" />
+    <testcase name="PopBackOnEmptyVector" status="run" time="0" classname="vector_test" TEST_ID="03ac7f78-680d-49b1-b7e1-7551006b1545" />
+    <testcase name="PopBackNonEmptyVector" status="run" time="0" classname="vector_test" TEST_ID="ef4ecaa7-d467-4c8a-9ab4-4444b87727d0" />
+    <testcase name="SizeIncreasesWhenElementIsAdded" status="run" time="0" classname="vector_test" TEST_ID="2f1814ce-dfc8-4dbe-a7c7-ab004e28a7a2" />
+    <testcase name="SizeEqualsCapacityWheFull" status="run" time="0" classname="vector_test" TEST_ID="733985c2-ef1d-4772-9c01-4e26e841581d" />
+    <testcase name="SizeUnchangedWhenEmplaceFails" status="run" time="0" classname="vector_test" TEST_ID="6ae42f49-ef4d-4b9c-9360-a6e63a8b9357" />
+    <testcase name="NotEmptyWhenElementWasAdded" status="run" time="0" classname="vector_test" TEST_ID="651703b8-0828-471e-9333-547dc1b00295" />
+    <testcase name="EmptyAfterClear" status="run" time="0" classname="vector_test" TEST_ID="f08cd8f7-2eca-4ef2-b2c3-d642529ecd60" />
+    <testcase name="SizeZeroAfterClear" status="run" time="0" classname="vector_test" TEST_ID="7fb46858-5e85-488c-8c10-40c44d412c61" />
+    <testcase name="CopyConstructor" status="run" time="0" classname="vector_test" TEST_ID="afc46f10-e2fe-4c62-beb3-75c28d18d0f9" />
+    <testcase name="CopyConstructorWithEmptyVector" status="run" time="0" classname="vector_test" TEST_ID="438c8835-8545-40e4-b544-d66107507e2f" />
+    <testcase name="CopyConstructorWithFullVector" status="run" time="0" classname="vector_test" TEST_ID="b7420f78-f3ca-4a85-8382-fffe49d94bc2" />
+    <testcase name="MoveConstructor" status="run" time="0" classname="vector_test" TEST_ID="c96fdf10-822b-4872-b3d2-d3745a2ccb52" />
+    <testcase name="MoveConstructorWithEmptyVector" status="run" time="0" classname="vector_test" TEST_ID="1d89b1e1-f62f-49c4-bf04-9aba3dbbecab" />
+    <testcase name="operatorlessthan" status="run" time="0" classname="vector_test" />
+    <testcase name="operatorgreaterthan" status="run" time="0" classname="vector_test" />
+    <testcase name="operatorlessthanorequel" status="run" time="0" classname="vector_test" />
+    <testcase name="operatorgreaterthanorequel" status="run" time="0" classname="vector_test" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>MessageAuthCodeCtx_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_J_ekgBz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>Check</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/Check</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K82ywBz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>Finish</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/Finish</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K83Z0Bz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>GetDigestService</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/GetDigestService</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K83Z0Rz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>GetDigest</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/GetDigest</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K83Z0hz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>Reset</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/Reset</METHOD-REF>
+              <METHOD-ID>5</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K83Z0xz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>SetKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/SetKey</METHOD-REF>
+              <METHOD-ID>6</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K83Z1Bz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>StartReadOnlyMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/StartReadOnlyMemRegion</METHOD-REF>
+              <METHOD-ID>7</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K84A4Bz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>StartSecretSeed</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/StartSecretSeed</METHOD-REF>
+              <METHOD-ID>8</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K84A4Rz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>UpdateReadOnlyMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/UpdateReadOnlyMemRegion</METHOD-REF>
+              <METHOD-ID>9</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K84A4hz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>Update</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/Update</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_K84A4xz8EeyDV7d2g9PX0A">
+              <SHORT-NAME>UpdateRestrictedUseObject</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/UpdateRestrictedUseObject</METHOD-REF>
+              <METHOD-ID>11</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HH07sCBOEeywRNmBeYviRA">
+              <SHORT-NAME>isInitialized</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/isInitialized</METHOD-REF>
+              <METHOD-ID>12</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_8HiJwH9SEeyZ44Ztjmojfg">
+              <SHORT-NAME>GetCryptoPrimitiveId</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/GetCryptoPrimitiveId</METHOD-REF>
+              <METHOD-ID>13</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_7FmfsIAjEeyUycOz5uk0eQ">
+              <SHORT-NAME>VerifyMyProvider</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/MessageAuthCodeCtx/VerifyMyProvider</METHOD-REF>
+              <METHOD-ID>14</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/MessageAuthCodeCtx</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>50</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

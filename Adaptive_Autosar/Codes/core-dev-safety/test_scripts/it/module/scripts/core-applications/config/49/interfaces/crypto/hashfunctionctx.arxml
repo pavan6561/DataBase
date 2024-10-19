@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>HashFunctionCtx</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>qt</SHORT-NAME>
+              <SYMBOL>qt</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>crypto</SHORT-NAME>
+              <SYMBOL>crypto</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>cryptoprovider_001</SHORT-NAME>
+              <SYMBOL>cryptoprovider_001</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>hash</SHORT-NAME>
+              <SYMBOL>hash</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_cXdb8NWAEeuVt7_nL-IFsA">
+              <SHORT-NAME>Start</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_PJiGoPpiEeuIsodAguN2HQ">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_wtj4wNWIEeuVt7_nL-IFsA">
+                  <SHORT-NAME>iv</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ByteArray</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bqisAP6HEeupo9Ga37YnXw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidInputSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/Unsupported</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/MissingArgument</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_cXeqENWAEeuVt7_nL-IFsA">
+              <SHORT-NAME>Update</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_vybg4PphEeuIsodAguN2HQ">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_1aat0NWmEeuVt7_nL-IFsA">
+                  <SHORT-NAME>input</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ByteArray</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_RPu6AP6HEeupo9Ga37YnXw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/ProcessingNotStarted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_cXeqEdWAEeuVt7_nL-IFsA">
+              <SHORT-NAME>Finish</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_TYokUPpiEeuIsodAguN2HQ">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_PZawANWzEeuVt7_nL-IFsA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnFinishResponse</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/ProcessingNotStarted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidUsageOrder</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_9taXoPmpEeu0iIr4QYOk5A">
+              <SHORT-NAME>GetDigest</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_Wh9swPpiEeuIsodAguN2HQ">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_wVgeMPmwEeu0iIr4QYOk5A">
+                  <SHORT-NAME>offset</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_IL32YPmxEeu0iIr4QYOk5A">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnGetDigestResponse</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/ProcessingNotFinished</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_VcfnEHglEeyAzqapOA17YA">
+              <SHORT-NAME>GetDigestService</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_YoZiYHglEeyAzqapOA17YA">
+                  <SHORT-NAME>rngId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_YoZiYXglEeyAzqapOA17YA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_VcfnEXglEeyAzqapOA17YA">
+              <SHORT-NAME>StartNP</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_RfsEMHguEeyAzqapOA17YA">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_zErd0HguEeyAzqapOA17YA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/MissingArgument</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_VcfnEnglEeyAzqapOA17YA">
+              <SHORT-NAME>StartSecretSeed</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_kcB88HgvEeyAzqapOA17YA">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_kcCkAHgvEeyAzqapOA17YA">
+                  <SHORT-NAME>iv</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_kcCkAXgvEeyAzqapOA17YA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidInputSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/Unsupported</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_VcfnE3glEeyAzqapOA17YA">
+              <SHORT-NAME>UpdateUint8</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4HgvEeyAzqapOA17YA">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4XgvEeyAzqapOA17YA">
+                  <SHORT-NAME>input</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4ngvEeyAzqapOA17YA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/ProcessingNotStarted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_VcfnE3glEeyAzqapOA17YA">
+              <SHORT-NAME>UpdateRestrictedUseObject</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4HgvEeyAzqapOA17YA">
+                  <SHORT-NAME>hashId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4XgvEeyAzqapOA17YA">
+                  <SHORT-NAME>input</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="__3ZF4ngvEeyAzqapOA17YA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/ProcessingNotStarted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

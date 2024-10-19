@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>CertSignRequest</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>qt</SHORT-NAME>
+              <SYMBOL>qt</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>crypto</SHORT-NAME>
+              <SYMBOL>crypto</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>x509</SHORT-NAME>
+              <SYMBOL>x509</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>csr</SHORT-NAME>
+              <SYMBOL>csr</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_BWIvgHLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>Verify</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_QlX6IHPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>csrId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_QlX6IXPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnBool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_BWIvgXLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>ExportASN1CertSignRequest</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dKdLUHPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>csrId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dKdLUXPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnByteArray</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/InvalidUsageOrder</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_BWIvgnLEEeyW1vzBGjZdjA">
+              <SHORT-NAME>GetSignature</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_vTE9kHPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>csrId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_vTE9kXPSEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_BWIvg3LEEeyW1vzBGjZdjA">
+              <SHORT-NAME>Version</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_As3T4HPTEeyjtZN1Le4MAw">
+                  <SHORT-NAME>csrId</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_As3T4XPTEeyjtZN1Le4MAw">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ApplicationErrors/UndefinedApplicationError</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

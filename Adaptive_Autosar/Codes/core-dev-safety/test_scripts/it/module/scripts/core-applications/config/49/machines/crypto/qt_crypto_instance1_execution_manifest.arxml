@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>CryptoProviderPortMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_crypto_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_crypto_instance1/PPortCryptoProvider</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_crypto_instance1</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_crypto_instance1</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/CryptoProvider</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <CRYPTO-PROVIDER-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>OpenSSLMappingToPortPrototypeMapping</SHORT-NAME>
+          <CRYPTO-PROVIDER-REF DEST="CRYPTO-PROVIDER">/Machines/QtMachine/CryptoModuleInstantiation/CryptoOpenSSLProvider</CRYPTO-PROVIDER-REF>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_crypto_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_crypto_instance1/RPortCryptoProviderPrototype</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_crypto_instance1</PROCESS-REF>
+        </CRYPTO-PROVIDER-TO-PORT-PROTOTYPE-MAPPING>
+        <CRYPTO-PROVIDER-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>CryptoProviderUCMPortMapping</SHORT-NAME>
+          <CRYPTO-PROVIDER-REF DEST="CRYPTO-PROVIDER">/Machines/QtMachine/CryptoModuleInstantiation/CryptoOpenSSLProvider</CRYPTO-PROVIDER-REF>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/package_manager/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponents/package_manager/RPortCryptoProviderUCMPrototype</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/package_manager</PROCESS-REF>
+        </CRYPTO-PROVIDER-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

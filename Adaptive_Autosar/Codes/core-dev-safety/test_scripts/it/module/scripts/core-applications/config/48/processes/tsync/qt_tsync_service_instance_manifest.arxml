@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>arPackage</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="d5e7a445-bbda-4c9c-bb96-8ba6d417d084">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>qt_tsync_instance1</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/SomeipServiceInterfaceDeployment/TimeBase_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>6</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="47ce4b80-a1ba-4a6f-836c-40c3625f63b6">
+      <SHORT-NAME>SomeipServiceInstanceToMachineMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>TSync_Instance1_SomeipServiceInstanceToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_tsync_instance1</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3318</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c66eb9d9-c26a-40d9-b0aa-ddc0463fd863">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>qt_TSync_ServiceInstanceToPortPrototypeMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_tsync_instance1/tsync_instance_1_rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_tsync_instance1/PPort_TimeBaseConsumer</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_tsync_instance1</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_tsync_instance1</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

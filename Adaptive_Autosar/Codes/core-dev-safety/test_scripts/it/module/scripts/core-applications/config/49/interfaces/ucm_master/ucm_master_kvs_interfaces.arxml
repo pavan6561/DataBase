@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PersistencyKeyValueStorageInterface</SHORT-NAME>
+      <ELEMENTS>
+        <PERSISTENCY-KEY-VALUE-STORAGE-INTERFACE>
+          <SHORT-NAME>VehiclePackageTransferStatus</SHORT-NAME>
+          <REDUNDANCY>NONE</REDUNDANCY>
+          <UPDATE-STRATEGY>KEEP-EXISTING</UPDATE-STRATEGY>
+        </PERSISTENCY-KEY-VALUE-STORAGE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

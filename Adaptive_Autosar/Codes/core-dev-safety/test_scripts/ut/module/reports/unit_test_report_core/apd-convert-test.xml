@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="43" failures="0" disabled="0" errors="0" timestamp="2023-06-02T12:12:01" time="0.001" name="AllTests">
+  <testsuite name="ConvertTest" tests="43" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="toString_uint8_t" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_int8_t" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_Integer" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_Float" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_LongLongUnsignedInt" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_Char" status="run" time="0.001" classname="ConvertTest" />
+    <testcase name="toString_String" status="run" time="0" classname="ConvertTest" />
+    <testcase name="toString_StringConvertableClass" status="run" time="0" classname="ConvertTest" />
+    <testcase name="FromString_String" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Char_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Char_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_IsINTEGER" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_IsEmpty" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_IsZero" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_INTEGERWithSign" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_INTEGERWithSignPlacedWrongly" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_SimpleFLOAT" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_MultiDotFLOAT" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_FLOATWithSign" status="run" time="0" classname="ConvertTest" />
+    <testcase name="stringIsNumber_NumberWithLetters" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_FLOAT_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_FLOAT_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Double_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Double_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_LongDouble_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_LongDouble_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UNSIGNED_Int_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UNSIGNED_Int_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UNSIGNED_LongInt_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UNSIGNED_LongInt_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Int_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_ShortInt_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_ShortInt_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Bool_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_Bool_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UShortInt_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_UShortInt_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_LongInt_Success" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_LongInt_Fail" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_MinMaxShort" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_MinMaxUNSIGNED_Short" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_MinMaxInt" status="run" time="0" classname="ConvertTest" />
+    <testcase name="fromString_MinMaxUNSIGNED_Int" status="run" time="0" classname="ConvertTest" />
+  </testsuite>
+</testsuites>

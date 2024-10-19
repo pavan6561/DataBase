@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>PrivateKey</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/PrivateKey_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="60a615d1-615b-4736-add0-5624b2e93c03">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>PrivateKeyToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/PrivateKey</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>4021</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Machines</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>QtMachine</SHORT-NAME>
+          <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/EthernetCluster/QtMachine</MACHINE-DESIGN-REF>
+          <MODULE-INSTANTIATIONS>
+            <TIME-SYNC-MODULE-INSTANTIATION>
+              <SHORT-NAME>TimeSyncModuleInstantiation</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="NetworkInterface">
+                    <SD>enp3s0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TIME-BASES>
+                <SYNCHRONIZED-TIME-BASE-CONSUMER UUID="_VZNLMF5KEeyT1ewgvAmUfg">
+                  <SHORT-NAME>UTC_Consumer</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="RateDeviation">
+                        <SD GID="RateDeviationMeasurementDuration">6</SD>
+                        <SD GID="RateCorrectionPerMeasurementDuration">2</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <NETWORK-TIME-CONSUMER-REF DEST="GLOBAL-TIME-ETH-SLAVE">/GlobalTimeDomains/UTC/UTC_Slave1</NETWORK-TIME-CONSUMER-REF>
+                </SYNCHRONIZED-TIME-BASE-CONSUMER>
+                <SYNCHRONIZED-TIME-BASE-CONSUMER UUID="_ofYkIHQ-EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>GPS_Consumer</SHORT-NAME>
+                  <NETWORK-TIME-CONSUMER-REF DEST="GLOBAL-TIME-ETH-SLAVE">/GlobalTimeDomains/GPS/GPS_Slave1</NETWORK-TIME-CONSUMER-REF>
+                </SYNCHRONIZED-TIME-BASE-CONSUMER>
+                <SYNCHRONIZED-TIME-BASE-CONSUMER UUID="_17x30HQ-EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>IST_OFS_Consumer</SHORT-NAME>
+                  <NETWORK-TIME-CONSUMER-REF DEST="GLOBAL-TIME-ETH-SLAVE">/GlobalTimeDomains/IST/IST_OFS_Slaves1</NETWORK-TIME-CONSUMER-REF>
+                </SYNCHRONIZED-TIME-BASE-CONSUMER>
+                <SYNCHRONIZED-TIME-BASE-PROVIDER UUID="_YTqG8HQ_EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>KST_Provider</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="RateCorrectionMax">
+                        <SD>0.5</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <NETWORK-TIME-PROVIDER-REF DEST="GLOBAL-TIME-ETH-MASTER">/GlobalTimeDomains/KST/KST_Masters1</NETWORK-TIME-PROVIDER-REF>
+                  <TIME-SYNC-CORRECTION>
+                    <ALLOW-PROVIDER-RATE-CORRECTION>true</ALLOW-PROVIDER-RATE-CORRECTION>
+                    <RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>2</RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>
+                    <RATE-DEVIATION-MEASUREMENT-DURATION>6.0</RATE-DEVIATION-MEASUREMENT-DURATION>
+                  </TIME-SYNC-CORRECTION>
+                </SYNCHRONIZED-TIME-BASE-PROVIDER>
+                <SYNCHRONIZED-TIME-BASE-PROVIDER UUID="_YTqG8XQ_EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>EST_Provider</SHORT-NAME>
+                  <NETWORK-TIME-PROVIDER-REF DEST="GLOBAL-TIME-ETH-MASTER">/GlobalTimeDomains/EST/EST_Masters1</NETWORK-TIME-PROVIDER-REF>
+                  <TIME-SYNC-CORRECTION>
+                    <ALLOW-PROVIDER-RATE-CORRECTION>false</ALLOW-PROVIDER-RATE-CORRECTION>
+                    <RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>2</RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>
+                    <RATE-DEVIATION-MEASUREMENT-DURATION>6.0</RATE-DEVIATION-MEASUREMENT-DURATION>
+                  </TIME-SYNC-CORRECTION>
+                </SYNCHRONIZED-TIME-BASE-PROVIDER>
+                <SYNCHRONIZED-TIME-BASE-PROVIDER UUID="_YTqG8nQ_EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>CET_OFS_Provider</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="RateCorrectionMax">
+                        <SD>0.5</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <NETWORK-TIME-PROVIDER-REF DEST="GLOBAL-TIME-ETH-MASTER">/GlobalTimeDomains/CET/CET_OFS_Masters1</NETWORK-TIME-PROVIDER-REF>
+                  <TIME-SYNC-CORRECTION>
+                    <ALLOW-PROVIDER-RATE-CORRECTION>true</ALLOW-PROVIDER-RATE-CORRECTION>
+                    <RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>2</RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>
+                    <RATE-DEVIATION-MEASUREMENT-DURATION>6.0</RATE-DEVIATION-MEASUREMENT-DURATION>
+                  </TIME-SYNC-CORRECTION>
+                </SYNCHRONIZED-TIME-BASE-PROVIDER>
+                <SYNCHRONIZED-TIME-BASE-PROVIDER UUID="_YTqG83Q_EeyUW8Ew5H4zVw">
+                  <SHORT-NAME>PST_OFS_Provider</SHORT-NAME>
+                  <NETWORK-TIME-PROVIDER-REF DEST="GLOBAL-TIME-ETH-MASTER">/GlobalTimeDomains/PST/PST_OFS_Masters1</NETWORK-TIME-PROVIDER-REF>
+                  <TIME-SYNC-CORRECTION>
+                    <ALLOW-PROVIDER-RATE-CORRECTION>false</ALLOW-PROVIDER-RATE-CORRECTION>
+                    <RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>2</RATE-CORRECTIONS-PER-MEASUREMENT-DURATION>
+                    <RATE-DEVIATION-MEASUREMENT-DURATION>6.0</RATE-DEVIATION-MEASUREMENT-DURATION>
+                  </TIME-SYNC-CORRECTION>
+                </SYNCHRONIZED-TIME-BASE-PROVIDER>
+                <SYNCHRONIZED-TIME-BASE-CONSUMER UUID="_xXLoAIr3EeySfNZHw6r1Ug">
+                  <SHORT-NAME>JST_Consumer</SHORT-NAME>
+                  <NETWORK-TIME-CONSUMER-REF DEST="GLOBAL-TIME-ETH-SLAVE">/GlobalTimeDomains/JST/JST_Slave1</NETWORK-TIME-CONSUMER-REF>
+                </SYNCHRONIZED-TIME-BASE-CONSUMER>
+                <SYNCHRONIZED-TIME-BASE-CONSUMER UUID="_xXLoAYr3EeySfNZHw6r1Ug">
+                  <SHORT-NAME>MIT_OFS_Consumer</SHORT-NAME>
+                  <NETWORK-TIME-CONSUMER-REF DEST="GLOBAL-TIME-ETH-SLAVE">/GlobalTimeDomains/MIT/MIT_OFS_Slave1</NETWORK-TIME-CONSUMER-REF>
+                </SYNCHRONIZED-TIME-BASE-CONSUMER>
+              </TIME-BASES>
+            </TIME-SYNC-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>statemanager_ucm_stub</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="_J7ECAHknEeyJobUXsb3tBw">
+              <SHORT-NAME>RPortPrototype_sm_ucm_stub</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/UpdateRequest_Canoe</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_rSk_EHnREeyDceOd7e-5Aw">
+              <SHORT-NAME>PPortPrototype_UpdateRequest</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/sm/portinterfaces/UpdateRequest</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

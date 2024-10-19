@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponents</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_ucm_instance1</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_fEOwcM0KEeu1l-6yTZVelA">
+              <SHORT-NAME>PPortApplicationPackageManagement</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationPackageManagement</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_0om4kM5iEeuSI-V84b3Hiw">
+              <SHORT-NAME>RPortPackageManagement</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/ServiceInterfaces/PackageManagement</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="3c7ff2c1-7c4e-434f-aa4b-deed6640df74">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>qt_ucm_instance1</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_DPzx0M0LEeu1l-6yTZVelA">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponents/qt_ucm_instance1</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="89345004-c7f1-4dc5-80b8-1d9344256c5f">
+      <SHORT-NAME>ProcessDesigns</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_ucm_instance1</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_ucm_instance1</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="e84c1b3c-b32b-4a59-8c6d-a5128a16a922">
+      <SHORT-NAME>SoftwarePackages</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="253fc2ba-2cb9-42b4-8cc5-758bcbffccdb">
+      <SHORT-NAME>SoftwareClusters</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>SoftwareClusterPlatformCore</SHORT-NAME>
+          <CATEGORY>PLATFORM_CORE</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="IPC">
+                <SDG>
+                  <SD GID="FUNCTION-GROUP-REF">FG_X</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                  <SD GID="FUNCTION-GROUP-REF">FG_Y</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                </SDG>
+                <SD GID="PREACTIVATION_FG_STATE_LIST">YES</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <CLAIMED-FUNCTION-GROUP-REFS>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/MachineFG</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/CryptoApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/ComApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/UCMApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Processes/ara_someip_routing_daemon/AraSomeipRoutingDaemonStateMachine</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Processes/ara_dlt_daemon/AraDltDaemon</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/PHMApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/UCMPackageManagerStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/TSyncApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/UcmMasterApplicationStates</CLAIMED-FUNCTION-GROUP-REF>
+          </CLAIMED-FUNCTION-GROUP-REFS>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/package_manager</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_crypto_instance1</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_ucm_updateadapter</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_ucm_instance1</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_statemanager</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance1</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/ara_someip_routing_daemon</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/ara_dlt_daemon</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/phm_core</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Process/crypto_core</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/statemanager</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/SoftwareClusterDesign/SoftwareClusterDesign</DESIGN-REF>
+          </DESIGN-REFS>
+          <TYPE-APPROVAL>None</TYPE-APPROVAL>
+        </SOFTWARE-CLUSTER>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="112f91d0-f36e-447b-b192-11dfed28e287">
+      <SHORT-NAME>SoftwareClusterDesign</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SoftwareClusterDesign</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

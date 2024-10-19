@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>PublicKey_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_QmGz4GPBEeysF8KrdMrKgw">
+              <SHORT-NAME>CheckKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PublicKey/CheckKey</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_XHvU4GPBEeysF8KrdMrKgw">
+              <SHORT-NAME>HashPublicKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PublicKey/HashPublicKey</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_otJIUJblEeyN-J70deIxbA">
+              <SHORT-NAME>ExportPublicly</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PublicKey/ExportPublicly</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/PublicKey</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>76</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

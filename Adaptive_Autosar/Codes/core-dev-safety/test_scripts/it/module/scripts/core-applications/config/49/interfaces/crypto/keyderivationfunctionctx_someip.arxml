@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>KeyDerivationFunctionCtx_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_vrPPYBUeEeyuC4UclpGIGg">
+              <SHORT-NAME>SetSourceKeyMaterial</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/SetSourceKeyMaterial</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL0BUfEeyuC4UclpGIGg">
+              <SHORT-NAME>AddSalt</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/AddSalt</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL0RUfEeyuC4UclpGIGg">
+              <SHORT-NAME>ConfigIterations</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/ConfigIterations</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL0hUfEeyuC4UclpGIGg">
+              <SHORT-NAME>DeriveKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/DeriveKey</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL0xUfEeyuC4UclpGIGg">
+              <SHORT-NAME>AddSecretSalt</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/AddSecretSalt</METHOD-REF>
+              <METHOD-ID>5</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL1BUfEeyuC4UclpGIGg">
+              <SHORT-NAME>DeriveSeed</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/DeriveSeed</METHOD-REF>
+              <METHOD-ID>6</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL1RUfEeyuC4UclpGIGg">
+              <SHORT-NAME>Reset</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/Reset</METHOD-REF>
+              <METHOD-ID>7</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL1hUfEeyuC4UclpGIGg">
+              <SHORT-NAME>GetExtensionService</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/GetExtensionService</METHOD-REF>
+              <METHOD-ID>8</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL1xUfEeyuC4UclpGIGg">
+              <SHORT-NAME>GetKeyIdSize</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/GetKeyIdSize</METHOD-REF>
+              <METHOD-ID>9</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL2BUfEeyuC4UclpGIGg">
+              <SHORT-NAME>GetTargetAlgId</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/GetTargetAlgId</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL2RUfEeyuC4UclpGIGg">
+              <SHORT-NAME>GetTargetAllowedUsage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/GetTargetAllowedUsage</METHOD-REF>
+              <METHOD-ID>11</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL2hUfEeyuC4UclpGIGg">
+              <SHORT-NAME>GetTargetKeyBitLength</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/GetTargetKeyBitLength</METHOD-REF>
+              <METHOD-ID>12</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_VlTL2xUfEeyuC4UclpGIGg">
+              <SHORT-NAME>Init</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/Init</METHOD-REF>
+              <METHOD-ID>13</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_0a-bACBNEeywRNmBeYviRA">
+              <SHORT-NAME>isInitialized</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/KeyDerivationFunctionCtx/isInitialized</METHOD-REF>
+              <METHOD-ID>14</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/KeyDerivationFunctionCtx</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>31</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

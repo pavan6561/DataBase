@@ -1,0 +1,98 @@
+target "CRYPTO Code Generator Target"
+
+with source,requirements
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/releases/2020-09/" {
+  org.eclipse.emf.compare.feature.group [3.3.12.202008311302,3.3.12.202008311302]
+  org.eclipse.emf.compare.ide.ui.feature.group [3.3.12.202008311302,3.3.12.202008311302]
+  org.eclipse.emf.mwe.sdk.feature.group [1.5.3.v20200520-0756,1.5.3.v20200520-0756]
+  org.eclipse.emf.sdk.feature.group [2.23.0.v20200822-0801,2.23.0.v20200822-0801]
+  org.eclipse.emf.transaction.sdk.feature.group [1.12.0.201805140824,1.12.0.201805140824]
+  org.eclipse.emf.validation.sdk.feature.group [1.12.2.202008210805,1.12.2.202008210805]
+  org.eclipse.gmf.runtime.notation.sdk.feature.group [1.13.0.202004160913,1.13.0.202004160913]
+  org.eclipse.gmf.runtime.sdk.feature.group [1.13.0.202004160913,1.13.0.202004160913]
+  org.eclipse.gmf.runtime.thirdparty.feature.group [1.13.0.202004160913,1.13.0.202004160913]
+  org.eclipse.uml2.sdk.feature.group [5.5.1.v20200302-1312,5.5.1.v20200302-1312]
+  org.eclipse.wst.common_ui.feature.feature.group [3.19.0.v202007161535,3.19.0.v202007161535]
+  org.eclipse.xpand.sdk.feature.group [2.2.0.v201605260315,2.2.0.v201605260315]
+  org.eclipse.xsd.sdk.feature.group [2.23.0.v20200723-0820,2.23.0.v20200723-0820]
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/eclipse/updates/4.17" {
+    org.eclipse.equinox.sdk.feature.group [3.20.300.v20200828-1034,3.20.300.v20200828-1034]
+    org.eclipse.rcp.feature.group [4.17.0.v20200902-1800,4.17.0.v20200902-1800]
+    org.eclipse.sdk.ide [4.17.0.I20200902-1800,4.17.0.I20200902-1800]
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/tools/orbit/downloads/drops/R20200831200620/repository" {
+    com.google.gson.source [2.8.2.v20180104-1110,2.8.2.v20180104-1110]
+  javax.activation [1.1.0.v201211130549,1.1.0.v201211130549]
+  org.apache.commons.cli [1.4.0.v20200417-1444,1.4.0.v20200417-1444]
+  org.apache.commons.io [2.6.0.v20190123-2029,2.6.0.v20190123-2029]
+  org.apache.commons.compress [1.19.0.v20200106-2343,1.19.0.v20200106-2343]
+  org.hamcrest [1.1.0.v20090501071000,1.1.0.v20090501071000]
+  org.hamcrest.library [1.3.0.v20180524-2246,1.3.0.v20180524-2246]
+  org.jdom2 [2.0.6.v20191125-0928,2.0.6.v20191125-0928]
+  org.mockito [1.9.5.v201605172210,1.9.5.v201605172210]
+} 
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/viatra/updates/release" {
+  org.eclipse.viatra.query.runtime.feature.source.feature.group [1.5.0.201612211702,1.5.0.201612211702]
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/sphinx/updates/0.11.x" {
+  org.eclipse.sphinx.examples.feature.group [0.11.2.201802230805,0.11.2.201802230805]
+  org.eclipse.sphinx.sdk.feature.group [0.11.2.201802230805,0.11.2.201802230805]
+  org.eclipse.sphinx.testutils.feature.group [0.11.2.201802230805,0.11.2.201802230805]
+  org.eclipse.sphinx.viatra.query.sdk.feature.group [0.11.2.201802230805,0.11.2.201802230805]
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/egf/updates/oxygen/official/" {
+  org.eclipse.egf.common.feature.group [1.5.0.v20170418-1840,1.5.0.v20170418-1840]
+  org.eclipse.egf.model.ftask.feature.group [1.5.0.v20170418-1840,1.5.0.v20170418-1840]
+  org.eclipse.egf.model.feature.group [1.5.0.v20170418-1840,1.5.0.v20170418-1840]
+}
+
+location "http://192.168.1.17:8081/artifactory/artop-mirror/artop-sdk-4.14" {
+  org.artop.base.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.base.sdk.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.core.workspace.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.eel.feature.group [1.1.0.201706291244,1.1.0.201706291244]
+  org.artop.eel.sdk.feature.group [1.1.0.201706291244,1.1.0.201706291244]
+  org.artop.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.sdk.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.core.examples.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.thirdparty.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+  org.artop.core.autosar449.sdk.feature.group [4.14.0.202012101426,4.14.0.202012101426]
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/nattable/releases/1.5.0/repository" {
+  org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group [1.5.0.201703192131,1.5.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.core.feature.feature.group [1.5.0.201703192131,1.5.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.core.source.feature.feature.group [1.5.0.201703192131,1.5.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.extension.poi.feature.feature.group [1.5.0.201703192131,1.5.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.extension.nebula.feature.feature.group [1.1.0.201703192131,1.1.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.extension.e4.feature.feature.group [1.1.0.201703192131,1.1.0.201703192131]
+  org.eclipse.nebula.widgets.nattable.extension.glazedlists.source.feature.feature.group [1.5.0.201703192131,1.5.0.201703192131]
+}
+
+location "http://192.168.1.17:8081/artifactory/artop-mirror/artext-update-site" {
+  org.artop.artext.sdk.feature.group [1.7.2.201610092029,1.7.2.201610092029]
+}
+
+location "http://192.168.1.17:8081/artifactory/a00042-astra-repo/snapshots" {
+  com.avinsystems.astra.adaptive.feature.feature.group lazy
+  com.avinsystems.astra.adaptive.feature.source.feature.group lazy
+}
+
+location "http://192.168.1.17:8081/artifactory/a00042-gt-repo/snapshots" {
+  com.avinsystems.ap.gt.feature.feature.group lazy
+  com.avinsystems.ap.gt.feature.source.feature.group lazy
+}
+
+location "http://192.168.1.17:8081/artifactory/eclipse-mirror/technology/swtbot/releases/3.0.0" {
+  org.eclipse.swtbot.feature.group [3.0.0.202006031738,3.0.0.202006031738]
+  org.eclipse.swtbot.eclipse.feature.group [3.0.0.202006031738,3.0.0.202006031738]
+  org.eclipse.swtbot.eclipse.test.junit.feature.group [3.0.0.202006031738,3.0.0.202006031738]
+  org.hamcrest.core [1.3.0.v20180420-1519,1.3.0.v20180420-1519]
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="38" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0.001" name="AllTests">
+  <testsuite name="ResultTest" tests="38" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="ResultTest" />
+    <testcase name="ConvertingConstructors" status="run" time="0" classname="ResultTest" />
+    <testcase name="CopyAndMove" status="run" time="0" classname="ResultTest" />
+    <testcase name="HasValue" status="run" time="0" classname="ResultTest" />
+    <testcase name="DereferenceOperator" status="run" time="0" classname="ResultTest" />
+    <testcase name="Dereference_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="Ok" status="run" time="0" classname="ResultTest" />
+    <testcase name="Err" status="run" time="0" classname="ResultTest" />
+    <testcase name="Err_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="ValueOr" status="run" time="0" classname="ResultTest" />
+    <testcase name="ValueOr_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="Resolve_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="ErrorOr" status="run" time="0" classname="ResultTest" />
+    <testcase name="ErrorOr_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="CheckError" status="run" time="0.001" classname="ResultTest" />
+    <testcase name="Bind" status="run" time="0" classname="ResultTest" />
+    <testcase name="Bind_Void" status="run" time="0" classname="ResultTest" />
+    <testcase name="Swap" status="run" time="0" classname="ResultTest" />
+    <testcase name="FromError_copy" status="run" time="0" classname="ResultTest" />
+    <testcase name="FromError_move" status="run" time="0" classname="ResultTest" />
+    <testcase name="EqualityOperator1" status="run" time="0" classname="ResultTest" />
+    <testcase name="NotEqualityOperator1" status="run" time="0" classname="ResultTest" />
+    <testcase name="EqualityOperator2" status="run" time="0" classname="ResultTest" />
+    <testcase name="EqualityOperator3" status="run" time="0" classname="ResultTest" />
+    <testcase name="NotEqualityOperator2" status="run" time="0" classname="ResultTest" />
+    <testcase name="NotEqualityOperator3" status="run" time="0" classname="ResultTest" />
+    <testcase name="ConvertingConstructor_TEST" status="run" time="0" classname="ResultTest" />
+    <testcase name="Swap2" status="run" time="0" classname="ResultTest" />
+    <testcase name="FromError" status="run" time="0" classname="ResultTest" />
+    <testcase name="EqualityOperator4" status="run" time="0" classname="ResultTest" />
+    <testcase name="NotEqualityOperator4" status="run" time="0" classname="ResultTest" />
+    <testcase name="EqualityOperator5" status="run" time="0" classname="ResultTest" />
+    <testcase name="NonEqualityOperator5" status="run" time="0" classname="ResultTest" />
+    <testcase name="FromValue1" status="run" time="0" classname="ResultTest" />
+    <testcase name="EmplaceError" status="run" time="0" classname="ResultTest" />
+    <testcase name="FromValue2" status="run" time="0" classname="ResultTest" />
+    <testcase name="Resolve" status="run" time="0" classname="ResultTest" />
+    <testcase name="Error_copy" status="run" time="0" classname="ResultTest" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>qt_statemanager</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_statemanager</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_statemanager</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <EXECUTION-DEPENDENCYS>
+                <EXECUTION-DEPENDENCY>
+                  <PROCESS-STATE-IREF>
+                    <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Processes/ara_someip_routing_daemon/AraSomeipRoutingDaemonStateMachine</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                    <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/ProcessStateMachine/Running</TARGET-MODE-DECLARATION-REF>
+                  </PROCESS-STATE-IREF>
+                </EXECUTION-DEPENDENCY>
+              </EXECUTION-DEPENDENCYS>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/MachineState/Startup</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/qt_stateManager_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="be388423-9274-4245-a801-cccbe7db14c0">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>StateManagerPortMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_statemanager/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_statemanager/PStateManager</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_statemanager</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_statemanager</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/StateManager</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="7aaf2bad-0845-4189-84b1-5d8f0d6b9c44">
+      <SHORT-NAME>ProcessToMachineMappingSet</SHORT-NAME>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

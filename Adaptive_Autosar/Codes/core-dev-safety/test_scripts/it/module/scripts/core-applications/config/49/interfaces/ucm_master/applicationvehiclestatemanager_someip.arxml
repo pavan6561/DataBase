@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployement</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>ApplicationVehicleStateManager_Someip</SHORT-NAME>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_wuj8AHqUEeyqF9_TMPmkrQ">
+              <SHORT-NAME>VsmSafetyPolicy</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehicleStateManager/VsmSafetyPolicy</FIELD-REF>
+              <GET UUID="_x0sdoHqUEeyqF9_TMPmkrQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>444</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_yIjNwHqUEeyqF9_TMPmkrQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>555</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_yhJ7AHqUEeyqF9_TMPmkrQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>666</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_xPrsEHqUEeyqF9_TMPmkrQ">
+              <SHORT-NAME>SafetyState</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleStateManager/SafetyState</METHOD-REF>
+              <METHOD-ID>777</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationVehicleStateManager</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_Z2dtcHqVEeyqF9_TMPmkrQ">
+              <SHORT-NAME>SafetyPolicyEvent</SHORT-NAME>
+              <EVENT-GROUP-ID>202</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleStateManager_Someip/VsmSafetyPolicy/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>888</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>Certificate_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gT6ikHMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>AuthorityKeyId</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/AuthorityKeyId</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETkHMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>EndTime</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/EndTime</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETkXMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>GetFingerprint</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/GetFingerprint</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETknMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>GetStatus</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/GetStatus</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETk3MBEeyLHMk0y0IlYw">
+              <SHORT-NAME>IsRoot</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/IsRoot</METHOD-REF>
+              <METHOD-ID>5</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETlHMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>IssuerDn</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/IssuerDn</METHOD-REF>
+              <METHOD-ID>6</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETlXMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>SerialNumber</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/SerialNumber</METHOD-REF>
+              <METHOD-ID>7</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETlnMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>StartTime</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/StartTime</METHOD-REF>
+              <METHOD-ID>8</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETl3MBEeyLHMk0y0IlYw">
+              <SHORT-NAME>SubjectKeyId</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/SubjectKeyId</METHOD-REF>
+              <METHOD-ID>9</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETmHMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>VerifyMe</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/VerifyMe</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_gUETmXMBEeyLHMk0y0IlYw">
+              <SHORT-NAME>X509Version</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/X509Version</METHOD-REF>
+              <METHOD-ID>11</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-wHL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>GetConstraints</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/GetConstraints</METHOD-REF>
+              <METHOD-ID>12</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-wXL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>GetPathLimit</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/GetPathLimit</METHOD-REF>
+              <METHOD-ID>13</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-wnL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>IsCa</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/IsCa</METHOD-REF>
+              <METHOD-ID>14</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-w3L-EeyLHMk0y0IlYw">
+              <SHORT-NAME>SubjectDn</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/SubjectDn</METHOD-REF>
+              <METHOD-ID>15</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-xHL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>SubjectPubKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/SubjectPubKey</METHOD-REF>
+              <METHOD-ID>16</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-xHL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>VerifyMyProvider</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/VerifyMyProvider</METHOD-REF>
+              <METHOD-ID>17</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_UNC-xHL-EeyLHMk0y0IlYw">
+              <SHORT-NAME>ExportPublicly</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Certificate/ExportPublicly</METHOD-REF>
+              <METHOD-ID>18</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Certificate</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>43</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

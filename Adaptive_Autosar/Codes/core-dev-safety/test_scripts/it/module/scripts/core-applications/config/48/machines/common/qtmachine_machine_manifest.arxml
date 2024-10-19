@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Machines</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>QtMachine</SHORT-NAME>
+          <DEFAULT-APPLICATION-TIMEOUT>
+            <EXIT-TIMEOUT-VALUE>1.0</EXIT-TIMEOUT-VALUE>
+          </DEFAULT-APPLICATION-TIMEOUT>
+          <FUNCTION-GROUPS>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_2Da9oEXrEeySKql_GHgC7g">
+              <SHORT-NAME>MachineFG</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/MachineState</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7CpQsEXrEeySKql_GHgC7g">
+              <SHORT-NAME>ComApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/ComApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7Cp3wEXrEeySKql_GHgC7g">
+              <SHORT-NAME>PHMApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/PHMApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7Cp3wUXrEeySKql_GHgC7g">
+              <SHORT-NAME>CryptoApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/CryptoApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7Cp3wkXrEeySKql_GHgC7g">
+              <SHORT-NAME>UCMApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UCMApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7Cp3w0XrEeySKql_GHgC7g">
+              <SHORT-NAME>TSyncApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/TSyncApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_7Cp3xEXrEeySKql_GHgC7g">
+              <SHORT-NAME>UCMPackageManagerStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UCMPackageManagerStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_0hwGIFgsEeyoj8Ec9arL9A">
+              <SHORT-NAME>UcmMasterApplicationStates</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StartupConfigSets/UcmMasterApplicationStates</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </FUNCTION-GROUPS>
+          <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/EthernetCluster/QtMachine</MACHINE-DESIGN-REF>
+          <MODULE-INSTANTIATIONS>
+            <OS-MODULE-INSTANTIATION UUID="_rO4HMLb3Eeu7WMWLj3a7kA">
+              <SHORT-NAME>Linux</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP UUID="_sv4m8Lb3Eeu7WMWLj3a7kA">
+                  <SHORT-NAME>ResourceGroup</SHORT-NAME>
+                  <CPU-USAGE>95</CPU-USAGE>
+                  <MEM-USAGE>2000000000</MEM-USAGE>
+                </RESOURCE-GROUP>
+                <RESOURCE-GROUP UUID="_B6RGYLkvEeulpPW2DaW2zw">
+                  <SHORT-NAME>ResourceGroups2</SHORT-NAME>
+                  <CPU-USAGE>95</CPU-USAGE>
+                  <MEM-USAGE>2000000000</MEM-USAGE>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <CRYPTO-MODULE-INSTANTIATION UUID="_WkJvQA_FEeyL6tLXkzJYVw">
+              <SHORT-NAME>CryptoModuleInstantiation</SHORT-NAME>
+            </CRYPTO-MODULE-INSTANTIATION>
+            <UCM-MODULE-INSTANTIATION UUID="_E3jrENNTEeuhdo5rn7yjXQ">
+              <SHORT-NAME>UcmModuleInstantiation</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SD GID="image_download_path">/UCM</SD>
+                    <SD GID="uuid">2e3b3d1e-b4eb-11e9-a2a3-2a2ae2dbcce4</SD>
+                    <SD GID="service_instance_id">SOME/IP:1</SD>
+                    <SD GID="service_instance_id_extn">SOME/IP:1415</SD>
+                    <SD GID="activate_response_time">500</SD>
+                    <SD GID="rollback_response_time">500</SD>
+                    <SD GID="persist_file_path">/opt/package_manager/var/UCM_persist</SD>
+                    <SD GID="ucm_state_key">UcmPersistState</SD>
+                    <SD GID="version">1.2.3.4</SD>
+                    <SD GID="swcl_database_path">/persist/data/update/sw_cluster_db.json</SD>
+                    <SD GID="history_file_path">/persist/data/update/HISTORY.json</SD>
+                    <SD GID="block_size">32768</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <IDENTIFIER>1</IDENTIFIER>
+            </UCM-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <PROCESSORS>
+            <PROCESSOR UUID="_QjEXoLcSEeuYLPCtdkriWQ">
+              <SHORT-NAME>Processors</SHORT-NAME>
+              <CORES>
+                <PROCESSOR-CORE UUID="_SLOBMLcSEeuYLPCtdkriWQ">
+                  <SHORT-NAME>Cores0</SHORT-NAME>
+                  <CORE-ID>0</CORE-ID>
+                </PROCESSOR-CORE>
+              </CORES>
+            </PROCESSOR>
+          </PROCESSORS>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

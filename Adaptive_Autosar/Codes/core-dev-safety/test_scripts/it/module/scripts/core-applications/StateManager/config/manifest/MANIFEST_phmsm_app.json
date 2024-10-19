@@ -1,0 +1,44 @@
+{
+  "process_name": "phmsm_spp",
+  "logtrace_process_id": "SM sample app",
+  "logtrace_process_desc": "SM SAMPLE",
+  "logtrace_log_modes": [
+    "CONSOLE"
+  ],
+  "logtrace_default_log_level": "VERBOSE",
+  "logtrace_file_path": "/var/redirected/sm_sample_app",
+  "executable": {
+    "platform_application": true,
+    "timer_resolution_ns": 1000,
+    "uses_logging": true
+  },
+  "application_states": [
+    "Running",
+    "Terminated"
+  ],
+  "startup_configs": [
+    {
+      "config_name_for_convenience": "Config #1",
+      "depends": [
+        "ara_dlt_daemon.Running",
+        "phm-core.Running"
+      ],
+      "machine_states": [
+        "Startup",
+        "Driving",
+        "Parking"
+      ],
+      "function_group_states": [],
+      "resource_group": "ResourceGroup",
+      "scheduling_policy": "Round Robin",
+      "scheduling_priority": 12,
+      "arguments": [],
+      "environment": [
+        "SM_EXECUTABLE_NAME=StateManager"
+      ]
+    }
+  ],
+  "service_instance_to_port_prototype_mapping": [],
+  "persistency_port_prototype_to_key_value_database_mapping": [],
+  "persistency_port_prototype_to_file_array_mapping": []
+}

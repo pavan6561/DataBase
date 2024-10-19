@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0" name="AllTests">
+  <testsuite name="InstanceSpecifierTest" tests="8" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="Constructor_StringView_Success" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="Factory_Validation" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="ToString" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="EqualityComparisonOperator_OtherInstanceSpecifier" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="EqualityComparisonOperator_StringView" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="GlobalEqualityComparisonOperator_StringView" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="OrderingComparisonOperator_OtherInstanceSpecifier" status="run" time="0" classname="InstanceSpecifierTest" />
+    <testcase name="EqualityOperator" status="run" time="0" classname="InstanceSpecifierTest" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponent</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_0wpFgE2eEey0WeFhgisBXg">
+              <SHORT-NAME>VehicleDriverApplicationPPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/portinterfaces/VehicleDriverApplication</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_0wpFgU2eEey0WeFhgisBXg">
+              <SHORT-NAME>VehiclePackageManagementPPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/types/portinterfaces/VehiclePackageManagement</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_1jllYE2eEey0WeFhgisBXg">
+              <SHORT-NAME>PackageManagementRPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/ServiceInterfaces/PackageManagement</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_rMgUcE2sEey0WeFhgisBXg">
+              <SHORT-NAME>VehicleStateManagerPPort</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/portinterfaces/VehicleStateManager</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_DLuXoFHUEeygf4_6TxtoVw">
+              <SHORT-NAME>VehiclePackageTransferStatusPRPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="PERSISTENCY-KEY-VALUE-STORAGE-INTERFACE">/PersistencyKeyValueStorageInterface/VehiclePackageTransferStatus</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="bb3653b9-6d01-49b6-a175-caf899f4aa4e">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+          <CATEGORY>PLATFORM_LEVEL</CATEGORY>
+          <BUILD-TYPE>BUILD-TYPE-DEBUG</BUILD-TYPE>
+          <MINIMUM-TIMER-GRANULARITY>1000.0</MINIMUM-TIMER-GRANULARITY>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_UMXskE2fEey0WeFhgisBXg">
+            <SHORT-NAME>vehicle_package_manager_root</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponent/vehicle_package_manager</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="74570411-638d-4dc7-8b85-452d82d90e73">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/vehicle_package_manager</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

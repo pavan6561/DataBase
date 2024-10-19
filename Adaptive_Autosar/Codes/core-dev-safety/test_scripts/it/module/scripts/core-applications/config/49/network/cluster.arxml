@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>EthernetCluster</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE-DESIGN>
+          <SHORT-NAME>QtMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR UUID="_j6qZELb_Eeu7WMWLj3a7kA">
+              <SHORT-NAME>EthernetCommunicationConnector</SHORT-NAME>
+              <NETWORK-ENDPOINT-REFS>
+                <NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</NETWORK-ENDPOINT-REF>
+              </NETWORK-ENDPOINT-REFS>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineSDNetworkEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE-DESIGN>
+        <ETHERNET-CLUSTER>
+          <SHORT-NAME>Ethernet</SHORT-NAME>
+          <ETHERNET-CLUSTER-VARIANTS>
+            <ETHERNET-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <ETHERNET-PHYSICAL-CHANNEL UUID="_CzrUoLcAEeu7WMWLj3a7kA">
+                  <SHORT-NAME>EthernetPhysicalChannel</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                  <NETWORK-ENDPOINTS>
+                    <NETWORK-ENDPOINT UUID="_HeOYMLcAEeu7WMWLj3a7kA">
+                      <SHORT-NAME>QtMachineNetworkEndpoint</SHORT-NAME>
+                      <NETWORK-ENDPOINT-ADDRESSES>
+                        <IPV-4-CONFIGURATION>
+                          <DEFAULT-GATEWAY>192.168.100.1</DEFAULT-GATEWAY>
+                          <IPV-4-ADDRESS>192.168.100.60</IPV-4-ADDRESS>
+                          <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                          <NETWORK-MASK>255.255.255.0</NETWORK-MASK>
+                        </IPV-4-CONFIGURATION>
+                      </NETWORK-ENDPOINT-ADDRESSES>
+                      <PRIORITY>1</PRIORITY>
+                    </NETWORK-ENDPOINT>
+                    <NETWORK-ENDPOINT>
+                      <SHORT-NAME>QtMachineSDNetworkEndpoint</SHORT-NAME>
+                      <NETWORK-ENDPOINT-ADDRESSES>
+                        <IPV-4-CONFIGURATION>
+                          <IPV-4-ADDRESS>239.192.255.251</IPV-4-ADDRESS>
+                          <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                        </IPV-4-CONFIGURATION>
+                      </NETWORK-ENDPOINT-ADDRESSES>
+                    </NETWORK-ENDPOINT>
+                  </NETWORK-ENDPOINTS>
+                </ETHERNET-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </ETHERNET-CLUSTER-CONDITIONAL>
+          </ETHERNET-CLUSTER-VARIANTS>
+        </ETHERNET-CLUSTER>
+        <MACHINE-DESIGN>
+          <SHORT-NAME>QtMachineDesignInstance2</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR UUID="_j6qZELb_Eeu7WMWLj3a7kA">
+              <SHORT-NAME>EthernetCommunicationConnector</SHORT-NAME>
+              <NETWORK-ENDPOINT-REFS>
+                <NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</NETWORK-ENDPOINT-REF>
+              </NETWORK-ENDPOINT-REFS>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineSDNetworkEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE-DESIGN>
+        <MACHINE-DESIGN>
+          <SHORT-NAME>QTMachineDesignInstance3</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR UUID="_hY8GkDYcEeyXTM4bHGaLPg">
+              <SHORT-NAME>EthernetCommunicationConnector1</SHORT-NAME>
+              <NETWORK-ENDPOINT-REFS>
+                <NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</NETWORK-ENDPOINT-REF>
+              </NETWORK-ENDPOINT-REFS>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineNetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVER-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/EthernetCluster/Ethernet/EthernetPhysicalChannel/QtMachineSDNetworkEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVER-CONFIGS>
+        </MACHINE-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

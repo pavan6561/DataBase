@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponent</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>vehicle_state_manager</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="_iP8zsE2tEey0WeFhgisBXg">
+              <SHORT-NAME>RPortPrototypeVehicleStateManager</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/portinterfaces/VehicleStateManager</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1c3bad01-d6d3-44e5-8f42-4a6a57251950">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>vehicle_state_manager</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_wN2R8E2tEey0WeFhgisBXg">
+            <SHORT-NAME>vehicle_state_manager_root</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponent/vehicle_state_manager</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="0645f72d-e8c7-4f78-8062-08196e294efa">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>vehicle_state_manager</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/vehicle_state_manager</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

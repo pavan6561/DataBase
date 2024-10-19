@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Process</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>crypto_core</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/crypto_core</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machines/QtMachine/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/MachineState/Startup</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroups2</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/crypto_core_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="0bc2dc20-e9ba-48c0-98f3-67d05b09b23e">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>crypto_core</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_-eOSsBuZEeyc--wwdcX3EQ">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponets/crypto_core</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="ca15c4dd-ce2d-473e-95d6-b12a0fc4f90e">
+      <SHORT-NAME>AdaptiveApplicationSwComponets</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>crypto_core</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

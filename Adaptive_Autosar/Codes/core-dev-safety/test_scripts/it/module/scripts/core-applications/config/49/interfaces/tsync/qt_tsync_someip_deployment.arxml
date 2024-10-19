@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>arPackage</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="6e88ca0e-78ed-4bce-8444-d90016274a6b">
+      <SHORT-NAME>SomeipServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>TimeBase_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_culaYCpiEey3k7EH3OJDcQ">
+              <SHORT-NAME>GetTimeWithStatusSomeip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetTimeWithStatusApp</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_WQxjADJxEeyOAvWGLCJTXw">
+              <SHORT-NAME>GetCurrentSomeip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetCurrentTimeApp</METHOD-REF>
+              <METHOD-ID>60</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_vMdCUE6dEey3w-6tKpKqvg">
+              <SHORT-NAME>ChangeNotifierAppSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/ChangeNotifierApp</METHOD-REF>
+              <METHOD-ID>70</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_crsUkFBYEey6FsF9fCYjKA">
+              <SHORT-NAME>StatusChangeDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/StatusChangeDataApp</METHOD-REF>
+              <METHOD-ID>101</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="__N9V4FD0Eey4sNRrahP0ig">
+              <SHORT-NAME>GetRateDeviationSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetRateDeviationApp</METHOD-REF>
+              <METHOD-ID>102</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="__N9V4VD0Eey4sNRrahP0ig">
+              <SHORT-NAME>StateChangeDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/StateChangeDataApp</METHOD-REF>
+              <METHOD-ID>103</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_F63-sHR0EeyUW8Ew5H4zVw">
+              <SHORT-NAME>SetTimeSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/SetTimeApp</METHOD-REF>
+              <METHOD-ID>31</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_F63-sXR0EeyUW8Ew5H4zVw">
+              <SHORT-NAME>UpdateTimeSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/UpdateTimeApp</METHOD-REF>
+              <METHOD-ID>32</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_F63-snR0EeyUW8Ew5H4zVw">
+              <SHORT-NAME>SetRateCorrectionSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/SetRateCorrectionApp</METHOD-REF>
+              <METHOD-ID>33</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_F63-s3R0EeyUW8Ew5H4zVw">
+              <SHORT-NAME>SetUserDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/SetUserDataApp</METHOD-REF>
+              <METHOD-ID>34</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_F63-tHR0EeyUW8Ew5H4zVw">
+              <SHORT-NAME>GetUserDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetUserDataApp</METHOD-REF>
+              <METHOD-ID>35</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_DYd-QIzcEeyLGJI3KipKJg">
+              <SHORT-NAME>GetSlaveTimingDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetSlaveTimingDataApp</METHOD-REF>
+              <METHOD-ID>36</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_DYnIMIzcEeyLGJI3KipKJg">
+              <SHORT-NAME>GetPdelayInitiatorDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetPdelayInitiatorDataApp</METHOD-REF>
+              <METHOD-ID>37</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_DYnIMYzcEeyLGJI3KipKJg">
+              <SHORT-NAME>GetMasterTimingDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetMasterTimingDataApp</METHOD-REF>
+              <METHOD-ID>38</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_DYnIMozcEeyLGJI3KipKJg">
+              <SHORT-NAME>GetPdelayResponderDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetPdelayResponderDataApp</METHOD-REF>
+              <METHOD-ID>39</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_DYnIM4zcEeyLGJI3KipKJg">
+              <SHORT-NAME>GetPrecisionDataSomeipMethodDeployment</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TimeBaseApp/GetPrecisionDataApp</METHOD-REF>
+              <METHOD-ID>40</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TimeBaseApp</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>7</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

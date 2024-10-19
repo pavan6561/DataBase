@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" disabled="0" errors="0" timestamp="2023-06-02T12:04:09" time="0" name="AllTests">
+  <testsuite name="FixedMapTest" tests="11" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="SizeTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="BeginTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="EndTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="OperatorTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="FindTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="AtTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="EraseTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="InsertTest" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="empty" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="valueSize" status="run" time="0" classname="FixedMapTest" />
+    <testcase name="valueSize_else" status="run" time="0" classname="FixedMapTest" />
+  </testsuite>
+</testsuites>

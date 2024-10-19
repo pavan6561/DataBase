@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>package_manager</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_ASLOgMYlEeuETrhPJgl8Zw">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponents/package_manager</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="939f7433-1505-4e8d-a95e-d3e02fb001ff">
+      <SHORT-NAME>AdaptiveApplicationSwComponents</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>package_manager</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_JZqLACs8EeyVmNRzifljWw">
+              <SHORT-NAME>PPortPackageManagement</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/ServiceInterfaces/PackageManagement</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_ItGeYCvpEeyZOPnP7vH1QA">
+              <SHORT-NAME>RUpdateRequest</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/sm/portinterfaces/UpdateRequest</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <PR-PORT-PROTOTYPE>
+              <SHORT-NAME>SwPackageCurrentStatusPRPort</SHORT-NAME>
+              <PROVIDED-REQUIRED-INTERFACE-TREF DEST="PERSISTENCY-KEY-VALUE-STORAGE-INTERFACE">/ara/apd/ucm/PersistencyKeyValueStorageInterfaces/SwPackageCurrentStatus</PROVIDED-REQUIRED-INTERFACE-TREF>
+            </PR-PORT-PROTOTYPE>
+            <PR-PORT-PROTOTYPE>
+              <SHORT-NAME>SwPackageTransferStatusPRPort</SHORT-NAME>
+              <PROVIDED-REQUIRED-INTERFACE-TREF DEST="PERSISTENCY-KEY-VALUE-STORAGE-INTERFACE">/ara/apd/ucm/PersistencyKeyValueStorageInterfaces/SwPackageTransferStatus</PROVIDED-REQUIRED-INTERFACE-TREF>
+            </PR-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_OYMCACwiEeyZOPnP7vH1QA">
+              <SHORT-NAME>PUpdateAdapter</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/UpdateAdapter</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_y-_kgDAMEeyx_NgXiLbQcg">
+              <SHORT-NAME>RPortCryptoProviderUCMPrototype</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CRYPTO-PROVIDER-INTERFACE">/CryptoInterfaces/CryptoProviderInterface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

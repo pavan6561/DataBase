@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>arPackage</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign_A</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign_B</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <DOCUMENTATION>
+          <SHORT-NAME>InitialApplication</SHORT-NAME>
+          <DOCUMENTATION-CONTENT/>
+        </DOCUMENTATION>
+        <DOCUMENTATION>
+          <SHORT-NAME>AVIN</SHORT-NAME>
+        </DOCUMENTATION>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>Swcl_Rollback_0005</SHORT-NAME>
+          <CATEGORY>SWCL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="IPC">
+                <SDG GID="SERVICE-INTERFACE-VERSION">
+                  <SD GID="FUNCTION-GROUP-REF">FG_X</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                  <SD GID="FUNCTION-GROUP-REF">FG_Y</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                </SDG>
+                <SD GID="PREACTIVATION_FG_STATE_LIST">YES</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <CLAIMED-FUNCTION-GROUP-REFS>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/arPackage/FunctionGroupSet_Rollback_0005/functionGroups1</CLAIMED-FUNCTION-GROUP-REF>
+          </CLAIMED-FUNCTION-GROUP-REFS>
+          <CONFLICTS-TO>
+            <OPERATOR>LOGICAL-AND</OPERATOR>
+          </CONFLICTS-TO>
+          <DEPENDS-ON>
+            <OPERATOR>LOGICAL-OR</OPERATOR>
+          </DEPENDS-ON>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/arPackage/SwClusterDesign</DESIGN-REF>
+          </DESIGN-REFS>
+          <DIAGNOSTIC-ADDRESSS>
+            <SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+              <ADDRESS-SEMANTICS>FUNCTIONAL-ADDRESS</ADDRESS-SEMANTICS>
+              <DIAGNOSTIC-ADDRESS>17473</DIAGNOSTIC-ADDRESS>
+            </SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+          </DIAGNOSTIC-ADDRESSS>
+          <LICENSE-REFS>
+            <LICENSE-REF DEST="DOCUMENTATION">/arPackage/AVIN</LICENSE-REF>
+          </LICENSE-REFS>
+          <RELEASE-NOTES-REF DEST="DOCUMENTATION">/arPackage/InitialApplication</RELEASE-NOTES-REF>
+          <TYPE-APPROVAL>2018/858</TYPE-APPROVAL>
+          <VENDOR-ID>1447315780</VENDOR-ID>
+          <VERSION>1.0.0.0</VERSION>
+        </SOFTWARE-CLUSTER>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>UCMPackageManagerStates_Rollback_0005</SHORT-NAME>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_pE0-QFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>on</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_pE1lUFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_pE2MYFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <FUNCTION-GROUP-SET>
+          <SHORT-NAME>FunctionGroupSet_Rollback_0005</SHORT-NAME>
+          <FUNCTION-GROUPS>
+            <MODE-DECLARATION-GROUP-PROTOTYPE UUID="_xKFy4IllEeyKIuNaLhYkWw">
+              <SHORT-NAME>functionGroups1</SHORT-NAME>
+              <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/arPackage/UCMPackageManagerStates_Rollback_0005</TYPE-TREF>
+            </MODE-DECLARATION-GROUP-PROTOTYPE>
+          </FUNCTION-GROUPS>
+        </FUNCTION-GROUP-SET>
+        <SOFTWARE-PACKAGE>
+          <SHORT-NAME>sw_pkg_Rollback_0005</SHORT-NAME>
+          <CATEGORY>TestPackage</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:VerifyFGStatusList">
+                <SDG GID="FunctionGroupRefs">
+                  <SDG GID="FunctionGroupStateRefs">
+                    <SD GID="FunctionGroupStateRef">0x00</SD>
+                    <SD GID="FunctionGroupStateRef">0x01</SD>
+                  </SDG>
+                  <SD GID="FunctionGroupRef">Machine</SD>
+                </SDG>
+                <SD GID="DV:Verify_FG_State_List">TRUE</SD>
+                <SD GID="PerformVerification">TRUE</SD>
+                <SD GID="VerificationTime">10000</SD>
+              </SDG>
+              <SDG GID="updateTypes">
+                <SDG GID="updateLocations">
+                  <SD GID="updateLocation">/UCM</SD>
+                </SDG>
+                <SD GID="updateType">singlefile</SD>
+              </SDG>
+              <SDG GID="SoftwarePackageActivationActionEnum">
+                <SD GID="ActivationActionEnum">nothing</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ACTION-TYPE>REMOVE</ACTION-TYPE>
+          <COMPRESSED-SOFTWARE-PACKAGE-SIZE>524288</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+          <MAXIMUM-SUPPORTED-UCM-VERSION>3.0.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+          <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+          <PACKAGER-ID>1347111236</PACKAGER-ID>
+          <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/arPackage/Swcl_Rollback_0005</SOFTWARE-CLUSTER-REF>
+          <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>655360</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+        </SOFTWARE-PACKAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

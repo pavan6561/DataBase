@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>CppImplementationDataTypes</SHORT-NAME>
+      <ELEMENTS>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>RadarObjects</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_1VVooCZ7EeyC84r1yBaioQ">
+              <SHORT-NAME>subElements1</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ByteArray</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_loI-wCqTEey-16E66dJh0A">
+              <SHORT-NAME>subElements2</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/LongArray</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Position</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_P_VXUCaCEeyR1eXkyu6khw">
+              <SHORT-NAME>x</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_P_V-YCaCEeyR1eXkyu6khw">
+              <SHORT-NAME>y</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_P_WlcCaCEeyR1eXkyu6khw">
+              <SHORT-NAME>z</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>ArrayCppIdt</SHORT-NAME>
+          <CATEGORY>ARRAY</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <ARRAY-SIZE>3</ARRAY-SIZE>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TypeRefCppIdt</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TypeRefCppIdt</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>TypeRefCppIdt</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>AssociativeMapCppIdt</SHORT-NAME>
+          <CATEGORY>ASSOCIATIVE_MAP</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TypeRefCppIdt</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TypeRefCppIdt</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>VectorCppIdt</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/TypeRefCppIdt</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Distances</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_0kzyYCqTEey-16E66dJh0A">
+              <SHORT-NAME>subElements1</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_0kzyYSqTEey-16E66dJh0A">
+              <SHORT-NAME>subElements2</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Duration</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_1lXQcCqTEey-16E66dJh0A">
+              <SHORT-NAME>subElements1</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_1lXQcSqTEey-16E66dJh0A">
+              <SHORT-NAME>subElements2</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Vector_control</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Vector_analysis</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Vector_distance</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Array_analysis</SHORT-NAME>
+          <CATEGORY>ARRAY</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <ARRAY-SIZE>4</ARRAY-SIZE>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Array_distance</SHORT-NAME>
+          <CATEGORY>ARRAY</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <ARRAY-SIZE>2</ARRAY-SIZE>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Array_control</SHORT-NAME>
+          <CATEGORY>ARRAY</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <ARRAY-SIZE>5</ARRAY-SIZE>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>EventSubscriptionStates</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/avin/stdtypes/std_uint8_t</BASE-TYPE-REF>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/CompuMethods/SubscriptionStatesResponse</COMPU-METHOD-REF>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Enum_response</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/avin/stdtypes/std_uint8_t</BASE-TYPE-REF>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/CompuMethods/GeneralResponseTypeEnum</COMPU-METHOD-REF>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>SLT_response</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <BASE-TYPE-REF DEST="SW-BASE-TYPE">/avin/stdtypes/std_uint8_t</BASE-TYPE-REF>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/CompuMethods/GeneralResponseTypeScaleLinearAndTextable</COMPU-METHOD-REF>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>	
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="5daeb29b-f1d9-4c28-a131-1ce4eca1bc95">
+      <SHORT-NAME>CompuMethods</SHORT-NAME>
+      <ELEMENTS>
+        <COMPU-METHOD>
+          <SHORT-NAME>GeneralResponseTypeEnum</SHORT-NAME>
+          <CATEGORY>TEXTTABLE</CATEGORY>
+          <COMPU-INTERNAL-TO-PHYS>
+            <COMPU-SCALES>
+              <COMPU-SCALE>
+                <SYMBOL>kSuccess</SYMBOL>
+                <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                <UPPER-LIMIT>0x00</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kGeneralReject</SYMBOL>
+                <LOWER-LIMIT>0x01</LOWER-LIMIT>
+                <UPPER-LIMIT>0x01</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kGeneralMemoryError</SYMBOL>
+                <LOWER-LIMIT>0x02</LOWER-LIMIT>
+                <UPPER-LIMIT>0x02</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kTransferIdInvalid</SYMBOL>
+                <LOWER-LIMIT>0x03</LOWER-LIMIT>
+                <UPPER-LIMIT>0x03</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kOperationNotPermitted</SYMBOL>
+                <LOWER-LIMIT>0x04</LOWER-LIMIT>
+                <UPPER-LIMIT>0x04</UPPER-LIMIT>
+              </COMPU-SCALE>
+            </COMPU-SCALES>
+          </COMPU-INTERNAL-TO-PHYS>
+        </COMPU-METHOD>
+        <COMPU-METHOD>
+          <SHORT-NAME>GeneralResponseTypeScaleLinearAndTextable</SHORT-NAME>
+          <CATEGORY>SCALE_LINEAR_AND_TEXTTABLE</CATEGORY>
+          <COMPU-INTERNAL-TO-PHYS>
+            <COMPU-SCALES>
+              <COMPU-SCALE>
+                <SYMBOL>kSuccess</SYMBOL>
+                <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                <UPPER-LIMIT>0x00</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kGeneralReject</SYMBOL>
+                <LOWER-LIMIT>0x01</LOWER-LIMIT>
+                <UPPER-LIMIT>0x01</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kGeneralMemoryError</SYMBOL>
+                <LOWER-LIMIT>0x02</LOWER-LIMIT>
+                <UPPER-LIMIT>0x02</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kTransferIdInvalid</SYMBOL>
+                <LOWER-LIMIT>0x03</LOWER-LIMIT>
+                <UPPER-LIMIT>0x03</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kOperationNotPermitted</SYMBOL>
+                <LOWER-LIMIT>0x04</LOWER-LIMIT>
+                <UPPER-LIMIT>0x04</UPPER-LIMIT>
+              </COMPU-SCALE>
+            </COMPU-SCALES>
+          </COMPU-INTERNAL-TO-PHYS>
+        </COMPU-METHOD>      
+        <COMPU-METHOD>
+          <SHORT-NAME>SubscriptionStatesResponse</SHORT-NAME>
+          <CATEGORY>TEXTTABLE</CATEGORY>
+          <COMPU-INTERNAL-TO-PHYS>
+            <COMPU-SCALES>
+              <COMPU-SCALE>
+                <SYMBOL>kSubscribed</SYMBOL>
+                <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                <UPPER-LIMIT>0x00</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kNotSubscribed</SYMBOL>
+                <LOWER-LIMIT>0x01</LOWER-LIMIT>
+                <UPPER-LIMIT>0x01</UPPER-LIMIT>
+              </COMPU-SCALE>
+              <COMPU-SCALE>
+                <SYMBOL>kSubscriptionPending</SYMBOL>
+                <LOWER-LIMIT>0x02</LOWER-LIMIT>
+                <UPPER-LIMIT>0x02</UPPER-LIMIT>
+              </COMPU-SCALE>
+            </COMPU-SCALES>
+          </COMPU-INTERNAL-TO-PHYS>
+        </COMPU-METHOD>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

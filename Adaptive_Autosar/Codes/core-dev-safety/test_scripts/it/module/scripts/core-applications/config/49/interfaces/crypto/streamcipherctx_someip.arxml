@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>StreamCipherCtx_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LROOUBz-EeypydmN3KGsGA">
+              <SHORT-NAME>CountBytesInCache</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/CountBytesInCache</METHOD-REF>
+              <METHOD-ID>1</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LROOURz-EeypydmN3KGsGA">
+              <SHORT-NAME>EstimateMaxInputSize</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/EstimateMaxInputSize</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LROOUhz-EeypydmN3KGsGA">
+              <SHORT-NAME>EstimateRequiredCapacity</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/EstimateRequiredCapacity</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRO1YBz-EeypydmN3KGsGA">
+              <SHORT-NAME>FinishBytes</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/FinishBytes</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRO1YRz-EeypydmN3KGsGA">
+              <SHORT-NAME>GetBlockService</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/GetBlockService</METHOD-REF>
+              <METHOD-ID>5</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRPccBz-EeypydmN3KGsGA">
+              <SHORT-NAME>IsBytewiseMode</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/IsBytewiseMode</METHOD-REF>
+              <METHOD-ID>6</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRPccRz-EeypydmN3KGsGA">
+              <SHORT-NAME>GetTransformation</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/GetTransformation</METHOD-REF>
+              <METHOD-ID>7</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRPcchz-EeypydmN3KGsGA">
+              <SHORT-NAME>IsSeekableMode</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/IsSeekableMode</METHOD-REF>
+              <METHOD-ID>8</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRQDgBz-EeypydmN3KGsGA">
+              <SHORT-NAME>ProcessBlocksReadOnlyMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/ProcessBlocksReadOnlyMemRegion</METHOD-REF>
+              <METHOD-ID>9</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRRRoBz-EeypydmN3KGsGA">
+              <SHORT-NAME>ProcessBlocksReadWriteMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/ProcessBlocksReadWriteMemRegion</METHOD-REF>
+              <METHOD-ID>10</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRRRoRz-EeypydmN3KGsGA">
+              <SHORT-NAME>ProcessBytesReadOnlyMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/ProcessBytesReadOnlyMemRegion</METHOD-REF>
+              <METHOD-ID>11</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRR4sBz-EeypydmN3KGsGA">
+              <SHORT-NAME>Reset</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/Reset</METHOD-REF>
+              <METHOD-ID>12</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRR4sRz-EeypydmN3KGsGA">
+              <SHORT-NAME>Seek</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/Seek</METHOD-REF>
+              <METHOD-ID>13</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRR4shz-EeypydmN3KGsGA">
+              <SHORT-NAME>SetKey</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/SetKey</METHOD-REF>
+              <METHOD-ID>14</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRSfwBz-EeypydmN3KGsGA">
+              <SHORT-NAME>StartReadOnlyMemRegion</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/StartReadOnlyMemRegion</METHOD-REF>
+              <METHOD-ID>15</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRSfwRz-EeypydmN3KGsGA">
+              <SHORT-NAME>StartSecretSeed</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/StartSecretSeed</METHOD-REF>
+              <METHOD-ID>16</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LRSfwhz-EeypydmN3KGsGA">
+              <SHORT-NAME>isInitialized</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/StreamCipherCtx/isInitialized</METHOD-REF>
+              <METHOD-ID>17</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/StreamCipherCtx</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>33</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

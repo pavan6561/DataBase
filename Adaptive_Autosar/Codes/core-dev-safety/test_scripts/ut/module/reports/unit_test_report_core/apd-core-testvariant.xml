@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="42" failures="0" disabled="1" errors="0" timestamp="2023-04-27T06:59:33" time="0.002" name="AllTests">
+  <testsuite name="variant_Test" tests="41" failures="0" disabled="1" errors="0" time="0.002">
+    <testcase name="DefaultCTorCreatesInvalidVariant" status="run" time="0" classname="variant_Test" />
+    <testcase name="InitializedVariantReturnsCorrectIndex" status="run" time="0" classname="variant_Test" TEST_ID="7b1cf4b5-e38d-4aea-804a-f8bd75e0a605" />
+    <testcase name="CreatingVariantFromPODTypeReturnsProvidedValue" status="run" time="0" classname="variant_Test" TEST_ID="d087b440-a669-4467-a016-3a4ae5b5882a" />
+    <testcase name="CreatingVariantFromLValueReturnsProvidedValue" status="run" time="0" classname="variant_Test" TEST_ID="ff991aeb-15de-45fe-b6fb-a0a3d3c36c68" />
+    <testcase name="CreatingVariantWithSameTypeChoosesFirstFittingType" status="run" time="0" classname="variant_Test" TEST_ID="819b5c7d-106c-476a-a49e-aaa78e092e3f" />
+    <testcase name="EmplaceValidElementWorks" status="run" time="0" classname="variant_Test" TEST_ID="24021bd7-3749-4ca3-9b35-db3cb4837bff" />
+    <testcase name="EmplaceSecondValidElementWorks" status="run" time="0.001" classname="variant_Test" TEST_ID="fb4ba160-dd0c-4255-9916-cc56d950e970" />
+    <testcase name="DISABLED_emplaceInvalidElement" status="notrun" time="0" classname="variant_Test" />
+    <testcase name="EmplaceWhenAlreadyDifferentTypeAssignedDoesNotWork" status="run" time="0" classname="variant_Test" TEST_ID="f2c0825a-349c-4acb-9643-cb046f7e0310" />
+    <testcase name="GetOnUninitializedVariantFails" status="run" time="0" classname="variant_Test" TEST_ID="d1da6416-f198-4756-9bdd-2c61b9750005" />
+    <testcase name="GetVariantWithCorrectValueWorks" status="run" time="0" classname="variant_Test" TEST_ID="ab08976b-0986-4fad-bfdb-f10810d19ae6" />
+    <testcase name="GetVariantWithIncorrectValueFails" status="run" time="0" classname="variant_Test" TEST_ID="9c83f8ed-f4a1-4e45-b63f-26924544cc77" />
+    <testcase name="ConstGetOnUninitializedVariantFails" status="run" time="0" classname="variant_Test" TEST_ID="16b511c8-e56a-48c9-bbff-5a7d07e7a500" />
+    <testcase name="constGetVariantWithCorrectValue" status="run" time="0" classname="variant_Test" TEST_ID="4419f569-0541-43ab-8448-9ba10556b459" />
+    <testcase name="ConstGetVariantWithIncorrectValueFails" status="run" time="0" classname="variant_Test" TEST_ID="979e1131-e981-4f67-bef2-a1fe4770c5a6" />
+    <testcase name="Get_ifWhenUninitializedReturnsProvidedValue" status="run" time="0" classname="variant_Test" TEST_ID="64585111-3495-4c01-8900-af2e19223e62" />
+    <testcase name="Get_ifInitializedWithCorrectValueWorks" status="run" time="0" classname="variant_Test" TEST_ID="27b80822-0f32-46a6-83d9-595b35e23139" />
+    <testcase name="Get_ifInitializedWithIncorrectValueReturnsProvidedValue" status="run" time="0" classname="variant_Test" TEST_ID="4126af94-d4ce-405a-bcc7-1b6d1fce6d0b" />
+    <testcase name="DTorIsCalled" status="run" time="0" classname="variant_Test" TEST_ID="46f16073-af10-4d4b-9944-a316bc5847ef" />
+    <testcase name="DTorIsCalledAfterEmplace" status="run" time="0" classname="variant_Test" TEST_ID="0de8d215-76be-4727-9fb4-42c54cb1b742" />
+    <testcase name="CopyCTorWithValueLeadsToSameValue" status="run" time="0" classname="variant_Test" TEST_ID="710f8add-4a3c-4b9c-b429-5f42689b49da" />
+    <testcase name="CopyCTorWithoutValueResultsInInvalidVariant" status="run" time="0" classname="variant_Test" TEST_ID="31b12efc-4f2d-4b3c-ad72-c12ca8a0cfc3" />
+    <testcase name="CopyAssignmentWithValueLeadsToSameValue" status="run" time="0" classname="variant_Test" TEST_ID="ebf341fa-c218-4ab8-ae13-a35d707bb5b2" />
+    <testcase name="CopyAssignmentWithoutValueResultsInInvalidVariant" status="run" time="0" classname="variant_Test" TEST_ID="75466e8c-78b3-4a2f-84cb-06849cf80baa" />
+    <testcase name="MoveCTorWithValueLeadsToSameValue" status="run" time="0" classname="variant_Test" TEST_ID="34962242-8319-48e5-a064-5118c6ffa080" />
+    <testcase name="MoveCTorWithoutValueResultsInInvalidVariant" status="run" time="0.001" classname="variant_Test" TEST_ID="83db1777-3e66-4755-9072-0c90973ae303" />
+    <testcase name="MoveAssignmentWithValueLeadsToSameValue" status="run" time="0" classname="variant_Test" TEST_ID="ee36df28-545f-42bc-9ef6-3699284f1a42" />
+    <testcase name="MoveAssignmentWithoutValueResultsInInvalidVariant" status="run" time="0" classname="variant_Test" TEST_ID="5b6c8183-3ea1-44ee-ac99-7f427127b82b" />
+    <testcase name="CreatingSecondObjectViaCopyCTorResultsInTwoDTorCalls" status="run" time="0" classname="variant_Test" TEST_ID="57a5836f-d981-445a-9040-6c3358cee6c4" />
+    <testcase name="CreatingSecondObjectViaCopyAssignmentResultsInTwoDTorCalls" status="run" time="0" classname="variant_Test" TEST_ID="6932e30b-f24f-46be-88e0-d745d9f0db92" />
+    <testcase name="DirectValueAssignmentResultsInCorrectIndex" status="run" time="0" classname="variant_Test" TEST_ID="55377419-08dc-4d6b-b163-b2da7ad70417" />
+    <testcase name="DirectValueAssignmentWhenAlreadyAssignedWithDifferentType" status="run" time="0" classname="variant_Test" TEST_ID="a058c173-497b-43ec-ba03-2702f3ba8190" />
+    <testcase name="HoldsAlternativeForCorrectType" status="run" time="0" classname="variant_Test" TEST_ID="9da264db-a84e-41cd-94ff-92af529e2d6b" />
+    <testcase name="HoldsAlternativeForIncorrectType" status="run" time="0" classname="variant_Test" TEST_ID="63f3690f-1f66-407c-8050-97f47f62638e" />
+    <testcase name="SameTypeVariantAndEmplaceWithIndexResultsInCorrectValue" status="run" time="0" classname="variant_Test" TEST_ID="fb55e6d8-d42d-4073-b5db-5300c56df540" />
+    <testcase name="SameTypeVariantResultsInCorrectIndex" status="run" time="0" classname="variant_Test" TEST_ID="10994259-9fb5-411f-9e12-365f2d8e09fd" />
+    <testcase name="SameTypeVariantReturnsNothingForIncorrectIndex" status="run" time="0" classname="variant_Test" TEST_ID="04c16cb1-f67f-47fa-bde8-f15ff0d044c3" />
+    <testcase name="ConstSameTypeVariantAndEmplaceWithIndexResultsInCorrectValue" status="run" time="0" classname="variant_Test" TEST_ID="89511ef2-46e6-49f5-8272-713a860ff070" />
+    <testcase name="InPlaceAtIndexCTorResultsInCorrectIndexAndValue" status="run" time="0" classname="variant_Test" TEST_ID="6a1fe90d-da43-4d82-b5f5-e940b4724e86" />
+    <testcase name="InPlaceAtTypeCTorResultsInCorrectIndexAndValue" status="run" time="0" classname="variant_Test" TEST_ID="71ddd0cd-125f-4f69-b12d-f0f024c541a4" />
+    <testcase name="CopyVariantIntoVariantOfDifferentType" status="run" time="0" classname="variant_Test" TEST_ID="d0ea4fed-7b18-4d0d-aa05-d76911fb29f7" />
+  </testsuite>
+  <testsuite name="VariantTest" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="Swap" status="run" time="0" classname="VariantTest" />
+  </testsuite>
+</testsuites>

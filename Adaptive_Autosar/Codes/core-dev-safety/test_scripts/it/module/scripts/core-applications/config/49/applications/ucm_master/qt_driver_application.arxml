@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponent</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_driver_application</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="_VMGVIE2oEey0WeFhgisBXg">
+              <SHORT-NAME>VehicleDriverApplicationRPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/ucm/pkgmgr/portinterfaces/VehicleDriverApplication</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_EjwKQFQ0Eeylht-jRMMeWA">
+              <SHORT-NAME>PPortApplicationVehicleDriverManagement</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationVehicleDriverManagement</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="ef35ab51-df78-42b6-acd2-f1209f25de8b">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>qt_driver_application</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_qIpAgE2oEey0WeFhgisBXg">
+            <SHORT-NAME>qt_driver_application_root</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponent/qt_driver_application</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="91512131-d64a-4c36-8e1a-ccf3bc2f0f33">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_driver_application</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_driver_application</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

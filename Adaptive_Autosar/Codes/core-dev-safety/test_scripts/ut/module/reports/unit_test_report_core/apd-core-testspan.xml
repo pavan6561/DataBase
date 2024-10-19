@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="21" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0.015" name="AllTests">
+  <testsuite name="SpanTest" tests="21" failures="0" disabled="0" errors="0" time="0.015">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="SpanTest" />
+    <testcase name="IsSpanTrait" status="run" time="0" classname="SpanTest" />
+    <testcase name="IsArrayTrait" status="run" time="0" classname="SpanTest" />
+    <testcase name="IsSuitableContainerTrait" status="run" time="0" classname="SpanTest" />
+    <testcase name="DefaultConstructor" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConstructFromPointerWithSize" status="run" time="0.002" classname="SpanTest" />
+    <testcase name="ConstructFromStartEndPointer" status="run" time="0.002" classname="SpanTest" />
+    <testcase name="ConstructFromRawArray" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConstructFromArrayClass" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConstructFromContainer" status="run" time="0.001" classname="SpanTest" />
+    <testcase name="ConstructFromCustomContainer" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConstructFromCustomContainerOfConstValues" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConstructFromConstCustomContainer" status="run" time="0" classname="SpanTest" />
+    <testcase name="CopyConstructAndAssign" status="run" time="0" classname="SpanTest" />
+    <testcase name="ConvertingConstruct" status="run" time="0" classname="SpanTest" />
+    <testcase name="First" status="run" time="0.003" classname="SpanTest" />
+    <testcase name="Last" status="run" time="0.001" classname="SpanTest" />
+    <testcase name="Subspan" status="run" time="0.005" classname="SpanTest" />
+    <testcase name="AsBytes" status="run" time="0" classname="SpanTest" />
+    <testcase name="AsWritableBytes" status="run" time="0" classname="SpanTest" />
+    <testcase name="MakeSpan" status="run" time="0" classname="SpanTest" />
+  </testsuite>
+</testsuites>

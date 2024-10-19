@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="e6c0690e-be14-4be2-9ccd-c3708b0cf14c">
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>qt_phm_instance1</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_phm_instance1</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/PHMApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/PHMApplicationStates/PHM_Instance1</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/qt_phm_instance1_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

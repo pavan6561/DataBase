@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>apd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ucm</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PersistencyKeyValueStorages</SHORT-NAME>
+                  <ELEMENTS>
+                    <PERSISTENCY-KEY-VALUE-STORAGE>
+                      <SHORT-NAME>SwPackageTransferStatusStorage</SHORT-NAME>
+                      <URI>/opt/package_manager/var/swpackage_transfer_status_database.json</URI>
+                    </PERSISTENCY-KEY-VALUE-STORAGE>
+                    <PERSISTENCY-KEY-VALUE-STORAGE>
+                      <SHORT-NAME>SwPackageCurrentStatusDatabase</SHORT-NAME>
+                      <URI>/opt/package_manager/var/swpackage_current_status_database.json</URI>
+                    </PERSISTENCY-KEY-VALUE-STORAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

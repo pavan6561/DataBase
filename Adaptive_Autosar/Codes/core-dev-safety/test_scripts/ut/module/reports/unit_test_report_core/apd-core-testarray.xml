@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="21" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0" name="AllTests">
+  <testsuite name="ArrayTest" tests="21" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="ArrayTest" />
+    <testcase name="Create" status="run" time="0" classname="ArrayTest" />
+    <testcase name="CreateZeroSize" status="run" time="0" classname="ArrayTest" />
+    <testcase name="RandomElementAccess" status="run" time="0" classname="ArrayTest" />
+    <testcase name="FrontBackAccess" status="run" time="0" classname="ArrayTest" />
+    <testcase name="DataAccess" status="run" time="0" classname="ArrayTest" />
+    <testcase name="IteratorBeginEnd" status="run" time="0" classname="ArrayTest" />
+    <testcase name="IteratorRbeginRend" status="run" time="0" classname="ArrayTest" />
+    <testcase name="ComparisonOperatorsWorkForSingleItem" status="run" time="0" classname="ArrayTest" />
+    <testcase name="ComparisonOperatorsWorkForMultipleItems" status="run" time="0" classname="ArrayTest" />
+    <testcase name="ComparisonOperatorsWorkForZeroSize" status="run" time="0" classname="ArrayTest" />
+    <testcase name="Fill" status="run" time="0" classname="ArrayTest" />
+    <testcase name="SwapMember" status="run" time="0" classname="ArrayTest" />
+    <testcase name="GlobalSwap" status="run" time="0" classname="ArrayTest" />
+    <testcase name="Sort" status="run" time="0" classname="ArrayTest" />
+    <testcase name="TupleSize" status="run" time="0" classname="ArrayTest" />
+    <testcase name="TupleElement" status="run" time="0" classname="ArrayTest" />
+    <testcase name="QualifiedGet" status="run" time="0" classname="ArrayTest" />
+    <testcase name="UnqualifiedGet" status="run" time="0" classname="ArrayTest" />
+    <testcase name="RandomElementAccessToOperator" status="run" time="0" classname="ArrayTest" />
+    <testcase name="Get" status="run" time="0" classname="ArrayTest" />
+  </testsuite>
+</testsuites>

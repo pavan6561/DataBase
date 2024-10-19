@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployement</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>ApplicationVehicleDriverManagement_Someip</SHORT-NAME>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_4_V1AHR2EeyvI6hoaon75g">
+              <SHORT-NAME>ApprovalRequired</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehicleDriverManagement/ApprovalRequired</FIELD-REF>
+              <GET UUID="_WF5XoHR7EeyvI6hoaon75g">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>111</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_WckyQHR7EeyvI6hoaon75g">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>222</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_W5EhAHR7EeyvI6hoaon75g">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>333</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_Plf7YHw_EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyPolicy</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehicleDriverManagement/SafetyPolicy</FIELD-REF>
+              <GET UUID="_SVFuIHw_EeyNgfDXyPI4ZA">
+                <SHORT-NAME>SafetyPolicy_getter</SHORT-NAME>
+                <METHOD-ID>1</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_SvxfAHw_EeyNgfDXyPI4ZA">
+                <SHORT-NAME>SafetyPolicy_notifier</SHORT-NAME>
+                <EVENT-ID>2</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_Plf7YXw_EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyState</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehicleDriverManagement/SafetyState</FIELD-REF>
+              <GET UUID="_lF4ToHw_EeyNgfDXyPI4ZA">
+                <SHORT-NAME>SafetyState_getter</SHORT-NAME>
+                <METHOD-ID>11</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_lbTKAHw_EeyNgfDXyPI4ZA">
+                <SHORT-NAME>SafetyState_notifier</SHORT-NAME>
+                <EVENT-ID>22</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_IprZcJhyEeyeZ5d2XevlqQ">
+              <SHORT-NAME>CampaignStateField</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehicleDriverManagement/CampaignStateField</FIELD-REF>
+              <GET UUID="_KbvM8JhyEeyeZ5d2XevlqQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>100</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_K0cA0JhyEeyeZ5d2XevlqQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>200</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_Wi_64FQwEeylht-jRMMeWA">
+              <SHORT-NAME>CampaignState</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/CampaignState</METHOD-REF>
+              <METHOD-ID>200</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_w8_dcFwzEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsSyncingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/IsSyncingSet</METHOD-REF>
+              <METHOD-ID>201</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_w8_dcVwzEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsProcessingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/IsProcessingSet</METHOD-REF>
+              <METHOD-ID>202</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_w8_dclwzEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsActivatingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/IsActivatingSet</METHOD-REF>
+              <METHOD-ID>203</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_w8_dc1wzEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsVechicleCheckingSet</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/IsVehicleCheckingSet</METHOD-REF>
+              <METHOD-ID>204</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_H3rVYHN-EeyvI6hoaon75g">
+              <SHORT-NAME>GetSwPackageDescription</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/GetSwPackageDescription</METHOD-REF>
+              <METHOD-ID>205</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_E8s5kHOgEeyvI6hoaon75g">
+              <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/GetSwProcessProgress</METHOD-REF>
+              <METHOD-ID>206</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_E8s5kXOgEeyvI6hoaon75g">
+              <SHORT-NAME>GetSwTransferProgress</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/GetSwTransferProgress</METHOD-REF>
+              <METHOD-ID>207</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="__ZAnQXQ-EeyvI6hoaon75g">
+              <SHORT-NAME>DriverApproval</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehicleDriverManagement/DriverApproval</METHOD-REF>
+              <METHOD-ID>209</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationVehicleDriverManagement</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_byOTMHR5EeyvI6hoaon75g">
+              <SHORT-NAME>ApprovalEvent</SHORT-NAME>
+              <EVENT-GROUP-ID>101</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleDriverManagement_Someip/ApprovalRequired/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_u0CbAHw_EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyPolicy_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-ID>202</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleDriverManagement_Someip/SafetyPolicy/SafetyPolicy_notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_u0CbAXw_EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyState_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-ID>303</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleDriverManagement_Someip/SafetyState/SafetyState_notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_RnmWsJhyEeyeZ5d2XevlqQ">
+              <SHORT-NAME>CampaignStateEvent</SHORT-NAME>
+              <EVENT-GROUP-ID>404</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleDriverManagement_Someip/CampaignStateField/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>999</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

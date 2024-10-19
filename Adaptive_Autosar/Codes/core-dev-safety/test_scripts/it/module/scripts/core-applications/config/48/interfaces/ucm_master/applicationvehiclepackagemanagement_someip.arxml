@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>ApplicationVehiclePackageManagement_Someip</SHORT-NAME>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_k1fLEJh2Eey9GqXgh2_Q1g">
+              <SHORT-NAME>TransferStateField</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferStateField</FIELD-REF>
+              <GET UUID="_nDf6wJh2Eey9GqXgh2_Q1g">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>555</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_njlwEJh2Eey9GqXgh2_Q1g">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>666</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_C6AAcFEOEeyw4fnfhjELzw">
+              <SHORT-NAME>TransferStart</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferStart</METHOD-REF>
+              <METHOD-ID>100</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_C6ER4FEOEeyw4fnfhjELzw">
+              <SHORT-NAME>TransferVehiclePackage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferVehiclePackage</METHOD-REF>
+              <METHOD-ID>101</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_C6KYgFEOEeyw4fnfhjELzw">
+              <SHORT-NAME>TransferData</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferData</METHOD-REF>
+              <METHOD-ID>102</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_C6KYgVEOEeyw4fnfhjELzw">
+              <SHORT-NAME>TransferExit</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferExit</METHOD-REF>
+              <METHOD-ID>103</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_xqGGIFKSEey9kLwVVMa6LQ">
+              <SHORT-NAME>LoadBinaryPackage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/LoadBinaryPackage</METHOD-REF>
+              <METHOD-ID>104</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_uZWhEFPlEeylht-jRMMeWA">
+              <SHORT-NAME>TransferState</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/TransferState</METHOD-REF>
+              <METHOD-ID>105</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HFPqsFP0Eeylht-jRMMeWA">
+              <SHORT-NAME>RequestedPackage</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/RequestedPackage</METHOD-REF>
+              <METHOD-ID>106</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_34R6sFzaEeyNLd4wKFc8eg">
+              <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/GetSwClusterInfo</METHOD-REF>
+              <METHOD-ID>107</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_34Tv4FzaEeyNLd4wKFc8eg">
+              <SHORT-NAME>SwPackageInventory</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/SwPackageInventory</METHOD-REF>
+              <METHOD-ID>108</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LUwgoG7mEeyZ0c_vyP3wow">
+              <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/DeleteTransfer</METHOD-REF>
+              <METHOD-ID>109</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_LUwgoW7mEeyZ0c_vyP3wow">
+              <SHORT-NAME>GetSwPackages</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/GetSwPackages</METHOD-REF>
+              <METHOD-ID>110</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3mqJYIr0EeyQl62to_eb-w">
+              <SHORT-NAME>CancelCampaign</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/CancelCampaign</METHOD-REF>
+              <METHOD-ID>111</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_3mqJYYr0EeyQl62to_eb-w">
+              <SHORT-NAME>AllowCampaign</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/AllowCampaign</METHOD-REF>
+              <METHOD-ID>112</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-PqXkI8vEeyvRIDbxZtWMw">
+              <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/ApplicationVehiclePackageManagement/GetCampaignHistory</METHOD-REF>
+              <METHOD-ID>113</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/ApplicationVehiclePackageManagement</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_wSWP8Jh2Eey9GqXgh2_Q1g">
+              <SHORT-NAME>VpmSomeipEventGroup</SHORT-NAME>
+              <EVENT-GROUP-ID>300</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/ApplicationVehiclePackageManagement_Someip/TransferStateField/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>777</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

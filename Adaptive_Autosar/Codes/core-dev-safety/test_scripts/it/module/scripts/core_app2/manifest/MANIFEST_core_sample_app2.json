@@ -1,0 +1,40 @@
+{
+  "process_name": "core-app2",
+  "logtrace_process_id": "CAP",
+  "logtrace_process_desc": "",
+  "logtrace_log_modes": [
+    "CONSOLE"
+  ],
+  "logtrace_default_log_level": "VERBOSE",
+  "logtrace_file_path": "/var/redirected/core_sample_app2",
+  "executable": {
+    "platform_application": false,
+    "timer_resolution_ns": 1000,
+    "uses_logging": true
+  },
+  "application_states": [],
+  "startup_configs": [
+    {
+      "config_name_for_convenience": "Config #1",
+      "depends": [
+        "ara_someip_routing_daemon.Running",
+        "ara_dlt_daemon.Running"
+      ],
+      "machine_states": [
+        "Startup"
+      ],
+      "function_group_states": [
+      ],
+      "resource_group": "ResourceGroup",
+      "scheduling_policy": "SCHEDULING-POLICY-ROUND-ROBIN",
+      "scheduling_priority": 12,
+      "arguments": [],
+      "environment": [
+        "SM_CONFIGURATION=/opt/core-app2/etc/sm_config.json"
+      ]
+    }
+  ],
+  "service_instance_to_port_prototype_mapping": [],
+  "persistency_port_prototype_to_key_value_database_mapping": [],
+  "persistency_port_prototype_to_file_array_mapping": []
+}

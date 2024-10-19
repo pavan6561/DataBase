@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PersistencyKeyValueStorage</SHORT-NAME>
+      <ELEMENTS>
+        <PERSISTENCY-KEY-VALUE-STORAGE>
+          <SHORT-NAME>VehiclePackageTransferStatusDatabase</SHORT-NAME>
+          <URI>/opt/vehicle_package_manager/var/vehiclepackage_transfer_status_database.json</URI>
+        </PERSISTENCY-KEY-VALUE-STORAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

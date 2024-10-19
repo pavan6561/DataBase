@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ApplicationErrorDomains</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BlockInconsistent</SHORT-NAME>
+          <ERROR-CODE>25</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ApplicationErrors</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>AuthenticationFailed</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Software Package authentication failed.</L-2>
+          </DESC>
+          <ERROR-CODE>8</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BlockInconsistent</SHORT-NAME>
+          <ERROR-CODE>25</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>CancelFailed</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Cancel failed.</L-2>
+          </DESC>
+          <ERROR-CODE>16</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ErrorDuringActivation</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Activate failed.</L-2>
+          </DESC>
+          <ERROR-CODE>19</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ErrorNoValidProcessing</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Activate cannot be performed because previous processing is invalid.</L-2>
+          </DESC>
+          <ERROR-CODE>20</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>GeneralMemoryError</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">A general memory error occured.</L-2>
+          </DESC>
+          <ERROR-CODE>11</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>GeneralReject</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">General reject.</L-2>
+          </DESC>
+          <ERROR-CODE>10</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncompatiblePackageVersion</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The processed Software Package Version is Incompatible.</L-2>
+          </DESC>
+          <ERROR-CODE>24</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncorrectBlock</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The block counter value is not as expected.</L-2>
+          </DESC>
+          <ERROR-CODE>2</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncorrectSize</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The size of the Software Package exceeds the provided size in TransferStart.</L-2>
+          </DESC>
+          <ERROR-CODE>3</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InsufficientData</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">TransferExit has been called but total transferred data size does not match expected data size provided with TransferStart call.</L-2>
+          </DESC>
+          <ERROR-CODE>6</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InsufficientMemory</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Insufficient memory to perform operation.</L-2>
+          </DESC>
+          <ERROR-CODE>1</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidManifest</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Package manifest could not be read.</L-2>
+          </DESC>
+          <ERROR-CODE>13</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidTransferId</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The Transfer ID is invalid.</L-2>
+          </DESC>
+          <ERROR-CODE>4</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncorrectBlockSize</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The size of the block exceeds the provided block size from TransferStart.</L-2>
+          </DESC>
+          <ERROR-CODE>30</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>MissingDependencies</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Activate cannot be performed because of missing dependencies.</L-2>
+          </DESC>
+          <ERROR-CODE>21</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>NotAbleToRevertPackages</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">RevertProcessedSwPackages failed.</L-2>
+          </DESC>
+          <ERROR-CODE>15</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>NotAbleToRollback</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Rollback failed.</L-2>
+          </DESC>
+          <ERROR-CODE>18</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>NothingToRevert</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">RevertProcessedSwPackages has been called without prior processing of a Software Package.</L-2>
+          </DESC>
+          <ERROR-CODE>14</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>NothingToRollback</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Rollback cannot be performed due to no rollback data available.</L-2>
+          </DESC>
+          <ERROR-CODE>17</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>OldVersion</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Software Package version is too old.</L-2>
+          </DESC>
+          <ERROR-CODE>9</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>OperationNotPermitted</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The operation is not supported in the current context.</L-2>
+          </DESC>
+          <ERROR-CODE>5</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>PackageInconsistent</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Package integrity check failed.</L-2>
+          </DESC>
+          <ERROR-CODE>7</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>PreActivationFailed</SHORT-NAME>
+          <ERROR-CODE>19</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ProcessSwPackageCancelled</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The processing operation has been interrupted by a Cancel() call.</L-2>
+          </DESC>
+          <ERROR-CODE>22</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ProcessedSoftwarePackageInconsistent</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">The processed Software Package integrity check has failed.</L-2>
+          </DESC>
+          <ERROR-CODE>23</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ServiceBusy</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Another processing is already ongoing and therefore the current processing request has to be rejected.</L-2>
+          </DESC>
+          <ERROR-CODE>12</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>TransferInterrupted</SHORT-NAME>
+          <ERROR-CODE>26</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>VerificationFailed</SHORT-NAME>
+          <ERROR-CODE>27</ERROR-CODE>
+        </AP-APPLICATION-ERROR>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

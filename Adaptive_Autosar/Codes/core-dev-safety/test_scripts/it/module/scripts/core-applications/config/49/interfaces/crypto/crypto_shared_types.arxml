@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>qt</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="f304436f-0f0e-4b3c-ad1e-960196af035d">
+          <SHORT-NAME>crypto</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="723adeb8-6534-46d5-8d1c-fe9f7fccfc3d">
+              <SHORT-NAME>compu_methods</SHORT-NAME>
+              <ELEMENTS>
+                <COMPU-METHOD>
+                  <SHORT-NAME>CryptoObjectTypeIPC</SHORT-NAME>
+                  <CATEGORY>TEXTTABLE</CATEGORY>
+                  <COMPU-INTERNAL-TO-PHYS>
+                    <COMPU-SCALES>
+                      <COMPU-SCALE>
+                        <SYMBOL>kUndefined</SYMBOL>
+                        <LOWER-LIMIT>0x00</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x00</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSymmetricKey</SYMBOL>
+                        <LOWER-LIMIT>0x01</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x01</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kPrivateKey</SYMBOL>
+                        <LOWER-LIMIT>0x02</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x02</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kPublicKey</SYMBOL>
+                        <LOWER-LIMIT>0x03</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x03</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSignature</SYMBOL>
+                        <LOWER-LIMIT>0x04</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x04</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SYMBOL>kSecretSeed</SYMBOL>
+                        <LOWER-LIMIT>0x05</LOWER-LIMIT>
+                        <UPPER-LIMIT>0x05</UPPER-LIMIT>
+                      </COMPU-SCALE>
+                    </COMPU-SCALES>
+                  </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="ac2d692d-7b8c-44fc-b367-fef4ee2efb49">
+      <SHORT-NAME>CppImplementationDataTypes</SHORT-NAME>
+      <ELEMENTS>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>CryptoObjectIdentifier</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_OQGncG0lEeyn9JbnghbbfA">
+              <SHORT-NAME>mCOType</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/CryptoObjectTypeIPCqt</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_DAl0gG1FEeyLGeFDwsptRg">
+              <SHORT-NAME>mCouid</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/CryptoObjectUidIPCqt</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>CryptoObjectTypeIPCqt</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <COMPU-METHOD-REF DEST="COMPU-METHOD">/qt/crypto/compu_methods/CryptoObjectTypeIPC</COMPU-METHOD-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+          <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-REFERENCE-REF>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>CryptoObjectUidIPCqt</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tyC9sG1FEeyLGeFDwsptRg">
+              <SHORT-NAME>mGeneratorUid</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/UuidCryptoqt</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_tyC9sW1FEeyLGeFDwsptRg">
+              <SHORT-NAME>mVersionStamp</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>UuidCryptoqt</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_u5mmMG1GEeyLGeFDwsptRg">
+              <SHORT-NAME>mQwordMs</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_u5mmMW1GEeyLGeFDwsptRg">
+              <SHORT-NAME>mQwordLs</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>returnString</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_ltzDMG7hEeyvkf_siWc95g">
+              <SHORT-NAME>string</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_mPjscG7hEeyvkf_siWc95g">
+              <SHORT-NAME>errorValue</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>VectorReadOnlyMem</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/ByteArray</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>VectorInstanceId</SHORT-NAME>
+          <CATEGORY>VECTOR</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <TEMPLATE-ARGUMENTS>
+            <CPP-TEMPLATE-ARGUMENT>
+              <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TEMPLATE-TYPE-REF>
+            </CPP-TEMPLATE-ARGUMENT>
+          </TEMPLATE-ARGUMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+        <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>CryptoPrimitive</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS/>
+          <SUB-ELEMENTS>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_LlP14Jh2Eey0apJKepWdcg">
+              <SHORT-NAME>algId</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+            <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="_PrwYQJh2Eey0apJKepWdcg">
+              <SHORT-NAME>algName</SHORT-NAME>
+              <TYPE-REFERENCE>
+                <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-REFERENCE-REF>
+              </TYPE-REFERENCE>
+            </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+          </SUB-ELEMENTS>
+          <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+        </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

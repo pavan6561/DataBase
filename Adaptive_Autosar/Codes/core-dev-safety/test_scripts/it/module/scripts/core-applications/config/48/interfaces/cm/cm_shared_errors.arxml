@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ApplicationErrorDomains</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR-DOMAIN>
+          <SHORT-NAME>SpecificErrors</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <VALUE>44</VALUE>
+        </AP-APPLICATION-ERROR-DOMAIN>
+        <AP-APPLICATION-ERROR-DOMAIN>
+          <SHORT-NAME>GenericErrors</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <VALUE>45</VALUE>
+        </AP-APPLICATION-ERROR-DOMAIN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="54839b06-6c6d-4209-ad84-cbde9186c9dc">
+      <SHORT-NAME>ApplicationErrors</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidConfigString</SHORT-NAME>
+          <ERROR-CODE>5</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/SpecificErrors</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidParameter</SHORT-NAME>
+          <ERROR-CODE>6</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/SpecificErrors</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>GenericFailure</SHORT-NAME>
+          <ERROR-CODE>12</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/GenericErrors</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

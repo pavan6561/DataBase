@@ -1,0 +1,9 @@
+# AP fstab - source:
+#
+# <file system>	<mount point>	<type>	<options>
+
+tmpfs	/run	tmpfs	mode=0755,nodev,nosuid,strictatime
+tmpfs	/tmp	tmpfs	defaults,mode=1777,noatime,nodiratime,size=5m
+devpts	/dev/pts devpts	defaults
+tmpfs	/dev/shm tmpfs  defaults
+

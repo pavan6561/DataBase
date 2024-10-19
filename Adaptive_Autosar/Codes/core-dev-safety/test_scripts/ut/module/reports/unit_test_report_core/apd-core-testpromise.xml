@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="19" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0" name="AllTests">
+  <testsuite name="Promise" tests="19" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="Constructor" status="run" time="0" classname="Promise" />
+    <testcase name="MoveConstructor" status="run" time="0" classname="Promise" />
+    <testcase name="AssignmentOperator" status="run" time="0" classname="Promise" />
+    <testcase name="SetErrorMove" status="run" time="0" classname="Promise" />
+    <testcase name="SetErrorCopy" status="run" time="0" classname="Promise" />
+    <testcase name="SetValueCopy" status="run" time="0" classname="Promise" />
+    <testcase name="SetValueMove" status="run" time="0" classname="Promise" />
+    <testcase name="swap" status="run" time="0" classname="Promise" />
+    <testcase name="SetResult" status="run" time="0" classname="Promise" />
+    <testcase name="SetResultMove" status="run" time="0" classname="Promise" />
+    <testcase name="Void_Constructor" status="run" time="0" classname="Promise" />
+    <testcase name="void_MoveConstructor" status="run" time="0" classname="Promise" />
+    <testcase name="void_AssignmentOperator" status="run" time="0" classname="Promise" />
+    <testcase name="void_SetErrorMove" status="run" time="0" classname="Promise" />
+    <testcase name="void_SetErrorCopy" status="run" time="0" classname="Promise" />
+    <testcase name="void_SetValueCopy" status="run" time="0" classname="Promise" />
+    <testcase name="void_swap" status="run" time="0" classname="Promise" />
+    <testcase name="void_SetResult" status="run" time="0" classname="Promise" />
+    <testcase name="void_SetResultMove" status="run" time="0" classname="Promise" />
+  </testsuite>
+</testsuites>

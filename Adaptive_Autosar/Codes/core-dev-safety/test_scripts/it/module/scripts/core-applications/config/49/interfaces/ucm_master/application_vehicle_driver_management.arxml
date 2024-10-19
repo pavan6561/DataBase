@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>ApplicationVehicleDriverManagement</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="_jhGKwHR2EeyvI6hoaon75g">
+              <SHORT-NAME>ApprovalRequired</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/bool</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_9Y19sHw-EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyPolicy</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_9Y2kwHw-EeyNgfDXyPI4ZA">
+              <SHORT-NAME>SafetyState</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/bool</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_-41KcJhxEeyeZ5d2XevlqQ">
+              <SHORT-NAME>CampaignStateField</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/CampaignStateType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_OrPJ4FQvEeylht-jRMMeWA">
+              <SHORT-NAME>CampaignState</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_QskIcFQvEeylht-jRMMeWA">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_7CBmAFwuEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsSyncingSet</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_9k6ZgFwuEeyCm-qsWCGMRQ">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_7CLXAFwuEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsProcessingSet</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_aYG7QFwzEeyCm-qsWCGMRQ">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_7CLXAVwuEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsActivatingSet</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_lIJ9cFwzEeyCm-qsWCGMRQ">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_7CLXAlwuEeyCm-qsWCGMRQ">
+              <SHORT-NAME>IsVehicleCheckingSet</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_qcryIFwzEeyCm-qsWCGMRQ">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_BaPX4HN-EeyvI6hoaon75g">
+              <SHORT-NAME>GetSwPackageDescription</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_C6d0gHN-EeyvI6hoaon75g">
+                  <SHORT-NAME>packageName</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_0f-ocHOfEeyvI6hoaon75g">
+              <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_1kTzQHOfEeyvI6hoaon75g">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_0gJAgHOfEeyvI6hoaon75g">
+              <SHORT-NAME>GetSwTransferProgress</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_5SFFgHOfEeyvI6hoaon75g">
+                  <SHORT-NAME>response</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/returnValues</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_I-vn4XQ-EeyvI6hoaon75g">
+              <SHORT-NAME>DriverApproval</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_RXdmUHQ-EeyvI6hoaon75g">
+                  <SHORT-NAME>approval</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/bool</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_17oG0HQ-EeyvI6hoaon75g">
+                  <SHORT-NAME>safetystate</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

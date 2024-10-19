@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>qt_phm_instance2</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/PhmSupervisedEntity_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>2</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="4f9ac4df-a768-4aa4-bef9-307a9e0788cf">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>QtPHMInstance2SomeipServiceInstanceToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachineDesignInstance2/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_phm_instance2</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>5002</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="9" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0" name="AllTests">
+  <testsuite name="CoreErrorDomainTest" tests="9" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="Name" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="Message" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="Throw" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="CoreErrorDomainAccessor" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="MakeErrorCodeOverload" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="kInvalidMetaModelShortname" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="kInvalidMetaModelPath" status="run" time="0" classname="CoreErrorDomainTest" />
+    <testcase name="Exception" status="run" time="0" classname="CoreErrorDomainTest" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,74 @@
+{
+   "SMConfiguration":
+{
+   "PowerOnFunctionGrp":[
+      {    
+           
+               "function_group_name":"Mode_request",
+               "function_group_state":"On"          
+         
+      } ,
+      {    
+           
+               "function_group_name":"Engine_FG",
+               "function_group_state":"On"          
+         
+      }
+   ],
+   "UpdateSessionTimeout":90000,
+
+   "ResetRequestTimeout":10000,
+
+   "DiagnosticAddress":[
+        {
+            "address":"0XFFFF",
+            "function_group_states":
+            [
+                {
+                    "function_group_name": "Mode_request",
+                    "function_group_state": "On"
+                }
+                
+            ]
+        }
+    ],
+ "NetworkHandler":[
+        {
+            "name":"nm_handler_0",
+            "instance_id": "SOME/IP:22",
+            "machine_states": [  ],
+            "function_group_states": [
+            "Lane_Change_Assistance.On"
+            ],
+            "afterrun_timeout_ms": 5000
+        }
+   ],  "PowerModes":[
+   {
+      "instance_id":"SOME/IP:301",
+      "function_group_name":"Mode_request"
+   },
+   {
+      "instance_id":"SOME/IP:302",
+      "function_group_name":"Mode_request"
+   }
+],
+"TriggerIn":[
+   {
+      "InstanceSpecifier":"SOME/IP:20",
+      "FunctionGroupName":"Lane_Change_Assistance"
+   }
+ ],
+"TriggerOut":[
+   {
+      "InstanceSpecifier":"SOME/IP:21",
+      "FunctionGroupName":"Lane_Change_Assistance"
+   }
+ ],
+"TriggerInOut":[
+   {
+      "InstanceSpecifier":"SOME/IP:19",
+      "FunctionGroupName":"Update_Session"
+   }
+ ]
+}
+}

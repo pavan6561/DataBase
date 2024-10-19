@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkcatalog:Catalog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:checkcatalog="http://www.eclipse.org/sphinx/check/catalog" id="EcucValueAccessor4XValidationRules" label="ECUC Value Accessor 4x Validation Rules">
+  <categories id="High" label="Checks with High Priority."/>
+  <categories id="Low" label="Checks with Low Priority."/>
+  <constraints id="CryptoProviderToPrototypeMapping" label="CRYPTO" severity="Error" message="ERR_CRYPTO_DATA_001:CryptoProviderToPortPrototypeMapping has to be configured in astra" categories="High"/>
+  <constraints id="Executables" label="CRYPTO" severity="Error" message="ERR_CRYPTO_DATA_002:Executable needs to be configured" categories="High"/>
+  <constraints id="UUID" label="CRYPTO" severity="Error" message="ERR_CRYPTO_DATA_003:UUID should be configured" categories="High"/>  
+  <constraints id="RootSwComponentPrototype" label="CRYPTO" severity="Error" message="ERR_CRYPTO_DATA_004:RootSwCompoenetPrototype and application type should be configured" categories="High"/> 
+  <constraints id="CryptoProviderInstanceToPortPrototypeMapping" label="CRYPTO" severity="Error" message="ERR_CRYPTO_DATA_005:Each Crypto Provider Instance should be mapped" categories="High"/> 
+  <constraints id="Process" label="CRYPTO" severity="Warning" message="ERR_CRYPTO_DATA_006:RootSwCompoenetPrototype and application type should be configured" categories="High"/> 
+</checkcatalog:Catalog> 

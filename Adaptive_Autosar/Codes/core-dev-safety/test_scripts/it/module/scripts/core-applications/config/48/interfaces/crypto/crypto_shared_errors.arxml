@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ApplicationErrorDomains</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR-DOMAIN>
+          <SHORT-NAME>Security</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>qt</SHORT-NAME>
+              <SYMBOL>qt</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>crypto</SHORT-NAME>
+              <SYMBOL>crypto</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <VALUE>1</VALUE>
+        </AP-APPLICATION-ERROR-DOMAIN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="a6bd873b-cbfb-433a-94b2-b7b8f711a954">
+      <SHORT-NAME>ApplicationErrors</SHORT-NAME>
+      <ELEMENTS>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>AboveBoundary</SHORT-NAME>
+          <ERROR-CODE>861641071</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>AccessViolation</SHORT-NAME>
+          <ERROR-CODE>50528256</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>AuthTagNotValid</SHORT-NAME>
+          <ERROR-CODE>33619976</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BadObjectReference</SHORT-NAME>
+          <ERROR-CODE>50331652</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BadObjectType</SHORT-NAME>
+          <ERROR-CODE>50397440</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BelowBoundary</SHORT-NAME>
+          <ERROR-CODE>33619974</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BruteForceRisk</SHORT-NAME>
+          <ERROR-CODE>50331650</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>BusyResource</SHORT-NAME>
+          <ERROR-CODE>16777218</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ContentDuplication</SHORT-NAME>
+          <ERROR-CODE>50331654</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ContentRestrictions</SHORT-NAME>
+          <ERROR-CODE>50331651</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>EmptyContainer</SHORT-NAME>
+          <ERROR-CODE>50397187</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ErrorClass</SHORT-NAME>
+          <ERROR-CODE>16777216</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ErrorSubClass</SHORT-NAME>
+          <ERROR-CODE>65536</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ErrorSubSubClass</SHORT-NAME>
+          <ERROR-CODE>256</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InOutBuffersIntersect</SHORT-NAME>
+          <ERROR-CODE>33619973</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncompatibleArguments</SHORT-NAME>
+          <ERROR-CODE>33619972</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncompatibleObject</SHORT-NAME>
+          <ERROR-CODE>50397185</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>IncompleteArgState</SHORT-NAME>
+          <ERROR-CODE>50397186</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InsufficientCapacity</SHORT-NAME>
+          <ERROR-CODE>33619970</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InsufficientResource</SHORT-NAME>
+          <ERROR-CODE>16777219</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidArgument</SHORT-NAME>
+          <ERROR-CODE>33619968</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidInputSize</SHORT-NAME>
+          <ERROR-CODE>33619971</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>InvalidUsageOrder</SHORT-NAME>
+          <ERROR-CODE>33685504</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>LogicFault</SHORT-NAME>
+          <ERROR-CODE>33554432</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>MissingArgument</SHORT-NAME>
+          <ERROR-CODE>50397188</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ModifiedResource</SHORT-NAME>
+          <ERROR-CODE>16777221</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ProcessingNotFinished</SHORT-NAME>
+          <ERROR-CODE>33685507</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ProcessingNotStarted</SHORT-NAME>
+          <ERROR-CODE>33685506</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>ResourceFault</SHORT-NAME>
+          <ERROR-CODE>16777217</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>RuntimeFault</SHORT-NAME>
+          <ERROR-CODE>50331648</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UnexpectedValue</SHORT-NAME>
+          <ERROR-CODE>50397184</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UninitializedContext</SHORT-NAME>
+          <ERROR-CODE>33685505</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UnknownIdentifier</SHORT-NAME>
+          <ERROR-CODE>33619969</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UnreservedResource</SHORT-NAME>
+          <ERROR-CODE>16777220</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>Unsupported</SHORT-NAME>
+          <ERROR-CODE>33620224</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UnsupportedFormat</SHORT-NAME>
+          <ERROR-CODE>50331649</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UsageViolation</SHORT-NAME>
+          <ERROR-CODE>50462720</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+        <AP-APPLICATION-ERROR>
+          <SHORT-NAME>UndefinedApplicationError</SHORT-NAME>
+          <ERROR-CODE>100</ERROR-CODE>
+          <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ApplicationErrorDomains/Security</ERROR-DOMAIN-REF>
+        </AP-APPLICATION-ERROR>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

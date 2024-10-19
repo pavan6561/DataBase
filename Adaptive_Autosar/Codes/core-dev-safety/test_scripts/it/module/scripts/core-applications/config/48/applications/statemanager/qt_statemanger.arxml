@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="3be36bd0-c78f-48be-a247-d15c4ee3a630">
+      <SHORT-NAME>AdaptiveApplicationSwComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_statemanager</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_PAjkULfIEeuS5Z9XimcdqA">
+              <SHORT-NAME>PStateManager</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/StateManager</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1886c167-1b74-4719-a7cb-e6f999b3cf13">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>qt_statemanager</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_3jzpMLfLEeuS5Z9XimcdqA">
+            <SHORT-NAME>rootSwComponentPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_statemanager</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="8278ff93-6bfc-4bdc-a417-e77caa14f17b">
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_statemanager</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_statemanager</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

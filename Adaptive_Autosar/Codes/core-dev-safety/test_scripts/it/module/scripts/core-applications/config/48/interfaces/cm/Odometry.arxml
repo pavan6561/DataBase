@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>Odometry</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <EVENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="_H_20cCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint8</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint16</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint32</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFyhwCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_unit64</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int8</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUSwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int16</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUiwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int32</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUywjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int64</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_float</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVSwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_double</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuViwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_enum</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVywjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_scalelinear</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuWCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_string</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_supplyvoltage</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_temperature</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_reestablishing</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_samplepointer</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_nLae0JZAEeylev3sPoF_zw">
+              <SHORT-NAME>Event_MarkerInterface</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </EVENTS>
+          <FIELDS>
+            <FIELD UUID="_KznVgCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Speed</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Velocity</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Pose2D</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kipVEey24q8HwY-K5A">
+              <SHORT-NAME>AdditionalVehicleMotionInformation</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_FOhJ8CwxEey5G_x5kEY1mg">
+              <SHORT-NAME>WheelCorrection</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_FuuUACwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Acceleration</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_GEtyICwxEey5G_x5kEY1mg">
+              <SHORT-NAME>AngularRate</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_GqJacCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Time</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_HN0IMCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Distance</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_WEnkYCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Position</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Y5SrcCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_enum</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_bcdLwCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_scalelinear</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_e2ZjECwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_string</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_e2ZjECwxEey5G_x5kEY1mg">
+              <SHORT-NAME>fields_temperaturediscard</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_MV9SACpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_basicDT</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAECpYEey24q8HwY-K5A">
+                  <SHORT-NAME>SpeedDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAESpYEey24q8HwY-K5A">
+                  <SHORT-NAME>VelocityDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEipYEey24q8HwY-K5A">
+                  <SHORT-NAME>Pose2DDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEypYEey24q8HwY-K5A">
+                  <SHORT-NAME>AdditionalVehicleMotionInformationDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFCpYEey24q8HwY-K5A">
+                  <SHORT-NAME>WheelCorrectionDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFSpYEey24q8HwY-K5A">
+                  <SHORT-NAME>AccelerationDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFipYEey24q8HwY-K5A">
+                  <SHORT-NAME>AngularRateDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFypYEey24q8HwY-K5A">
+                  <SHORT-NAME>TimeDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HtifMCwzEey5G_x5kEY1mg">
+                  <SHORT-NAME>DistanceDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HtifMSwzEey5G_x5kEY1mg">
+                  <SHORT-NAME>PositionDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>SpeedDetection_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>VelocityDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80iw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>Pose2DDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80yw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AdditionalVehicleMotionInformationDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>WheelCorrectionDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AccelerationDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81iw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AngularRateDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81yw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>TimeDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P82Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>DistanceDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P82Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>PositionDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_MV95FSpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_enum</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNUyECpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Enum_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNWAMCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Enum_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C26ICpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_scalelinear</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Scalelinear_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Scalelinear_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_string</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>String_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>String_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>SamplePointer</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>SamplePointer_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>SamplePointer_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>IsReady</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>IsReady_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>IsReady_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_voltage</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>DataElement_voltage_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>DataElement_voltage_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_3T-E0Fy7Eey8I4XW6hIWnw">
+              <SHORT-NAME>BrakeLight</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_TdCBQFy8Eey8I4XW6hIWnw">
+                  <SHORT-NAME>BrakeLight_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_Xz2QgFy8Eey8I4XW6hIWnw">
+                  <SHORT-NAME>BrakeLight_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE>
+          <SHORT-NAME>Odometry_Canoe</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>com</SHORT-NAME>
+              <SYMBOL>com</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sample</SHORT-NAME>
+              <SYMBOL>sample</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <EVENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="_H_20cCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint8</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint16</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFx6sSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_uint32</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_JFyhwCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_unit64</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int8</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUSwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int16</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUiwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int32</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuUywjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_int64</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_float</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVSwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_double</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuViwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_enum</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuVywjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_scalelinear</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_MUAuWCwjEey5G_x5kEY1mg">
+              <SHORT-NAME>Event_string</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_supplyvoltage</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_temperature</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_reestablishing</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="__qisoFKTEeysCIdvD_9wAw">
+              <SHORT-NAME>Event_samplepointer</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE UUID="_H_20cCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Event_MarkerInterface</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </EVENTS>
+          <FIELDS>
+            <FIELD UUID="_KznVgCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Speed</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kCpVEey24q8HwY-K5A">
+              <SHORT-NAME>Velocity</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kSpVEey24q8HwY-K5A">
+              <SHORT-NAME>Pose2D</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Kzn8kipVEey24q8HwY-K5A">
+              <SHORT-NAME>AdditionalVehicleMotionInformation</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_FOhJ8CwxEey5G_x5kEY1mg">
+              <SHORT-NAME>WheelCorrection</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_FuuUACwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Acceleration</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_GEtyICwxEey5G_x5kEY1mg">
+              <SHORT-NAME>AngularRate</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_GqJacCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Time</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_HN0IMCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Distance</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_WEnkYCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Position</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_Y5SrcCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_enum</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_bcdLwCwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_scalelinear</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_e2ZjECwxEey5G_x5kEY1mg">
+              <SHORT-NAME>Field_string</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="_e2ZjECwxEey5G_x5kEY1mg">
+              <SHORT-NAME>fields_temperaturediscard</SHORT-NAME>
+              <SW-DATA-DEF-PROPS/>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="_MV9SACpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_basicDT</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAECpYEey24q8HwY-K5A">
+                  <SHORT-NAME>SpeedDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAESpYEey24q8HwY-K5A">
+                  <SHORT-NAME>VelocityDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEipYEey24q8HwY-K5A">
+                  <SHORT-NAME>Pose2DDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAEypYEey24q8HwY-K5A">
+                  <SHORT-NAME>AdditionalVehicleMotionInformationDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFCpYEey24q8HwY-K5A">
+                  <SHORT-NAME>WheelCorrectionDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFSpYEey24q8HwY-K5A">
+                  <SHORT-NAME>AccelerationDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFipYEey24q8HwY-K5A">
+                  <SHORT-NAME>AngularRateDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_KSzAFypYEey24q8HwY-K5A">
+                  <SHORT-NAME>TimeDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HtifMCwzEey5G_x5kEY1mg">
+                  <SHORT-NAME>DistanceDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_HtifMSwzEey5G_x5kEY1mg">
+                  <SHORT-NAME>PositionDetection_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>SpeedDetection_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>VelocityDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80iw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>Pose2DDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P80yw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AdditionalVehicleMotionInformationDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>WheelCorrectionDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AccelerationDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81iw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>AngularRateDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P81yw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>TimeDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P82Cw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>DistanceDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/float</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_O_P82Sw0Eey5G_x5kEY1mg">
+                  <SHORT-NAME>PositionDetection_Out</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/double</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_MV95FSpVEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_enum</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNUyECpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Enum_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_bNWAMCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Enum_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/Enum_response</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C26ICpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_scalelinear</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Scalelinear_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_cMvAoSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>Scalelinear_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/SLT_response</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_string</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>String_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>String_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/String</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>SamplePointer</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>SamplePointer_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>SamplePointer_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>IsReady</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>IsReady_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>IsReady_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_8C3hMCpYEey24q8HwY-K5A">
+              <SHORT-NAME>DataElement_voltage</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsCpZEey24q8HwY-K5A">
+                  <SHORT-NAME>DataElement_voltage_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_dESTsSpZEey24q8HwY-K5A">
+                  <SHORT-NAME>DataElement_voltage_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/int8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="_3T-E0Fy7Eey8I4XW6hIWnw">
+              <SHORT-NAME>BrakeLight</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_TdCBQFy8Eey8I4XW6hIWnw">
+                  <SHORT-NAME>BrakeLight_In</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="_Xz2QgFy8Eey8I4XW6hIWnw">
+                  <SHORT-NAME>BrakeLight_Out</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS/>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b72b63c4-4d67-4a59-890d-29b483ed7aa3">
+      <SHORT-NAME>TransformationPropsSets</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b59a1b68-4165-470d-83d1-72ee115c1d34">
+      <SHORT-NAME>TransformationPropsToServiceInterfaceMappingSets</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="df117c20-12b2-43a8-bc5e-49a103bd170b">
+      <SHORT-NAME>SomeipDataPrototypeTransformationProps</SHORT-NAME>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

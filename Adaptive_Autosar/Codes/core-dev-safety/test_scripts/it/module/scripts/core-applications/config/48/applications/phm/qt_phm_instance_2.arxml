@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="1e9dc87c-63fa-45c6-8732-6d13adb72f00">
+      <SHORT-NAME>AdaptiveApplicationSwComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_phm_instance2</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_jU2owLdsEeusqYeADdDnSg">
+              <SHORT-NAME>PAliveSupervision0002</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PhmSupervisedEntity</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_COuV8DuxEeyGvoay7vl0eQ">
+              <SHORT-NAME>RAliveMultiple</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="PHM-SUPERVISED-ENTITY-INTERFACE">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_AliveMultiple</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_4kHM4FEcEey8LvdfSmIsOg">
+              <SHORT-NAME>RFunctionGrpMode</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="PHM-SUPERVISED-ENTITY-INTERFACE">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_FunctionGrpModeRequest</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_tXn3EFwkEeyoE4HemfEPsQ">
+              <SHORT-NAME>RPlatformReset</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="PHM-SUPERVISED-ENTITY-INTERFACE">/PlatformHealthManagementContributions/PhmSupervisedEntityInterface_PlatformrReset</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="20e61c02-131b-46c8-9b50-8bfe72f953f0">
+      <SHORT-NAME>Executables</SHORT-NAME>
+      <ELEMENTS>
+        <EXECUTABLE>
+          <SHORT-NAME>qt_phm_instance2</SHORT-NAME>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="_C8SpMLdwEeusqYeADdDnSg">
+            <SHORT-NAME>rootSwComponentPrototype2</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+        </EXECUTABLE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ProcessDesign</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_phm_instance2</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_phm_instance2</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

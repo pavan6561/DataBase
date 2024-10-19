@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>AirCooler_Someip</SHORT-NAME>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>AirCooler_Temperature_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/AirCooler/AirCooler_Temperature</METHOD-REF>
+              <METHOD-ID>301</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/AirCooler</SERVICE-INTERFACE-REF>
+          <SERVICE-INTERFACE-ID>102</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1ca57afb-4f0e-4102-83cc-086713134a2b">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>AirCooler_qt_cm_instance4_ProvidedSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/AirCooler_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>103</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>AirCooler_qt_cm_instance3_RequiredSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/AirCooler_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-SERVICE-INSTANCE-ID>103</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c44a0145-6c8c-41f7-8587-fabbb26003fd">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>AirCooler_qt_cm_instance4_Provided_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/AirCooler_qt_cm_instance4_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3005</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>AirCooler_qt_cm_instance3_Required_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/AirCooler_qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>0</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="49440f8e-db7d-491a-98a4-f09f363c892a">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>AirCooler_qt_cm_instance4_ProvidedSomeipInstance_PAirCooler_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance4/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance4/PAirCooler</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance4</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance4</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/AirCooler_qt_cm_instance4_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>AirCooler_qt_cm_instance3_RequiredSomeipInstance_RAirCooler_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance3/RAirCooler</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance3</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance3</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/AirCooler_qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b9104bff-79c0-4121-9750-1a803f64ee27">
+      <SHORT-NAME>SomeipSdTimingConfigs</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+          <SHORT-NAME>SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.0</MAX-VALUE>
+            <MIN-VALUE>0.0</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <TIME-TO-LIVE>10</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

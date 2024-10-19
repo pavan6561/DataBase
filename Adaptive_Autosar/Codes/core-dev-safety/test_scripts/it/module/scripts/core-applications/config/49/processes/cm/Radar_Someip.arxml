@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>Radar_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_J90dkOVXEeueLYDo2wlyRA">
+              <SHORT-NAME>BrakeEvent_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Radar/BrakeEvent</EVENT-REF>
+              <EVENT-ID>1</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_0qqzkOVXEeueLYDo2wlyRA">
+              <SHORT-NAME>UpdateRate_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Radar/UpdateRate</FIELD-REF>
+              <GET UUID="_CagnsOVYEeueLYDo2wlyRA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>3001</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_DCRLQOVYEeueLYDo2wlyRA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>3000</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_DYPbQOVYEeueLYDo2wlyRA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>300</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_aNPdEOVYEeueLYDo2wlyRA">
+              <SHORT-NAME>Adjust_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Radar/Adjust</METHOD-REF>
+              <METHOD-ID>32000</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_hWhM4OVYEeueLYDo2wlyRA">
+              <SHORT-NAME>Calibrate_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Radar/Calibrate</METHOD-REF>
+              <METHOD-ID>32010</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_WJ1GEP_zEeuDc7KHPMU2gQ">
+              <SHORT-NAME>Update_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Radar/Update</METHOD-REF>
+              <METHOD-ID>32020</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/Radar</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_Q8-BAOVXEeueLYDo2wlyRA">
+              <SHORT-NAME>SomeipEventGroup</SHORT-NAME>
+              <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Radar_Someip/BrakeEvent_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_wGvQAPs9EeupU89nyibrZA">
+              <SHORT-NAME>SomeipEventGroupField</SHORT-NAME>
+              <EVENT-GROUP-ID>3</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Radar_Someip/UpdateRate_Someip/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>99</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

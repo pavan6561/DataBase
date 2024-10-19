@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>arPackage</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>TEST_SWCL</SHORT-NAME>
+          <CATEGORY>SWCL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="IPC">
+                <SD GID="PREACTIVATION_FG_STATE_LIST">YES</SD>
+                <SDG GID="SERVICE-INTERFACE-VERSION">
+                  <SD GID="FUNCTION-GROUP-REF">FG_X</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                  <SD GID="FUNCTION-GROUP-REF">FG_Y</SD>
+                  <SD GID="FUNCTION-GROUP-STATE-REF">OFF</SD>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <CONFLICTS-TO>
+            <OPERATOR>LOGICAL-AND</OPERATOR>
+          </CONFLICTS-TO>
+          <DEPENDS-ON>
+            <OPERATOR>LOGICAL-OR</OPERATOR>
+          </DEPENDS-ON>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/arPackage/SwClusterDesign</DESIGN-REF>
+          </DESIGN-REFS>
+          <DIAGNOSTIC-ADDRESSS>
+            <SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+              <ADDRESS-SEMANTICS>FUNCTIONAL-ADDRESS</ADDRESS-SEMANTICS>
+              <DIAGNOSTIC-ADDRESS>17473</DIAGNOSTIC-ADDRESS>
+            </SOFTWARE-CLUSTER-DOIP-DIAGNOSTIC-ADDRESS>
+          </DIAGNOSTIC-ADDRESSS>
+          <TYPE-APPROVAL>None</TYPE-APPROVAL>
+          <VENDOR-ID>1447315780</VENDOR-ID>
+          <VERSION>0.1.2.328</VERSION>
+        </SOFTWARE-CLUSTER>
+        <SOFTWARE-PACKAGE>
+          <SHORT-NAME>sw_pkg_main</SHORT-NAME>
+          <CATEGORY>TestPackage</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:VerifyFGStatusList">
+                <SD GID="DV:Verify_FG_State_List">TRUE</SD>
+                <SD GID="PerformVerification">TRUE</SD>
+                <SD GID="VerificationTime">10000</SD>
+                <SDG GID="FunctionGroupRefs">
+                  <SD GID="FunctionGroupRef">Machine</SD>
+                  <SDG GID="FunctionGroupStateRefs">
+                    <SD GID="FunctionGroupStateRef">0x00</SD>
+                    <SD GID="FunctionGroupStateRef">0x01</SD>
+                  </SDG>
+                </SDG>
+              </SDG>
+              <SDG GID="updateTypes">
+                <SD GID="updateType">singlefile</SD>
+                <SDG GID="updateLocations">
+                  <SD GID="updateLocation">/UCM</SD>
+                </SDG>
+              </SDG>
+              <SDG GID="SoftwarePackageActivationActionEnum">
+                <SD GID="ActivationActionEnum">reboot</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ACTION-TYPE>INSTALL</ACTION-TYPE>
+          <COMPRESSED-SOFTWARE-PACKAGE-SIZE>524288</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+          <MAXIMUM-SUPPORTED-UCM-VERSION>1.4.0.2</MAXIMUM-SUPPORTED-UCM-VERSION>
+          <MINIMUM-SUPPORTED-UCM-VERSION>1.1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+          <PACKAGER-ID>1347111236</PACKAGER-ID>
+          <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/arPackage/TEST_SWCL</SOFTWARE-CLUSTER-REF>
+          <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>655360</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+        </SOFTWARE-PACKAGE>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>SoftwareCluster_A</SHORT-NAME>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/arPackage/SwClusterDesign_A</DESIGN-REF>
+          </DESIGN-REFS>
+        </SOFTWARE-CLUSTER>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>SoftwareCluster_B</SHORT-NAME>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/arPackage/SwClusterDesign_B</DESIGN-REF>
+          </DESIGN-REFS>
+        </SOFTWARE-CLUSTER>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign_A</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN>
+          <SHORT-NAME>SwClusterDesign_B</SHORT-NAME>
+        </SOFTWARE-CLUSTER-DESIGN>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>UCMPackageManagerStates</SHORT-NAME>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_pE0-QFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>on</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_pE1lUFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_pE2MYFcYEeyFPI5GXoSs8g">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

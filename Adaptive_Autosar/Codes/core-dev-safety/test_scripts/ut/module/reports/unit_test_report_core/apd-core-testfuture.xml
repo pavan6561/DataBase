@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:34" time="10.001" name="AllTests">
+  <testsuite name="Future" tests="12" failures="0" disabled="0" errors="0" time="10.001">
+    <testcase name="MoveConstructor" status="run" time="0" classname="Future" />
+    <testcase name="valid" status="run" time="0" classname="Future" />
+    <testcase name="wait_for_ready_timeout" status="run" time="3.001" classname="Future" />
+    <testcase name="wait_for_ready_ready" status="run" time="0" classname="Future" />
+    <testcase name="wait_until_ready" status="run" time="0" classname="Future" />
+    <testcase name="wait_until_timeout" status="run" time="2" classname="Future" />
+    <testcase name="MoveConstructor_void" status="run" time="0" classname="Future" />
+    <testcase name="valid_void" status="run" time="0" classname="Future" />
+    <testcase name="wait_for_ready_timeout_void" status="run" time="3" classname="Future" />
+    <testcase name="wait_for_ready_ready_void" status="run" time="0" classname="Future" />
+    <testcase name="wait_until_ready_void" status="run" time="0" classname="Future" />
+    <testcase name="wait_until_timeout_void" status="run" time="2" classname="Future" />
+  </testsuite>
+</testsuites>

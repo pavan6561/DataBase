@@ -1,0 +1,18 @@
+{
+    "process_name": "phm_core",
+    "logtrace_process_id": "PHM",
+    "logtrace_process_desc": "Platform Health Management",
+    "logtrace_log_modes":
+    [
+        "CONSOLE"
+    ],
+    "logtrace_default_log_level": "VERBOSE",
+    "logtrace_file_path": "/var/redirected/phm_core",
+    "executable":
+    {
+        "platform_application": true,
+        "timer_resolution_ns": 1000,
+        "uses_logging": true
+    }
+}
+

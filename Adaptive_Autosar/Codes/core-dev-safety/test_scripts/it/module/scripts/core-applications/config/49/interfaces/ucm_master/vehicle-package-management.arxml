@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ucm</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>pkgmgr</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>portinterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="dd5cf6b2-d5c6-43ec-85ca-1ec2c54b19f3">
+              <SHORT-NAME>types</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="86929c4b-5eb5-481d-9610-6c76cca2ca56">
+                  <SHORT-NAME>portinterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SERVICE-INTERFACE>
+                      <SHORT-NAME>VehiclePackageManagement</SHORT-NAME>
+                      <IS-SERVICE>true</IS-SERVICE>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ucm</SHORT-NAME>
+                          <SYMBOL>ucm</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <FIELDS>
+                        <FIELD>
+                          <SHORT-NAME>RequestedPackage</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">The requested package name.</L-2>
+                          </DESC>
+                          <SW-DATA-DEF-PROPS/>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-TREF>
+                          <HAS-GETTER>true</HAS-GETTER>
+                          <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                          <HAS-SETTER>false</HAS-SETTER>
+                        </FIELD>
+                        <FIELD>
+                          <SHORT-NAME>SafetyState</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Vehicle state computed by the Vehicle State Manager Adaptive Application.</L-2>
+                          </DESC>
+                          <SW-DATA-DEF-PROPS/>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/bool</TYPE-TREF>
+                          <HAS-GETTER>true</HAS-GETTER>
+                          <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                          <HAS-SETTER>false</HAS-SETTER>
+                        </FIELD>
+                        <FIELD>
+                          <SHORT-NAME>TransferState</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">The current status of Campaign.</L-2>
+                          </DESC>
+                          <SW-DATA-DEF-PROPS/>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferStateType</TYPE-TREF>
+                          <HAS-GETTER>true</HAS-GETTER>
+                          <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                          <HAS-SETTER>false</HAS-SETTER>
+                        </FIELD>
+                      </FIELDS>
+                      <METHODS>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>AllowCampaign</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">To allow a new campaign to start</L-2>
+                          </DESC>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>CancelCampaign</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This method aborts an ongoing processing of a Software Package.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>DisableCampaign</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">To forbid new campaign</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/bool</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/CancelFailed</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Delete a transferred Software Package.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>id</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Transfer ID of the currently running request.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Getter method to retrieve all actions that have been performed by UCM.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>timestampGE</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Earliest timestamp (inclusive)</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>timestampLT</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Latest timestamp (exclusive)</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>CampaignHistory</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">The history of all actions that have been performed by UCM Master.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/CampaignHistoryType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This method returns a list of SoftwareClusters that are in state kPresent.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>SwInfo</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">List of installed SoftwareClusters that are in state kPresent.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwClusterInfoVectorType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetSwPackages</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This method returns the Software Packages that available in UCM.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>Packages</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">List of Software Packages.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwPackageInfoVectorType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>SwPackageInventory</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN"/>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>AvailableSoftwarePackages</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">List of available Software Packages in Backend corresponding to VIN.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameVersionVectorType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>RequiredSoftwarePackages</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">List of Software Packages to be sent to UCM Master.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameVersionVectorType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>TransferData</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Block-wise transfer of a Software Package to UCM.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>id</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Transfer ID.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>data</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Data block of the Software Package.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/ByteVectorType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>blockCounter</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Block counter value of the current block.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/BlockInconsistent</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/IncorrectBlock</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/IncorrectBlockSize</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/IncorrectSize</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/TransferInterrupted</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>TransferExit</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Finish the transfer of a Software Package to UCM.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>id</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Transfer ID of the currently running request.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InsufficientData</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/OldVersion</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InvalidPackageManifest</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>TransferStart</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN"/>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>SoftwarePackageName</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Software Package Short Name of the Software Package to be transferred.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/SwNameType</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>id</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Return TransferId.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>blockSize</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Return the size of the blocks to be used inside TransferData method.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/BlockSizeType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/UnexpectedPackage</POSSIBLE-AP-ERROR-REF>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>TransferVehiclePackage</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Start the transfer of a Software Package. The size of the Software Package to be transferred to UCM must be provided. UCM will generate a Transfer ID for subsequent calls to TransferData, TransferExit, ProcessSwPackage, DeleteTransfer.</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>size</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Size (in bytes) of the Software Package to be transferred.</L-2>
+                              </DESC>
+                              <SW-DATA-DEF-PROPS/>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/CppImplementationDataTypes/uint64_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>id</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Return TransferId.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/TransferIdType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>blockSize</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">Return the size of the blocks to be used inside TransferData method.</L-2>
+                              </DESC>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/ucm/datatypes/CPPImplementationDataTypes/BlockSizeType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                          <POSSIBLE-AP-ERROR-REFS>
+                            <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ara/ucm/ApApplicationErrors/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                          </POSSIBLE-AP-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                      </METHODS>
+                    </SERVICE-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

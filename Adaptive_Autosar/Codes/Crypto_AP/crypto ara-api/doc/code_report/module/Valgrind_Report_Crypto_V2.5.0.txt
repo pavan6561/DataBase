@@ -1,0 +1,175 @@
+root@qemux86:/crypto-core/bin# valgrind --leak-check=full -v ./CryptoServiceDaemon 
+==333== Memcheck, a memory error detector
+==333== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==333== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==333== Command: ./CryptoServiceDaemon
+==333== 
+--333-- Valgrind options:
+--333--    --leak-check=full
+--333--    -v
+--333-- Contents of /proc/version:
+--333--   Linux version 5.2.32-yocto-standard (oe-user@oe-host) (gcc version 9.2.0 (GCC)) #1 SMP PREEMPT Fri Aug 27 07:35:34 UTC 2021
+--333-- 
+--333-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3
+--333-- Page sizes: currently 4096, max supported 4096
+--333-- Valgrind library directory: /usr/lib/valgrind
+--333-- Reading syms from /crypto-core/bin/CryptoServiceDaemon
+--333--   Considering /crypto-core/bin/CryptoServiceDaemon ..
+--333--   .. CRC mismatch (computed 5a677582 wanted c86f99cb)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /lib/ld-2.30.so
+--333--   Considering /lib/ld-2.30.so ..
+--333--   .. CRC mismatch (computed e2418bbf wanted efa077ad)
+--333--   Considering /lib/.debug/ld-2.30.so ..
+--333--   .. CRC is valid
+--333-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--333--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--333--   .. CRC mismatch (computed 443c1d7e wanted 8737cb41)
+--333--    object doesn't have a symbol table
+--333--    object doesn't have a dynamic symbol table
+--333-- Scheduler: using generic scheduler lock implementation.
+--333-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==333== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-333-by-root-on-???
+==333== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-333-by-root-on-???
+==333== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-333-by-root-on-???
+==333== 
+==333== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==333== don't want to do, unless you know exactly what you're doing,
+==333== or are doing some strange experiment):
+==333==   /usr/lib/valgrind/../../bin/vgdb --pid=333 ...command...
+==333== 
+==333== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==333==   /path/to/gdb ./CryptoServiceDaemon
+==333== and then give GDB the following command
+==333==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=333
+==333== --pid is optional if only one valgrind process is running
+==333== 
+--333-- REDIR: 0x42fcc1e0 (ld-linux.so.2:strlen) redirected to 0x580ab919 (???)
+--333-- REDIR: 0x42fcbf40 (ld-linux.so.2:index) redirected to 0x580ab8f4 (???)
+--333-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--333--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--333--   .. CRC mismatch (computed d1d42df1 wanted 2469a343)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+==333== WARNING: new redirection conflicts with existing -- ignoring it
+--333--     old: 0x42fcc1e0 (strlen              ) R-> (0000.0) 0x580ab919 ???
+--333--     new: 0x42fcc1e0 (strlen              ) R-> (2007.0) 0x0480e630 strlen
+--333-- Reading syms from /usr/lib/libvsomeip.so.2.99.99
+--333--   Considering /usr/lib/libvsomeip.so.2.99.99 ..
+--333--   .. CRC mismatch (computed 09a8d65f wanted e26fb28d)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /usr/lib/libcrypto.so.3
+--333--   Considering /usr/lib/libcrypto.so.3 ..
+--333--   .. CRC mismatch (computed 9c8f1d34 wanted d210014a)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /usr/lib/libsqlite3.so.0.8.6
+--333--   Considering /usr/lib/libsqlite3.so.0.8.6 ..
+--333--   .. CRC mismatch (computed 4371f057 wanted d0d0d134)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /usr/lib/libdlt.so.2.18.0
+--333--   Considering /usr/lib/libdlt.so.2.18.0 ..
+--333--   .. CRC mismatch (computed fa58372e wanted 7baeee27)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /lib/libpthread-2.30.so
+--333--   Considering /lib/libpthread-2.30.so ..
+--333--   .. CRC mismatch (computed c38b5730 wanted 5fe736f3)
+--333--   Considering /lib/.debug/libpthread-2.30.so ..
+--333--   .. CRC is valid
+--333-- Reading syms from /usr/lib/libstdc++.so.6.0.27
+--333--   Considering /usr/lib/libstdc++.so.6.0.27 ..
+--333--   .. CRC mismatch (computed 2f804aba wanted aa7f2e64)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /lib/libgcc_s.so.1
+--333--   Considering /lib/libgcc_s.so.1 ..
+--333--   .. CRC mismatch (computed 26238b0d wanted 7804d005)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /lib/libc-2.30.so
+--333--   Considering /lib/libc-2.30.so ..
+--333--   .. CRC mismatch (computed e00e1536 wanted dd564c28)
+--333--   Considering /lib/.debug/libc-2.30.so ..
+--333--   .. CRC is valid
+--333-- Reading syms from /usr/lib/libvsomeip3.so.3.1.14
+--333--   Considering /usr/lib/libvsomeip3.so.3.1.14 ..
+--333--   .. CRC mismatch (computed 40528782 wanted e9543e83)
+--333--    object doesn't have a symbol table
+--333-- Reading syms from /lib/libdl-2.30.so
+--333--   Considering /lib/libdl-2.30.so ..
+--333--   .. CRC mismatch (computed d558bb97 wanted 7a3f2ac7)
+--333--   Considering /lib/.debug/libdl-2.30.so ..
+--333--   .. CRC is valid
+--333-- Reading syms from /lib/libm-2.30.so
+--333--   Considering /lib/libm-2.30.so ..
+--333--   .. CRC mismatch (computed 7547e966 wanted 5033be13)
+--333--   Considering /lib/.debug/libm-2.30.so ..
+--333--   .. CRC is valid
+--333-- Reading syms from /lib/librt-2.30.so
+--333--   Considering /lib/librt-2.30.so ..
+--333--   .. CRC mismatch (computed 3a193690 wanted dc3eb924)
+--333--   Considering /lib/.debug/librt-2.30.so ..
+--333--   .. CRC is valid
+--333-- REDIR: 0x5046b00 (libc.so.6:strncasecmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x504ca80 (libc.so.6:memrchr) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5060640 (libc.so.6:wcslen) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x50456c0 (libc.so.6:strcmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046c40 (libc.so.6:memcpy) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045680 (libc.so.6:index) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045b90 (libc.so.6:strlen) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x50468b0 (libc.so.6:memset) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x50468f0 (libc.so.6:mempcpy) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045730 (libc.so.6:strcpy) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046860 (libc.so.6:memmove) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046820 (libc.so.6:bcmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046a40 (libc.so.6:stpcpy) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x50cb190 (libc.so.6:__memcpy_chk) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045c80 (libc.so.6:strncpy) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5060550 (libc.so.6:wcscmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x50467e0 (libc.so.6:memchr) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045c40 (libc.so.6:strncmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045640 (libc.so.6:strcat) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045770 (libc.so.6:strcspn) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045cc0 (libc.so.6:rindex) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046ac0 (libc.so.6:strcasecmp) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5045fb0 (libc.so.6:strspn) redirected to 0x48011dd (_vgnU_ifunc_wrapper)
+--333-- REDIR: 0x5046430 (libc.so.6:strstr) redirected to 0x4813200 (strstr)
+--333-- REDIR: 0x505f810 (libc.so.6:__GI_strrchr) redirected to 0x480e070 (__GI_strrchr)
+--333-- REDIR: 0x5041be0 (libc.so.6:malloc) redirected to 0x480b572 (malloc)
+--333-- REDIR: 0x504cde0 (libc.so.6:__strlen_sse2_bsf) redirected to 0x480e590 (strlen)
+--333-- REDIR: 0x5103c10 (libc.so.6:__memcpy_ssse3) redirected to 0x480feb0 (memcpy)
+--333-- REDIR: 0x50429b0 (libc.so.6:calloc) redirected to 0x480d518 (calloc)
+--333-- REDIR: 0x505fcb0 (libc.so.6:__GI_strlen) redirected to 0x480e5b0 (__GI_strlen)
+--333-- REDIR: 0x505f030 (libc.so.6:__GI_memcmp) redirected to 0x4811680 (__GI_memcmp)
+--333-- REDIR: 0x51101f0 (libc.so.6:__strcmp_ssse3) redirected to 0x480f4f0 (strcmp)
+--333-- REDIR: 0x4e52d60 (libstdc++.so.6:operator new(unsigned int)) redirected to 0x480bb3b (operator new(unsigned int))
+--333-- REDIR: 0x5101570 (libc.so.6:__memset_sse2) redirected to 0x4811fa0 (memset)
+--333-- REDIR: 0x5048310 (libc.so.6:strchrnul) redirected to 0x4812ba0 (strchrnul)
+--333-- REDIR: 0x504e760 (libc.so.6:__strncpy_ssse3) redirected to 0x480e830 (strncpy)
+--333-- REDIR: 0x4e50c20 (libstdc++.so.6:operator delete(void*)) redirected to 0x480ca23 (operator delete(void*))
+--333-- REDIR: 0x511a490 (libc.so.6:__memcmp_ssse3) redirected to 0x4811830 (bcmp)
+--333-- REDIR: 0x504cd30 (libc.so.6:__GI_strncmp) redirected to 0x480ece0 (__GI_strncmp)
+--333-- REDIR: 0x50421e0 (libc.so.6:free) redirected to 0x480c5a3 (free)
+--333-- REDIR: 0x4e50c40 (libstdc++.so.6:operator delete(void*, unsigned int)) redirected to 0x480cbd3 (operator delete(void*, unsigned int))
+^C--333-- REDIR: 0x505f410 (libc.so.6:__GI_mempcpy) redirected to 0x4812dc0 (__GI_mempcpy)
+[  242.111279]~DLT~  333~WARNING  ~Lost log messages in user buffer when exiting: 27
+==333== Warning: invalid file descriptor -1 in syscall close()
+==333==    at 0x549FED7: mq_close (mq_close.c:29)
+==333==    by 0x4D858EA: dlt_free (in /usr/lib/libdlt.so.2.18.0)
+==333==    by 0x4D88C64: ??? (in /usr/lib/libdlt.so.2.18.0)
+==333==    by 0x4FF5782: __run_exit_handlers (exit.c:108)
+==333==    by 0x4FF5960: exit (exit.c:139)
+==333==    by 0x4FDDEBC: (below main) (libc-start.c:342)
+==333== Warning: invalid file descriptor -1 in syscall close()
+==333==    at 0x549FED7: mq_close (mq_close.c:29)
+==333==    by 0x4D858F6: dlt_free (in /usr/lib/libdlt.so.2.18.0)
+==333==    by 0x4D88C64: ??? (in /usr/lib/libdlt.so.2.18.0)
+==333==    by 0x4FF5782: __run_exit_handlers (exit.c:108)
+==333==    by 0x4FF5960: exit (exit.c:139)
+==333==    by 0x4FDDEBC: (below main) (libc-start.c:342)
+==333== 
+==333== HEAP SUMMARY:
+==333==     in use at exit: 0 bytes in 0 blocks
+==333==   total heap usage: 164 allocs, 164 frees, 139,056 bytes allocated
+==333== 
+==333== All heap blocks were freed -- no leaks are possible
+==333== 
+==333== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+

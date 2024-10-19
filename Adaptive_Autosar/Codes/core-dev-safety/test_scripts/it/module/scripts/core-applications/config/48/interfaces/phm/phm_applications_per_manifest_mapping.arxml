@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PersistanceToKeyValueStorageMappings</SHORT-NAME>
+      <ELEMENTS>
+        <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+          <SHORT-NAME>qt_phm_instance1_PersistencyPortPrototype</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+          <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-STORAGE">/PersistencyInterface/qt_phm_instance1_persistance</KEY-VALUE-STORAGE-REF>
+        </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+        <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+          <SHORT-NAME>qt_phm_instance3_PersistancyPortMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+          <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-STORAGE">/PersistencyInterface/qt_phm_instance3_persistance</KEY-VALUE-STORAGE-REF>
+        </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

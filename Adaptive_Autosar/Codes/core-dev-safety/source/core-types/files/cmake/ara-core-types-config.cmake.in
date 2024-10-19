@@ -1,0 +1,30 @@
+# -----------------------------------------------------------------------------------------------------------
+# Copyright (C) AVIN SYSTEMS PVT LTD 2022 - All Rights Reserved Reproduction, distribution and utilization
+# of this document as well as the communication of its contents to others without explicit authorization is
+# prohibited. Offenders will be held liable for the payment of damages.
+# -----------------------------------------------------------------------------------------------------------
+# File Name   : CMakeLists.txt
+#
+# Purpose     : This file provides make environment.
+# -----------------------------------------------------------------------------------------------------------
+
+# Config file for the ara::core package.
+
+# This file exports the ara::core-types CMake target which should be passed to the
+# target_link_libraries command.
+#
+# In addition, the following variable is defined:
+#   ara-core-types_FOUND - TRUE if headers were found
+
+include(CMakeFindDependencyMacro)
+
+find_dependency(Threads)
+find_dependency(Boost)
+find_dependency(Boost)
+find_dependency(iceoryx_hoofs)
+
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/ara-core-types-targets.cmake")
+
+check_required_components(ara-core-types)

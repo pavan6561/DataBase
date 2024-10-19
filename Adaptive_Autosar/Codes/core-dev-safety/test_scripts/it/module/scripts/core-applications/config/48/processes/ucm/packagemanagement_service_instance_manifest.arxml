@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+          <SHORT-NAME>PackageManagementRequired</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG>
+                <SD GID="DV:SERVICE-INSTANCE-ID">1</SD>
+                <SDG GID="DV:SERVICE-VERSION">
+                  <SD GID="DV:MAJOR-VERSION">1</SD>
+                  <SD GID="DV:MINOR-VERSION">ANY</SD>
+                </SDG>
+                <SDG GID="DV:SERVICE-DISCOVERY">
+                  <SD GID="DV:SERVICE-OFFER-TIME-TO-LIVE">60</SD>
+                  <SD GID="DV:DOMAIN">1234</SD>
+                  <SD GID="DV:PORT">45679</SD>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/PackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+        </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+        <PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+          <SHORT-NAME>PackageManagementProvided</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG>
+                <SD GID="DV:SERVICE-INSTANCE-ID">1</SD>
+                <SDG>
+                  <SD GID="DV:MAJOR-VERSION">1</SD>
+                  <SD GID="DV:MINOR-VERSION">ANY</SD>
+                </SDG>
+                <SDG>
+                  <SD GID="DV:SERVICE-OFFER-TIME-TO-LIVE">60</SD>
+                  <SD GID="DV:DOMAIN">1234</SD>
+                  <SD GID="DV:PORT">45679</SD>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/PackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+        </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>UpdateAdapterProvided</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/UpdateAdapter_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="7370ef68-2ba9-4acd-97f0-d07565878b1f">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>PackageManagementToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/ServiceInstances/PackageManagementRequired</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+        </USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>PackageManagementProvidedToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ServiceInstances/PackageManagementProvided</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+        </USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

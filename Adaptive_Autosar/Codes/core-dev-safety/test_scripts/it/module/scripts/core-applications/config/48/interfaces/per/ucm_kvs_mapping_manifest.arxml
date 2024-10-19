@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>apd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ucm</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>mapping</SHORT-NAME>
+                  <ELEMENTS>
+                   <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+                      <SHORT-NAME>SwPackageTransferStatusStorageToPortMapping</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                      <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/package_manager/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="PR-PORT-PROTOTYPE">/AdaptiveApplicationSwComponents/package_manager/SwPackageTransferStatusPRPort</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/Processes/package_manager</PROCESS-REF>
+                      <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-STORAGE">/ara/apd/ucm/PersistencyKeyValueStorages/SwPackageTransferStatusStorage</KEY-VALUE-STORAGE-REF>
+                    </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+                    <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+                      <SHORT-NAME>SwPackageCurrentStatuStorageToPortMapping</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                       <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/package_manager/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="PR-PORT-PROTOTYPE">/AdaptiveApplicationSwComponents/package_manager/SwPackageCurrentStatusPRPort</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/Processes/package_manager</PROCESS-REF>
+                      <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-STORAGE">/ara/apd/ucm/PersistencyKeyValueStorages/SwPackageCurrentStatusDatabase</KEY-VALUE-STORAGE-REF>
+                    </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+                   </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

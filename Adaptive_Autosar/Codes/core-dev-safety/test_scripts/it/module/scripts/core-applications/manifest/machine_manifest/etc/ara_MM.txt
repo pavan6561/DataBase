@@ -1,0 +1,1 @@
+/home/sudarshan.reddy/A00042/qt-app/manifest/machine_manifest/./etc/qtmachine_machine_manifest.json;

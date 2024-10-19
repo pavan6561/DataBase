@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0" name="AllTests">
+  <testsuite name="VectorTest" tests="3" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="TypeIsAvailableAndCompilable" status="run" time="0" classname="VectorTest" />
+    <testcase name="GlobalComparisonOperatorsWork" status="run" time="0" classname="VectorTest" />
+    <testcase name="SwapOverloadWorks" status="run" time="0" classname="VectorTest" />
+  </testsuite>
+</testsuites>

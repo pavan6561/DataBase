@@ -1,0 +1,230 @@
+{
+  "ucm": {
+    "identifier": "1"
+  },
+  "default_application_timeout": {
+    "enter_timeout_ns": 0,
+    "exit_timeout_ns": 1000000000
+  },
+  "states": [
+    {
+      "name": "Startup"
+    },
+    {
+      "name": "Shutdown"
+    },
+    {
+      "name": "Restart"
+    },
+    {
+      "name": "On"
+    },
+    {
+      "name": "Off"
+    },
+    {
+      "name": "Verify"
+    },
+    {
+      "name": "Parking"
+    },
+    {
+      "name": "Driving"
+    }
+  ],
+  "function_groups": [
+    {
+      "name": "Lane_Change_Assistance",
+      "states": [
+        {
+          "name": "Off"
+        },
+        {
+          "name": "On"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "AraDltDaemon",
+      "states": [
+        {
+          "name": "Running"
+        },
+        {
+          "name": "Terminated"
+        }
+      ]
+    },
+    {
+      "name": "AraSomeipRoutingDaemonStateMachine",
+      "states": [
+        {
+          "name": "Running"
+        },
+        {
+          "name": "Terminated"
+        }
+      ]
+    },
+    {
+      "name": "ComApplicationStates",
+      "states": [
+        {
+          "name": "Com_Instance1"
+        },
+        {
+          "name": "Com_Instance2"
+        },
+        {
+          "name": "Com_Instance3"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "CryptoApplicationStates",
+      "states": [
+        {
+          "name": "Crypto_Instance1"
+        },
+        {
+          "name": "Crypto_Instance2"
+        },
+        {
+          "name": "Crypto_Instance_1_2"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "PHMApplicationStates",
+      "states": [
+        {
+          "name": "PHM_Instance1"
+        },
+        {
+          "name": "PHM_Instance2"
+        },
+        {
+          "name": "PHM_Instance_1_2"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        },
+        {
+          "name": "PHM_Instance3"
+        }
+      ]
+    },
+    {
+      "name": "TSyncApplicationStates",
+      "states": [
+        {
+          "name": "TSync_Instance1"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "TSyncApplicationStates",
+      "states": [
+        {
+          "name": "TSync_Instance1"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "UCMApplicationStates",
+      "states": [
+        {
+          "name": "Ucm_Instance1"
+        },
+        {
+          "name": "Ucm_Instance2"
+        },
+        {
+          "name": "Ucm_Instance_1_2"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    },
+    {
+      "name": "UCMPackageManagerStates",
+      "states": [
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        },
+        {
+          "name": "On"
+        }
+      ]
+    },
+    {
+      "name": "UcmMasterApplicationStates",
+      "states": [
+        {
+          "name": "Ucm_Master_Application1"
+        },
+        {
+          "name": "Ucm_Master_Application2"
+        },
+        {
+          "name": "Ucm_Master_Application_1_2"
+        },
+        {
+          "name": "Off"
+        },
+        {
+          "name": "Verify"
+        }
+      ]
+    }
+  ],
+  "resource_groups": [
+    {
+      "name": "ResourceGroup",
+      "cpu_usage": 95,
+      "mem_usage": 2000000000
+    },
+    {
+      "name": "ResourceGroups2",
+      "cpu_usage": 95,
+      "mem_usage": 2000000000
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AdaptiveApplicationSwComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_crypto_instance1</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="_aob8AMUyEeuwiNuegN1xMQ">
+              <SHORT-NAME>PPortCryptoProvider</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/CryptoProvider</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_LaqP4NNMEeuNvoeG1YIo0A">
+              <SHORT-NAME>PPortRandomGeneratorCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/RandomGeneratorCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_AAR7cNW2EeuVt7_nL-IFsA">
+              <SHORT-NAME>PPortHashFunctionCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/HashFunctionCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_ukaFkPXiEeu_2d52ali3ag">
+              <SHORT-NAME>PPortAuthCipherCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/AuthCipherCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_GBXcwBSDEeySMsDmCSkM8w">
+              <SHORT-NAME>PPortKeyDerivationFunctionCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/KeyDerivationFunctionCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_ePXbsBzwEeyDV7d2g9PX0A">
+              <SHORT-NAME>PPortMessageAuthCodeCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/MessageAuthCodeCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_GBXcwBSDEeySMsDmCSkM8w">
+              <SHORT-NAME>PPortStreamCipherCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/StreamCipherCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_LaqP4NNMEeuNvoeG1YIo0A">
+              <SHORT-NAME>PPortSymmetricBlockCipherCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SymmetricBlockCipherCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_LaqP4NNMEeuNvoeG1YIo0A">
+              <SHORT-NAME>PPortSymmetricKeyWrapperCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SymmetricKeyWrapperCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_KfJNQBRPEeyIu__W0ZFp7g">
+              <SHORT-NAME>RPortCryptoProviderPrototype</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CRYPTO-PROVIDER-INTERFACE">/CryptoInterfaces/CryptoProviderInterface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_fDGMcEtYEeyDad20tGeHYg">
+              <SHORT-NAME>PPortEncryptPublicCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/EncryptorPublicCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_6x6mcEtkEeyCh77rMDItHg">
+              <SHORT-NAME>PPortDecryptPrivateCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/DecryptorPrivateCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_zuLz4FKJEeyiy5izJSc-3g">
+              <SHORT-NAME>PPortVerifierPublicCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VerifierPublicCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_g8Dz0FKYEeyiy5izJSc-3g">
+              <SHORT-NAME>PPortSignerPrivateCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SignerPrivateCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_g8Dz0FKYEeyiy5izJSc-3g">
+              <SHORT-NAME>PPortSigEncodePrivateCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SigEncodePrivateCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_nK7UIFM4EeyhX9lz1O8NSQ">
+              <SHORT-NAME>PPortMsgRecoveryPublicCtx</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/MsgRecoveryPublicCtx</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3VTs0GL2EeyBZ_3PCpCGgg">
+              <SHORT-NAME>PPortBlockService</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BlockService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3zJ1sGMSEeyBZ_3PCpCGgg">
+              <SHORT-NAME>PPortCryptoService</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/CryptoService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_cp7MUGMXEeyBZ_3PCpCGgg">
+              <SHORT-NAME>PPortDigestService</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/DigestService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_ujecAGPAEeysF8KrdMrKgw">
+              <SHORT-NAME>PPortPublicKey</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/PublicKey</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_nBXokGPYEeyOSfb-dcmuoQ">
+              <SHORT-NAME>PPortPrivateKey</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/PrivateKey</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_frkB8GSDEeyQJor5uW2u7A">
+              <SHORT-NAME>PPortSecretSeed</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SecretSeed</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_gtn_EGSHEeyGT-APBwipvg">
+              <SHORT-NAME>PPortSignature</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Signature</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3Z4HAGSnEeyGT-APBwipvg">
+              <SHORT-NAME>PPortCryptoObject</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/CryptoObject</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_ivdpQGSuEeyGT-APBwipvg">
+              <SHORT-NAME>PPortRestrictedUseObject</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/RestrictedUseObject</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_RmlvQGn9Eeyl5rT07HGMdQ">
+              <SHORT-NAME>PPortExtensionService</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/ExtensionService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_EL8-AGocEeyNgcJC1Aq3fA">
+              <SHORT-NAME>PPortSignatureService</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SignatureService</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_gZkqIG7ZEeyVNe3Zirk5fA">
+              <SHORT-NAME>PPortCryptoPrimitiveId</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/CryptoPrimitiveId</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemYIiQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortX509Provider</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/X509Provider</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemYYiQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortBasicCertInfo</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BasicCertInfo</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemYoiQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortCertificate</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Certificate</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemY4iQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortCertSignRequest</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/CertSignRequest</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemZIiQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortX509DN</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/X509DN</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="_3xemZYiQEeyqtOxMe9SRaw">
+              <SHORT-NAME>PPortX509PublicKeyInfo</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/X509PublicKeyInfo</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="7" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0" name="AllTests">
+  <testsuite name="OptionalTest" tests="7" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="TypeIsAvailableAndCompilable" status="run" time="0" classname="OptionalTest" />
+    <testcase name="DisengagedCtor" status="run" time="0" classname="OptionalTest" />
+    <testcase name="ValueCtor" status="run" time="0" classname="OptionalTest" />
+    <testcase name="CopyCtor" status="run" time="0" classname="OptionalTest" />
+    <testcase name="MoveCtor" status="run" time="0" classname="OptionalTest" />
+    <testcase name="emplace" status="run" time="0" classname="OptionalTest" />
+    <testcase name="is_optional" status="run" time="0" classname="OptionalTest" />
+  </testsuite>
+</testsuites>

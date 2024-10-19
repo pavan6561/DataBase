@@ -1,0 +1,17 @@
+# -----------------------------------------------------------------------------------------------------------
+# Copyright (C) AVIN SYSTEMS PVT LTD 2022 - All Rights Reserved Reproduction, distribution and utilization
+# of this document as well as the communication of its contents to others without explicit authorization is
+# prohibited. Offenders will be held liable for the payment of damages.
+# -----------------------------------------------------------------------------------------------------------
+# File Name   : CMakeLists.txt
+#
+# Purpose     : This file provides cmake for ipc library.
+# -----------------------------------------------------------------------------------------------------------
+
+# Config file for the condition package.
+
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@-targets.cmake")
+
+check_required_components(@PROJECT_NAME@)

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="28" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0.001" name="AllTests">
+  <testsuite name="POLYMORPHIC_ALLOCATOR_TEST" tests="11" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="TestResource" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="PolymorphicAllocator" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="new_delete_resource_test" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="null_memory_resource_test" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="default_resource_test" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="monotonic_buffer_resource_test" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="do_allocate" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="do_deallocate" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="do_is_equal" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="null_memory_resource_do_is_equal" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+    <testcase name="null_memory_resource_do_deallocate" status="run" time="0" classname="POLYMORPHIC_ALLOCATOR_TEST" />
+  </testsuite>
+  <testsuite name="UPSTREAM_TEST" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="testa" status="run" time="0" classname="UPSTREAM_TEST" />
+  </testsuite>
+  <testsuite name="UNSYNCHRONIZED_POOL_RESOURCE_TEST" tests="16" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="Init" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="paracons1" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="paracons2" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="release" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="upstream_resource" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="do_is_equal" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="do_allocate" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="do_deallocate" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_index1" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_index2" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_block" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_next_blocks_per_chunk1" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_next_blocks_per_chunk2" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_cached_blocks1" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_cached_blocks2" status="run" time="0.001" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+    <testcase name="pool_count" status="run" time="0" classname="UNSYNCHRONIZED_POOL_RESOURCE_TEST" />
+  </testsuite>
+</testsuites>

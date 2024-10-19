@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkcatalog:Catalog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:checkcatalog="http://www.eclipse.org/sphinx/check/catalog" id="EcucValueAccessor4XValidationRules" label="ECUC Value Accessor 4x Validation Rules">
+  <categories id="High" label="Checks with High Priority."/>
+  <categories id="Low" label="Checks with Low Priority."/>
+  <constraints id="CryptoProviderRport" label="CRYPTO" severity="Error" message="ERR_CRYPTO_constr_5240: Crypto provider port mapping is mapped to Rport not instance of CryptoProviderInterface" categories="High"/>
+</checkcatalog:Catalog>

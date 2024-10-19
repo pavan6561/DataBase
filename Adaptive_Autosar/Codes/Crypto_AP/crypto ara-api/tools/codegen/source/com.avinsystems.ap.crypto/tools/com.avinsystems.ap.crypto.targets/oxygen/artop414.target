@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="CRYPTO Code Generator Target" sequenceNumber="1629889205">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.compare.feature.group" version="3.3.12.202008311302"/>
+      <unit id="org.eclipse.emf.compare.ide.ui.feature.group" version="3.3.12.202008311302"/>
+      <unit id="org.eclipse.emf.mwe.sdk.feature.group" version="1.5.3.v20200520-0756"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.23.0.v20200822-0801"/>
+      <unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.12.0.201805140824"/>
+      <unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.12.2.202008210805"/>
+      <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="1.13.0.202004160913"/>
+      <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.13.0.202004160913"/>
+      <unit id="org.eclipse.gmf.runtime.thirdparty.feature.group" version="1.13.0.202004160913"/>
+      <unit id="org.eclipse.uml2.sdk.feature.group" version="5.5.1.v20200302-1312"/>
+      <unit id="org.eclipse.wst.common_ui.feature.feature.group" version="3.19.0.v202007161535"/>
+      <unit id="org.eclipse.xpand.sdk.feature.group" version="2.2.0.v201605260315"/>
+      <unit id="org.eclipse.xsd.sdk.feature.group" version="2.23.0.v20200723-0820"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/releases/2020-09/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.20.300.v20200828-1034"/>
+      <unit id="org.eclipse.rcp.feature.group" version="4.17.0.v20200902-1800"/>
+      <unit id="org.eclipse.sdk.ide" version="4.17.0.I20200902-1800"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/eclipse/updates/4.17"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.google.gson.source" version="2.8.2.v20180104-1110"/>
+      <unit id="javax.activation" version="1.1.0.v201211130549"/>
+      <unit id="org.apache.commons.cli" version="1.4.0.v20200417-1444"/>
+      <unit id="org.apache.commons.io" version="2.6.0.v20190123-2029"/>
+      <unit id="org.apache.commons.compress" version="1.19.0.v20200106-2343"/>
+      <unit id="org.hamcrest" version="1.1.0.v20090501071000"/>
+      <unit id="org.hamcrest.library" version="1.3.0.v20180524-2246"/>
+      <unit id="org.jdom2" version="2.0.6.v20191125-0928"/>
+      <unit id="org.mockito" version="1.9.5.v201605172210"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/tools/orbit/downloads/drops/R20200831200620/repository"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.viatra.query.runtime.feature.source.feature.group" version="1.5.0.201612211702"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/viatra/updates/release"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sphinx.examples.feature.group" version="0.11.2.201802230805"/>
+      <unit id="org.eclipse.sphinx.sdk.feature.group" version="0.11.2.201802230805"/>
+      <unit id="org.eclipse.sphinx.testutils.feature.group" version="0.11.2.201802230805"/>
+      <unit id="org.eclipse.sphinx.viatra.query.sdk.feature.group" version="0.11.2.201802230805"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/sphinx/updates/0.11.x"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.egf.common.feature.group" version="1.5.0.v20170418-1840"/>
+      <unit id="org.eclipse.egf.model.ftask.feature.group" version="1.5.0.v20170418-1840"/>
+      <unit id="org.eclipse.egf.model.feature.group" version="1.5.0.v20170418-1840"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/egf/updates/oxygen/official/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.artop.base.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.base.sdk.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.core.workspace.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.eel.feature.group" version="1.1.0.201706291244"/>
+      <unit id="org.artop.eel.sdk.feature.group" version="1.1.0.201706291244"/>
+      <unit id="org.artop.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.sdk.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.core.examples.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.thirdparty.feature.group" version="4.14.0.202012101426"/>
+      <unit id="org.artop.core.autosar449.sdk.feature.group" version="4.14.0.202012101426"/>
+      <repository location="http://192.168.1.17:8081/artifactory/artop-mirror/artop-sdk-4.14"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group" version="1.5.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.core.feature.feature.group" version="1.5.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.core.source.feature.feature.group" version="1.5.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.extension.poi.feature.feature.group" version="1.5.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.extension.nebula.feature.feature.group" version="1.1.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.extension.e4.feature.feature.group" version="1.1.0.201703192131"/>
+      <unit id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.source.feature.feature.group" version="1.5.0.201703192131"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/nattable/releases/1.5.0/repository"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.artop.artext.sdk.feature.group" version="1.7.2.201610092029"/>
+      <repository location="http://192.168.1.17:8081/artifactory/artop-mirror/artext-update-site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.avinsystems.astra.adaptive.feature.feature.group" version="0.0.0"/>
+      <unit id="com.avinsystems.astra.adaptive.feature.source.feature.group" version="0.0.0"/>
+      <repository location="http://192.168.1.17:8081/artifactory/a00042-astra-repo/snapshots"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.avinsystems.ap.gt.feature.feature.group" version="0.0.0"/>
+      <unit id="com.avinsystems.ap.gt.feature.source.feature.group" version="0.0.0"/>
+      <repository location="http://192.168.1.17:8081/artifactory/a00042-gt-repo/snapshots"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.swtbot.feature.group" version="3.0.0.202006031738"/>
+      <unit id="org.eclipse.swtbot.eclipse.feature.group" version="3.0.0.202006031738"/>
+      <unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="3.0.0.202006031738"/>
+      <unit id="org.hamcrest.core" version="1.3.0.v20180420-1519"/>
+      <repository location="http://192.168.1.17:8081/artifactory/eclipse-mirror/technology/swtbot/releases/3.0.0"/>
+    </location>
+  </locations>
+</target>

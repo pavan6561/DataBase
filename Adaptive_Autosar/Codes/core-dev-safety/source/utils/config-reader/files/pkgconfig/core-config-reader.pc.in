@@ -1,0 +1,21 @@
+# -----------------------------------------------------------------------------------------------------------
+# Copyright (C) AVIN SYSTEMS PVT LTD 2022 - All Rights Reserved Reproduction, distribution and utilization
+# of this document as well as the communication of its contents to others without explicit authorization is
+# prohibited. Offenders will be held liable for the payment of damages.
+# -----------------------------------------------------------------------------------------------------------
+# File Name   : CMakeLists.txt
+#
+# Purpose     : This file provides make environment.
+# -----------------------------------------------------------------------------------------------------------
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: @PROJECT_NAME@
+Description: library for config_reader
+Version: @PROJECT_VERSION@
+
+Libs: -L${libdir} -l@PROJECT_NAME@
+Cflags: -I${includedir}

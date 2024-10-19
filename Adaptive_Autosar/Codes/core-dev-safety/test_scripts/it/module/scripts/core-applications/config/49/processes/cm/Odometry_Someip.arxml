@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>Odometry_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventUint8_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_uint8</EVENT-REF>
+              <EVENT-ID>20</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventEnum_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_enum</EVENT-REF>
+              <EVENT-ID>30</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgipeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventScaleLinear_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_scalelinear</EVENT-REF>
+              <EVENT-ID>31</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgypeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventString_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_string</EVENT-REF>
+              <EVENT-ID>32</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventInt64_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_int64</EVENT-REF>
+              <EVENT-ID>26</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventInt8_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_int8</EVENT-REF>
+              <EVENT-ID>27</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventFloat_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_float</EVENT-REF>
+              <EVENT-ID>28</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventDouble_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_double</EVENT-REF>
+              <EVENT-ID>29</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventInt32_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_int32</EVENT-REF>
+              <EVENT-ID>25</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventUint16_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_uint16</EVENT-REF>
+              <EVENT-ID>21</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventUint32_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_uint32</EVENT-REF>
+              <EVENT-ID>22</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventUint64_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_unit64</EVENT-REF>
+              <EVENT-ID>23</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventInt16_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_int16</EVENT-REF>
+              <EVENT-ID>24</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventSupplyVoltage_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_supplyvoltage</EVENT-REF>
+              <EVENT-ID>33</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventTemperature_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_temperature</EVENT-REF>
+              <EVENT-ID>34</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventBacklighting_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_backlighting</EVENT-REF>
+              <EVENT-ID>35</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Event_reestablishing_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_reestablishing</EVENT-REF>
+              <EVENT-ID>36</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Event_samplepointer_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_samplepointer</EVENT-REF>
+              <EVENT-ID>37</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_2GtdcJYUEey2x-WWDWNfnA">
+              <SHORT-NAME>Event_MarkerInterface_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/Odometry/Event_MarkerInterface</EVENT-REF>
+              <EVENT-ID>38</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Speed_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Speed</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>100</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>50</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>200</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Enum_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Field_enum</FIELD-REF>
+              <GET UUID="_Kq45gCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>101</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_K8yh0CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>51</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_LOTIkCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>201</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcipeEeyWSv_QnPX-rA">
+              <SHORT-NAME>ScaleLinear_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Field_scalelinear</FIELD-REF>
+              <GET UUID="_LvdU4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>102</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_MAYs0CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>52</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_MXwD8CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>202</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcypeEeyWSv_QnPX-rA">
+              <SHORT-NAME>String_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Field_string</FIELD-REF>
+              <GET UUID="_MxkSICpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>103</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_NBAcUCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>53</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_NUR9oCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>203</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Distance_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Distance</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>104</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>54</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>204</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Position_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Position</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>105</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>55</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>205</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>AngularRate_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/AngularRate</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>106</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>56</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>206</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Time_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Time</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>107</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>57</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>207</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Velocity_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Velocity</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>108</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>58</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>208</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>WheelCorrection_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/WheelCorrection</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>109</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>59</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>209</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Acceleration_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Acceleration</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>110</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>60</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>210</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Pose2D_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/Pose2D</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>111</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>61</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>211</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>AdditionalVehicleMotionInformation_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/AdditionalVehicleMotionInformation</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>112</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>62</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>212</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>TemperatureDiscard_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/Odometry/fields_temperaturediscard</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>113</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>63</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>213</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_basicDT_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/DataElement_basicDT</METHOD-REF>
+              <METHOD-ID>301</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_enum_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/DataElement_enum</METHOD-REF>
+              <METHOD-ID>302</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMCpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_scalelinear_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/DataElement_scalelinear</METHOD-REF>
+              <METHOD-ID>303</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_string_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/DataElement_string</METHOD-REF>
+              <METHOD-ID>304</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>SamplePointer_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/SamplePointer</METHOD-REF>
+              <METHOD-ID>305</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>IsReady_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/IsReady</METHOD-REF>
+              <METHOD-ID>307</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_voltage_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/DataElement_voltage</METHOD-REF>
+              <METHOD-ID>308</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>BrakeLight_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/Odometry/BrakeLight</METHOD-REF>
+              <METHOD-ID>309</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/Odometry</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_AUb1UCpfEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>110</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventUint8_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventEnum_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventScaleLinear_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventString_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventInt64_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventInt8_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventFloat_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventDouble_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventInt32_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventUint16_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventUint32_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventUint64_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventInt16_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventSupplyVoltage_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventTemperature_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/EventBacklighting_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Event_reestablishing_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Event_samplepointer_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Event_MarkerInterface_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_AUb1USpfEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventDataType_SomeipField</SHORT-NAME>
+              <EVENT-GROUP-ID>401</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Speed_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Enum_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/ScaleLinear_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/String_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Distance_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Position_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/AngularRate_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Time_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Velocity_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/WheelCorrection_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Acceleration_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/Pose2D_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/AdditionalVehicleMotionInformation_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip/TemperatureDiscard_Someip/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>101</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1ca57afb-4f0e-4102-83cc-086713134a2b">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>odometry_qt_cm_instance3_ProvidedSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoCp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Odometry_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoSp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroupsField</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Odometry_Someip/EventDataType_SomeipField</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>102</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>qt_cm_instance3_RequiredSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/Odometry_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-EVENT-GROUPS>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Odometry_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientEventGroupTimingConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroupsField</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Odometry_Someip/EventDataType_SomeipField</EVENT-GROUP-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+          </REQUIRED-EVENT-GROUPS>
+          <REQUIRED-SERVICE-INSTANCE-ID>103</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c44a0145-6c8c-41f7-8587-fabbb26003fd">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>odometry_qt_cm_instance3_Provided_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/odometry_qt_cm_instance3_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3004</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>odometry_qt_cm_instance3_Required_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>0</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="49440f8e-db7d-491a-98a4-f09f363c892a">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>odometry_qt_cm_instance3_ProvidedSomeipInstance_POdometry_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance3/POdometry</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance3</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance3</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/odometry_qt_cm_instance3_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>odometry_qt_cm_instance3_RequiredSomeipInstance_ROdometry_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance3/ROdometry</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance3</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance3</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_cm_instance3_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b9104bff-79c0-4121-9750-1a803f64ee27">
+      <SHORT-NAME>SomeipSdTimingConfigs</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+          <SHORT-NAME>SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+          <REQUEST-RESPONSE-DELAY>
+            <MAX-VALUE>1.0</MAX-VALUE>
+            <MIN-VALUE>0.0</MIN-VALUE>
+          </REQUEST-RESPONSE-DELAY>
+          <TIME-TO-LIVE>10</TIME-TO-LIVE>
+        </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

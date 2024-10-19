@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>sm</SHORT-NAME>
+          <ELEMENTS>
+            <AP-APPLICATION-ERROR-DOMAIN>
+              <SHORT-NAME>StateManagementErrors</SHORT-NAME>
+              <VALUE>0</VALUE>
+            </AP-APPLICATION-ERROR-DOMAIN>
+            <AP-APPLICATION-ERROR>
+              <SHORT-NAME>PrepareFailed</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Preparation step of update failed</L-2>
+              </DESC>
+              <ERROR-CODE>7</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/sm/StateManagementErrors</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR>
+              <SHORT-NAME>Rejected</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Requested operation was rejected due to State Managements</L-2>
+              </DESC>
+              <ERROR-CODE>5</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/sm/StateManagementErrors</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR>
+              <SHORT-NAME>RollbackFailed</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Rollback step of update failed</L-2>
+              </DESC>
+              <ERROR-CODE>8</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/sm/StateManagementErrors</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR>
+              <SHORT-NAME>VerifyFailed</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Verification step of update failed</L-2>
+              </DESC>
+              <ERROR-CODE>6</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ara/sm/StateManagementErrors</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>datatypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>FGNameType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">full qualified FunctionGroup shortName</L-2>
+                      </DESC>
+                      <CATEGORY>STRING</CATEGORY>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>sm</SHORT-NAME>
+                          <SYMBOL>sm</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>FunctionGroupListType</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">A list of FunctionGroups</L-2>
+                      </DESC>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <SHORT-NAME-PATTERN></SHORT-NAME-PATTERN>
+                      <SW-DATA-DEF-PROPS/>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ara</SHORT-NAME>
+                          <SYMBOL>ara</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>sm</SHORT-NAME>
+                          <SYMBOL>sm</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/sm/datatypes/ImplementationDataTypes/FGNameType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/sm/datatypes/ImplementationDataTypes/FGNameType</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

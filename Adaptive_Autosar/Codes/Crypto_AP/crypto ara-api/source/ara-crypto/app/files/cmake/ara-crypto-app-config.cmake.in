@@ -1,0 +1,14 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (C) AVIN SYSTEMS PVT LTD 2021 - All Rights Reserved. 
+# The reproduction, distribution and utilization of this document as well as the communication of its contents 
+# to others without explicit authorization is prohibited. Offenders will be held liable for the payment of 
+# damages.
+# ------------------------------------------------------------------------------------------------------------
+
+# Config file for the crypto package.
+
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/ara-crypto-app-targets.cmake")
+
+check_required_components(ara-crypto-app)

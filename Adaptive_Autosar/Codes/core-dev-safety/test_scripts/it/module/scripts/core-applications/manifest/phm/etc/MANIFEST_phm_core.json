@@ -1,0 +1,37 @@
+{
+  "process_name": "PHMD",
+  "logtrace_process_id": "PHMID",
+  "logtrace_process_desc": "phm daemon context",
+  "logtrace_log_modes": [
+    "CONSOLE"
+  ],
+  "logtrace_default_log_level": "VERBOSE",
+  "logtrace_file_path": "",
+  "executable": {
+    "platform_application": true,
+    "timer_resolution_ns": 1000,
+    "uses_logging": true
+  },
+  "application_states": [],
+  "startup_configs": [
+    {
+      "config_name_for_convenience": "Config #1",
+      "depends": ["ara_someip_routing_daemon.Running"],
+      "machine_states": [
+        "Startup"
+      ],
+      "function_group_states": [],
+      "resource_group": "ResourceGroup",
+      "scheduling_policy": "SCHEDULING-POLICY-ROUND-ROBIN",
+      "scheduling_priority": 10,
+      "arguments": [],
+      "environment": [
+        "PHM_CONFIGURATION=/opt/phm-core/etc/phm.json",
+        "LOG_CONFIG_PATH=/opt/phm-core/etc/log_config.json"
+      ]
+    }
+  ],
+  "service_instance_to_port_prototype_mapping": [],
+  "persistency_port_prototype_to_key_value_database_mapping": [],
+  "persistency_port_prototype_to_file_array_mapping": []
+}

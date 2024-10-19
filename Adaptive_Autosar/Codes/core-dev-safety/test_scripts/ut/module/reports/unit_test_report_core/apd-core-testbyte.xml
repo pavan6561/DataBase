@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:33" time="0" name="AllTests">
+  <testsuite name="ByteTest" tests="8" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="ByteTest" />
+    <testcase name="ConversionToUnsignedChar" status="run" time="0" classname="ByteTest" />
+    <testcase name="BraceInitialize_HasValue" status="run" time="0" classname="ByteTest" />
+    <testcase name="DefaultConstruction_HasIndeterminateValue" status="run" time="0" classname="ByteTest" />
+    <testcase name="ValueInitialization_IsZero" status="run" time="0" classname="ByteTest" />
+    <testcase name="Assignment" status="run" time="0" classname="ByteTest" />
+    <testcase name="Comparison" status="run" time="0" classname="ByteTest" />
+    <testcase name="CompareWithZero" status="run" time="0" classname="ByteTest" />
+  </testsuite>
+</testsuites>

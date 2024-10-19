@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>qt_cm_instance1</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance1</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_cm_instance1</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet/ComApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/ComApplicationStates/Com_Instance1</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/Processes/qt_cm_instance1_startupconfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="00711bef-8281-4a8f-b9eb-7de38780b150">
+      <SHORT-NAME>ProcessDesigns</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-DESIGN>
+          <SHORT-NAME>qt_cm_instance1</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_cm_instance1</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="d98eb399-ea48-4dc2-82c0-e088f11a0f0e">
+      <SHORT-NAME>ProcessToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-TO-MACHINE-MAPPING-SET>
+          <SHORT-NAME>CMProcessToMachineMappingSet</SHORT-NAME>
+          <PROCESS-TO-MACHINE-MAPPINGS>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_NwM9gOVsEeueLYDo2wlyRA">
+              <SHORT-NAME>QTCMInstance1ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance1</PROCESS-REF>
+              <SHALL-RUN-ON-REFS>
+                <SHALL-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-RUN-ON-REF>
+              </SHALL-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_lDLyIBVLEey5d-sRJDl0-A">
+              <SHORT-NAME>StateManagerToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_statemanager</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_lDO1cBVLEey5d-sRJDl0-A">
+              <SHORT-NAME>QtCryptoInstance1ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_crypto_instance1</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_lDQDkBVLEey5d-sRJDl0-A">
+              <SHORT-NAME>packageManagerToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/package_manager</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_lDQDkRVLEey5d-sRJDl0-A">
+              <SHORT-NAME>QtUCMUpdateAdapterToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_ucm_updateadapter</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_7kO9MBVLEey5d-sRJDl0-A">
+              <SHORT-NAME>QTUcmInstance1ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_ucm_instance1</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_qnPksBVYEey5d-sRJDl0-A">
+              <SHORT-NAME>QtPhmInstance1ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_qnQLwBVYEey5d-sRJDl0-A">
+              <SHORT-NAME>QtPhmInstance2ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_c4v1UBYREeyDU9U1nRPqqA">
+              <SHORT-NAME>AraCryptoCoreToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Process/crypto_core</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_8fpekBemEey1YuUch4Xb0A">
+              <SHORT-NAME>RoutingManagerRDToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/ara_someip_routing_daemon</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_eM3EYFMhEeyGX6pVn_nqKQ">
+              <SHORT-NAME>QTOtaClientToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_ota_client</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_J5TjQFWgEeyXgrh5l-En2g">
+              <SHORT-NAME>QTDriverApplicationToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_driver_application</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_NwM9gOVsEeueLYDo2wlyRA">
+              <SHORT-NAME>QTCMInstance2ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance2</PROCESS-REF>
+              <SHALL-RUN-ON-REFS>
+                <SHALL-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-RUN-ON-REF>
+              </SHALL-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_NwM9gOVsEeueLYDo2wlyRA">
+              <SHORT-NAME>QTCMInstance3ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance3</PROCESS-REF>
+              <SHALL-RUN-ON-REFS>
+                <SHALL-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-RUN-ON-REF>
+              </SHALL-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_NwM9gOVsEeueLYDo2wlyRA">
+              <SHORT-NAME>QTCMInstance4ToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance4</PROCESS-REF>
+              <SHALL-RUN-ON-REFS>
+                <SHALL-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-RUN-ON-REF>
+              </SHALL-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+          </PROCESS-TO-MACHINE-MAPPINGS>
+        </PROCESS-TO-MACHINE-MAPPING-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1030ea12-381c-4018-a2c6-670ec3cc773a">
+      <SHORT-NAME>DltLogChannelToProcessMappings</SHORT-NAME>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

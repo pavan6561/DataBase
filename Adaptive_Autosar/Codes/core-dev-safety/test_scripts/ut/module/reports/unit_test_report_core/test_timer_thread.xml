@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" disabled="0" errors="0" timestamp="2023-04-27T07:00:09" time="54.002" name="AllTests">
+  <testsuite name="TimerThreadTest" tests="11" failures="0" disabled="0" errors="0" time="54.002">
+    <testcase name="Init" status="run" time="0" classname="TimerThreadTest" />
+    <testcase name="StartSingleShotTimer" status="run" time="6.001" classname="TimerThreadTest" />
+    <testcase name="StartPeriodicTimer" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="StopTimer" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="GetHeadQueueTimerId" status="run" time="0" classname="TimerThreadTest" />
+    <testcase name="StartSingleShotTimerWithInvalidTimer" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="StartSingleShotTimerWithInvalidHandler" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="GetRemainingTimeWithInvalidId" status="run" time="6.001" classname="TimerThreadTest" />
+    <testcase name="StopTimereWithInvalidId" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="StartPeriodicTimerWithInvalidTimer" status="run" time="6" classname="TimerThreadTest" />
+    <testcase name="StartPeriodicTimerWithInvalidHandler" status="run" time="6" classname="TimerThreadTest" />
+  </testsuite>
+</testsuites>

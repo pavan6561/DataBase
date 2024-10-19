@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PersistencyPortToKeyValueStorageMapping</SHORT-NAME>
+      <ELEMENTS>
+        <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+          <SHORT-NAME>vehicle_package_manager</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/vehicle_package_manager/vehicle_package_manager_root</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponent/vehicle_package_manager/VehiclePackageTransferStatusPRPort</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS">/Processes/vehicle_package_manager</PROCESS-REF>
+          <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-STORAGE">/PersistencyKeyValueStorage/VehiclePackageTransferStatusDatabase</KEY-VALUE-STORAGE-REF>
+        </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-STORAGE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

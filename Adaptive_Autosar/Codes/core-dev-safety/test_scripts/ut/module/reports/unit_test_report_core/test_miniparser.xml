@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="59" failures="0" disabled="0" errors="0" timestamp="2023-04-27T07:01:20" time="0.01" name="AllTests">
+  <testsuite name="minijson_reader" tests="29" failures="0" disabled="0" errors="0" time="0.009">
+    <testcase name="BufferContext" status="run" time="0.004" classname="minijson_reader" />
+    <testcase name="ConstBufferContext" status="run" time="0.003" classname="minijson_reader" />
+    <testcase name="IstreamContext" status="run" time="0" classname="minijson_reader" />
+    <testcase name="ParseError" status="run" time="0" classname="minijson_reader" />
+    <testcase name="value_default_constructed" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_empty" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_single_field" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_multiple_fields" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_nested" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_bytes_read" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_empty" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_single_elem" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_single_elem2" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_multiple_elems" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_nested" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_bytes_read" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_truncated" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_truncated" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_object_invalid" status="run" time="0" classname="minijson_reader" />
+    <testcase name="parse_array_invalid" status="run" time="0.001" classname="minijson_reader" />
+    <testcase name="nested_not_parsed" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForA" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForB" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForC" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForD" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForE" status="run" time="0" classname="minijson_reader" />
+    <testcase name="IsHexDigitTestForF" status="run" time="0" classname="minijson_reader" />
+    <testcase name="OperatorOverloadingTest2" status="run" time="0" classname="minijson_reader" />
+    <testcase name="DispatcherMethodsTest" status="run" time="0" classname="minijson_reader" />
+  </testsuite>
+  <testsuite name="minijson_reader_detail" tests="29" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="utf16_to_utf32" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="utf16_to_utf32_invalid" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="utf32_to_utf8" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="utf32_to_utf8_invalid" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="utf16_to_utf8" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_utf16_escape_sequence" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_utf16_escape_sequence_invalid" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="write_utf8_char" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_empty" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_one_char" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_ascii" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_utf8" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_escape_sequences" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_escape_sequences_utf16" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_string_invalid" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_whitespace" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_true" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_false" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_null" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_integer_too_large" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_number_exhaustive" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_number_exhaustive_fail" status="run" time="0.001" classname="minijson_reader_detail" />
+    <testcase name="parse_unquoted_value_invalid" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_object" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_array" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_quoted_string" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_quoted_string_empty" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_unquoted" status="run" time="0" classname="minijson_reader_detail" />
+    <testcase name="parse_value_unquoted_invalid" status="run" time="0" classname="minijson_reader_detail" />
+  </testsuite>
+  <testsuite name="minijson_parser" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="minijson_parser" status="run" time="0" classname="minijson_parser" />
+  </testsuite>
+</testsuites>

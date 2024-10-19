@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="42" failures="0" disabled="0" errors="0" timestamp="2023-04-27T07:01:36" time="0.001" name="AllTests">
+  <testsuite name="IpcInterfaceBase" tests="14" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="IpcInterfaceBase" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="Receive" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="SetMessageFromString" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="setMessageFromString_error" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="Send" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="CloseIpcChannel" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="Reopen" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="IpcChannelMapsToFile" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="HasClosableIpcChannel" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="CleanupOutdatedIpcChannel" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="TimedReceive" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="TimedSend" status="run" time="0" classname="IpcInterfaceBase" />
+    <testcase name="GetRuntimeName" status="run" time="0.001" classname="IpcInterfaceBase" />
+    <testcase name="IsInitialized" status="run" time="0" classname="IpcInterfaceBase" />
+  </testsuite>
+  <testsuite name="IpcInterfaceUser" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="IpcInterfaceUser" status="run" time="0" classname="IpcInterfaceUser" />
+  </testsuite>
+  <testsuite name="IpcMessage" tests="11" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="IpcMessage" status="run" time="0" classname="IpcMessage" />
+    <testcase name="IpcMessage_1" status="run" time="0" classname="IpcMessage" />
+    <testcase name="GetNumberOfElements" status="run" time="0" classname="IpcMessage" />
+    <testcase name="GetElementAtIndex" status="run" time="0" classname="IpcMessage" />
+    <testcase name="IsValidEntry" status="run" time="0" classname="IpcMessage" />
+    <testcase name="AddEntry" status="run" time="0" classname="IpcMessage" />
+    <testcase name="IsValid" status="run" time="0" classname="IpcMessage" />
+    <testcase name="GetMessage" status="run" time="0" classname="IpcMessage" />
+    <testcase name="SetMessage" status="run" time="0" classname="IpcMessage" />
+    <testcase name="ClearMessage" status="run" time="0" classname="IpcMessage" />
+    <testcase name="operator" status="run" time="0" classname="IpcMessage" />
+  </testsuite>
+  <testsuite name="IpcInterfaceCreator" tests="2" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="IpcInterfaceCreator" status="run" time="0" classname="IpcInterfaceCreator" />
+    <testcase name="CleanupResource" status="run" time="0" classname="IpcInterfaceCreator" />
+  </testsuite>
+  <testsuite name="VersionInfo" tests="14" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="VersionInfo" status="run" time="0" classname="VersionInfo" />
+    <testcase name="VersionInfo1" status="run" time="0" classname="VersionInfo" />
+    <testcase name="IsValid" status="run" time="0" classname="VersionInfo" />
+    <testcase name="operator_10" status="run" time="0" classname="VersionInfo" />
+    <testcase name="operator_1" status="run" time="0" classname="VersionInfo" />
+    <testcase name="operator" status="run" time="0" classname="VersionInfo" />
+    <testcase name="operator1" status="run" time="0" classname="VersionInfo" />
+    <testcase name="GetCurrentVersion" status="run" time="0" classname="VersionInfo" />
+    <testcase name="kOff" status="run" time="0" classname="VersionInfo" />
+    <testcase name="checkCompatibility_1" status="run" time="0" classname="VersionInfo" />
+    <testcase name="checkCompatibility1" status="run" time="0" classname="VersionInfo" />
+    <testcase name="checkCompatibility2" status="run" time="0" classname="VersionInfo" />
+    <testcase name="checkCompatibility3" status="run" time="0" classname="VersionInfo" />
+    <testcase name="checkCompatibility4" status="run" time="0" classname="VersionInfo" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstance</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>ProvidedSomeipApplicationVehicleStateManagerInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployement/ApplicationVehicleStateManager_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_RZYW8HqWEeyqF9_TMPmkrQ">
+              <SHORT-NAME>providedEventGroupsVSM</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployement/ApplicationVehicleStateManager_Someip/SafetyPolicyEvent</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>7</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>RequiredVehicleStateManager</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ara/apd/ucm_master/deployment/VehicleStateManagersomeip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-SERVICE-INSTANCE-ID>920</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="f3763000-87fa-4147-a4d4-8edfa91ec19e">
+      <SHORT-NAME>ServiceInstanceToPortMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>ProvidedApplicationVehicleStateManagerToPortPrototypeMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_vehicle_state_manager/qt_vehicle_state_manager_root</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponent/qt_vehicle_state_manager/VSMApplicationPPort</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_vehicle_state_manager</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_vehicle_state_manager</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/ProvidedSomeipApplicationVehicleStateManagerInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>RequiredVehicleStateManagerToPortPrototypeMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_vehicle_state_manager/qt_vehicle_state_manager_root</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponent/qt_vehicle_state_manager/VSMCoreRPort</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_vehicle_state_manager</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_vehicle_state_manager</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/RequiredVehicleStateManager</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

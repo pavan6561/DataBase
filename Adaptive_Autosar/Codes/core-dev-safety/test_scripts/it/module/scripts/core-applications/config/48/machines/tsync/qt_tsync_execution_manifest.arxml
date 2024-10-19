@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="5d8e9a3f-3123-483c-a1ab-8bf20c201233">
+      <SHORT-NAME>Processes</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS>
+          <SHORT-NAME>qt_tsync_instance1</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/qt_tsync_instance1</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/qt_tsync_instance1</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSet/TSyncFunctionGroupSet/TSyncApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/TSyncApplicationStates/TSync_Instance1</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSet/TSyncFunctionGroupSet/TSyncApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/TSyncApplicationStates/TSync_Core_Off</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/TSyncStartupConfigSet/qt_tsync_instance1_startupConfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+        <PROCESS>
+          <SHORT-NAME>tsync_core</SHORT-NAME>
+          <DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesign/tsync_coreProcessDesign</DESIGN-REF>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/Executables/tsync_core</EXECUTABLE-REF>
+          <STATE-DEPENDENT-STARTUP-CONFIGS>
+            <STATE-DEPENDENT-STARTUP-CONFIG>
+              <FUNCTION-GROUP-STATE-IREFS>
+                <FUNCTION-GROUP-STATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSet/TSyncFunctionGroupSet/TSyncApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/TSyncApplicationStates/TSync_Instance1</TARGET-MODE-DECLARATION-REF>
+                </FUNCTION-GROUP-STATE-IREF>
+              </FUNCTION-GROUP-STATE-IREFS>
+              <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machines/QtMachine/Linux/ResourceGroup</RESOURCE-GROUP-REF>
+              <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/StartupConfigSets/TSyncStartupConfigSet/tsync_core_startupConfig</STARTUP-CONFIG-REF>
+            </STATE-DEPENDENT-STARTUP-CONFIG>
+          </STATE-DEPENDENT-STARTUP-CONFIGS>
+        </PROCESS>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2f708810-b1ec-4e5f-a1b0-30574443a257">
+      <SHORT-NAME>StartupConfigSets</SHORT-NAME>
+      <ELEMENTS>
+        <MODE-DECLARATION-GROUP>
+          <SHORT-NAME>TSyncApplicationStates</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StartupConfigSets/TSyncApplicationStates/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="_y_U2kCp4Eey9CaJVle9l6Q">
+              <SHORT-NAME>TSync_Instance1</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_70-ooCp4Eey9CaJVle9l6Q">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_n7mvkDAMEeyCQrHcXIfavA">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="_pf6vEHR1EeyUW8Ew5H4zVw">
+              <SHORT-NAME>TSync_Core_Off</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <STARTUP-CONFIG-SET>
+          <SHORT-NAME>TSyncStartupConfigSet</SHORT-NAME>
+          <STARTUP-CONFIGS>
+            <STARTUP-CONFIG UUID="_T9PwYFfwEeytSqtPqn9BbA">
+              <SHORT-NAME>qt_tsync_instance1_startupConfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/qt_tsync_instance1/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+            <STARTUP-CONFIG UUID="_X2i9MFfwEeytSqtPqn9BbA">
+              <SHORT-NAME>tsync_core_startupConfig</SHORT-NAME>
+              <ENVIRONMENT-VARIABLES>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>LOG_CONFIG_PATH</KEY>
+                  <VALUE>/opt/tsync_core/etc/log_config.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+                <TAG-WITH-OPTIONAL-VALUE>
+                  <KEY>TSYNC_CORE_MANIFEST</KEY>
+                  <VALUE>/opt/tsync_core/etc/tsync_core.json</VALUE>
+                </TAG-WITH-OPTIONAL-VALUE>
+              </ENVIRONMENT-VARIABLES>
+              <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+              <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+            </STARTUP-CONFIG>
+          </STARTUP-CONFIGS>
+        </STARTUP-CONFIG-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="7b599af4-f976-44ea-ba9d-ca517fde824d">
+      <SHORT-NAME>ProcessToMachine</SHORT-NAME>
+      <ELEMENTS>
+        <PROCESS-TO-MACHINE-MAPPING-SET>
+          <SHORT-NAME>TSyncProcessToMachineMappingSet</SHORT-NAME>
+          <PROCESS-TO-MACHINE-MAPPINGS>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_fG4SUFdjEeyT9s05XXnX1A">
+              <SHORT-NAME>qt_tsync_instance1_processToMachine</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_tsync_instance1</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+            <PROCESS-TO-MACHINE-MAPPING UUID="_fG4SUVdjEeyT9s05XXnX1A">
+              <SHORT-NAME>tsync_core_processToMachineMappings</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machines/QtMachine</MACHINE-REF>
+              <PROCESS-REF DEST="PROCESS">/Processes/tsync_core</PROCESS-REF>
+              <SHALL-NOT-RUN-ON-REFS>
+                <SHALL-NOT-RUN-ON-REF DEST="PROCESSOR-CORE">/Machines/QtMachine/Processors/Cores0</SHALL-NOT-RUN-ON-REF>
+              </SHALL-NOT-RUN-ON-REFS>
+            </PROCESS-TO-MACHINE-MAPPING>
+          </PROCESS-TO-MACHINE-MAPPINGS>
+        </PROCESS-TO-MACHINE-MAPPING-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="3f8a5abe-af06-4630-a986-6da7d614bc85">
+      <SHORT-NAME>FunctionGroupSet</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c902f03b-926a-43c7-a652-d2a9f57a6430">
+      <SHORT-NAME>Softwarecluster</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>TSyncSoftwareCluster</SHORT-NAME>
+          <CATEGORY>PLATFORM_CORE</CATEGORY>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/qt_tsync_instance1</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/Processes/tsync_core</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+        </SOFTWARE-CLUSTER>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

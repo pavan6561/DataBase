@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ProvidedSomeIp</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>ProvidedSomeIpVehiclePackageManagementInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_i92AEFHBEeygf4_6TxtoVw">
+              <SHORT-NAME>RequestedPackage_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/RequestedPackage_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_i92AEVHBEeygf4_6TxtoVw">
+              <SHORT-NAME>SafetyState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/SafetyState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_i92AElHBEeygf4_6TxtoVw">
+              <SHORT-NAME>TransferState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/TransferState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>909</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>ProvidedSomeIpVehicleDriverApplicationInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ara/apd/ucm_master/deployment/VehicleDriverApplicationSomeIp</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_OzntAFHCEeygf4_6TxtoVw">
+              <SHORT-NAME>ApprovalRequired_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehicleDriverApplicationSomeIp/ApprovalRequired_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_OzntAVHCEeygf4_6TxtoVw">
+              <SHORT-NAME>CampaignState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehicleDriverApplicationSomeIp/CampaignState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_OzntAlHCEeygf4_6TxtoVw">
+              <SHORT-NAME>SafetyPolicy_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehicleDriverApplicationSomeIp/SafetyPolicy_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_OzntA1HCEeygf4_6TxtoVw">
+              <SHORT-NAME>SafetyState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehicleDriverApplicationSomeIp/SafetyState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>910</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>ProvidedSomeipVehicleStateManager</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ara/apd/ucm_master/deployment/VehicleStateManagersomeip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_0WYjwFHCEeygf4_6TxtoVw">
+              <SHORT-NAME>RequestedPackage_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/RequestedPackage_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_0WYjwVHCEeygf4_6TxtoVw">
+              <SHORT-NAME>SafetyState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/SafetyState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_0WYjwlHCEeygf4_6TxtoVw">
+              <SHORT-NAME>TransferState_provided_eventgroup</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/apd/ucm_master/deployment/VehiclePackageManagementSomeIp/TransferState_eventgroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>920</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="3c46050e-f694-428e-a404-5dd0bf684f12">
+      <SHORT-NAME>ServiceInstanceToMachineMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>VehiclePackageManagerInstancesToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/ServiceInstances/PackageManagementRequired</SERVICE-INSTANCE-REF>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ProvidedSomeIp/ProvidedSomeipVehicleStateManager</SERVICE-INSTANCE-REF>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ProvidedSomeIp/ProvidedSomeIpVehicleDriverApplicationInstance</SERVICE-INSTANCE-REF>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ProvidedSomeIp/ProvidedSomeIpVehiclePackageManagementInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>5000</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

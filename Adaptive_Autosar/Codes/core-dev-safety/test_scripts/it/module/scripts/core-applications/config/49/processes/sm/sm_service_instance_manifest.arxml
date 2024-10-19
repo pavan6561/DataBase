@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+          <SHORT-NAME>RequiredSomeIpUpdateRequestInstance</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG>
+                <SD GID="DV:SERVICE-INSTANCE-ID">666</SD>
+                <SDG GID="DV:SERVICE-VERSION">
+                  <SD GID="DV:MAJOR-VERSION">1</SD>
+                  <SD GID="DV:MINOR-VERSION">ANY</SD>
+                </SDG>
+                <SDG GID="DV:SERVICE-DISCOVERY">
+                  <SD GID="DV:SERVICE-OFFER-TIME-TO-LIVE">60</SD>
+                  <SD GID="DV:DOMAIN">1234</SD>
+                  <SD GID="DV:PORT">45679</SD>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/UpdateRequestSomeIp</SERVICE-INTERFACE-DEPLOYMENT-REF>
+        </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+        <USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>UpdateRequestInstanceToMachineMapping3</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/ServiceInstances/RequiredSomeIpUpdateRequestInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+        </USER-DEFINED-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>UpdateAdapter_Someip</SHORT-NAME>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_gXOwEN83EeuzRqyN6aE1sw">
+              <SHORT-NAME>UpdateStatus</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/UpdateAdapter/UpdateStatus</FIELD-REF>
+              <GET UUID="_2aHYcN83EeuzRqyN6aE1sw">
+                <SHORT-NAME>getUpdateStatus</SHORT-NAME>
+                <METHOD-ID>1</METHOD-ID>
+                <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_7V9AUN83EeuzRqyN6aE1sw">
+                <SHORT-NAME>onUpdateStatus</SHORT-NAME>
+                <EVENT-ID>32770</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_hRagYN83EeuzRqyN6aE1sw">
+              <SHORT-NAME>SetActivateStatus</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/UpdateAdapter/SetActivateStatus</METHOD-REF>
+              <METHOD-ID>3</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_hRagYd83EeuzRqyN6aE1sw">
+              <SHORT-NAME>SetRollbackStatus</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/UpdateAdapter/SetRollbackStatus</METHOD-REF>
+              <METHOD-ID>4</METHOD-ID>
+              <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/UpdateAdapter</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_CYzikN85EeuzRqyN6aE1sw">
+              <SHORT-NAME>onUpdateStatus</SHORT-NAME>
+              <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/UpdateAdapter_Someip/UpdateStatus/onUpdateStatus</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>1415</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

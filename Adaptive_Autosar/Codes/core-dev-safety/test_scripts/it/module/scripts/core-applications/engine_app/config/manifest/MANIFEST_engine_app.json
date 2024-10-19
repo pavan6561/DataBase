@@ -1,0 +1,66 @@
+{
+  "process_name": "engine_app",
+  "logtrace_process_id": "PHMDemo",
+  "logtrace_process_desc": "PHM demo Context",
+  "logtrace_log_modes": [
+    "CONSOLE"
+  ],
+  "logtrace_default_log_level": "VERBOSE",
+  "logtrace_file_path": "/var/redirected/engine_app",
+  "executable": {
+    "platform_application": true,
+    "timer_resolution_ns": 1000,
+    "uses_logging": true
+  },
+  "application_states": [],
+  "startup_configs": [
+    {
+      "config_name_for_convenience": "Machine: Startup, Driving, Parking",
+      "depends": ["ara_dlt_daemon.Running","phm-core.Running"
+      ],
+      "machine_states": [
+      ],
+      "function_group_states": [
+      {
+              "function_group_name": "Lane_Change_Assistance",
+              "function_group_state": "On"
+          }		       
+    ],
+      "resource_group": "Resource group PHM",
+      "scheduling_policy": "Round Robin",
+      "scheduling_priority": 12,
+      "arguments": ["ON"],
+      "environment": [
+          "PHM_CONFIGURATION=/opt/phm-core/etc/phm.json"
+      ]
+  },
+  {
+      "config_name_for_convenience": "Machine: Startup, Driving, Parking",
+      "depends": ["ara_dlt_daemon.Running","phm-core.Running"
+      ],
+      "machine_states": [
+      ],
+      "function_group_states": [
+      {
+              "function_group_name": "Lane_Change_Assistance",
+              "function_group_state": "Verify"
+          }
+    ],
+      "resource_group": "Resource group PHM",
+      "scheduling_policy": "Round Robin",
+      "scheduling_priority": 12,
+      "arguments": ["VERIFY"],
+      "environment": [
+          "LOG_CONFIG_PATH=/opt/phm-core/etc/log_config.json"
+      ]
+  }
+  ],
+  "service_instance_to_port_prototype_mapping": [
+    {
+      "instance_specifier": "engine_app/rootSwComponentPrototype/PAliveSupervision0001",
+      "service_instance": "/"
+    }
+  ],
+  "persistency_port_prototype_to_key_value_database_mapping": [],
+  "persistency_port_prototype_to_file_array_mapping": []
+}

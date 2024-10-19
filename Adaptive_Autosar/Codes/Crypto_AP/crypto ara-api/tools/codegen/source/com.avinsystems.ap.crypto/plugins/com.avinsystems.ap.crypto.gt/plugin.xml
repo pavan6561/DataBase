@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.sphinx.emf.check.checkvalidators">
+      <validator
+            catalog="resources/crypto_data.checkcatalog"
+            class="com.avinsystems.ap.crypto.gt.check.CryptoDataValidator">
+      </validator>
+      <validator
+            catalog="resources/crypto_constraint.checkcatalog"
+            class="com.avinsystems.ap.crypto.gt.check.CryptoConstraintValidator">
+      </validator>
+   </extension>
+   <extension
+         point="com.avinsystems.ap.gt.core.apgenerator">
+      <datacollector
+            class="com.avinsystems.ap.crypto.gt.collector.CryptoDataCollector"
+            fclongname="CRYPTO"
+            fcname="CRYPTO">
+      </datacollector>
+      <validator
+            constraintvalidator="com.avinsystems.ap.crypto.gt.check.CryptoConstraintValidator"
+            datavalidator="com.avinsystems.ap.crypto.gt.check.CryptoDataValidator">
+      </validator>
+      <manifestgenerator
+            class="com.avinsystems.ap.crypto.gt.generator.CryptoManifestGenerator">
+      </manifestgenerator>
+   </extension>
+
+</plugin>

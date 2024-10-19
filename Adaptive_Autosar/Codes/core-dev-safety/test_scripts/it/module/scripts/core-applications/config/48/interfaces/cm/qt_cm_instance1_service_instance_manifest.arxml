@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>qt_cm_instance1</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/Radar_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_Q4xrQOVcEeueLYDo2wlyRA">
+              <SHORT-NAME>providedEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Radar_Someip/SomeipEventGroup</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_OlIsIPs-EeupU89nyibrZA">
+              <SHORT-NAME>providedEventGroupsField</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/Radar_Someip/SomeipEventGroupField</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>19</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>QtCMInstance1PortPrototypeMapping</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance1/PRadar</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance1</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_cm_instance1</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2b936de9-06e6-439e-a437-9ee2c8d2afd9">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>QtCMInstance1ToMachineMapping</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/qt_cm_instance1</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3001</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

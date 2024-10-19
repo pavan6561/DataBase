@@ -1,0 +1,456 @@
+{
+  "PHMConfiguration": {
+    "FunctionGroups": [
+      {
+        "functionGroupName": "MachineFG",
+        "States": [
+          {
+            "shortName": "MachineFG.Startup",
+            "ProcessSupervisions": [
+              {
+                "ProcessName": "execution-manager",
+                "failedSupervisionCyclesTolerance": 2,
+                "SupervisedEntity": [
+                  {
+                    "supervisedEntityName": "execution-manager/root_sw0/PhmSample/em",
+                    "localSupervisionName": "execution-manager.execution-manager/root_sw0/PhmSample/em",
+                    "AliveSupervision": [
+                      {
+                        "AliveSupervisionRef": 4
+                      }
+                    ],
+                    "DeadlineSupervision": [],
+                    "LogicalSupervision": []
+                  }
+                ],
+                "checksum": 2041340633
+              },
+              {
+                "ProcessName": "StateManager",
+                "failedSupervisionCyclesTolerance": 2,
+                "SupervisedEntity": [
+                  {
+                    "supervisedEntityName": "StateManager/root_sw0/PhmSample/sm",
+                    "localSupervisionName": "StateManager.StateManager/root_sw0/PhmSample/sm",
+                    "AliveSupervision": [
+                    ],
+                    "DeadlineSupervision": [],
+                    "LogicalSupervision": []
+                  }
+                ],
+                "checksum": 3714056177
+              }
+            ],
+            "checksum": 3884654411
+          }
+        ],
+        "checksum": 3291491299
+      },
+      {
+        "functionGroupName": "Lane_Change_Assistance",
+        "States": [
+          {
+            "shortName": "Lane_Change_Assistance.On",
+            "ProcessSupervisions": [
+              {
+                "ProcessName": "engine_app",
+                "failedSupervisionCyclesTolerance": 2,
+                "SupervisedEntity": [
+                  {
+                    "supervisedEntityName": "engine_app/root_sw0/PhmSample/enginePrototype0",
+                    "localSupervisionName": "engine_app.engine_app/root_sw0/PhmSample/enginePrototype0",
+                    "AliveSupervision": [
+                    ],
+                    "DeadlineSupervision": [
+                    ],
+                    "LogicalSupervision": [
+                    ]
+                  }
+                ],
+                "checksum": 1116241374
+              }
+            ],
+            "checksum": 1886511836
+          },
+          {
+            "shortName": "Lane_Change_Assistance.Verify",
+            "ProcessSupervisions": [
+              {
+                "ProcessName": "engine_app",
+                "failedSupervisionCyclesTolerance": 4,
+                "SupervisedEntity": [
+                  {
+                    "supervisedEntityName": "engine_app/root_sw0/PhmSample/enginePrototype0",
+                    "localSupervisionName": "engine_app.engine_app/root_sw0/PhmSample/enginePrototype0",
+                    "AliveSupervision": [
+                      {
+                        "AliveSupervisionRef": 0
+                      }
+                    ],
+                    "DeadlineSupervision": [
+                      {
+                        "DeadlineSupervisionRef": 1
+                      }
+                    ],
+                    "LogicalSupervision": [
+                      {
+                        "LogicalSupervisionRef": 1
+                      }
+                    ]
+                  }
+                ],
+                "checksum": 1116241374
+              },
+              {
+                "ProcessName": "temperature_app",
+                "failedSupervisionCyclesTolerance": 4,
+                "SupervisedEntity": [
+                  {
+                    "supervisedEntityName": "temperature_app/root_sw0/PhmSample/temperaturePrototype0",
+                    "localSupervisionName": "temperature_app.temperature_app/root_sw0/PhmSample/temperaturePrototype0",
+                    "AliveSupervision": [
+                    ],
+                    "DeadlineSupervision": [
+                    ],
+                    "LogicalSupervision": [
+                      {
+                        "LogicalSupervisionRef": 1
+                      }
+                    ]
+                  }
+                ],
+                "checksum": 2181832376
+              }
+            ],
+            "checksum": 1321605947
+          }
+        ],
+        "checksum": 494895310
+      }
+    ],
+    "AliveSupervision": [
+      {
+        "Id": 0,
+        "shortName": "Alive1",
+        "checkpointId": 2,
+        "expectedAliveIndications": 2,
+        "maxMargin": 1,
+        "minMargin": 1,
+        "aliveReferenceCycle": 1000,
+        "checksum": 1979896213
+      },
+      {
+        "Id": 1,
+        "shortName": "engineAlive2",
+        "checkpointId": 3,
+        "expectedAliveIndications": 2,
+        "maxMargin": 1,
+        "minMargin": 1,
+        "aliveReferenceCycle": 500,
+        "checksum": 1213970680
+      },
+      {
+        "Id": 2,
+        "shortName": "engineAlive3",
+        "checkpointId": 2,
+        "expectedAliveIndications": 4,
+        "maxMargin": 2,
+        "minMargin": 2,
+        "aliveReferenceCycle": 400,
+        "checksum": 1063028846
+      },
+      {
+        "Id": 3,
+        "shortName": "temperatureAlive",
+        "checkpointId": 4,
+        "expectedAliveIndications": 4,
+        "maxMargin": 1,
+        "minMargin": 1,
+        "aliveReferenceCycle": 1000,
+        "checksum": 1123386301
+      },
+      {
+        "Id": 4,
+        "shortName": "emAlive",
+        "checkpointId": 41,
+        "expectedAliveIndications": 2,
+        "maxMargin": 1,
+        "minMargin": 1,
+        "aliveReferenceCycle": 3000,
+        "checksum": 3880788722
+      },
+      {
+        "Id": 5,
+        "shortName": "smAlive",
+        "checkpointId": 40,
+        "expectedAliveIndications": 2,
+        "maxMargin": 1,
+        "minMargin": 1,
+        "aliveReferenceCycle": 1000,
+        "checksum": 3814624006
+      }
+    ],
+    "DeadlineSupervision": [
+      {
+        "Id": 0,
+        "shortName": "engineDeadline0",
+        "checkpointTransition": [
+        ],
+        "maxDeadline": 250,
+        "minDeadline": 25,
+        "checksum": 3508291547
+      },
+      {
+        "Id": 1,
+        "shortName": "engineDeadline1",
+        "checkpointTransition": [
+          22,
+          23
+        ],
+        "maxDeadline": 500,
+        "minDeadline": 50,
+        "checksum": 2786817869
+      },
+      {
+        "Id": 2,
+        "shortName": "temperatureDeadline",
+        "checkpointTransition": [
+          24,
+          25
+        ],
+        "maxDeadline": 500,
+        "minDeadline": 50,
+        "checksum": 941431019
+      }
+    ],
+    "LogicalSupervision": [
+      {
+        "Id": 0,
+        "shortName": "engineLogical1",
+        "isSharedAcrossProcess": false,
+        "LogicalTransitions": [
+          {
+            "TransitionNumber": 0,
+            "TransitionInfo": "INITIAL",
+            "Transitions": [
+              {
+                "Source": 65535,
+                "Destination": 19,
+                "IsFinalCheckpoint": false
+              }
+            ]
+          },
+          {
+            "TransitionNumber": 1,
+            "TransitionInfo": "INTRANSITION",
+            "Transitions": [
+              {
+                "Source": 19,
+                "Destination": 20,
+                "IsFinalCheckpoint": false
+              },
+              {
+                "Source": 20,
+                "Destination": 21,
+                "IsFinalCheckpoint": true
+              }
+            ]
+          }
+        ],
+        "checksum": 4183199588
+      },
+      {
+        "Id": 1,
+        "shortName": "engineLogical2",
+        "isSharedAcrossProcess": true,
+        "LogicalTransitions": [
+          {
+            "TransitionNumber": 0,
+            "TransitionInfo": "INITIAL",
+            "Transitions": [
+              {
+                "Source": 65535,
+                "Destination": 14,
+                "IsFinalCheckpoint": false
+              }
+            ]
+          },
+          {
+            "TransitionNumber": 1,
+            "TransitionInfo": "INTRANSITION",
+            "Transitions": [
+              {
+                "Source": 14,
+                "Destination": 15,
+                "IsFinalCheckpoint": false
+              },
+              {
+                "Source": 15,
+                "Destination": 17,
+                "IsFinalCheckpoint": true
+              }
+            ]
+          }
+        ],
+        "checksum": 1616895710
+      }
+    ],
+    "HealthChannelExternalStatus": [
+      {
+        "shortName": "TyrePressueExternalHealthChannel",
+        "status": 1,
+        "processName": "engine_app",
+        "healthChannelPath": "engine_app/root_sw0/PhmSample/tyrePrototype0",
+        "healthChannelSupervisionRef": 1,
+        "checksum": 2228435856
+      }
+    ],
+    "HealthChannelSupervision": [
+      {
+        "Id": 0,
+        "shortName": "EngineHealthChannel",
+        "pport": "PhmSm_Executable/root_SW1/PhmSample/Phm_supervision_PPort",
+        "recoveryNotificationTimeout": 2,
+        "recoveryNotificationRetry": 3,
+        "checksum": 344314688
+      },
+      {
+        "Id": 1,
+        "shortName": "TyrePressueExternalHealthChannel",
+        "pport": "PhmSm_Executable/root_SW1/PhmSample/PhmHealthChannel_PPort",
+        "recoveryNotificationTimeout": 2,
+        "recoveryNotificationRetry": 3,
+        "checksum": 2228435856
+      }
+    ],
+    "WatchdogList": [
+      {
+        "shortName": "watchdog1",
+        "period": 500,
+        "status": "Enable",
+        "checksum": 3710041796
+      }
+    ],
+    "GlobalSupervisionConfig": [
+      {
+        "shortName": "globalSupervisionLaneChangeAssistance",
+        "supervisionCycle": 1000,
+        "expiredSupervisionCyclesTolerance": 2,
+        "functionGroupName": "Lane_Change_Assistance",
+        "IsPlatformApp": false,
+        "healthChannelSupervisionRef": 0,
+        "SupervisedEntity": [
+          {
+            "supervisedEntityName": "engine_app/root_sw0/PhmSample/enginePrototype0",
+            "processName": "engine_app"
+          },
+          {
+            "supervisedEntityName": "temperature_app/root_sw0/PhmSample/temperaturePrototype0",
+            "processName": "temperature_app"
+          }
+        ],
+        "checksum": 1473616163
+      },
+      {
+        "shortName": "globalSupervisionMachineState",
+        "supervisionCycle": 1000,
+        "expiredSupervisionCyclesTolerance": 3,
+        "functionGroupName": "MachineFG",
+        "IsPlatformApp": true,
+        "healthChannelSupervisionRef": 0,
+        "SupervisedEntity": [
+          {
+            "supervisedEntityName": "StateManager/root_sw0/PhmSample/sm",
+            "processName": "StateManager"
+          }
+        ],
+        "checksum": 1436642230
+      }
+    ],
+    "ExecutableProcessConfig": [
+      {
+        "shortName": "execution-manager",
+        "IPCChannel": "User",
+        "IsSMProcess": 0,
+        "SupervisedEntity": [],
+        "checksum": 2041340633
+      },
+      {
+        "shortName": "StateManager",
+        "IPCChannel": "User",
+        "IsSMProcess": 1,
+        "SupervisedEntity": [
+        ],
+        "checksum": 3714056177
+      },
+      {
+        "shortName": "engine_app",
+        "IPCChannel": "Creator",
+        "IsSMProcess": 0,
+        "SupervisedEntity": [
+          {
+            "shortName": "engine_app/root_sw0/PhmSample/enginePrototype0",
+            "AliveSupervision": [
+              {
+                "shortName": "AliveSupervision0",
+                "checkpointId": [
+                  2
+                ]
+              }
+            ],
+            "DeadlineSupervision": [
+              {
+                "shortName": "DeadlineSupervision0",
+                "checkpointId": [
+                  22,
+                  23
+                ]
+              }
+            ],
+            "LogicalSupervision": [
+              {
+                "shortName": "LogicalSupervision0",
+                "checkpointId": [
+                  19,
+                  20,
+                  21
+                ]
+              },
+              {
+                "shortName": "LogicalSupervision1",
+                "checkpointId": [
+                  14
+                ]
+              }
+            ]
+          }
+        ],
+        "checksum": 1116241374
+      },
+      {
+        "shortName": "temperature_app",
+        "IPCChannel": "Creator",
+        "IsSMProcess": 0,
+        "SupervisedEntity": [
+          {
+            "shortName": "temperature_app/root_sw0/PhmSample/temperaturePrototype0",
+            "AliveSupervision": [
+            ],
+            "DeadlineSupervision": [
+            ],
+            "LogicalSupervision": [
+              {
+                "shortName": "LogicalSupervision0",
+                "checkpointId": [
+                  15,
+                  17
+                ]
+              }
+            ]
+          }
+        ],
+        "checksum": 2181832376
+      }
+    ]
+  }
+}

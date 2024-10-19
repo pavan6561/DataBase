@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SomeIpServiceInterfaceDeployment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>SerializeString_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZmxEG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString2MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_String2MSBF</EVENT-REF>
+              <EVENT-ID>27</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZnYIG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString2MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_String2MSBL</EVENT-REF>
+              <EVENT-ID>28</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZnYIW3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString4MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_String4MSBF</EVENT-REF>
+              <EVENT-ID>29</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZn_MG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString4MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_String4MSBL</EVENT-REF>
+              <EVENT-ID>30</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_Txh2kG_AEeyzPKJ4PsT75w">
+              <SHORT-NAME>EventStringOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_StringOne</EVENT-REF>
+              <EVENT-ID>31</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IHeCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringBothNoLength_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_StringBothNoLength</EVENT-REF>
+              <EVENT-ID>32</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IXeCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringBothNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_StringBothNoByteOrder</EVENT-REF>
+              <EVENT-ID>33</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IneCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringNoLength_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_StringNoLength</EVENT-REF>
+              <EVENT-ID>34</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8I3eCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString/Event_StringNoByteOrder</EVENT-REF>
+              <EVENT-ID>35</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/SerializeString</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_5fZf8G3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>402</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventString2MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventString2MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventString4MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventString4MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventStringOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventStringBothNoLength_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventStringBothNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventStringNoLength_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventStringNoByteOrder_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>102</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>SerializeStringCanoe_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZmxEG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString2MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_String2MSBF</EVENT-REF>
+              <EVENT-ID>27</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZnYIG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString2MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_String2MSBL</EVENT-REF>
+              <EVENT-ID>28</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZnYIW3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString4MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_String4MSBF</EVENT-REF>
+              <EVENT-ID>29</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_bZn_MG3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventString4MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_String4MSBL</EVENT-REF>
+              <EVENT-ID>30</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_Txh2kG_AEeyzPKJ4PsT75w">
+              <SHORT-NAME>EventStringOne_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_StringOne</EVENT-REF>
+              <EVENT-ID>31</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IHeCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringBothNoLength_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_StringBothNoLength</EVENT-REF>
+              <EVENT-ID>32</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IXeCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringBothNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_StringBothNoByteOrder</EVENT-REF>
+              <EVENT-ID>33</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8IneCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringNoLength_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_StringNoLength</EVENT-REF>
+              <EVENT-ID>34</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_KXQ8I3eCEeyO06mzu3YoGw">
+              <SHORT-NAME>EventStringNoByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/SerializeString_Canoe/Event_StringNoByteOrder</EVENT-REF>
+              <EVENT-ID>35</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/SerializeString_Canoe</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_5fZf8G3lEeyL0962B6SCEA">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>402</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventString2MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventString2MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventString4MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventString4MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventStringOne_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventStringBothNoLength_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventStringBothNoByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventStringNoLength_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip/EventStringNoByteOrder_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>102</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="bb9e6dcd-adfb-41ea-b5d5-880b018e65aa">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_ProvidedSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeString_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_qTSJAG4PEeyL0962B6SCEA">
+              <SHORT-NAME>providedEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>101</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_RequiredSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/SomeIpServiceInterfaceDeployment/SerializeStringCanoe_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-EVENT-GROUPS>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/SomeIpServiceInterfaceDeployment/SerializeString_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+          </REQUIRED-EVENT-GROUPS>
+          <REQUIRED-SERVICE-INSTANCE-ID>105</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="198de014-b3b4-45f2-bcfa-ea3311ad3214">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_Provided_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/SerializeString_qt_cm_instance2_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3003</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_Required_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/SerializeString_qt_cm_instance2_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>0</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2f6dc4bd-849f-4278-82d1-98e2cea7daaa">
+      <SHORT-NAME>ServiceInstanceToPortMapping</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_ProvidedSomeipServiceInstance_PSerializeString_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance2/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance2/PSerializeString</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance2</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/SerializeString_qt_cm_instance2_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>SerializeString_qt_cm_instance2_RequiredSomeipServiceInstance_RSerializeString_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance2/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance2/RSerializeString</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance2</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/SerializeString_qt_cm_instance2_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

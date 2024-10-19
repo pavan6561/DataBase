@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2023-04-27T06:59:44" time="0" name="AllTests">
+  <testsuite name="SteadyClockTest" tests="2" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="StaticTypeProperties" status="run" time="0" classname="SteadyClockTest" />
+    <testcase name="GetTimestamp" status="run" time="0" classname="SteadyClockTest" />
+  </testsuite>
+</testsuites>

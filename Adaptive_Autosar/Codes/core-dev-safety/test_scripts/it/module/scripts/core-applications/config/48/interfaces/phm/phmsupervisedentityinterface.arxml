@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PhmSupervisedEntityInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_Alive</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_L3a6sBuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kInitialize</SHORT-NAME>
+              <CHECKPOINT-ID>1</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_Deadline</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_QrYY8BuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kDoorSource</SHORT-NAME>
+              <CHECKPOINT-ID>3</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_QrZAABuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kDoorTarget</SHORT-NAME>
+              <CHECKPOINT-ID>4</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_Logical</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_Xr0V0BuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kStart</SHORT-NAME>
+              <CHECKPOINT-ID>5</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Xr084BuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kStop</SHORT-NAME>
+              <CHECKPOINT-ID>6</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Xr1j8BuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kResume</SHORT-NAME>
+              <CHECKPOINT-ID>7</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Xr1j8RuVEeyc--wwdcX3EQ">
+              <SHORT-NAME>kShutdown</SHORT-NAME>
+              <CHECKPOINT-ID>8</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_GlobalExpiredToStopped</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_fSlo4B-FEeyJI9P1GBOXwQ">
+              <SHORT-NAME>kOK</SHORT-NAME>
+              <CHECKPOINT-ID>9</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_fSlo4R-FEeyJI9P1GBOXwQ">
+              <SHORT-NAME>kFailed</SHORT-NAME>
+              <CHECKPOINT-ID>10</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_r7fLYCA7Eey2B8sRrnbozQ">
+              <SHORT-NAME>kExpired</SHORT-NAME>
+              <CHECKPOINT-ID>11</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_AliveMultiple</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_2dGmMDupEeyGvoay7vl0eQ">
+              <SHORT-NAME>kAliveMultiple</SHORT-NAME>
+              <CHECKPOINT-ID>13</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_DeadlineNegative</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_Kn4WMD8HEeyb39Kact-V_Q">
+              <SHORT-NAME>kLightOn</SHORT-NAME>
+              <CHECKPOINT-ID>14</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Ct8osD8LEeyb39Kact-V_Q">
+              <SHORT-NAME>kLightOff</SHORT-NAME>
+              <CHECKPOINT-ID>15</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_Watchdog</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_CVPK4ExKEey2KtHgFKW_QA">
+              <SHORT-NAME>kIndicatorOn</SHORT-NAME>
+              <CHECKPOINT-ID>16</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_CVPK4UxKEey2KtHgFKW_QA">
+              <SHORT-NAME>kIndicatorOff</SHORT-NAME>
+              <CHECKPOINT-ID>17</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Is6O4ExbEey2KtHgFKW_QA">
+              <SHORT-NAME>kPlay</SHORT-NAME>
+              <CHECKPOINT-ID>18</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Is6O4UxbEey2KtHgFKW_QA">
+              <SHORT-NAME>kPause</SHORT-NAME>
+              <CHECKPOINT-ID>19</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_Is6O4kxbEey2KtHgFKW_QA">
+              <SHORT-NAME>kReverse</SHORT-NAME>
+              <CHECKPOINT-ID>20</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_FunctionGrpModeRequest</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_WNqogFEZEey8LvdfSmIsOg">
+              <SHORT-NAME>kWiperTimer1On</SHORT-NAME>
+              <CHECKPOINT-ID>21</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_W7btcFEZEey8LvdfSmIsOg">
+              <SHORT-NAME>KWiperTimer1Off</SHORT-NAME>
+              <CHECKPOINT-ID>22</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="6dab847c-8a28-4c81-94c7-f0e985e7361f">
+      <SHORT-NAME>PhmRecoveryActionInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <PHM-RECOVERY-ACTION-INTERFACE>
+          <SHORT-NAME>PhmRecoveryAction</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <RECOVERY UUID="_gpBb4B97EeyJI9P1GBOXwQ">
+            <SHORT-NAME>RecoveryMethod</SHORT-NAME>
+            <FIRE-AND-FORGET>true</FIRE-AND-FORGET>
+          </RECOVERY>
+        </PHM-RECOVERY-ACTION-INTERFACE>
+        <PHM-RECOVERY-ACTION-INTERFACE>
+          <SHORT-NAME>PhmRecoveryAction2</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <RECOVERY UUID="_iJVGwDx0EeySp-Y4pRc7_Q">
+            <SHORT-NAME>RecoveryMethod</SHORT-NAME>
+            <FIRE-AND-FORGET>true</FIRE-AND-FORGET>
+          </RECOVERY>
+        </PHM-RECOVERY-ACTION-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="b8bb08d6-eaa7-4e31-9037-71dadfd0e651">
+      <SHORT-NAME>PhmHealthChannelInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <PHM-HEALTH-CHANNEL-INTERFACE>
+          <SHORT-NAME>PhmHealthChannelInterface_HCSupervision</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <STATUSS>
+            <PHM-HEALTH-CHANNEL-STATUS UUID="_wrOUMB97EeyJI9P1GBOXwQ">
+              <SHORT-NAME>kHigh</SHORT-NAME>
+              <STATUS-ID>2</STATUS-ID>
+            </PHM-HEALTH-CHANNEL-STATUS>
+            <PHM-HEALTH-CHANNEL-STATUS UUID="_8pLtAD1hEeyW7_uLJ734tQ">
+              <SHORT-NAME>kLow</SHORT-NAME>
+              <STATUS-ID>1</STATUS-ID>
+            </PHM-HEALTH-CHANNEL-STATUS>
+          </STATUSS>
+        </PHM-HEALTH-CHANNEL-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

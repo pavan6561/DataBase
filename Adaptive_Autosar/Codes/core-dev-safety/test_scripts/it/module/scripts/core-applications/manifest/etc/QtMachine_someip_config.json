@@ -1,0 +1,1526 @@
+{
+  "unicast": "192.168.100.60",
+  "iptype": "IPv4",
+  "logging": {
+    "level": "debug",
+    "console": "true",
+    "file": {
+      "enable": "false",
+      "path": "/tmp/vsomeip.log"
+    },
+    "dlt": "true"
+  },
+  "applications": [
+    {
+      "name": "qt_cm_instance1",
+      "id": "0x58c1f3"
+    },
+    {
+      "name": "qt_statemanager",
+      "id": "0x83c5aa"
+    },
+    {
+      "name": "qt_crypto_instance1",
+      "id": "0x82cfd2"
+    },
+    {
+      "name": "package_manager",
+      "id": "0x1ee2c3"
+    },
+    {
+      "name": "qt_ucm_updateadapter",
+      "id": "0x605163"
+    },
+    {
+      "name": "qt_ucm_instance1",
+      "id": "0x4bc56b"
+    },
+    {
+      "name": "qt_phm_instance1",
+      "id": "0x51b010"
+    },
+    {
+      "name": "qt_phm_instance2",
+      "id": "0xd4810d"
+    },
+    {
+      "name": "crypto_core",
+      "id": "0xaeaa4c"
+    },
+    {
+      "name": "ara_someip_routing_daemon",
+      "id": "0xa5ca48"
+    },
+    {
+      "name": "qt_ota_client",
+      "id": "0xa9c0d2"
+    },
+    {
+      "name": "qt_driver_application",
+      "id": "0xf1032e"
+    },
+    {
+      "name": "qt_cm_instance2",
+      "id": "0x84f2b5"
+    },
+    {
+      "name": "qt_cm_instance3",
+      "id": "0xe99346"
+    },
+    {
+      "name": "qt_cm_instance4",
+      "id": "0xdd9357"
+    },
+    {
+      "name": "qt_phm_instance3",
+      "id": "0xed8f71"
+    },
+    {
+      "name": "qt_tsync_instance1",
+      "id": "0x964370"
+    },
+    {
+      "name": "tsync_core",
+      "id": "0x54d28b"
+    }
+  ],
+  "services": [
+    {
+      "service": "0x64",
+      "instance": "0x6",
+      "major_version": "0x1",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "8003"
+    },
+    {
+      "service": "0x1e",
+      "instance": "0x5",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "8002"
+    },
+    {
+      "service": "0x65",
+      "instance": "0x66",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x8014",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801e",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801f",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8020",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801b",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801c",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801d",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8019",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8015",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8016",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8017",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8018",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8021",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8022",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8023",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8024",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8025",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8032",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8033",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8034",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8035",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8036",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8037",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8038",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8039",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803a",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803b",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803c",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803d",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803e",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803f",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x6e",
+          "events": [
+            "0x8014",
+            "0x801e",
+            "0x801f",
+            "0x8020",
+            "0x801a",
+            "0x801b",
+            "0x801c",
+            "0x801d",
+            "0x8019",
+            "0x8015",
+            "0x8016",
+            "0x8017",
+            "0x8018",
+            "0x8021",
+            "0x8022",
+            "0x8023",
+            "0x8024",
+            "0x8025"
+          ]
+        },
+        {
+          "eventgroup": "0x191",
+          "events": [
+            "0x8032",
+            "0x8033",
+            "0x8034",
+            "0x8035",
+            "0x8036",
+            "0x8037",
+            "0x8038",
+            "0x8039",
+            "0x803a",
+            "0x803b",
+            "0x803c",
+            "0x803d",
+            "0x803e",
+            "0x803f"
+          ]
+        }
+      ],
+      "unreliable": "3004"
+    },
+    {
+      "service": "0x65",
+      "instance": "0x67",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x8014",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801e",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801f",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8020",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801b",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801c",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801d",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8019",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8015",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8016",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8017",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8018",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8021",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8022",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8023",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8024",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8025",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8032",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8033",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8034",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8035",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8036",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8037",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8038",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8039",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803a",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803b",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803c",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803d",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803e",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x803f",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x6e",
+          "events": [
+            "0x8014",
+            "0x801e",
+            "0x801f",
+            "0x8020",
+            "0x801a",
+            "0x801b",
+            "0x801c",
+            "0x801d",
+            "0x8019",
+            "0x8015",
+            "0x8016",
+            "0x8017",
+            "0x8018",
+            "0x8021",
+            "0x8022",
+            "0x8023",
+            "0x8024",
+            "0x8025"
+          ]
+        },
+        {
+          "eventgroup": "0x191",
+          "events": [
+            "0x8032",
+            "0x8033",
+            "0x8034",
+            "0x8035",
+            "0x8036",
+            "0x8037",
+            "0x8038",
+            "0x8039",
+            "0x803a",
+            "0x803b",
+            "0x803c",
+            "0x803d",
+            "0x803e",
+            "0x803f"
+          ]
+        }
+      ],
+      "unreliable": "0"
+    },
+    {
+      "someip-tp": {
+        "service-to-client": [
+          "0x801a"
+        ]
+      },
+      "service": "0x64",
+      "instance": "0x64",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x800a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800b",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800c",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800d",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800e",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800f",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8010",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8011",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8012",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8013",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8014",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8015",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8016",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8017",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8018",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8019",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80c9",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80cd",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80d0",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80d3",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8100",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8105",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8108",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x810b",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x810e",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8111",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8114",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8117",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x190",
+          "events": [
+            "0x800a",
+            "0x800b",
+            "0x800c",
+            "0x800d",
+            "0x800e",
+            "0x800f",
+            "0x8010",
+            "0x8011",
+            "0x8012",
+            "0x8013",
+            "0x8014",
+            "0x8015",
+            "0x8016",
+            "0x8017",
+            "0x8018",
+            "0x8019",
+            "0x801a"
+          ]
+        },
+        {
+          "eventgroup": "0x191",
+          "events": [
+            "0x80c9",
+            "0x80cd",
+            "0x80d0",
+            "0x80d3",
+            "0x8100",
+            "0x8105",
+            "0x8108",
+            "0x810b",
+            "0x8114",
+            "0x810e",
+            "0x8111",
+            "0x8117"
+          ]
+        }
+      ],
+      "unreliable": "3002"
+    },
+    {
+      "service": "0x64",
+      "instance": "0xc8",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x800a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800b",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800c",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800d",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800e",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x800f",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8010",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8011",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8012",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8013",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8014",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8015",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8016",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8017",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8018",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8019",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x801a",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80c9",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80cd",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80d0",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x80d3",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8100",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8105",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8108",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x810b",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x810e",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8111",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8114",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8117",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x190",
+          "events": [
+            "0x800a",
+            "0x800b",
+            "0x800c",
+            "0x800d",
+            "0x800e",
+            "0x800f",
+            "0x8010",
+            "0x8011",
+            "0x8012",
+            "0x8013",
+            "0x8014",
+            "0x8015",
+            "0x8016",
+            "0x8017",
+            "0x8018",
+            "0x8019",
+            "0x801a"
+          ]
+        },
+        {
+          "eventgroup": "0x191",
+          "events": [
+            "0x80c9",
+            "0x80cd",
+            "0x80d0",
+            "0x80d3",
+            "0x8100",
+            "0x8105",
+            "0x8108",
+            "0x810b",
+            "0x8114",
+            "0x810e",
+            "0x8111",
+            "0x8117"
+          ]
+        }
+      ],
+      "unreliable": "0"
+    },
+    {
+      "service": "0x66",
+      "instance": "0x67",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "3005"
+    },
+    {
+      "service": "0x66",
+      "instance": "0x67",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "0"
+    },
+    {
+      "service": "0x5",
+      "instance": "0x2",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "5002"
+    },
+    {
+      "service": "0x5",
+      "instance": "0x3",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "5003"
+    },
+    {
+      "service": "0x5",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "5001"
+    },
+    {
+      "service": "0xa",
+      "instance": "0x2",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "2001"
+    },
+    {
+      "service": "0x63",
+      "instance": "0x13",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x8001",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        },
+        {
+          "event": "0x8bb8",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x1",
+          "events": [
+            "0x8001"
+          ]
+        },
+        {
+          "eventgroup": "0x3",
+          "events": [
+            "0x8bb8"
+          ]
+        }
+      ],
+      "unreliable": "3001"
+    },
+    {
+      "service": "0xf",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4001"
+    },
+    {
+      "service": "0x19",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4002"
+    },
+    {
+      "service": "0x1a",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4003"
+    },
+    {
+      "service": "0x1e",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4004"
+    },
+    {
+      "service": "0x1f",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4005"
+    },
+    {
+      "service": "0x32",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4006"
+    },
+    {
+      "service": "0x21",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4007"
+    },
+    {
+      "service": "0x20",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4008"
+    },
+    {
+      "service": "0x22",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4009"
+    },
+    {
+      "service": "0x46",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4010"
+    },
+    {
+      "service": "0x47",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4011"
+    },
+    {
+      "service": "0x25",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4014"
+    },
+    {
+      "service": "0x24",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4013"
+    },
+    {
+      "service": "0x23",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4012"
+    },
+    {
+      "service": "0x26",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4016"
+    },
+    {
+      "service": "0x49",
+      "service": "0x14",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4017"
+    },
+    {
+      "service": "0x50",
+      "unreliable": "7002"
+    },
+    {
+      "service": "0xc8",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4024"
+    },
+    {
+      "service": "0x55",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4030"
+    },
+    {
+      "service": "0x4a",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4018"
+    },
+    {
+      "service": "0x4b",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4019"
+    },
+    {
+      "service": "0x52",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4026"
+    },
+    {
+      "service": "0x4d",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4021"
+    },
+    {
+      "service": "0x4c",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4020"
+    },
+    {
+      "service": "0x51",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4025"
+    },
+    {
+      "service": "0x4e",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4022"
+    },
+    {
+      "service": "0x4f",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4023"
+    },
+    {
+      "service": "0x4e",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4022"
+    },
+    {
+      "service": "0x49",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4017"
+    },
+    {
+      "service": "0x4b",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4019"
+    },
+    {
+      "service": "0x4d",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4021"
+    },
+    {
+      "service": "0x4a",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4018"
+    },
+    {
+      "service": "0x2c",
+      "instance": "0x1",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4020"
+    },
+    {
+      "service": "0x53",
+      "instance": "0x1",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "4027"
+      "unreliable": "9000"
+    },
+    {
+      "reliable": {
+        "port": 7001,
+        "enable-magic-cookies": false
+      },
+      "service": "0x587",
+      "instance": "0x587",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [
+        {
+          "event": "0x8002",
+          "is_field": "true",
+          "is_reliable": "false",
+          "update-cycle": 2000
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x1",
+          "events": [
+            "0x8002"
+          ]
+        }
+      ]
+    },
+    {
+      "service": "0x7",
+      "instance": "0x6",
+      "major_version": "0x0",
+      "minor_version": "0x0",
+      "is_provider": "true",
+      "events": [],
+      "eventgroups": [],
+      "unreliable": "3318"
+    }
+  ],
+  "service-discovery": {
+    "enable": "true",
+    "multicast": "239.192.255.251",
+    "port": "30490",
+    "protocol": "udp",
+    "initial_delay_min": "10",
+    "initial_delay_max": "100",
+    "repetitions_base_delay": "200",
+    "repetitions_max": "3",
+    "ttl": "255",
+    "cyclic_offer_delay": "2000",
+    "request_response_delay": "1500"
+  }
+}

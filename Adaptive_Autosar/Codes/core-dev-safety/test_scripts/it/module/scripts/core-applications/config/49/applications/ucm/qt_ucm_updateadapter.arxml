@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="e563b83d-f5de-4043-8c73-f8006f58158d">
+      <SHORT-NAME>AdaptiveApplicationSwComponents</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>qt_ucm_updateadapter</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="__DqnMN9CEeu6a_Z_5w6Qxw">
+              <SHORT-NAME>UpdateAdapterRport</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/UpdateAdapter</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="_N55CQB0VEey6Z4QaZJGpRQ">
+              <SHORT-NAME>RCryptoProviderUCMPort</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CRYPTO-PROVIDER-INTERFACE">/CryptoInterfaces/CryptoProviderInterface</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          <SHORT-NAME>DisplaySpeed_Someip</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventStruct_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_struct</EVENT-REF>
+              <EVENT-ID>10</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventArray_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_array</EVENT-REF>
+              <EVENT-ID>11</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgipeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventVector_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_vector</EVENT-REF>
+              <EVENT-ID>12</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_8CamgypeEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventMaps_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_maps</EVENT-REF>
+              <EVENT-ID>13</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_oT-xQFf2Eey8Kql-zJDS4A">
+              <SHORT-NAME>EventStruct_serialize_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_struct_serialize</EVENT-REF>
+              <EVENT-ID>14</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_Hf3e0F40Eey6jvaNCICSOQ">
+              <SHORT-NAME>EventByteOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/EventByteOrder</EVENT-REF>
+              <EVENT-ID>15</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_Hf3e0V40Eey6jvaNCICSOQ">
+              <SHORT-NAME>EventLegthField_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/EventLengthField</EVENT-REF>
+              <EVENT-ID>16</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_aQRZQF51Eey6jvaNCICSOQ">
+              <SHORT-NAME>EventOrder_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Order</EVENT-REF>
+              <EVENT-ID>17</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tCagQF6OEey6jvaNCICSOQ">
+              <SHORT-NAME>EventDynamicTrue_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_DynamicTrue</EVENT-REF>
+              <EVENT-ID>18</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_tCagQV6OEey6jvaNCICSOQ">
+              <SHORT-NAME>EventDynmaicFalse_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_DynamicFalse</EVENT-REF>
+              <EVENT-ID>19</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="__yFW4GFsEey_pvrZZioDng">
+              <SHORT-NAME>EventLength_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length</EVENT-REF>
+              <EVENT-ID>20</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_DCwLcGIzEeye1qpLNtLNkA">
+              <SHORT-NAME>EventTLV_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_TLV</EVENT-REF>
+              <EVENT-ID>21</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_iMGqQGcvEeyks-ikMB_nTA">
+              <SHORT-NAME>EventLength2MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBF</EVENT-REF>
+              <EVENT-ID>22</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_iMGqQWcvEeyks-ikMB_nTA">
+              <SHORT-NAME>EventLength2MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length2MSBL</EVENT-REF>
+              <EVENT-ID>23</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_iMGqQmcvEeyks-ikMB_nTA">
+              <SHORT-NAME>EventLength4MSBF_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBF</EVENT-REF>
+              <EVENT-ID>24</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_iMGqQ2cvEeyks-ikMB_nTA">
+              <SHORT-NAME>EventLength4MSBL_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_Length4MSBL</EVENT-REF>
+              <EVENT-ID>25</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_wPsDAGieEeyqB8kYCFnHRA">
+              <SHORT-NAME>EventSomeipSeg_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_SomeIpSeg</EVENT-REF>
+              <EVENT-ID>26</EVENT-ID>
+              <MAXIMUM-SEGMENT-LENGTH>1392</MAXIMUM-SEGMENT-LENGTH>
+              <SEPARATION-TIME>0.0</SEPARATION-TIME>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="_INJQsJLbEeyzd6frGeFWTw">
+              <SHORT-NAME>EventSameData_Someip</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/DisplaySpeed/Event_SameData</EVENT-REF>
+              <EVENT-ID>40</EVENT-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Condition_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/Condition</FIELD-REF>
+              <GET UUID="_H-hZ4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>200</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_J06TwCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>201</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_KNHYYCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>202</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Identifier_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/Identifier</FIELD-REF>
+              <GET UUID="_Kq45gCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>204</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_K8yh0CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>205</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_LOTIkCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>206</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcipeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Status_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/Status</FIELD-REF>
+              <GET UUID="_LvdU4CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>207</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_MAYs0CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>208</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_MXwD8CpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>209</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_8xQCcypeEeyWSv_QnPX-rA">
+              <SHORT-NAME>PowerMode_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/PowerMode</FIELD-REF>
+              <GET UUID="_MxkSICpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>210</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_NBAcUCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>211</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_NUR9oCpkEeyWSv_QnPX-rA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>212</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_3qfoQFf2Eey8Kql-zJDS4A">
+              <SHORT-NAME>PowerStruct_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/PowerStruct</FIELD-REF>
+              <GET UUID="_BT_coFf4Eeyvaa6h6_h4HA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>255</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_BpwRQFf4Eeyvaa6h6_h4HA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>256</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_CAevMFf4Eeyvaa6h6_h4HA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>257</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_VEVwcF40Eey6jvaNCICSOQ">
+              <SHORT-NAME>Struct_order_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/StructOrder</FIELD-REF>
+              <GET UUID="_fRYMMF40Eey6jvaNCICSOQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>260</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_foCYsF40Eey6jvaNCICSOQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>261</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_f7lm0F40Eey6jvaNCICSOQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>262</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_VEVwcV40Eey6jvaNCICSOQ">
+              <SHORT-NAME>ByteOrder_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/ByteOrder</FIELD-REF>
+              <GET UUID="_qtlJwF40Eey6jvaNCICSOQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>263</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_rEU10F40Eey6jvaNCICSOQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>264</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_rU8EsF40Eey6jvaNCICSOQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>265</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_9ao1QF51Eey6jvaNCICSOQ">
+              <SHORT-NAME>StructLength_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/StructLength</FIELD-REF>
+              <GET UUID="_GTkk0F52Eey6jvaNCICSOQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>266</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_Gnp-cF52Eey6jvaNCICSOQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>267</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_G7uxAF52Eey6jvaNCICSOQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>268</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_uGbiAF6OEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicTrue_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/DynamicTrue</FIELD-REF>
+              <GET UUID="_GI-8EF6PEey6jvaNCICSOQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>269</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_GbS0EF6PEey6jvaNCICSOQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>270</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_GwBG4F6PEey6jvaNCICSOQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>271</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_uGbiAV6OEey6jvaNCICSOQ">
+              <SHORT-NAME>DynamicFalse_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/DynamicFalse</FIELD-REF>
+              <GET UUID="_HXNpwF6PEey6jvaNCICSOQ">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>272</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_HoRkkF6PEey6jvaNCICSOQ">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>273</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_H40iAF6PEey6jvaNCICSOQ">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>274</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_DF_-sGFtEey_pvrZZioDng">
+              <SHORT-NAME>DataLength_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/LengthOne</FIELD-REF>
+              <GET UUID="_KQU3YGFtEey_pvrZZioDng">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>275</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_Ko4hUGFtEey_pvrZZioDng">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>276</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_K5bewGFtEey_pvrZZioDng">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>277</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_QWyNUGIzEeye1qpLNtLNkA">
+              <SHORT-NAME>TLVDataLength_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/TLVDataLength</FIELD-REF>
+              <GET UUID="_YYmusGIzEeye1qpLNtLNkA">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>278</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_YqnEsGIzEeye1qpLNtLNkA">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>279</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_ZCziQGIzEeye1qpLNtLNkA">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>280</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="_Xi-yQJLbEeyzd6frGeFWTw">
+              <SHORT-NAME>FieldSubscribe_Someip</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterfaces/DisplaySpeed/FieldSubscribe</FIELD-REF>
+              <GET UUID="_cWrx0JLbEeyzd6frGeFWTw">
+                <SHORT-NAME>get</SHORT-NAME>
+                <METHOD-ID>281</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="_cwZSUJLbEeyzd6frGeFWTw">
+                <SHORT-NAME>notifier</SHORT-NAME>
+                <EVENT-ID>282</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="_dD75YJLbEeyzd6frGeFWTw">
+                <SHORT-NAME>set</SHORT-NAME>
+                <METHOD-ID>283</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>InitialMode_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/InitMonitor</METHOD-REF>
+              <METHOD-ID>300</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkSpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_struct_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_struct</METHOD-REF>
+              <METHOD-ID>301</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMCpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_vector_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_vector</METHOD-REF>
+              <METHOD-ID>302</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZugMSpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_array_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_array</METHOD-REF>
+              <METHOD-ID>303</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_HZvHQCpjEeyWSv_QnPX-rA">
+              <SHORT-NAME>DataElement_maps_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_maps</METHOD-REF>
+              <METHOD-ID>304</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_-7NYkCpeEeyWSv_QnPX-rA">
+              <SHORT-NAME>Echo_array_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/Echo_array</METHOD-REF>
+              <METHOD-ID>305</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+           <SOMEIP-METHOD-DEPLOYMENT UUID="_50pjoENmEeyeH-0-lCKGeQ">
+              <SHORT-NAME>SubscriptionState_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/SubscriptionState</METHOD-REF>
+              <METHOD-ID>306</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_50pjoENmEeyeH-0-lCKGeQ">
+              <SHORT-NAME>SampleCount_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/SampleCount</METHOD-REF>
+              <METHOD-ID>307</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="_1ktecGLhEeysOvx3aW6tqw">
+              <SHORT-NAME>DataElementTLV_Someip</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/DisplaySpeed/DataElement_TLV</METHOD-REF>
+              <METHOD-ID>308</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/DisplaySpeed</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="_AUb1UCpfEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventDataType_Someip</SHORT-NAME>
+              <EVENT-GROUP-ID>400</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventStruct_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventArray_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventVector_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventMaps_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventStruct_serialize_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventByteOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLegthField_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventOrder_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDynamicTrue_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDynmaicFalse_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLength_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventTLV_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLength2MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLength2MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLength4MSBF_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventLength4MSBL_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventSomeipSeg_Someip</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventSameData_Someip</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="_AUb1USpfEeyWSv_QnPX-rA">
+              <SHORT-NAME>EventDataType_SomeipField</SHORT-NAME>
+              <EVENT-GROUP-ID>401</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/Condition_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/Identifier_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/Status_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/PowerMode_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/PowerStruct_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/Struct_order_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/ByteOrder_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/StructLength_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/DataLength_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/DynamicTrue_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/DynamicFalse_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/TLVDataLength_Someip/notifier</EVENT-REF>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip/FieldSubscribe_Someip/notifier</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>100</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>0</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1ca57afb-4f0e-4102-83cc-086713134a2b">
+      <SHORT-NAME>ServiceInstances</SHORT-NAME>
+      <ELEMENTS>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_ProvidedSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoCp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="_IdCuoSp0EeyWSv_QnPX-rA">
+              <SHORT-NAME>providedEventGroupsField</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDataType_SomeipField</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>1</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdServerServiceInstance</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>100</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_RequiredSomeipServiceInstance</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceInterfaceDeployments/DisplaySpeed_Someip</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <REQUIRED-EVENT-GROUPS>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroups</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDataType_Someip</EVENT-GROUP-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>requiredEventGroupsField</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceInterfaceDeployments/DisplaySpeed_Someip/EventDataType_SomeipField</EVENT-GROUP-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+          </REQUIRED-EVENT-GROUPS>
+          <REQUIRED-SERVICE-INSTANCE-ID>200</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/SomeipSdTimingConfigs/SomeipSdClientServiceInstance</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="c44a0145-6c8c-41f7-8587-fabbb26003fd">
+      <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_Provided_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/DisplaySpeed_qt_cm_instance2_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>3002</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_Required_ServiceInstance_toMachine</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/EthernetCluster/QtMachine/EthernetCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/DisplaySpeed_qt_cm_instance2_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>0</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="49440f8e-db7d-491a-98a4-f09f363c892a">
+      <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_ProvidedSomeipServiceInstance_PDisplaySpeed_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance2/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance2/PDisplaySpeed</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance2</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance2</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/DisplaySpeed_qt_cm_instance2_ProvidedSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+        <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          <SHORT-NAME>DisplaySpeed_qt_cm_instance2_RequiredSomeipServiceInstance_RDisplaySpeed_toPort</SHORT-NAME>
+          <PORT-PROTOTYPE-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_cm_instance2/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_cm_instance2/RDisplaySpeed</TARGET-PORT-PROTOTYPE-REF>
+          </PORT-PROTOTYPE-IREF>
+          <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/ProcessDesigns/qt_cm_instance2</PROCESS-DESIGN-REF>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_cm_instance2</PROCESS-REF>
+          <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstances/DisplaySpeed_qt_cm_instance2_RequiredSomeipServiceInstance</SERVICE-INSTANCE-REF>
+        </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

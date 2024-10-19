@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PlatformHealthManagementContributions</SHORT-NAME>
+      <ELEMENTS>
+        <PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION>
+          <SHORT-NAME>PlatformHealthManagementContribution1</SHORT-NAME>
+          <CHECKPOINTS>
+            <SUPERVISION-CHECKPOINT UUID="_ZauuELfREeuS5Z9XimcdqA">
+              <SHORT-NAME>SCInitializing</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RAlive</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Alive/kInitialize</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_ZLIgcPYaEeuL-9_6UJTbrQ">
+              <SHORT-NAME>SCWindowSource</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadline</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Deadline/kDoorSource</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_ZLIgcfYaEeuL-9_6UJTbrQ">
+              <SHORT-NAME>SCWindowTarget</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadline</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Deadline/kDoorTarget</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_t8aWMATwEeyEWKIqpShLog">
+              <SHORT-NAME>SCStart</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RLogical</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Logical/kStart</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_t8a9QATwEeyEWKIqpShLog">
+              <SHORT-NAME>SCStop</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RLogical</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Logical/kStop</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_t8bkUATwEeyEWKIqpShLog">
+              <SHORT-NAME>SCResume</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RLogical</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Logical/kResume</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_t8bkUQTwEeyEWKIqpShLog">
+              <SHORT-NAME>SCShutdown</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RLogical</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Logical/kShutdown</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_IuCUQCA9Eey2B8sRrnbozQ">
+              <SHORT-NAME>SCOK</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RGlobalExpiredToStopped</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_GlobalExpiredToStopped/kOK</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_IuCUQSA9Eey2B8sRrnbozQ">
+              <SHORT-NAME>SCFailed</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RGlobalExpiredToStopped</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_GlobalExpiredToStopped/kFailed</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_IuCUQiA9Eey2B8sRrnbozQ">
+              <SHORT-NAME>SCExpired</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RGlobalExpiredToStopped</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_GlobalExpiredToStopped/kExpired</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_r4AvcDusEeyGvoay7vl0eQ">
+              <SHORT-NAME>SCAliveMultiple</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RAliveMultiple</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_AliveMultiple/kAliveMultiple</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_GeAZ8D8LEeyb39Kact-V_Q">
+              <SHORT-NAME>SCLightOn</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadlineNegative</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_DeadlineNegative/kLightOn</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_GeAZ8T8LEeyb39Kact-V_Q">
+              <SHORT-NAME>SCLightOff</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadlineNegative</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_DeadlineNegative/kLightOff</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_Vop8UExKEey2KtHgFKW_QA">
+              <SHORT-NAME>SCIndicatorOn</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Watchdog/kIndicatorOn</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_Vop8UUxKEey2KtHgFKW_QA">
+              <SHORT-NAME>SCIndicatorOff</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Watchdog/kIndicatorOff</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_L3cCcExhEey2KtHgFKW_QA">
+              <SHORT-NAME>SCPlay</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Watchdog/kPlay</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_L3lzcExhEey2KtHgFKW_QA">
+              <SHORT-NAME>SCPause</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Watchdog/kPause</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_L3lzcUxhEey2KtHgFKW_QA">
+              <SHORT-NAME>SCReverse</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_Watchdog/kReverse</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_w1LnwFEbEey8LvdfSmIsOg">
+              <SHORT-NAME>SCWiperTimer1On</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RFunctionGrpMode</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_FunctionGrpModeRequest/kWiperTimer1On</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_w1LnwVEbEey8LvdfSmIsOg">
+              <SHORT-NAME>SCWiperTimerOff</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RFunctionGrpMode</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PhmSupervisedEntityInterfaces/PhmSupervisedEntityInterface_FunctionGrpModeRequest/KWiperTimer1Off</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_5le7EFwkEeyoE4HemfEPsQ">
+              <SHORT-NAME>SCRoofTopOpen</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RPlatformReset</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PlatformHealthManagementContributions/PhmSupervisedEntityInterface_PlatformrReset/kRoofTopOpen</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+            <SUPERVISION-CHECKPOINT UUID="_5le7EVwkEeyoE4HemfEPsQ">
+              <SHORT-NAME>SCRoofTopClose</SHORT-NAME>
+              <PHM-CHECKPOINT-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RPlatformReset</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-PHM-CHECKPOINT-REF DEST="PHM-CHECKPOINT">/PlatformHealthManagementContributions/PhmSupervisedEntityInterface_PlatformrReset/kRoofTopClose</TARGET-PHM-CHECKPOINT-REF>
+              </PHM-CHECKPOINT-IREF>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance2</PROCESS-REF>
+            </SUPERVISION-CHECKPOINT>
+          </CHECKPOINTS>
+          <LOCAL-SUPERVISIONS>
+            <LOCAL-SUPERVISION UUID="_jmFHwLfREeuS5Z9XimcdqA">
+              <SHORT-NAME>AliveSupervision</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RAlive</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <ALIVE-SUPERVISIONS>
+                <ALIVE-SUPERVISION UUID="_dvy0YLfSEeuS5Z9XimcdqA">
+                  <SHORT-NAME>AliveInitializing</SHORT-NAME>
+                  <ALIVE-REFERENCE-CYCLE>0.5</ALIVE-REFERENCE-CYCLE>
+                  <CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCInitializing</CHECKPOINT-REF>
+                  <EXPECTED-ALIVE-INDICATIONS>5</EXPECTED-ALIVE-INDICATIONS>
+                  <MAX-MARGIN>1</MAX-MARGIN>
+                  <MIN-MARGIN>1</MIN-MARGIN>
+                </ALIVE-SUPERVISION>
+              </ALIVE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>5</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_p5FEcPYaEeuL-9_6UJTbrQ">
+              <SHORT-NAME>DeadlineSupervision</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadline</SDX-REF>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEADLINE-SUPERVISIONS>
+                <DEADLINE-SUPERVISION UUID="_vsU1cPYaEeuL-9_6UJTbrQ">
+                  <SHORT-NAME>DeadlineRunning</SHORT-NAME>
+                  <CHECKPOINT-TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/DeadlineSupervision/WindowTransition</CHECKPOINT-TRANSITION-REF>
+                  <MAX-DEADLINE>0.5</MAX-DEADLINE>
+                  <MIN-DEADLINE>0.1</MIN-DEADLINE>
+                </DEADLINE-SUPERVISION>
+              </DEADLINE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_wyd-IPYaEeuL-9_6UJTbrQ">
+                  <SHORT-NAME>WindowTransition</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCWindowSource</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCWindowTarget</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_mRsIIBuXEeyc--wwdcX3EQ">
+              <SHORT-NAME>LogicalSupervision</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RLogical</SDX-REF>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOGICAL-SUPERVISIONS>
+                <LOGICAL-SUPERVISION UUID="_DozMEBuYEeyc--wwdcX3EQ">
+                  <SHORT-NAME>logicalSupervisions1</SHORT-NAME>
+                  <INITIAL-CHECKPOINT-REFS>
+                    <INITIAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCStart</INITIAL-CHECKPOINT-REF>
+                  </INITIAL-CHECKPOINT-REFS>
+                  <FINAL-CHECKPOINT-REFS>
+                    <FINAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCShutdown</FINAL-CHECKPOINT-REF>
+                  </FINAL-CHECKPOINT-REFS>
+                  <TRANSITION-REFS>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/LogicalSupervision/SCStartToStop</TRANSITION-REF>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/LogicalSupervision/SCStopToResume</TRANSITION-REF>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/LogicalSupervision/SCResumeToShutDown</TRANSITION-REF>
+                  </TRANSITION-REFS>
+                </LOGICAL-SUPERVISION>
+              </LOGICAL-SUPERVISIONS>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_II4sEBuYEeyc--wwdcX3EQ">
+                  <SHORT-NAME>SCStartToStop</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCStart</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCStop</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+                <CHECKPOINT-TRANSITION UUID="_II4sERuYEeyc--wwdcX3EQ">
+                  <SHORT-NAME>SCStopToResume</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCStop</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCResume</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+                <CHECKPOINT-TRANSITION UUID="_II5TIBuYEeyc--wwdcX3EQ">
+                  <SHORT-NAME>SCResumeToShutDown</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCResume</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCShutdown</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_qp8ZECA9Eey2B8sRrnbozQ">
+              <SHORT-NAME>GlobalExpiredToStopped</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RGlobalExpiredToStopped</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>2</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOGICAL-SUPERVISIONS>
+                <LOGICAL-SUPERVISION UUID="_wje_UCA9Eey2B8sRrnbozQ">
+                  <SHORT-NAME>GlobalExpiredToStopped</SHORT-NAME>
+                  <INITIAL-CHECKPOINT-REFS>
+                    <INITIAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCOK</INITIAL-CHECKPOINT-REF>
+                  </INITIAL-CHECKPOINT-REFS>
+                  <FINAL-CHECKPOINT-REFS>
+                    <FINAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCExpired</FINAL-CHECKPOINT-REF>
+                  </FINAL-CHECKPOINT-REFS>
+                  <TRANSITION-REFS>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/GlobalExpiredToStopped/kOKToKFailed</TRANSITION-REF>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/GlobalExpiredToStopped/kFailedTokExpired</TRANSITION-REF>
+                  </TRANSITION-REFS>
+                </LOGICAL-SUPERVISION>
+              </LOGICAL-SUPERVISIONS>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_2IW9ICA9Eey2B8sRrnbozQ">
+                  <SHORT-NAME>kOKToKFailed</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCOK</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCFailed</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+                <CHECKPOINT-TRANSITION UUID="_2IW9ISA9Eey2B8sRrnbozQ">
+                  <SHORT-NAME>kFailedTokExpired</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCFailed</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCExpired</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_i57A0DuxEeyGvoay7vl0eQ">
+              <SHORT-NAME>AliveMultipleSupervision</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RAliveMultiple</SDX-REF>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <ALIVE-SUPERVISIONS>
+                <ALIVE-SUPERVISION UUID="_oA6v0DuxEeyGvoay7vl0eQ">
+                  <SHORT-NAME>AliveMultiple</SHORT-NAME>
+                  <ALIVE-REFERENCE-CYCLE>1.0</ALIVE-REFERENCE-CYCLE>
+                  <CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCAliveMultiple</CHECKPOINT-REF>
+                  <EXPECTED-ALIVE-INDICATIONS>5</EXPECTED-ALIVE-INDICATIONS>
+                  <MAX-MARGIN>1</MAX-MARGIN>
+                  <MIN-MARGIN>1</MIN-MARGIN>
+                </ALIVE-SUPERVISION>
+              </ALIVE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_uO244D8LEeyb39Kact-V_Q">
+              <SHORT-NAME>DeadlineNegative</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance1</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</SDX-REF>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RDeadlineNegative</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance1</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEADLINE-SUPERVISIONS>
+                <DEADLINE-SUPERVISION UUID="_2cu5QD8LEeyb39Kact-V_Q">
+                  <SHORT-NAME>DeadlineNegative</SHORT-NAME>
+                  <CHECKPOINT-TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/DeadlineNegative/OnToOff</CHECKPOINT-TRANSITION-REF>
+                  <MAX-DEADLINE>6.0</MAX-DEADLINE>
+                  <MIN-DEADLINE>1.0</MIN-DEADLINE>
+                </DEADLINE-SUPERVISION>
+              </DEADLINE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_82wg8D8MEeyb39Kact-V_Q">
+                  <SHORT-NAME>OnToOff</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCLightOn</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCLightOff</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_7eXkQExKEey2KtHgFKW_QA">
+              <SHORT-NAME>Watchdog</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance3</SDX-REF>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RWatchdog</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance3</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEADLINE-SUPERVISIONS>
+                <DEADLINE-SUPERVISION UUID="_B3qBkExLEey2KtHgFKW_QA">
+                  <SHORT-NAME>WatchdogDeadlineSupervision</SHORT-NAME>
+                  <CHECKPOINT-TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/Watchdog/IndicatorOnToIndicatorOff</CHECKPOINT-TRANSITION-REF>
+                  <MAX-DEADLINE>2.0</MAX-DEADLINE>
+                  <MIN-DEADLINE>0.5</MIN-DEADLINE>
+                </DEADLINE-SUPERVISION>
+              </DEADLINE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>2</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOGICAL-SUPERVISIONS>
+                <LOGICAL-SUPERVISION UUID="_SSLtwExgEey2KtHgFKW_QA">
+                  <SHORT-NAME>WatchdogLogicalSupervisions1</SHORT-NAME>
+                  <INITIAL-CHECKPOINT-REFS>
+                    <INITIAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCPlay</INITIAL-CHECKPOINT-REF>
+                  </INITIAL-CHECKPOINT-REFS>
+                  <FINAL-CHECKPOINT-REFS>
+                    <FINAL-CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCReverse</FINAL-CHECKPOINT-REF>
+                  </FINAL-CHECKPOINT-REFS>
+                  <TRANSITION-REFS>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/Watchdog/PlayToPause</TRANSITION-REF>
+                    <TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/Watchdog/PauseToReverse</TRANSITION-REF>
+                  </TRANSITION-REFS>
+                </LOGICAL-SUPERVISION>
+              </LOGICAL-SUPERVISIONS>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_DFWjwExLEey2KtHgFKW_QA">
+                  <SHORT-NAME>IndicatorOnToIndicatorOff</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCIndicatorOn</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCIndicatorOff</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+                <CHECKPOINT-TRANSITION UUID="_F_msYExhEey2KtHgFKW_QA">
+                  <SHORT-NAME>PlayToPause</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCPlay</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCPause</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+                <CHECKPOINT-TRANSITION UUID="_F_msYUxhEey2KtHgFKW_QA">
+                  <SHORT-NAME>PauseToReverse</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCPause</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCReverse</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_mXV2QFEjEey8LvdfSmIsOg">
+              <SHORT-NAME>FunctionGrpModeRequest</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RFunctionGrpMode</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance2</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEADLINE-SUPERVISIONS>
+                <DEADLINE-SUPERVISION UUID="_rRO9YFEjEey8LvdfSmIsOg">
+                  <SHORT-NAME>deadlineSupervisions1</SHORT-NAME>
+                  <CHECKPOINT-TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/FunctionGrpModeRequest/WiperTimer1</CHECKPOINT-TRANSITION-REF>
+                  <MAX-DEADLINE>2.0</MAX-DEADLINE>
+                  <MIN-DEADLINE>0.2</MIN-DEADLINE>
+                </DEADLINE-SUPERVISION>
+              </DEADLINE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_sMVTsFEjEey8LvdfSmIsOg">
+                  <SHORT-NAME>WiperTimer1</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCWiperTimer1On</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCWiperTimerOff</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+            <LOCAL-SUPERVISION UUID="_8oomMFwoEeyoE4HemfEPsQ">
+              <SHORT-NAME>PlatformReset</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SDX-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2/RPlatformReset</SDX-REF>
+                    <SDX-REF DEST="EXECUTABLE">/Executables/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="PROCESS">/Processes/qt_phm_instance2</SDX-REF>
+                    <SDX-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance2/rootSwComponentPrototype2</SDX-REF>
+                    <SDX-REF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance2</SDX-REF>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEADLINE-SUPERVISIONS>
+                <DEADLINE-SUPERVISION UUID="__EK0gFwoEeyoE4HemfEPsQ">
+                  <SHORT-NAME>PlatformResetDeadlineSupervision</SHORT-NAME>
+                  <CHECKPOINT-TRANSITION-REF DEST="CHECKPOINT-TRANSITION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/PlatformReset/RoofTopOpenToClose</CHECKPOINT-TRANSITION-REF>
+                  <MAX-DEADLINE>1.0</MAX-DEADLINE>
+                  <MIN-DEADLINE>0.2</MIN-DEADLINE>
+                </DEADLINE-SUPERVISION>
+              </DEADLINE-SUPERVISIONS>
+              <FAILED-SUPERVISION-CYCLES-TOLERANCE>1</FAILED-SUPERVISION-CYCLES-TOLERANCE>
+              <TRANSITIONS>
+                <CHECKPOINT-TRANSITION UUID="_B8-0sFwpEeyoE4HemfEPsQ">
+                  <SHORT-NAME>RoofTopOpenToClose</SHORT-NAME>
+                  <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCRoofTopOpen</SOURCE-REF>
+                  <TARGET-REF DEST="SUPERVISION-CHECKPOINT">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/SCRoofTopClose</TARGET-REF>
+                </CHECKPOINT-TRANSITION>
+              </TRANSITIONS>
+            </LOCAL-SUPERVISION>
+          </LOCAL-SUPERVISIONS>
+          <GLOBAL-SUPERVISIONS>
+            <GLOBAL-SUPERVISION UUID="_yDo1oPYbEeuL-9_6UJTbrQ">
+              <SHORT-NAME>GlobalSupervisionAlive</SHORT-NAME>
+              <EXPIRED-SUPERVISION-CYCLES-TOLERANCE>1</EXPIRED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOCAL-SUPERVISION-REFS>
+                <LOCAL-SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/AliveSupervision</LOCAL-SUPERVISION-REF>
+              </LOCAL-SUPERVISION-REFS>
+              <SUPERVISION-CYCLE>1.0</SUPERVISION-CYCLE>
+            </GLOBAL-SUPERVISION>
+            <GLOBAL-SUPERVISION UUID="_CUwlwDGbEeyl1oKh-thK5g">
+              <SHORT-NAME>GlobalSupervisionExpiedToStopped</SHORT-NAME>
+              <EXPIRED-SUPERVISION-CYCLES-TOLERANCE>1</EXPIRED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOCAL-SUPERVISION-REFS>
+                <LOCAL-SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/GlobalExpiredToStopped</LOCAL-SUPERVISION-REF>
+              </LOCAL-SUPERVISION-REFS>
+              <SUPERVISION-CYCLE>1.0</SUPERVISION-CYCLE>
+            </GLOBAL-SUPERVISION>
+            <GLOBAL-SUPERVISION UUID="_z3o-0Du0EeyGvoay7vl0eQ">
+              <SHORT-NAME>GlobalSupervisionDeadlineLogical</SHORT-NAME>
+              <EXPIRED-SUPERVISION-CYCLES-TOLERANCE>1</EXPIRED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOCAL-SUPERVISION-REFS>
+                <LOCAL-SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/DeadlineSupervision</LOCAL-SUPERVISION-REF>
+                <LOCAL-SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/LogicalSupervision</LOCAL-SUPERVISION-REF>
+              </LOCAL-SUPERVISION-REFS>
+              <SUPERVISION-CYCLE>1.0</SUPERVISION-CYCLE>
+            </GLOBAL-SUPERVISION>
+            <GLOBAL-SUPERVISION UUID="_jqBkgEx6Eey2KtHgFKW_QA">
+              <SHORT-NAME>globalSupervisionAliveMultiple</SHORT-NAME>
+              <EXPIRED-SUPERVISION-CYCLES-TOLERANCE>1</EXPIRED-SUPERVISION-CYCLES-TOLERANCE>
+              <LOCAL-SUPERVISION-REFS>
+                <LOCAL-SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/AliveMultipleSupervision</LOCAL-SUPERVISION-REF>
+              </LOCAL-SUPERVISION-REFS>
+              <SUPERVISION-CYCLE>1.0</SUPERVISION-CYCLE>
+            </GLOBAL-SUPERVISION>
+          </GLOBAL-SUPERVISIONS>
+          <HEALTH-CHANNELS>
+            <HEALTH-CHANNEL-EXTERNAL-STATUS UUID="_A4ihQB-FEeyJI9P1GBOXwQ">
+              <SHORT-NAME>HC_SupervisionExternalStatus</SHORT-NAME>
+              <MODE-CONDITION>EQUAL</MODE-CONDITION>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+              <STATUS-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/RHCInterfaceRPort</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-STATUS-REF DEST="PHM-HEALTH-CHANNEL-STATUS">/PhmHealthChannelInterfaces/PhmHealthChannelInterface_HCSupervision/kHigh</TARGET-STATUS-REF>
+              </STATUS-IREF>
+            </HEALTH-CHANNEL-EXTERNAL-STATUS>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_x_Ui4B-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>HCGlobalStatusStopped</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-STOPPED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="GLOBAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/GlobalSupervisionExpiedToStopped</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_x_Ui4R-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>HCLocalAliveFailed</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-FAILED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/AliveSupervision</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_x_Ui4h-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>HCLocalDeadlineExpired</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-EXPIRED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/DeadlineSupervision</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_x_Ui4x-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>HCGlobalExpied</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-EXPIRED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="GLOBAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/GlobalSupervisionDeadlineLogical</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-EXTERNAL-STATUS UUID="_Zf-_sDviEeyGvoay7vl0eQ">
+              <SHORT-NAME>HealthChannelExternalStatus2</SHORT-NAME>
+              <MODE-CONDITION>NOT-EQUAL</MODE-CONDITION>
+              <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+              <STATUS-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <CONTEXT-R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/RHCExt2</CONTEXT-R-PORT-PROTOTYPE-REF>
+                <TARGET-STATUS-REF DEST="PHM-HEALTH-CHANNEL-STATUS">/PhmHealthChannelInterfaces/PhmHealthChannelInterface_HCSupervision/kLow</TARGET-STATUS-REF>
+              </STATUS-IREF>
+            </HEALTH-CHANNEL-EXTERNAL-STATUS>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_Ol510ExLEey2KtHgFKW_QA">
+              <SHORT-NAME>HCWatchdog</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-EXPIRED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="DEADLINE-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/Watchdog/WatchdogDeadlineSupervision</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_UIoekExLEey2KtHgFKW_QA">
+              <SHORT-NAME>HCWatchdog2</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-EXPIRED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="LOGICAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/Watchdog/WatchdogLogicalSupervisions1</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_abyTUEx6Eey2KtHgFKW_QA">
+              <SHORT-NAME>HCPlatformReset</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-FAILED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="DEADLINE-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/PlatformReset/PlatformResetDeadlineSupervision</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+            <HEALTH-CHANNEL-SUPERVISION UUID="_5jz1sFEkEey8LvdfSmIsOg">
+              <SHORT-NAME>HCFunctionGrpModeRequest</SHORT-NAME>
+              <SUPERVISION-CONDITION>IS-FAILED</SUPERVISION-CONDITION>
+              <SUPERVISION-REF DEST="LOCAL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/FunctionGrpModeRequest</SUPERVISION-REF>
+            </HEALTH-CHANNEL-SUPERVISION>
+          </HEALTH-CHANNELS>
+          <LOGICAL-EXPRESSIONS>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuMxUB-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionsNOT</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalAliveFailed</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NOT</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuV7QB-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionAND</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalAliveFailed</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalExpied</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>AND</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuV7QR-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionOR</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalDeadlineExpired</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalExpied</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>OR</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuV7Qh-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionNAND</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalStatusStopped</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalExpied</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NAND</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuV7Qx-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionsXOR</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalAliveFailed</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalDeadlineExpired</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>XOR</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_LuV7RB-HEeyJI9P1GBOXwQ">
+              <SHORT-NAME>logicalExpressionsHCInterfaceExternalNot</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-EXTERNAL-STATUS">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HC_SupervisionExternalStatus</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NOT</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_-S2QkDWtEeyd0rbu-tPd-A">
+              <SHORT-NAME>logicalExpressionORDeadlineExpired</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalDeadlineExpired</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalStatusStopped</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>OR</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_19o2oDvjEeyGvoay7vl0eQ">
+              <SHORT-NAME>logicalExpressionsHCInterfaceExternal2Not</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-EXTERNAL-STATUS">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HealthChannelExternalStatus2</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NOT</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_QuZ2kExPEey2KtHgFKW_QA">
+              <SHORT-NAME>logicalExpressionsORWatchdogDeadline</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCWatchdog</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCLocalDeadlineExpired</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>OR</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_HSqaQExiEey2KtHgFKW_QA">
+              <SHORT-NAME>logicalExpressionORWatchdogLogical</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCWatchdog2</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCGlobalStatusStopped</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>OR</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_WdkxUEx6Eey2KtHgFKW_QA">
+              <SHORT-NAME>logicalExpressionsNANDPlatformReset</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCPlatformReset</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCFunctionGrpModeRequest</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NAND</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+            <PHM-LOGICAL-EXPRESSION UUID="_8uEyQFEkEey8LvdfSmIsOg">
+              <SHORT-NAME>LogicalExpressionsNANDFunctionGrp</SHORT-NAME>
+              <HEALTH-CHANNEL-ARGUMENT-REFS>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-SUPERVISION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HCFunctionGrpModeRequest</HEALTH-CHANNEL-ARGUMENT-REF>
+                <HEALTH-CHANNEL-ARGUMENT-REF DEST="HEALTH-CHANNEL-EXTERNAL-STATUS">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/HC_SupervisionExternalStatus</HEALTH-CHANNEL-ARGUMENT-REF>
+              </HEALTH-CHANNEL-ARGUMENT-REFS>
+              <LOGICAL-OPERATOR>NAND</LOGICAL-OPERATOR>
+            </PHM-LOGICAL-EXPRESSION>
+          </LOGICAL-EXPRESSIONS>
+          <RULES>
+            <PHM-RULE UUID="_mv7AUB-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleUndefinedState_LE_AND_OnChng</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionAND</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnChange</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>UNDEFINED</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListTrueOnChange</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_mv7AUR-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleFalseState_LE_NAND_OnEv</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionNAND</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnEvaluation</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>FALSE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListtrueOnEvaluation</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_mv7AUh-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleTruestate_LE_OR_OnChng</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionOR</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnChange</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>TRUE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListTrueOnChange</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_mv7AUx-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleUndefinedState_LE_NOT_OnEv</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsNOT</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnEvaluation</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>UNDEFINED</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListtrueOnEvaluation</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_mv7AVB-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleTrueState_LE_XOR_OnEv</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsXOR</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnEvaluation</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>TRUE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListtrueOnEvaluation</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_mv7AVR-JEeyJI9P1GBOXwQ">
+              <SHORT-NAME>RuleFalseState_LE_HCinterface_OnChng</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsHCInterfaceExternalNot</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListFalseOnChange</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>FALSE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListTrueOnChange</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_6_TZsDvjEeyGvoay7vl0eQ">
+              <SHORT-NAME>RuleTrueState_LE_HCinterface2_OnChng</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsHCInterfaceExternal2Not</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListTrueOnChangeHC</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>TRUE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/ActionListTrueOnChangeHC</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_YadjUExPEey2KtHgFKW_QA">
+              <SHORT-NAME>RuleUndefinedStateWatchdogStopTrigger</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsORWatchdogDeadline</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogStopTrigger</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>UNDEFINED</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogStopTrigger</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_d7pegExQEey2KtHgFKW_QA">
+              <SHORT-NAME>RuleundefinedStateWatchdogWrongTrigger</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionORWatchdogLogical</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogStopTrigger</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>UNDEFINED</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogWrongTrigger</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_P-oX8Ex6Eey2KtHgFKW_QA">
+              <SHORT-NAME>RuleTruePlatformReset</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/logicalExpressionsNANDPlatformReset</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/PlatformReset</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>TRUE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/PlatformReset</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+            <PHM-RULE UUID="_QFkLYFElEey8LvdfSmIsOg">
+              <SHORT-NAME>RuleFalseFunctionGrpModeRequest</SHORT-NAME>
+              <EXPRESSION-REF DEST="PHM-LOGICAL-EXPRESSION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/LogicalExpressionsNANDFunctionGrp</EXPRESSION-REF>
+              <FALSE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/FunctionGrpModeRequest</FALSE-ACTION-LIST-REF>
+              <RULE-INIT-STATE>FALSE</RULE-INIT-STATE>
+              <TRUE-ACTION-LIST-REF DEST="PHM-ACTION-LIST">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/FunctionGrpModeRequest</TRUE-ACTION-LIST-REF>
+            </PHM-RULE>
+          </RULES>
+          <ACTION-LISTS>
+            <PHM-ACTION-LIST UUID="_uT-VsB-LEeyCmI6kWPVKGQ">
+              <SHORT-NAME>ActionListTrueOnChange</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-CHANGE</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_uT-VsR-LEeyCmI6kWPVKGQ">
+              <SHORT-NAME>ActionListFalseOnChange</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-CHANGE</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_uT-Vsh-LEeyCmI6kWPVKGQ">
+              <SHORT-NAME>ActionListtrueOnEvaluation</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-EVALUATION</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_uT-Vsx-LEeyCmI6kWPVKGQ">
+              <SHORT-NAME>ActionListFalseOnEvaluation</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-EVALUATION</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_PgmxIDzBEey6A6Irflgh9g">
+              <SHORT-NAME>ActionListTrueOnChangeHC</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-CHANGE</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction2</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_gjguEExPEey2KtHgFKW_QA">
+              <SHORT-NAME>WatchdogStopTrigger</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-CHANGE</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="WATCHDOG-PHM-ACTION-ITEM">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogStopTiggerPhmActionItem</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_yXCaEExPEey2KtHgFKW_QA">
+              <SHORT-NAME>WatchdogWrongTrigger</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-CHANGE</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="WATCHDOG-PHM-ACTION-ITEM">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/WatchdogWrongTriggerPhmActionItem</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_KTpyIEx6Eey2KtHgFKW_QA">
+              <SHORT-NAME>PlatformReset</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-EVALUATION</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="PLATFORM-PHM-ACTION-ITEM">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/PlatformPhmActionItem1</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+            <PHM-ACTION-LIST UUID="_OhY4EFHDEeyA4MHZEa-x3Q">
+              <SHORT-NAME>FunctionGrpModeRequest</SHORT-NAME>
+              <ACTION-LIST-EXECUTION>TRIGGERED-ON-EVALUATION</ACTION-LIST-EXECUTION>
+              <ACTION-LIST-ITEM-REFS>
+                <ACTION-LIST-ITEM-REF DEST="FUNCTION-GROUP-MODE-REQUEST-PHM-ACTION-ITEM">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/FunctionGroupModeRequestPhmActionItem1</ACTION-LIST-ITEM-REF>
+              </ACTION-LIST-ITEM-REFS>
+            </PHM-ACTION-LIST>
+          </ACTION-LISTS>
+          <ACTIONS>
+            <RECOVERY-VIA-APPLICATION-ACTION UUID="_XRifYB-MEeyCmI6kWPVKGQ">
+              <SHORT-NAME>RecoveryViaApplicationAction</SHORT-NAME>
+            </RECOVERY-VIA-APPLICATION-ACTION>
+            <RECOVERY-VIA-APPLICATION-ACTION UUID="_Er83MDx-EeySp-Y4pRc7_Q">
+              <SHORT-NAME>RecoveryViaApplicationAction2</SHORT-NAME>
+            </RECOVERY-VIA-APPLICATION-ACTION>
+            <WATCHDOG-PHM-ACTION-ITEM UUID="_lRNMQExPEey2KtHgFKW_QA">
+              <SHORT-NAME>WatchdogStopTiggerPhmActionItem</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SD GID="period">1000</SD>
+                    <SD GID="status">Enable</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <ACTION-TYPE>STOP-TRIGGER</ACTION-TYPE>
+            </WATCHDOG-PHM-ACTION-ITEM>
+            <WATCHDOG-PHM-ACTION-ITEM UUID="_lRNMQUxPEey2KtHgFKW_QA">
+              <SHORT-NAME>WatchdogWrongTriggerPhmActionItem</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG>
+                    <SD GID="period">1000</SD>
+                    <SD GID="status">Enable</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <ACTION-TYPE>WRONG-TRIGGER</ACTION-TYPE>
+            </WATCHDOG-PHM-ACTION-ITEM>
+            <PLATFORM-PHM-ACTION-ITEM UUID="_HkJe8Ex6Eey2KtHgFKW_QA">
+              <SHORT-NAME>PlatformPhmActionItem1</SHORT-NAME>
+              <ACTION-TYPE>RESET-MACHINE</ACTION-TYPE>
+            </PLATFORM-PHM-ACTION-ITEM>
+            <FUNCTION-GROUP-MODE-REQUEST-PHM-ACTION-ITEM UUID="_pkAv4EzsEey6gsUQI7gd5A">
+              <SHORT-NAME>FunctionGroupModeRequestPhmActionItem1</SHORT-NAME>
+              <REQUESTED-MODE-IREF>
+                <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machines/QtMachine/PHMApplicationStates</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StartupConfigSets/PHMApplicationStates/PHM_Instance2</TARGET-MODE-DECLARATION-REF>
+              </REQUESTED-MODE-IREF>
+            </FUNCTION-GROUP-MODE-REQUEST-PHM-ACTION-ITEM>
+          </ACTIONS>
+        </PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION>
+        <PHM-SUPERVISED-ENTITY-INTERFACE>
+          <SHORT-NAME>PhmSupervisedEntityInterface_PlatformrReset</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>phm</SHORT-NAME>
+              <SYMBOL>phm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <CHECKPOINTS>
+            <PHM-CHECKPOINT UUID="_KESsUFwkEeyoE4HemfEPsQ">
+              <SHORT-NAME>kRoofTopOpen</SHORT-NAME>
+              <CHECKPOINT-ID>23</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+            <PHM-CHECKPOINT UUID="_KESsUVwkEeyoE4HemfEPsQ">
+              <SHORT-NAME>kRoofTopClose</SHORT-NAME>
+              <CHECKPOINT-ID>24</CHECKPOINT-ID>
+            </PHM-CHECKPOINT>
+          </CHECKPOINTS>
+        </PHM-SUPERVISED-ENTITY-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="30f1df1f-b062-4655-bbf9-cd2340ae2a67">
+      <SHORT-NAME>RecoveryViaApplicationActionToClientServerOperation</SHORT-NAME>
+      <ELEMENTS>
+        <RECOVERY-VIA-APPLICATION-ACTION-TO-CLIENT-SERVER-OPERATION-MAPPING>
+          <SHORT-NAME>RecoveryViaApplicationActionToClientServerOperationMapping1</SHORT-NAME>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance1</PROCESS-REF>
+          <RECOVERY-ACTION-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance1/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <CONTEXT-P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance1/PRecoveryPort</CONTEXT-P-PORT-PROTOTYPE-REF>
+            <TARGET-METHOD-REF DEST="CLIENT-SERVER-OPERATION">/PhmRecoveryActionInterfaces/PhmRecoveryAction/RecoveryMethod</TARGET-METHOD-REF>
+          </RECOVERY-ACTION-IREF>
+          <RECOVERY-VIA-APPLICATION-ACTION-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction</RECOVERY-VIA-APPLICATION-ACTION-REF>
+        </RECOVERY-VIA-APPLICATION-ACTION-TO-CLIENT-SERVER-OPERATION-MAPPING>
+        <RECOVERY-VIA-APPLICATION-ACTION-TO-CLIENT-SERVER-OPERATION-MAPPING>
+          <SHORT-NAME>RecoveryViaApplicationActionToClientServerOperationMapping2</SHORT-NAME>
+          <PROCESS-REF DEST="PROCESS">/Processes/qt_phm_instance3</PROCESS-REF>
+          <RECOVERY-ACTION-IREF>
+            <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Executables/qt_phm_instance3/rootSwComponentPrototype</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+            <CONTEXT-P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/AdaptiveApplicationSwComponentTypes/qt_phm_instance3/PApplicationRecovery2_instance3</CONTEXT-P-PORT-PROTOTYPE-REF>
+            <TARGET-METHOD-REF DEST="CLIENT-SERVER-OPERATION">/PhmRecoveryActionInterfaces/PhmRecoveryAction2/RecoveryMethod</TARGET-METHOD-REF>
+          </RECOVERY-ACTION-IREF>
+          <RECOVERY-VIA-APPLICATION-ACTION-REF DEST="RECOVERY-VIA-APPLICATION-ACTION">/PlatformHealthManagementContributions/PlatformHealthManagementContribution1/RecoveryViaApplicationAction2</RECOVERY-VIA-APPLICATION-ACTION-REF>
+        </RECOVERY-VIA-APPLICATION-ACTION-TO-CLIENT-SERVER-OPERATION-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
