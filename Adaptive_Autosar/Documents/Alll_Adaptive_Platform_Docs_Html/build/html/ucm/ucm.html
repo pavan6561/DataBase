@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Update and Configuration Management (UCM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. State Management (SM)" href="../sm/sm.html" />
+    <link rel="prev" title="7. Network Management(NM)" href="../nm/nm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. <strong>Update and Configuration Management (UCM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#responsibilities">8.2. Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limitations">8.3. Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-overview">8.4. Technical Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies-to-other-functional-clusters">8.5. Dependencies to other functional clusters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interfaces-to-adaptive-state-management">8.5.1. Interfaces to Adaptive State Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ucm-service-over-ara-com">8.5.2. UCM service over ara::com</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interfaces-to-adaptive-crypto-interface">8.5.3. Interfaces to Adaptive Crypto Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interfaces-to-identity-and-access-management">8.5.4. Interfaces to Identity and Access Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-package">8.5.5. Software Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-package-management">8.6. Software Package Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transferring-software-packages">8.6.1. Transferring Software Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processing-software-packages">8.6.2. Processing Software Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-rollback-and-finish">8.6.3. Activation, Rollback and Finish</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#status-reporting">8.7. Status Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-cluster-lifecycle">8.8. Software Cluster lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-reporting">8.9. Version Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#history">8.10. History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ucm-master">8.11. UCM Master</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">8.11.1. Status reporting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-cluster">8.12. Software Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.13. Software Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vehicle-package">8.14. Vehicle Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span><strong>Update and Configuration Management (UCM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ucm/ucm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="update-and-configuration-management-ucm">
+<h1><span class="section-number">8. </span><strong>Update and Configuration Management (UCM)</strong><a class="headerlink" href="#update-and-configuration-management-ucm" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p><strong>Update and Configuration Management</strong> has the responsibility of installing, updating and removing software on an Adaptive Platform in a safe and secure way while not sacrificing the dynamic nature of the Adaptive Platform. These updates and changes can be to the AUTOSAR Adaptive Platform itself, including all functional clusters, the underlying POSIX OS and its kernel. UCM exposes its functionality via <strong>ara::com service interfaces</strong> and not direct APIs. This ensures the user of UCM does not have to be located on the same ECU.</p>
+</section>
+<section id="responsibilities">
+<h2><span class="section-number">8.2. </span>Responsibilities<a class="headerlink" href="#responsibilities" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Version Reporting of the software present in the AUTOSAR Adaptive Platform.</p></li>
+<li><p>Receiving and buffering software updates.</p></li>
+<li><p>Checking that enough resources are available to ensure a software update.</p></li>
+<li><p>Performing software updates and providing log messages and progress info.</p></li>
+<li><p>Validating the outcome of a software update.</p></li>
+<li><p>Providing rollback functionality to restore to a known functional state in case of failure.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="limitations">
+<h2><span class="section-number">8.3. </span>Limitations<a class="headerlink" href="#limitations" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>UCM is not responsible to initiate the update process.</p></li>
+<li><p>UCM realizes a service interface to achieve this operation.</p></li>
+<li><p>The safe state of the vehicle must be ensured by the client, before executing a software update procedure on demand.</p></li>
+<li><p>UCM receives a locally available software package for processing.</p></li>
+<li><p>Prior to triggering their processing, the software packages have to be transferred to UCM by using the provided ara::com interface.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="technical-overview">
+<h2><span class="section-number">8.4. </span>Technical Overview<a class="headerlink" href="#technical-overview" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>One of the declared goals of AUTOSAR Adaptive Platform is the ability to flexibly update the software and its configuration through over-the-air updates.</p></li>
+<li><p>During the life-cycle of an AUTOSAR Adaptive Platform, UCM is responsible to perform software modifications on the machine and to retain consistency of the whole system.</p></li>
+<li><p>The UCM Functional Cluster provides a service interface to retrieve AUTOSAR Adaptive Platform software information and consistently execute software updates. Since ara::com is used, the client using the UCM service interface can be located on the same AUTOSAR Adaptive Platform, but also remote clients are possible.</p></li>
+<li><p>It is also possible to use standard diagnostic services for downloading and installing software updates for the AUTOSAR Adaptive Platform.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id3">
+<img alt="../_images/ucm_logicalview.png" class="with-border" src="../_images/ucm_logicalview.png" />
+<figcaption>
+<p><span class="caption-text"><strong>UCM Logical View</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="dependencies-to-other-functional-clusters">
+<h2><span class="section-number">8.5. </span>Dependencies to other functional clusters<a class="headerlink" href="#dependencies-to-other-functional-clusters" title="Link to this heading"></a></h2>
+<p>The UCM functional cluster expose services to client applications via the ara::com middleware.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/UCM_dependencies_to_other_Functional_clusters.png" class="with-border" src="../_images/UCM_dependencies_to_other_Functional_clusters.png" />
+<figcaption>
+<p><span class="caption-text"><strong>UCM dependencies to other Functional clusters</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="interfaces-to-adaptive-state-management">
+<h3><span class="section-number">8.5.1. </span>Interfaces to Adaptive State Management<a class="headerlink" href="#interfaces-to-adaptive-state-management" title="Link to this heading"></a></h3>
+<p>UCM relies on State Management and its provided UpdateRequest Service Interface to perform the necessary Function Group state changes needed to activate the newly installed, updated or removed software.</p>
+</section>
+<section id="ucm-service-over-ara-com">
+<h3><span class="section-number">8.5.2. </span>UCM service over ara::com<a class="headerlink" href="#ucm-service-over-ara-com" title="Link to this heading"></a></h3>
+<p>The UCM shall provide a service interface over ara::com using methods and fields.</p>
+</section>
+<section id="interfaces-to-adaptive-crypto-interface">
+<h3><span class="section-number">8.5.3. </span>Interfaces to Adaptive Crypto Interface<a class="headerlink" href="#interfaces-to-adaptive-crypto-interface" title="Link to this heading"></a></h3>
+<p>UCM uses Crypto Interface to verify package integrity and authenticity and to decrypt confidential update data.</p>
+</section>
+<section id="interfaces-to-identity-and-access-management">
+<h3><span class="section-number">8.5.4. </span>Interfaces to Identity and Access Management<a class="headerlink" href="#interfaces-to-identity-and-access-management" title="Link to this heading"></a></h3>
+<p>Identity and Access Management controls the UCM’s Clients access to UCM’s service interface PackageManagement.</p>
+</section>
+<section id="software-package">
+<h3><span class="section-number">8.5.5. </span>Software Package<a class="headerlink" href="#software-package" title="Link to this heading"></a></h3>
+<p>UCM takes Software Package as input to perform software install, updates and removal.</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/Software_Package.png" class="with-border" src="../_images/Software_Package.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Software Package</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Content of a Software Package:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Each Software Package addresses a single SoftwareCluster and contains manifests, executables and further data (depending on the role of the SoftwareCluster)</p></li>
+<li><p>The manifest includes a name and a version. A time stamp will be trailing the Major.Minor.Patch version.</p></li>
+<li><p>UCM can create, update or remove any persistency data that is contained in the SoftwareCluster. Rollback of persisted data can be done to persistent data during update process.</p></li>
+<li><p>SoftwareCluster can have execution dependencies towards other SoftwareClusters. Execution dependencies are checked in the end of the update process before activating/switching to the new software version.</p></li>
+</ul>
+</div></blockquote>
+<p>Each Software Package will address a single SoftwareCluster. A SoftwareCluster can act in two roles:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>‘Sub’-SoftwareCluster</strong> : A SoftwareCluster without diagnostic target address, containing processes, executables and further elements.</p></li>
+<li><p><strong>‘Root’-SoftwareCluster</strong>: A SoftwareCluster with a diagnostic target address that may reference several other <strong>‘Sub’-SoftwareClusters</strong>, which thus form a logical group.</p></li>
+</ul>
+</div></blockquote>
+<p>A software package has to be modelled as a so-called SoftwareCluster which describes the content of a software package that has to be uploaded to the AUTOSAR Adaptive Platform. Software Package is used for the “physical”, uploadable software package that is processed by UCM whereas the term SoftwareCluster is used for the modelling element.</p>
+<p>In the model, the content of a SoftwareCluster will be determined by references to all required model elements. The SoftwareCluster and the related model elements will be put into a manifest that is part of the Software Package.</p>
+</section>
+</section>
+<section id="software-package-management">
+<h2><span class="section-number">8.6. </span>Software Package Management<a class="headerlink" href="#software-package-management" title="Link to this heading"></a></h2>
+<p>The UCM update sequence consists three different phases:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Software Package transfer</strong>: Phase in which, one or several Software Packages are transferred from the Diagnostic Application Client to the internal buffer of the UCM.</p></li>
+<li><p><strong>Software Package processing</strong>: Phase in which the UCM performs the operation (kInstall, kUpdate, kRemove) on the relevant SoftwareCluster (which will be inactivated [not executed] during the operation).</p></li>
+<li><p><strong>Activation</strong>: Phase in which the UCM checks the dependencies of the SoftwareClusters that have been involved in the operation, activates them and finally checks that all the SoftwareClusters can be executed properly prior to finishing the update.</p></li>
+</ul>
+</div></blockquote>
+<section id="transferring-software-packages">
+<h3><span class="section-number">8.6.1. </span>Transferring Software Packages<a class="headerlink" href="#transferring-software-packages" title="Link to this heading"></a></h3>
+<dl>
+<dt>Transferring of Software package uses three phases - Initiation of a data transfer, the data transfer and completion of the data transfer.</dt><dd><ul class="simple">
+<li><p><strong>Data Transfer Initiation</strong>:</p></li>
+</ul>
+<p>Initiation of Data transfer carry with the method TransferStart and takes total number of bytes of package to be transferred as input and returns TransferId on successful allocation of resource or returns application error on failure. Main purpose of TransferStart method is to prepare for the data transfer by allocating memory for storing software package.</p>
+<ul class="simple">
+<li><p><strong>Data Transfer</strong>:</p></li>
+</ul>
+<p>Actual data transfer is transferred using TransferData method. TransferData method is used for Block-wise transfer of a Software Package to UCM and takes TransferId, Data and BlockCounter. Main purpose of TransferData method is to transfer software package and perform few error checks eg. Authentication check.</p>
+<ul class="simple">
+<li><p><strong>Data Transfer Completion</strong>:</p></li>
+</ul>
+<p>TransferExit method is used for finishing the transfer of a Software Package to UCM. It extracts software package and performs software package validation checks. This method takes TransferId as input.</p>
+</dd>
+</dl>
+<p>UCM provides DeleteTransfer method to delete transferred software package if software package is not required or transferring/processing of software package fails.</p>
+<p>Lifecycle of Software Package is described in below figure:</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/Transfer_Data.png" class="with-border" src="../_images/Transfer_Data.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Transfer Data</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="processing-software-packages">
+<h3><span class="section-number">8.6.2. </span>Processing Software Packages<a class="headerlink" href="#processing-software-packages" title="Link to this heading"></a></h3>
+<p>Processing of Software Packages can involve any combination of an installation, update or removal of applications, configuration data, calibration data or manifests.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>UCM provides a method ProcessSwPackage to process transferred Software Package and takes TransferId as input to identify which transferred software package to be processed.</p></li>
+<li><p>UCM provides few supporting methods GetSwProcessProgress, Cancel and RevertProcessedSwPackage.</p></li>
+<li><p>GetSwProcessProgress method is used to query the progress of executing the ProcessSwPackage method call for provided TransferId.</p></li>
+<li><p>Cancel method is used to cancel the ongoing Software Package processing.</p></li>
+<li><p>RevertProcessedSwPackage method is used to revert all changes done during processing of Software Package.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="activation-rollback-and-finish">
+<h3><span class="section-number">8.6.3. </span>Activation, Rollback and Finish<a class="headerlink" href="#activation-rollback-and-finish" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The installed Software Cluster after completion of Software Package processing does not express whether a Software Cluster is currently executed or not. Hence UCM uses Activate method to activate the software cluster by performing dependency checks and system reset/application reset or directly activates software cluster depends on the software cluster configuration.</p></li>
+<li><p>UCM provides a method Rollback to recover from an Activation that went wrong.</p></li>
+<li><p>UCM provides a method Finish to commit all the changes and clean up all temporary data of the processed Software Packages.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="status-reporting">
+<h2><span class="section-number">8.7. </span>Status Reporting<a class="headerlink" href="#status-reporting" title="Link to this heading"></a></h2>
+<p>Once Software Packages are transferred to UCM, they are ready to be processed to finally apply changes to the AUTOSAR Adaptive Platform.</p>
+<p>In contrast to the transmission, the processing and activation tasks must happen in a strict sequential order. To achieve this UCM maintains different states and it is queried by Field called CurrentStatus.</p>
+<p>The state machine for CurrentStatus is shown in below figure:</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/Package_Manager_Status.png" class="with-border" src="../_images/Package_Manager_Status.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Package Manager Status</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="software-cluster-lifecycle">
+<h2><span class="section-number">8.8. </span>Software Cluster lifecycle<a class="headerlink" href="#software-cluster-lifecycle" title="Link to this heading"></a></h2>
+<p>Software cluster lifecycle is described in below figure:</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/swcluster.png" class="with-border" src="../_images/swcluster.png" />
+<figcaption>
+<p><span class="caption-text"><strong>State Machine for a SoftwareCluster</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>New Software Cluster starts its lifecycle with state kAdded. Software Cluster goes to kAdded state once Software Package is processed.</p></li>
+<li><p>Software Cluster goes to kPresent state on successful completion of install or update.</p></li>
+<li><p>For an update of existing Software Cluster, it goes to kUpdated on successful processing of a software package with new data.</p></li>
+<li><p>For a removal of existing Software Cluster, it goes to kRemoved on successful processing of a software package with new data.</p></li>
+<li><p>On reverting of processed software package Software Cluster goes back to kPresent state from kUpdated/kRemoved.</p></li>
+</ul>
+</section>
+<section id="version-reporting">
+<h2><span class="section-number">8.9. </span>Version Reporting<a class="headerlink" href="#version-reporting" title="Link to this heading"></a></h2>
+<p>UCM is responsible for reporting software information that are present on platform, reporting changes are done to software and provides general information of software cluster.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>UCM provides a method GetSwClusterInfo to provide the identifiers and versions of the SoftwareClusters that are in state kPresent.</p></li>
+<li><p>UCM provides a method GetSwClusterChangeInfo to provide the identifiers and versions of the SoftwareCluster that are in state kAdded, kUpdated or kRemoved.</p></li>
+<li><p>UCM provides a method GetSwClusterDescription to return the version, type approval, license and release notes of the SoftwareCluster that are in state kPresent.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="history">
+<h2><span class="section-number">8.10. </span>History<a class="headerlink" href="#history" title="Link to this heading"></a></h2>
+<p>UCM provides a method GetHistory to retrieve all actions that have been performed by UCM when exiting kVerifying state from a specific time window input parameter.</p>
+</section>
+<section id="ucm-master">
+<h2><span class="section-number">8.11. </span>UCM Master<a class="headerlink" href="#ucm-master" title="Link to this heading"></a></h2>
+<p>UCM Master objective is to provide a standard Adaptive Autosar solution to safely and securely update a complete vehicle Over The Air or by a Diagnostic Tester.</p>
+<p>UCM Master provides services for updating the software and its configuration in a vehicle. UCM Master is coordinating an update campaign within the vehicle.</p>
+<p>Following are the functionalities of UCM Master</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Interact with backend to identify Software Clusters that could be updated, installed or removed.</p></li>
+<li><p>Interact with backend to authenticate Vehicle Package.</p></li>
+<li><p>Interact with backend to confirm dependencies between Software Clusters within vehicle before starting campaign.</p></li>
+<li><p>Interact with backend to inform Backend of needed Software Packages, receives them and dispatch them to targeted ECUs.</p></li>
+<li><p>Interact with Vehicle State Manager to inform which safety conditions that must be applied according to Vehicle Package.</p></li>
+<li><p>Interact with Vehicle State Manager to share the computed vehicle state to other Applications or Functional Clusters involved in the update campaign.</p></li>
+<li><p>Interact with Vehicle Driver about update campaign to provide campaign state to trigger interaction with Human during update campaign.</p></li>
+<li><p>Interact with Vehicle Driver to get vehicle modification approval or consent from Human when configured in Vehicle Package.</p></li>
+<li><p>Provide information of installed software in vehicle.</p></li>
+<li><p>Provide information of update campaigns history.</p></li>
+<li><p>Recovery in case of failure.</p></li>
+</ul>
+</div></blockquote>
+<p>All these actions are what is called a campaign which UCM Master is coordinating. The UCM of the machines in the same network of a UCM Master is the target of a campaign, are referred to as UCM subordinates.</p>
+<p>The OTA Client establishes a communication between Backend and UCM Master so that they can exchange information of the installed Software Clusters in the vehicle and the Software Clusters available in the Backend. This communication could be triggered by OTA Client and UCM Master to request the updates in case of newly available Software Clusters (pull case) or by Backend to push, for instance, an important security update to a fleet of vehicles (push case). The computation to find new Software Clusters versions and resolution of dependencies between Software Clusters can be either done at UCM Master or Backend.</p>
+<section id="id1">
+<h3><span class="section-number">8.11.1. </span>Status reporting<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>UCM Master supports a mechanism to provide the state of an update campaign typically to OTA Client, Vehicle Driver Application and Vehicle State Manager.</p>
+<p>Campaign State Machine is described in below figure:</p>
+<figure class="align-center" id="id9">
+<img alt="../_images/State_Machine.png" class="with-border" src="../_images/State_Machine.png" />
+<figcaption>
+<p><span class="caption-text"><strong>State Machine</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Campaign State Machine for OTA Client (TransferState field) is described in below figure:</p>
+<figure class="align-center" id="id10">
+<img alt="../_images/TransferState_field.png" class="with-border" src="../_images/TransferState_field.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TransferState field</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="software-cluster">
+<h2><span class="section-number">8.12. </span>Software Cluster<a class="headerlink" href="#software-cluster" title="Link to this heading"></a></h2>
+<p>Modeling of SoftwareCluster is described below:</p>
+<figure class="align-center" id="id11">
+<img alt="../_images/SoftwareCluster.png" class="with-border" src="../_images/SoftwareCluster.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Software Cluster</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h2><span class="section-number">8.13. </span>Software Package<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>The existence of the SoftwareCluster by itself is not sufficient for installation. Actually, the SoftwareCluster gets wrapped into a so-called SoftwarePackage that comes with an own manifest format that is at least partly standardized.</p>
+<p>The difference between the semantics of a SoftwareCluster and the semantics of SoftwarePackage is that a SoftwareCluster focuses on the structure of the software itself while the SoftwarePackage is created to handle the logistics aspect of the software installation.</p>
+<p>Modelling of Software Package is described in below figure:</p>
+<figure class="align-center" id="id12">
+<img alt="../_images/Modeling_of_Software_Package.png" class="with-border" src="../_images/Modeling_of_Software_Package.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling_of_Software_Package</strong></span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Conceptual relation of Software Package and Software Cluster is described in below figure:</p>
+<figure class="align-center" id="id13">
+<img alt="../_images/SoftwarePackage%26SoftwareCluster.png" class="with-border" src="../_images/SoftwarePackage%26SoftwareCluster.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Software Package &amp; Software Cluster</strong></span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="vehicle-package">
+<h2><span class="section-number">8.14. </span>Vehicle Package<a class="headerlink" href="#vehicle-package" title="Link to this heading"></a></h2>
+<p>The ability to handle Software Packages is the prerequisite for an important further step: The execution of an update campaign that applies for the whole vehicle. The basis for the update campaign is the definition of meta-class VehiclePackage.</p>
+<p>Modeling of VehiclePackage is described in below figure:</p>
+<figure class="align-center" id="id14">
+<img alt="../_images/Modeling_of_VehiclePackage.png" class="with-border" src="../_images/Modeling_of_VehiclePackage.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of Vehicle Package</strong></span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../nm/nm.html" class="btn btn-neutral float-left" title="7. Network Management(NM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../sm/sm.html" class="btn btn-neutral float-right" title="9. State Management (SM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

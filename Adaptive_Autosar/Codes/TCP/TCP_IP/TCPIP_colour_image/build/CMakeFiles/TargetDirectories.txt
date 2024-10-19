@@ -1,0 +1,4 @@
+/home/pavan/TCPIP_vector/build/CMakeFiles/rebuild_cache.dir
+/home/pavan/TCPIP_vector/build/CMakeFiles/edit_cache.dir
+/home/pavan/TCPIP_vector/build/CMakeFiles/client.dir
+/home/pavan/TCPIP_vector/build/CMakeFiles/server.dir

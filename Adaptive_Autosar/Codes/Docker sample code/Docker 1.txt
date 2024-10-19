@@ -1,0 +1,139 @@
+>What is Container?
+	>A way to package an application with all the necessary dependencies(Binaries) and configuration.
+	>Portable entity, easily shared and moved around (Between Development team)
+	>(Portablility and Isolated enviroment which containes all the dependencies) Makes development and deployment process more efficent
+
+>Where do container(Image) live? (For sharing and move them)
+	>Container repository
+	>Private Repository
+	>Public Repository for Docker (Docker hub)(1000 of images for different application)
+	
+>What are the problems
+	>Number of services (Complexity)
+	>dependency version conflicts
+	>Installation process different on each OS enviroment and some times the service will not present in that OS.
+
+>Why do we need Container?
+	>We do not have to installed services directly on OS (Own Isolated enviroment)
+	>Everything is package in the container to run the application/software (Binaries, specific version of services, all the configuration)
+	>Fetching the image and deploying it can done usin one command and regard less of which OS i am in the command remains same
+	>Different version of same application without any conflicts.
+	
+>What container consist of?
+	>Layers of images stack on top of each other
+	>Linux Base image (Small) which makes container reamin in samll in size
+	>On top of Base image is application image
+	
+>What is dockerhub?
+	>Dockerhub is a public docker image repository (We dont need any credentials) 
+	>We can store our image in here (docker push)
+	>We can also fetch/pull puclic image for our own use (docker pull)
+	
+>What are the concept of layers?
+	>Layers are different images/service that needs to be stack on top of each other to make oyur own specific Image.
+	>The advantage of images are if we want to download newer version of the specific image then the layers which are same b/w the older version and newer one will not once again be download but the layers which are different will be.
+	>This will save time as well as space.
+
+>Docker image
+	>The actual package where the binaries, configuration , sources code, dockerfile .......
+	>They are immutable
+	>They can be moved
+	>It's an entity that is required to create container
+
+>Docker container
+	>CONTAINER is a running enviroment for image
+	>The not portable
+
+>Is docker image protable?
+	>It runs on any OS but regarding windows 9 and below's kernel (and also older mac versions) is not compatible with linux docker image.
+	>We have a tool called Docker toobox which abstracts away the kernal from the OS so we can run any docker images.
+
+>So what is port binding?
+	>So container and laptop/host have ports and binding os these ports helps in communication between host and container
+	>If we don't bind the ports from the Host and container, the container is partically unreachable.
+	>Port binding helps in sending req from the host to the container.
+
+	>NOTE: If containers are same but different version then they will be connected to same Container port. 
+
+>How to bind the ports?
+	>docker run -p5000:6379 -d redis
+			|    |			
+	        Laptop Port  |
+                             | 
+                             |
+			Container Port
+
+-------------------------------------------------------------------------DEBUG CONTAINER------------------------------------------------------------------------------
+>How to debug a container (If we want to look some files in the container, print the envirmental varibles, configuration files)?
+	> docker exce -it <CONTAINER_NAME/CONTAINER_ID> /bin/bash
+		       |                                     |
+		      Iteractuve terminal                 Get the bash
+
+	>This show the Linux Virtual filesystem of the container
+	>We can navigate through the filesystem looking for the bug or print some enviromental variables 
+
+>NOTE: And to exit this interactive terminal we just have to write "exit" 
+
+----------------------------------------------------------------------------DOCKER LOGS---------------------------------------------------------------------------------
+>To see the history to the container like how it's behaving we can use "logs"
+	>docker logs <CONTAINER_ID>
+
+>Just want to see just the last part of logs
+	>docker logs <CONTAINER_ID> | tail
+
+>If we what to string the logs
+	>docker logs <CONTAINER_ID> -f
+
+
+----------------------------------------------------------------------------DOCKER NETWORK-----------------------------------------------------------------------------
+>Docker by defaultly Creates its isolated docker network where containers are running.
+>If we deploy to two container in the same network, They can talk to each other using just the container name without localhost, port-number
+
+>So what about the application that runs outside the docker connects to them from host by using localhost  
+
+>How to see the newtork created by docker?
+	>docker network ls
+
+>How to create our own network?
+	>docker network create <NETWORK_NAME>   ====> docker network create ECU-networks
+
+>How to inetegrate our own network with the containers?
+	>docker run -p<Host_port>:<Container_port> --name <CONTAINER_NAME> --net <NEWTWRK_NAME> <IMAGE_NAME>
+
+>How to inetegrate two or more containers with our own network?
+	>docker run -p<Host_port1>:<Container_port1> --name <CONTAINER_NAME1> --net <NEWTWRK_NAME1> <IMAGE_NAME1>
+	>docker run -p<Host_port2>:<Container_port2> --name <CONTAINER_NAME2> --net <NEWTWRK_NAME2> <IMAGE_NAME2>
+
+>How to use enviromental variables of the container?
+	>docker run -d -p -p<Host_port>:<Container_port> -e <ENV_VAR>=<> <IMAGE_NAME>
+
+---------------------------------------------------------------------------DOCKER COMPOSE------------------------------------------------------------------------------
+>If there is one to two containers to be deployed then we can do that manually but what about 5 or 10 containers to be deployed?
+>We have to write commmands every time to depoy the container and its very tedious work
+>There is tool for AUTOMATING the running of containers call DOCKER COMPOSE.
+
+>What we are doing here is , by taking all the commands with its configuration(EVIROMENtAL_VARIABLE) and methods into a .yaml file so we have a structured commands.
+
+
+docker-compose.yaml
+#######################################################################################################################################################################
+version:'3'    <==== version of docker compose
+services:
+	<CONTAINER_NAME>:
+		image:<IMAGE_NAME>
+		ports:
+		    -<HOST_PORT>:<CONTAINER_PORT>
+		enviroment:
+		    -<ENVIROMENTAL_VARIABLES>
+		    -<ENVIROMENTAL_VARIABLES>
+	<CONTAINER_NAME>:
+		image:<IMAGE_NAME>
+		ports:
+		    -<HOST_PORT>:<CONTAINER_PORT>
+		enviroment:
+		    -<ENVIROMENTAL_VARIABLES>
+		    -<ENVIROMENTAL_VARIABLES>
+
+NOTE: As you can see that there no network configuration, the docker compose takes care of creating a common network
+	So we dont have to specify in which network these containers will run in.
+#######################################################################################################################################################################

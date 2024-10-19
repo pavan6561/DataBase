@@ -1,0 +1,10 @@
+sudo docker build -t hello .
+sudo docker images
+sudo docker run <ImageName:latest/ImageId>
+sudo docker -it run <ImageName:latest/ImageId> /bin/bash
+root@e28b9809bf31:/# cd app/
+root@e28b9809bf31:/app# ls
+hello  hello.cpp
+root@e28b9809bf31:/app# ./hello 
+Hello World
+root@e28b9809bf31:/app# 

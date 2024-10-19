@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13. Intrusion Detection System Manager (IDSM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="12. Cryptography" href="../crypto/crypto.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">13.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-architecture-of-a-distributed-onboard-ids">13.2. General Architecture of a distributed onboard IDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functionality-of-idsm">13.3. Functionality of IDSM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-mode">13.3.1. Reporting Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reporting-mode-options">13.3.1.1. Reporting Mode Options:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#filter-chain">13.3.2. Filter Chain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-of-filter">13.3.3. Types of Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-state-filter-sampling-filter">13.3.4. Machine State Filter &amp; Sampling Filter​</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aggregation-filter">13.3.5. Aggregation Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threshold-filter">13.3.6. Threshold Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timestamp">13.3.7. Timestamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authenticity">13.3.8. Authenticity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rate-traffic-limitation">13.3.9. Rate &amp; Traffic Limitation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">13.4. Configuration Methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#idsm-instantiation">13.4.1. IdsM Instantiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deployment-for-security-events">13.4.2. Deployment for Security Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security-event-report-interface">13.4.3. Security Event Report Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-custom-time-stamps-for-security-events">13.4.4. Obtaining custom Time Stamps for Security Events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">13. </span><strong>Intrusion Detection System Manager (IDSM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/idsm/idsm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="intrusion-detection-system-manager-idsm">
+<h1><span class="section-number">13. </span><strong>Intrusion Detection System Manager (IDSM)</strong><a class="headerlink" href="#intrusion-detection-system-manager-idsm" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">13.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>A number of special challenges apply to automotive IDS. For one, the E/E architecture of vehicles is a distributed system. Many familiar vehicle functions can only be implemented in the interplay of two or more ECUs. This property has effects on a potential onboard IDS architecture. Since no central node has knowledge of all security events on other nodes, the IDS itself must be a distributed system.</p>
+<p>A distributed onboard IDS is that it avoids a single point of failure. Detection algorithms – known as “sensors” – are implemented in the ECU software. For one, they detect protocol violations that occur as the result of hacker attacks. If the security sensors on one ECU fail, the rest of the IDS should continue to operate properly with practically no limitations.</p>
+</section>
+<section id="general-architecture-of-a-distributed-onboard-ids">
+<h2><span class="section-number">13.2. </span>General Architecture of a distributed onboard IDS<a class="headerlink" href="#general-architecture-of-a-distributed-onboard-ids" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<img alt="../_images/Architecture_of_a_distributed_onboard_IDS.png" class="with-border" src="../_images/Architecture_of_a_distributed_onboard_IDS.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Architecture of a distributed onboard IDS</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="functionality-of-idsm">
+<h2><span class="section-number">13.3. </span>Functionality of IDSM<a class="headerlink" href="#functionality-of-idsm" title="Link to this heading"></a></h2>
+<section id="reporting-mode">
+<h3><span class="section-number">13.3.1. </span>Reporting Mode<a class="headerlink" href="#reporting-mode" title="Link to this heading"></a></h3>
+<p>IdsM shall determine the default reporting mode of every reported SEv from the SecXT model parameter SecurityEventContextProps.defaultReportingMode.</p>
+<section id="reporting-mode-options">
+<h4><span class="section-number">13.3.1.1. </span>Reporting Mode Options:<a class="headerlink" href="#reporting-mode-options" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>OFF</p></li>
+<li><p>BRIEF</p></li>
+<li><p>DETAILED</p></li>
+<li><p>BRIEF_BYPASSING_FILTERS</p></li>
+<li><p>DETAILED_BYPASSING_FILTERS</p></li>
+</ul>
+</div></blockquote>
+<p>Reconfiguration of the reporting mode via diagnostic access is possible.</p>
+<p>IdsM standardizes a DID for reading and changing the reporting mode of events during runtime.</p>
+<p>API to change the reporting mode at runtime</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>GetReportingMode(SecurityEventDefinition.id)</p></li>
+<li><p>SetReportingMode(SecurityEventDefinition.id, ReportingMode)</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="filter-chain">
+<h3><span class="section-number">13.3.2. </span>Filter Chain<a class="headerlink" href="#filter-chain" title="Link to this heading"></a></h3>
+<p>The IdsM shall support the qualification of SEv by applying a configurable chain of filters to the reported SEv. One configured sequence of filters is called Filter Chain.</p>
+<p>Filter chains are configured using the SecXT model element SecurityEventFilterChain.</p>
+<p>Filter chain is evaluated after evaluating the reporting mode.</p>
+<p>When a SEv is reported, the IdsM shall apply the filter chain that is mapped to the SecurityEventDefinition of the reported SEv via the SecurityEventContextMapping.</p>
+</section>
+<section id="types-of-filter">
+<h3><span class="section-number">13.3.3. </span>Types of Filter<a class="headerlink" href="#types-of-filter" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>MachineState Filter ​</p></li>
+<li><p>Forward-Every-nth Filter​</p></li>
+<li><p>Aggregation Filter​</p></li>
+<li><p>Threshold Filter</p></li>
+</ol>
+<p>IdsM shall evaluate all activated filter in the order MachineState Filter, Forward-Every-nth Filter, Aggregation Filter, Threshold Filter</p>
+</section>
+<section id="machine-state-filter-sampling-filter">
+<h3><span class="section-number">13.3.4. </span>Machine State Filter &amp; Sampling Filter​<a class="headerlink" href="#machine-state-filter-sampling-filter" title="Link to this heading"></a></h3>
+<p>IdsM evaluates the current machine state equals one of the states referenced by SecurityEventStateFilter.blacklistedState, then IdsM shall drop the SEv.</p>
+<p>IdsM evaluates the sampling filter for a SEv, IdsM shall drop all the SEvs but every n-th per SecurityEventDefinition, where n is defined by SecurityEventOneEveryNFilter.n.</p>
+</section>
+<section id="aggregation-filter">
+<h3><span class="section-number">13.3.5. </span>Aggregation Filter<a class="headerlink" href="#aggregation-filter" title="Link to this heading"></a></h3>
+<p>All SEv of a given type occurring within a configured time interval are aggregated into one SEv with an additional counter information attached that indicates how often the event occurred in the time interval.</p>
+<p>The aggregation filter shall not forward (i.e., to the next filter) any incoming SEv during the aggregation interval.</p>
+<p>Aggregation of events can reduce resource consumption for SEvs occurring at a high frequency, while maintaining information on the total number of event occurrences.</p>
+</section>
+<section id="threshold-filter">
+<h3><span class="section-number">13.3.6. </span>Threshold Filter<a class="headerlink" href="#threshold-filter" title="Link to this heading"></a></h3>
+<p><strong>Event Dropping Below Threshold:</strong></p>
+<p>The threshold filter shall drop an SEv of given type if the sum of count parameters of all SEvs of given type that were processed by the threshold filter in the current threshold interval is smaller than the configured parameter SecurityEventThresholdFilter.thresholdNumber.</p>
+<p><strong>Event Forwarding Above Threshold:</strong></p>
+<p>The threshold filter shall forward an SEv of given type if the sum of count parameters of all SEvs of given type that were processed by the threshold filter in the current threshold interval is equal to or greater than the configured parameter SecurityEventThresholdFilter.thresholdNumber.</p>
+</section>
+<section id="timestamp">
+<h3><span class="section-number">13.3.7. </span>Timestamp<a class="headerlink" href="#timestamp" title="Link to this heading"></a></h3>
+<p>Timestamps are optional and can be provided to the IdsM in different ways.​</p>
+<p>Timestamps are optional:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>IdsmInstance.timestampSupport is set to false, IdsM shall not add a timestamp to a QSEv and shall ignore.</p></li>
+</ul>
+</div></blockquote>
+<p>Timestamps provided by the stack:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If IdsmInstance.timestampSupport is set to true, IdsmInstance.timestampFormat equals “‘AUTOSAR”’, and the ReportEvent() function is called without a timestamp parameter, then Idsm shall add a timestamp from the TimeSync::TimeBaseResource referenced as IdsPlatformInstantiation.timeBase.</p></li>
+<li><p>If IdsmInstance.timestampSupport is set to true and the ReportEvent() function is called with a timestamp parameter, then Idsm shall use this provided timestamp.</p></li>
+</ul>
+</div></blockquote>
+<p>Timestamp provided via event reporting interface:​</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If IdsmInstance.timestampSupport is set to true and the ReportEvent() function is called with a timestamp parameter, then Idsm shall use this provided timestamp.</p></li>
+</ul>
+</div></blockquote>
+<p>Timestamp provided via application software:​</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If IdsmInstance.timestampSupport is set to true, IdsmInstance.timestampFormat does not equal “‘AUTOSAR”’, and the ReportEvent() function is called without a timestamp parameter, then IdsM shall add a timestamp that is provided by a application software through the TimestampProvider callback to the QSEv.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="authenticity">
+<h3><span class="section-number">13.3.8. </span>Authenticity<a class="headerlink" href="#authenticity" title="Link to this heading"></a></h3>
+<p>IdsM can optionally protect the authenticity of transmitted QSEvs using cryptographic signatures.</p>
+<p><strong>Signing QSEv:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If an IdsmSignatureSupportAp is aggregated at the IdsmInstance in the role signatureSupportAp, then IdsM shall attach a cryptographic signature to each QSEv transmitted to the IdsR and to each locally persisted QSEv.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Primitive and Key:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>IdsM shall use the signing algorithm specified in the parameter IdsmSignatureSupportAp.cryptoPrimitive and the key identified by the CryptoKeySlot that is referenced by IdsmSignatureSupportAp in the role keySlot.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="rate-traffic-limitation">
+<h3><span class="section-number">13.3.9. </span>Rate &amp; Traffic Limitation<a class="headerlink" href="#rate-traffic-limitation" title="Link to this heading"></a></h3>
+<p>Before sending a QSEv to the IdsR or persisting a QSEv, IdsM shall apply rate and traffic limitation that can lead to dropping the QSEv.</p>
+<p><strong>Rate Limitation:</strong> IdsM shall drop an QSEv from transmission, if its transmission would cause the number of QSEvs transmitted in the current interval, which is specified in IdsmRateLimitation.timeInterval, to exceed the maximum number of transmission configured as IdsmRateLimitation. maxEventsInInterval.</p>
+<p><strong>Traffic Limitation:</strong> IdsM shall drop an QSEv from transmission, if its transmission would cause the number of bytes transmitted in the current interval, which is specified in IdsmTrafficLimitation.timeInterval, to exceed the maximum number of bytes configured as IdsmTrafficLimitation.maxBytesInInterval.</p>
+</section>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">13.4. </span>Configuration Methodology<a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<section id="idsm-instantiation">
+<h3><span class="section-number">13.4.1. </span>IdsM Instantiation<a class="headerlink" href="#idsm-instantiation" title="Link to this heading"></a></h3>
+<p>The definition of the deployment for the Intrusion Detection System Manager (IdsM) is modeled by means of the meta-class IdsmModuleInstantiation.</p>
+<p>On each Machine, only one instance of the Intrusion Detection System Manager (modeled by IdsmModuleInstantiation) shall exist.</p>
+<p>This instance manages all the reported SEvs created by SWCLs or Function Clusters on this Adaptive Machine.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/Specification_of_the_IdsmModuleInstantiation.png" class="with-border" src="../_images/Specification_of_the_IdsmModuleInstantiation.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Specification of the IdsmModuleInstantiation</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="deployment-for-security-events">
+<h3><span class="section-number">13.4.2. </span>Deployment for Security Events<a class="headerlink" href="#deployment-for-security-events" title="Link to this heading"></a></h3>
+<p>The security events that are actually reported by a local IdsM are represented by meta-class SecurityEventMapping, referenced by IdsmModuleInstantiation in the role reportableSecurityEvent.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/Modeling_of_between_a_SecurityEventMapping.png" class="with-border" src="../_images/Modeling_of_between_a_SecurityEventMapping.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of a SecurityEventMapping</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="security-event-report-interface">
+<h3><span class="section-number">13.4.3. </span>Security Event Report Interface<a class="headerlink" href="#security-event-report-interface" title="Link to this heading"></a></h3>
+<p>On the AUTOSAR adaptive platform, a dedicated PortInterface for the interaction of application-layer software with the AUTOSAR Intrusion Detection System
+Manager is defined.</p>
+<p>The name of this sub-class of abstract meta-class PortInterface is SecurityEventReportInterface.</p>
+<p>Each RPortPrototype typed by a SecurityEventReportInterface is able to report exactly one security event.</p>
+<p>The modeling of the association between a specific security event and the corresponding RPortPrototype typed by a SecurityEventReportInterface is created by means of the SecurityEventReportToSecurityEventDefinitionMapping.</p>
+<p>This meta-class maps the RPortPrototype to a SecurityEventDefinition that itself is part of the so-called Security Extract.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/Specification_of_the_SecurityEventReportInterface_and_SecurityEventReportToSecurityEventDefinitionMapping.png" class="with-border" src="../_images/Specification_of_the_SecurityEventReportInterface_and_SecurityEventReportToSecurityEventDefinitionMapping.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Specification of the SecurityEventReportInterface and SecurityEventReportToSecurityEventDefinitionMapping</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="obtaining-custom-time-stamps-for-security-events">
+<h3><span class="section-number">13.4.4. </span>Obtaining custom Time Stamps for Security Events<a class="headerlink" href="#obtaining-custom-time-stamps-for-security-events" title="Link to this heading"></a></h3>
+<p>One of the tasks of an IdsM is to obtain a custom time stamp that corresponds to reported security events under certain circumstances (which are not relevant for the sake of discussing the modeling).</p>
+<p>Time stamps can be obtained from sub-classes of the abstract base-class TimeBaseResource. Therefore, IdsmModuleInstantiation maintains a reference to
+TimeBaseResource.</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/Creating_an_associsation_between_a_IdsmModuleInstantiation_and_a_TimeBaseResource.png" class="with-border" src="../_images/Creating_an_associsation_between_a_IdsmModuleInstantiation_and_a_TimeBaseResource.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Creating an association between a IdsmModuleInstantiation and a TimeBaseResource</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../crypto/crypto.html" class="btn btn-neutral float-left" title="12. Cryptography" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

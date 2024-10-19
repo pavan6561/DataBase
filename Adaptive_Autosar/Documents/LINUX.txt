@@ -1,0 +1,195 @@
+                                           Booting steps of os
+                                         -----------------------
+.BISO:                basic input/ output system executes MBR
+.MBR:                 master boot record executes GRUB
+.GRUB:                grand unfield bootloader executes kernel
+.KERNEL:              kernel executes/sbin/init
+.INIT:                init executes runlevel programs
+.RUNLEVEL:            runlevel programs are executed from /etc/rc.d/rc*.d/
+
+                                            states of processor
+                                          -----------------------
+.ready state: process ready for execution but not being executed by cpu.
+.running state:running state ececuted by cpu.
+.wait state: process waiting for an external event to finish.(scanf())
+.delay state:process intentially goes to delay .(sleep()).
+.suspend state:process is suspended by some signls.(ctr+l)
+
+                                         scheduling policies in os
+                                        -----------------------------
+.FIFO: first in first out process will ececute.
+.ROUND ROBIN:periodialy releases the cpu from long running jobs.
+.SJF(short jump first):which one is small compare to others that will execute first.
+.PRIORITY SCHEDUING:lower number represent is high priority.
+.MULTILEVEL FEED BACK QUEUES:prioity 0,1,2;
+                                    
+                                             Link files
+                                           --------------
+.HARD LINK: if we remove the original file(abc) ,we can get the data from another file(def) (ln abc def)
+            both files are regular.inode numbers are same .link count are increment .
+            
+.SOFT LINK:  if we remove the original file(abc) ,we can not get the data from another file(def) (ln -s abc def)
+            one file are regular another linked .inode numbers are not same .link count not are increment.    
+
+
+                                            fork()
+                                            -------
+.fork(): fork is creat a child process.n child fork return 0,parent fork is return child pid.
+.orphan:parent execution complited and child is still execututing is called orphan.
+.zombie:child executed complited and parent is still executing is called zombie.
+
+                                            IPC: (Inter Process Communication.)
+                                         ------------------------------------------
+Inter Process Communication is a mechanism that allows processes to communicate
+with each other and syncronize their actions.
+
+IPC mechanism mainly used for: 2 types below
+1.communiction: Means exchaniging data between processes.
+        a.pipe
+        b.fifo
+        c.message queue
+        d.shared memeory
+
+2.Synchronization: Used for sycronizing the actions of the processes or threads.
+        a.semapore
+        b.record lock
+
+1.Communication:
+
+1.PIPE:
+        a.Pipe is a oldest ipc mechanism.Pipe is a unnamed pipe.By using pipe we
+can communicate with realated processes it means between parent and child
+process.
+        
+              d.pipe are unidirectional communication.one end is used for writting and
+other end used for reading the data.
+        e.maximum capacity of pipe is 65536 bytes.
+
+          Creating pipe:
+
+          #include<unistd.h>
+          int pipe(int p[2]);
+
+                   upon sucess 0; upon failure -1.
+
+          when write end closed read end returns 0;
+          when read end closed write end return SIGPIPE signal.
+
+Disadvantage: by using pipe we can communicate between only related process.
+
+
+2.FIFO:
+        1.To overcome disadvantage of pipe we are using fifo.
+        b.Fifo is a named pipe. By using fifo we can communicate between two
+unrelated processes.
+       2. A FIFO file is a special kind of file on the local storage
+             which allows two or more processes to communicate with each other 
+              by reading/writing to/from this file.
+      3. Once we have created a FIFO special file in this way, any process
+ can open it for reading or writing, in the same way as an ordinary file.
+
+         mkfifo("file_name"):create and open fifo file.
+
+
+Disadvantages:
+1.while one process writting data at other side anther process should be
+available for reading data.
+2.when one process writting data and other side if multiple process redy to read
+data while process read data we can't predict.
+
+
+3.Message queue:
+        a.To overcome disadvantages of fifo we are going to message queue.
+        b.In message queue there no neccessary that one process writting data
+other process should be available for reading.
+        c.Only particular process can read the data.
+        d. first message is saved based on message number and then it is read by
+another process based on message number.
+
+        msgget():   Creating and opening the message queue.
+        msgsnd():   Sending the message through message queue.
+        msgrcv():   Reading the message through messgae queue.
+        msgctl():   To do some control operation.
+
+Disadvantages:
+1.Message queue is a slowest ipc mechanism.because it uses kernal space for
+communication.
+2.Message queue uses key value instead of file name. because Key values are
+difficult to remember.
+
+4.Shared memeory:
+        a.To overcome the disadvantages of message queue we are going to shared
+memory.
+        b.Shared memory is a fastest ipc mechanism. because it will not use
+kernel space for communication.both the process will share same memory for
+communication.
+        c.In shared memory one process writing data another process should be
+available for reading data.
+        d.while one process updating data at a time other process will be
+reading data there will be missmatch of data so we need use semapore for
+syncronization.
+
+
+        shmget(): Creating and opening shared memory.
+        shmat(): Attach created shared memory.
+       shmdt(): Delete the created memory.
+        shmctl(): To do some control operation.
+
+Disadvantages:
+1.shared memory uses key value instead of file name. because Key values are
+difficult to remember.
+3.shared memory uses same memory used between multiple process.so there will be
+a missamstch of data.
+
+2.Syncronization:
+
+1.Semaphore:
+        a.semapore is used for  syncronization the process and thereds technique.
+         and signaling the machanisam
+        b.semapore is a small integer value.
+        c. Semaphore acts as a lock on the resources:
+        d. Whenever a process needs to access the resource,it first needs to take permission
+           from the semaphore.
+
+          semget(): Creating and opening semapore.
+          semctl(): Initialize semapore value like SETVAL,SETALL,GETALL and
+
+Disadvantages:
+1.semapore uses key value instead of file name. because Key values are difficult
+to remember.
+2.Semaphores may lead to a priority inversion where low priority processes may
+ access the critical section first and high priority processes later.
+
+2.Record lock:
+        a.to overcome the disadvantages of semapore we are using record lock.
+        b.Record lock is syncronization technique used between process.
+        c.to read data from the file ,make some changes to data and write it back to the file
+        c.In this we are using fcntl() system call for locking and unlocking the
+        memory.
+         
+
+     fcntl():used for getting duplicate file discriptor and to set some of
+flags.
+         uses of fcntl:
+         1.place alock on the file.
+         2.we can apply read lock,write lock and unlock memory.
+         3.perform file input/output.
+ 
+                                                Threads
+                                             -------------                   
+1.what is thread ?
+ans: a small processor is called as threads.threads creation is 10 times faster then process creation.
+ disadvantages of thread is multiple threads to memory shortage is occure.
+key : pthread.
+
+2.what is mutex?
+ans:1.mutex is a locking system
+    2.mutex is for thered synchronization.
+    3.mutex provided ownership only the owner can release the lock
+ A Mutex is a lock that we set before using a shared resource and release after using it.
+ When the lock is set, no other thread can access the locked region of code.
+ 
+
+
+
+

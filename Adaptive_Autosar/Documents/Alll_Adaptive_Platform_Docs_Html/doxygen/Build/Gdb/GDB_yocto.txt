@@ -1,0 +1,86 @@
+# Debugging an Application {#gdb_yoctoimage}
+
+## Setting up yocto environment for Remote Debugging
+*	In order to be able to do debugging on the target image you need a working ssh connection and a sftp server available on the target
+		The following packages need to be added to variable IMAGE_INSTALL in recipe yocto-layers/meta-ara/recipes-core/images/core-image-apd-debug.bb: 
+```
+	openssh-sftp-server \ 
+	glibc-utils \ 
+	localedef \
+```
+*	For debugging into other libraries (see below), also add these lines to file build/local.conf: 
+```
+IMAGE_GEN_DEBUGFS = "1"
+IMAGE_FSTYPES_DEBUGFS = "tar.bz2"
+```
+
+## Setting up eclipse
+*	Instatllaton of eclipse
+	To develop within the Eclipse IDE, you need to do the following: 
+	*	Install the optimal version of the Eclipse IDE.
+	*	Configure the Eclipse IDE. 
+	*	Install the Eclipse Yocto Plug-in. 
+	*	Configure the Eclipse Yocto Plug-in. 
+*	install eclipse
+	*	Find the tarball at http://www.eclipse.org/downloads. From that site, choose the appropriate download from the "Eclipse IDE for C/C++ Developers". This version contains the Eclipse Platform, the Java Development Tools (JDT), and the Plug-in Development Environment. 
+	*	Once you have downloaded the tarball, extract it into a clean directory. For example, the following commands unpack and install the downloaded Eclipse IDE tarball into a clean directory using the default name eclipse: 
+>		$ cd ~
+>	    $ tar -xzvf ~/Downloads/eclipse-cpp-neon-SR2-linux-gtk-x86_64.tar.gz
+*	Configuring the Eclipse IDE
+	*	This section presents the steps needed to configure the Eclipse IDE. 
+	*	Before installing and configuring the Eclipse Yocto Plug-in, you need to configure the Eclipse IDE. Follow these general steps: 
+		*	Start the Eclipse IDE.
+		*	Make sure you are in your Workbench and select "Install New Software" from the "Help" pull-down menu.
+		*	Select Neon - http://download.eclipse.org/releases/neon from the "Work with:" pull-down menu. 
+		*	Expand the box next to "Linux Tools" and select the Linux Tools LTTng Tracer Control, Linux Tools LTTng Userspace Analysis, and LTTng Kernel Analysis boxes. If these selections do not appear in the list, that means the items are already installed. 
+		*	Expand the box next to "Mobile and Device Development" and select the following boxes. Again, if any of the following items are not available for selection, that means the items are already installed: 
+			*	C/C++ Remote Launch (Requires RSE Remote System Explorer)
+			*	Remote System Explorer End-user Runtime
+			*	Remote System Explorer User Actions
+			*	Target Management Terminal (Core SDK)
+			*	TCF Remote System Explorer add-in
+			*	TCF Target Explorer
+		*	Expand the box next to "Programming Languages" and select the C/C++ Autotools Support and C/C++ Development Tools boxes. For Neon, these items do not appear on the list as they are already installed. 
+		*	Complete the installation and restart the Eclipse IDE.	
+*	Installing the Pre-built Plug-in from the Yocto Project Eclipse Update Site
+	*	To install the Eclipse Yocto Plug-in from the update site, follow these steps: 
+		*	Start up the Eclipse IDE. 
+		*	In Eclipse, select "Install New Software" from the "Help" menu. 
+		*	Click "Add..." in the "Work with:" area.
+		*	Enter http://downloads.yoctoproject.org/releases/eclipse-plugin/2.3.2/neon in the URL field and provide a meaningful name in the "Name" field.
+		*	Click "OK" to have the entry added to the "Work with:" drop-down list. 
+		*	Select the entry for the plug-in from the "Work with:" drop-down list. 
+		*	Check the boxes next to Yocto Project ADT Plug-in, Yocto Project Bitbake Commander Plug-in, and Yocto Project Documentation plug-in. 
+		*	Complete the remaining software installation steps and then restart the Eclipse IDE to finish the installation of the plug-in. 
+*	Configure the Eclipse environment
+	*	When Eclipse has started the first time the Yocto Project SDK tools configuration should be done. 
+	*	This is done in Eclipse Preferences under the Window menu. 
+	*	In order to get the paths right for compilers and make you should start Eclipse from a shell where you first has sourced the SDK setup script. 
+	*	When Eclipse has started the first time the Yocto Project SDK tools configuration should be done. This is done in Eclipse Preferences under the Window menu. 		
+	![configure eclipse ](images/configure_eclipse.png)
+
+
+## Import application to eclipse
+*	Create a workspace and cd into that workspace
+
+>	$ mkdir workspace && cd workspace
+
+*	Source sdk environment 	
+
+>	$ source path/to/sdk/environment
+
+* 	Cmake the application into the Workspace
+
+>	$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DENABLE_DOXYGEN=ON -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON -G"Eclipse CDT4 - Unix Makefiles" /path/to/persistency_demo/Cmake
+
+* 	Import the application into eclpse
+  	*	Click on File -> Import
+  	*	In C/C++ -> Existing code as Makefile project then click next
+  	*	Select Yocto Cmake Build (Toolchain) and Browse to project in Workspace that was created. 
+
+##	Debug the imported application
+*	During the creation of the project also a debug configuration should have been created. It is now time to do the final configuration of this and start a debugging session. Right click on your project and select Debug As → Debug Configurations. Open up C/C++ Remote application and you should find a template of your project debug configuration. Select that configuration. In the connection part select new. 
+	1.	Select SSH and
+	2.	Give it a name and add a user name and IP-address to login to your target.
+*	Click on the Browse button in the “Remote Absoulte Path for C/C++ Applciations” section. Now you should be able to login to your target and select a filesystem place where to store your executables. NOTE! it should be the executable file name that should be selected and not just the 		
+![SSH connection ](images/ssh_connection.png)

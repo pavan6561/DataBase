@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Platform Health Management(PHM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Network Management(NM)" href="../nm/nm.html" />
+    <link rel="prev" title="5. Time Synchronization (TSync)" href="../tsync/tsync.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. <strong>Platform Health Management(PHM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-phm">6.1. <strong>Overview of PHM</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependent-fcs-components">6.2. <strong>Dependent FCs/Components</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#health-monitoring">6.3. <strong>Health Monitoring</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-supervision-status">6.4. <strong>Global Supervision Status</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supervision-of-supervised-entities">6.5. <strong>Supervision of Supervised Entities</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#health-channel-supervision">6.6. <strong>Health Channel Supervision</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recovery-actions">6.7. <strong>Recovery actions</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notificaton-to-state-management">6.8. <strong>Notificaton to State Management</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recovery-action-via-watchdog">6.9. <strong>Recovery Action via Watchdog</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">6.10. <strong>Configuration Methodology</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-of-supervised-entities-and-checkpoint">6.10.1. Modeling of Supervised Entities and Checkpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-of-health-channel">6.10.2. Modeling of Health Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interaction-of-application-software-with-the-platform-healthmanagement">6.10.3. Interaction of application software with the Platform HealthManagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relation-between-design-and-deployment">6.10.4. Relation between design and deployment:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-of-localsupervision">6.10.5. Modeling of LocalSupervision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#health-channel-modeling">6.10.6. Health channel modeling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span><strong>Platform Health Management(PHM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/phm/phm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="platform-health-management-phm">
+<h1><span class="section-number">6. </span><strong>Platform Health Management(PHM)</strong><a class="headerlink" href="#platform-health-management-phm" title="Link to this heading"></a></h1>
+<section id="overview-of-phm">
+<h2><span class="section-number">6.1. </span><strong>Overview of PHM</strong><a class="headerlink" href="#overview-of-phm" title="Link to this heading"></a></h2>
+<p>Platform Health Management is a Functional Cluster in Adaptive AUTOSAR architecture that provides mechanism to detect health status of applications and trigger appropriate actions.</p>
+<p>This is achieved by supervising the applications, called internal health channel monitoring, or by directly using the status provided by them termed as external health channel monitoring.</p>
+<p>Internal health channel monitors the applications in terms of their rate of execution, order of execution and time constraint on execution. Based on the result of the supervision, internal health status is determined.
+The internal health status or external health status are then used to notify SM and trigger the configured recovery action.</p>
+</section>
+<section id="dependent-fcs-components">
+<h2><span class="section-number">6.2. </span><strong>Dependent FCs/Components</strong><a class="headerlink" href="#dependent-fcs-components" title="Link to this heading"></a></h2>
+<p>PHM is Dependent on the following FCs/Components.</p>
+<p><strong>State Management -</strong>
+The Platform Health Management functional cluster has an interface also with the State Management: If a failure is detected within a Supervised Entity or via Health Channel, Platform Health Management notifies State Management on this failure.</p>
+<p><strong>Execution Manager -</strong>
+The Platform Health Management functional cluster is dependent on the Execution Management Interface as it needs Process information from Execution Management Interface. The exact form of the information is vendor specific and therefore not standardized by AUTOSAR. However it is expected to include process states and function group states.</p>
+<p><strong>Watchdog -</strong>
+The Platform Health Management functional cluster is dependent on the Execution Management Interface. There could be some scenarios where there is no action is taken by SM for the failure of supervision, will result in the hardware reset.</p>
+<p>It is possible for all functional clusters to use the Supervision mechanisms provided by the Platform Health Management by using Checkpoints and the Health Channels as the other Applications.</p>
+</section>
+<section id="health-monitoring">
+<h2><span class="section-number">6.3. </span><strong>Health Monitoring</strong><a class="headerlink" href="#health-monitoring" title="Link to this heading"></a></h2>
+<p>Supervision of the software behaviour for correct timing and sequence is termed to be health monitoring .</p>
+<p>A Supervised Entity denotes a collection of Checkpoints within the corresponding software component type. A software component type can include zero, one or more Supervised Entities. It monitors various supervisions such as AliveSupervision,DeadlineSupervision and LogicalSupervision.</p>
+<p><strong>Alive Supervision</strong></p>
+<p>Alive Supervision offers a mechanism to periodically check the execution reliability of one or more Supervised Entities.</p>
+<figure class="align-center" id="id1">
+<img alt="Features of PHM" class="with-border" src="../_images/alive_supervision.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Alive Supervision</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Example for Alive Supervision:</strong> A 2ms task is being monitored at every 10ms. So, after 10ms the counter monitoring the 2ms task should be updated to 5(-/+). Whether the monitoring counter is being updated to 5(-/+) is monitored under Alive Supervision.</p>
+<p><strong>Deadline Supervision</strong></p>
+<p>Deadline Supervision checks the timing constraints of non-cyclic Supervised Entity. It is a kind of supervision that checks if the execution time between two Checkpoints is within minimum/maximum time limit.</p>
+<figure class="align-center" id="id2">
+<img alt="Features of PHM" class="with-border" src="../_images/deadline.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Deadline Supervision</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Example for Deadline Supervision:</strong> A Supervised Entity is meant to execute within 10ms. Two checkpoints will be placed in this Supervised Entity and time stamps will be taken between the start and the end checkpoint. The time difference between the checkpoints will give the time taken for execution of the Supervised Entity. Time interval between two checkpoints are monitored under Deadline Supervision.</p>
+<p><strong>Logical Supervision</strong></p>
+<p>Logical Supervision checks for the correct execution flow of code within a Supervised Entity and also ascertains that different Supervised Entities are executed in order.</p>
+<figure class="align-center" id="id3">
+<img alt="Features of PHM" class="with-border" src="../_images/logical.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Logical Supervision</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Example for Logical Supervision:</strong> In the Supervised Entity, there are two conditional paths for execution A and B, wherein one path is correct. Checkpoints are placed in the Supervised Entity. The flow of execution is monitored by monitoring these checkpoints.</p>
+<figure class="align-center" id="id4">
+<img alt="Features of PHM" class="with-border" src="../_images/Local_Supervision_Status.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Local Supervision Status</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Local Supervision Status determines the status of specific Supervised Entities. This is done based on the following:</p>
+<ul class="simple">
+<li><p>Previous value of the Local Supervision Status,</p></li>
+<li><p>Current values of result of AliveSupervision, result of DeadlineSupervision, result of LogicalSupervision.</p></li>
+</ul>
+<p><strong>FailedSupervisionCyclesTolerance:</strong> maximum acceptable amount of Supervision Cycles in the local state LOCAL_STATUS_FAILED before it is considered LOCAL_STATUS_EXPIRED.</p>
+<p>For the transitions between the states of the Local Supervision Status the following rules apply:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Rule No.</strong></p></td>
+<td><p><strong>Present State</strong></p></td>
+<td><p><strong>Transition Condition</strong></p></td>
+<td><p><strong>Next Status</strong></p></td>
+<td><p><strong>Transition
+NO</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>Initial Supervision Mode</p></td>
+<td><p>HM Successfully Initialized.</p></td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>Initial Supervision Mode</p></td>
+<td><p>HM Successfully Initialized but SE not
+activated in initial mode.</p></td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>Initial Supervision Mode</p></td>
+<td><p>HM Successfully Initialized and Initial
+mode of SE not configured to LOCAL_STATUS_OK.</p></td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>No Supervision function performed by HM
+and ReportCheckPoint() for SE</p></td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Rule No.</strong></p></td>
+<td><p><strong>Present State</strong></p></td>
+<td><p><strong>Transition Condition</strong></p></td>
+<td><p><strong>Next Status</strong></p></td>
+<td><p><strong>failed
+Supervision
+reference
+cycle counter</strong></p></td>
+<td><p><strong>Transition
+NO</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>All are correct</p></td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>Any one is incorrect</p></td>
+<td><p>LOCAL_STATUS_EXPIRED</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>If Alive is incorrect and
+rest are correct and
+failed Supervision
+Cycles Tolerance
+configured &gt; 0</p></td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>Increments</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>At least one SE of Alive is
+incorrect and rest are
+correct and failed
+Supervision Cycles
+Tolerance  configured &gt;
+failed   Supervision
+reference cycle counter
+cycle counter</p></td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>Increments</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="9">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><dl class="simple">
+<dt>All Supervisions are correct</dt><dd><p>and failed Supervision
+reference cycle counter &gt; 1</p>
+</dd>
+</dl>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>Decrements</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="10">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>All are correct and failed
+Supervision reference
+cycle  counter = 1</p></td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>Decrements</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="11">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><dl class="simple">
+<dt>(If Alive is incorrect and</dt><dd><p>failed Supervision
+reference cycle counter &gt;
+failed   Supervision
+Cycles  Tolerance
+configured)Or (Deadline and
+Logical are incorrect)</p>
+</dd>
+</dl>
+</td>
+<td><p>LOCAL_STATUS_EXPIRED</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+<p>Effect of changing mode: There are two modes of SE Activated and Deactivated mode.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Rule No.</strong></p></td>
+<td><p><strong>Present State</strong></p></td>
+<td><p><strong>Transition Condition</strong></p></td>
+<td><p><strong>Next Status</strong></p></td>
+<td><p><strong>Transition
+NO</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="12">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>switched to a mode that deactivates SE.</p></td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="13">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_FAILED</p></td>
+<td><p>switched to a mode that deactivates SE.</p></td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="14">
+<li></li>
+</ol>
+</td>
+<td><p>LOCAL_STATUS_DEACTIVATED</p></td>
+<td><p>switched to a mode that activates SE.</p></td>
+<td><p>LOCAL_STATUS_OK</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="global-supervision-status">
+<h2><span class="section-number">6.4. </span><strong>Global Supervision Status</strong><a class="headerlink" href="#global-supervision-status" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<img alt="Features of PHM" class="with-border" src="../_images/Gloabal_Supervision_Status.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Gloabal Supervision Status</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Global Supervision Status is calculated based on the Local Supervision Status of all the Supervised Entities.</p></li>
+<li><p>Global Supervision Status provides two variables i.e. Supervision cycle and Expire Supervision cycles Tolerance.</p></li>
+</ul>
+<p><strong>Supervision cycle</strong> is the period at which the Health Monitoring is performed. This describes at which cycle the Global Supervision and its contained Local Supervisions are executed.</p>
+<p><strong>Expire Supervision cycles</strong> Tolerance is maximum acceptable amount of Supervision Cycles in the global state GLOBAL_STATUS_EXPIRED before it is considered GLOBAL_STATUS_STOPPED.</p>
+<ul class="simple">
+<li><p>Health Monitoring has advantage of postponing the error reaction for a configurable value of Supervision Cycle and Expire Supervision Cycles Tolerance.</p></li>
+<li><p>The cyclic update of Global Supervision Status is necessary to trigger the timely transition from GLOBAL_STATUS_EXPIRED to GLOBAL_STATUS_STOPPED.</p></li>
+</ul>
+<p>The following rules apply for the states of the Global Supervision Status.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Rule No.</strong></p></td>
+<td><p><strong>Present State</strong></p></td>
+<td><p><strong>Transition</strong></p></td>
+<td><p><strong>Next Status</strong></p></td>
+<td><p><strong>Transition
+NO</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>INIT</p></td>
+<td><p>Statically Initalized</p></td>
+<td><p>GLOBAL_STATUS_DEACTIVATED</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_DEACTIVATED</p></td>
+<td><p>Sucessfully Initalized</p></td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>HM Deactivted</p></td>
+<td><p>GLOBAL_STATUS_DEACTIVATED</p></td>
+<td><p>14,15,1,17</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK or
+GLOBAL_STATUS_FAILED</p></td>
+<td><p>Changing supervision mode fails</p></td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Rule No.</strong></p></td>
+<td><p><strong>Present Status</strong></p></td>
+<td><p><strong>Local Supervision Status</strong></p></td>
+<td><p><strong>Expired Supervision
+Cycle</strong></p></td>
+<td><p><strong>NextStatus</strong></p></td>
+<td><p><strong>Transition
+NO</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>LOCAL_STATUS_OK or
+LOCAL_STATUS_DEACTIVATED.</p></td>
+<td></td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_FAILED and no
+SE is LOCAL_STATUS_EXPIRED.</p></td>
+<td></td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED.</p></td>
+<td><p>Configure value &gt;&gt; 0</p></td>
+<td><p>GLOBAL_STATUS_EXPIRED</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED.</p></td>
+<td><p>Configure value = 0</p></td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="9">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_FAILED and no
+SE is LOCAL_STATUS_EXPIRED.</p></td>
+<td></td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="10">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>Either all the SE are
+LOCAL_STATUS_OK or
+LOCAL_STATUS_DEACTIVATED.</p></td>
+<td></td>
+<td><p>GLOBAL_STATUS_OK</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="11">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED.</p></td>
+<td><p>Configure value&gt;0</p></td>
+<td><p>GLOBAL_STATUS_EXPIRED</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="12">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_FAILED</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED.</p></td>
+<td><p>Configure value=0</p></td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="13">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_EXPIRED</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED</p></td>
+<td><dl class="simple">
+<dt>Expired cycle counter</dt><dd><p>less than or equal to</p>
+</dd>
+</dl>
+</td>
+<td><p>GLOBAL_STATUS_EXPIRED
+and increment the
+Expired Cycle Counter.</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="14">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_EXPIRED</p></td>
+<td><p>At least one SE is
+LOCAL_STATUS_EXPIRED</p></td>
+<td><dl class="simple">
+<dt>Expired cycle counter &gt;</dt><dd><p>&gt; configured Tolerance
+value.</p>
+</dd>
+</dl>
+</td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="15">
+<li></li>
+</ol>
+</td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td></td>
+<td></td>
+<td><p>GLOBAL_STATUS_STOPPED</p></td>
+<td><p>11</p></td>
+</tr>
+</tbody>
+</table>
+<p>ExternalHealthStatus refers to hardware level monitoring and other external functionality such as TyrePressure, VoltageBattery, RAM status, ROM status, etc. When HealthStatus is registered, ExternalHealthMonitoring starts and when it is reported to be Low or High, Respective action will be taken by RecoveryHandler through HealthChannelHandler class, wherein pport data will be passed to smserver and HealthChannelAction is invoked.</p>
+<p>A Function Group is a set of coherent Processs, which need to be controlled consistently. Depending on the state of the Function Group, Processes are started or terminated.</p>
+</section>
+<section id="supervision-of-supervised-entities">
+<h2><span class="section-number">6.5. </span><strong>Supervision of Supervised Entities</strong><a class="headerlink" href="#supervision-of-supervised-entities" title="Link to this heading"></a></h2>
+<p>State Management coordinates the platform through Function Groups . Within a Function Group, there may be multiple Processes running.
+Platform Health Management monitors Supervised Entitys. Each Supervised Entity maps to whole or part of a Process. The monitoring is active as long as the corresponding Process is active.
+The status of local Supervisions within a Function Group is conglomerated in the corresponding Global Supervision Status.</p>
+</section>
+<section id="health-channel-supervision">
+<h2><span class="section-number">6.6. </span><strong>Health Channel Supervision</strong><a class="headerlink" href="#health-channel-supervision" title="Link to this heading"></a></h2>
+<p>Using Health Channel Supervision the system integrator can hook external supervision results to the Platform Health Management.
+External supervision can be routines like RAM test, ROM test, kernel status, voltage monitoring etc.
+The external supervision performs the monitoring and the determined result is classified according to the possible Health Status values and sent to Platform Health Management.</p>
+<dl class="simple">
+<dt>A Health Channel can be</dt><dd><ul class="simple">
+<li><p>Global supervision status of the software under supervision.</p></li>
+<li><p>Result of an environment monitoring algorithm. e.g. Voltage Monitoring, Temperature Monitoring.</p></li>
+<li><p>Result of a memory integrity test routine, e.g. RAM test, ROM test.</p></li>
+<li><p>Status of the operating system or Kernel. e.g. OS Status, Kernel Status.</p></li>
+<li><p>Status of another platform instance or Virtual Machine or ECU.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The various external monitoring routines shall report their result or status in the form of defined Health Statuses to the Platform Health Management. The Health Status of a Health Channel is the abstract format of the information that a Health Channel provides to the Platform Health Management. Two different Health Channels may have same Health Status names to represent its result, e.g. high, low, normal. If a reaction on a determined Health Status is necessary, Platform Health Management reports the status to State Management.</p>
+</section>
+<section id="recovery-actions">
+<h2><span class="section-number">6.7. </span><strong>Recovery actions</strong><a class="headerlink" href="#recovery-actions" title="Link to this heading"></a></h2>
+<p>The scope of Platform Health Management is to monitor the safety relevant Processs on the platform and report detect failures to State Management. If a failure in State Management is detected, Platform Health Management can trigger a reaction via hardware watchdog.</p>
+<figure class="align-center" id="id6">
+<img alt="Features of PHM" class="with-border" src="../_images/recovery.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Recovery Action of PHM</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="notificaton-to-state-management">
+<h2><span class="section-number">6.8. </span><strong>Notificaton to State Management</strong><a class="headerlink" href="#notificaton-to-state-management" title="Link to this heading"></a></h2>
+<p>The Platform Health Management debounces the failures of Supervised Entitys. After the debouncing, a recovery action is necessary. Thus, Platform Health Management notifies State Management. State Management as a coordinator of the platform can decide how a detected failure shall be handled and can trigger corresponding recovery actions. In most cases this might include switching the faulty Function Group to another state.</p>
+<p>Therefore, Platform Health Management has to makesure that State Management receives the notification on a detected failure. The Platform Health Management monitors the return of the RecoveryHandler with a configurable timeout. If after a configurable amount of retries the State Management will still not regularly return from the RecoveryHandler the PHM will do its own countermeasures by wrongly triggering or stop triggering the serviced watchdog.</p>
+</section>
+<section id="recovery-action-via-watchdog">
+<h2><span class="section-number">6.9. </span><strong>Recovery Action via Watchdog</strong><a class="headerlink" href="#recovery-action-via-watchdog" title="Link to this heading"></a></h2>
+<p>The Platform Health Management has the only interface to the hardware watchdog. Therefore, the watchdog supervises Platform Health Management and PHM can initiate a reaction of the watchdog by stop triggering or by sending a false trigger. Since this reaction means usually a reset of the machine, it has an impact on all functions and should be used only as a last resort in order to ensure freedom from interference.</p>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">6.10. </span><strong>Configuration Methodology</strong><a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<section id="modeling-of-supervised-entities-and-checkpoint">
+<h3><span class="section-number">6.10.1. </span>Modeling of Supervised Entities and Checkpoint<a class="headerlink" href="#modeling-of-supervised-entities-and-checkpoint" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<img alt="Features of PHM" class="with-border" src="../_images/modeling_of_supervised_entities_and_checkpoint.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of Supervised Entities and Checkpoints</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The checkpoint ID shall be defined for every Phmcheckpoint element, and is used during the call to the ReportCheckpoint API as a representation of Phmcheckpoint.</p>
+<p>If the application wants to query the status of a Supervised Entity monitored by the Platform Health Management then the application code calls the GetLocalSupervisionStatus API.</p>
+</section>
+<section id="modeling-of-health-channel">
+<h3><span class="section-number">6.10.2. </span>Modeling of Health Channel<a class="headerlink" href="#modeling-of-health-channel" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<img alt="Features of PHM" class="with-border" src="../_images/modeling_of_health_channel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of Health Channel</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The interaction of Health Channels with the Platform Health Management is defined by PhmHealthChannelInterface and PhmHealthChannelStatus states. The HealthChannel instance is constructed using the InstanceSpecifier of the respective RPortPrototype.</p>
+<p>The application code then calls the ReportHealthStatus API of the HealthChannel in order to notify the Platform Health Management that the Health Channel defined by the RPortPrototype has changed its status.</p>
+<p>The statusId shall be defined for every PhmHealthChannelStatus element.The attribute triggersRecoveryNotification defines whether this specific PhmHealthChannelStatus shall be considered by the PHM as triggering the recovery notification.</p>
+</section>
+<section id="interaction-of-application-software-with-the-platform-healthmanagement">
+<h3><span class="section-number">6.10.3. </span>Interaction of application software with the Platform HealthManagement<a class="headerlink" href="#interaction-of-application-software-with-the-platform-healthmanagement" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id9">
+<img alt="Features of PHM" class="with-border" src="../_images/modeling_of_platformhealthmanagementcontribution.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of Platform Health Management Contribution</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>PlatformHealthManagementContribution is a meta-class allows to define a set of configuration entities for the Platform Health Management.</p>
+<p>The PlatformHealthManagementContribution allows describing aspects for the deployment of configuration how the Platform Health Management shall behave during runtime.</p>
+<p>In order to define the interaction between the application software and the Platform Health Management the PlatformHealthManagementContribution creates its own representations of the RPortPrototypes typed by the PhmSupervisedEntityInterface and PhmHealthChannelInterface and creates relations to the application software RPortPrototypes.</p>
+</section>
+<section id="relation-between-design-and-deployment">
+<h3><span class="section-number">6.10.4. </span>Relation between design and deployment:<a class="headerlink" href="#relation-between-design-and-deployment" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id10">
+<img alt="Features of PHM" class="with-border" src="../_images/example_how_IDs_have_to_be_in_sync.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Example how IDs have to be in sync</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The application design uses the declarations provided in the Interface definitions for PhmSupervisedEntityInterface and PhmHealthChannelInterface. Specifically the handling of ids (checkpointId and statusId) requires a synchronized usage with the respective Interface definition.
+It is required to establish a contract between the application code and the Phm deployment. The application code shall only use such id values which are declared at the respective Interface definitions.
+During the configuration of the Phm the Phm artifacts are created. At deployment state there is no access to the design model available, thus the numeric values used for checkpointId and statusId at the Interface definition (PhmSupervisedEntityInterface and PhmHealthChannelInterface) are not available to the Phm.
+Therefore the numeric values for checkpointId and statusId are replicated in the deployment model of the Phm:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SupervisionCheckpoint.checkpointId replicates PhmCheckpoint.checkpointId.</p></li>
+<li><p>HealthChannelExternalReportedStatus.statusId replicates PhmHealthChannelStatus.statusId.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="modeling-of-localsupervision">
+<h3><span class="section-number">6.10.5. </span>Modeling of LocalSupervision<a class="headerlink" href="#modeling-of-localsupervision" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id11">
+<img alt="Features of PHM" class="with-border" src="../_images/modeling_of_localsupervision.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of LocalSupervision</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="health-channel-modeling">
+<h3><span class="section-number">6.10.6. </span>Health channel modeling<a class="headerlink" href="#health-channel-modeling" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="Features of PHM" class="with-border" src="../_images/health_channel_modeling.png" />
+<figcaption>
+<p><span class="caption-text"><strong>HealthChannel modeling</strong></span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The HealthChannel is used as an abstraction to the Platform Health Management input for the RecoveryNotification.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tsync/tsync.html" class="btn btn-neutral float-left" title="5. Time Synchronization (TSync)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../nm/nm.html" class="btn btn-neutral float-right" title="7. Network Management(NM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

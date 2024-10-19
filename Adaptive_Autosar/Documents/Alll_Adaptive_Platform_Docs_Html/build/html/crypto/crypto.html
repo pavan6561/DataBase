@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. Cryptography &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13. Intrusion Detection System Manager (IDSM)" href="../idsm/idsm.html" />
+    <link rel="prev" title="11. Persistency" href="../persistency/persistency.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. <strong>Cryptography</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">12.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-specification">12.2. Functional Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-concepts">12.3. Architecture Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#integration-with-identity-and-access-management">12.3.1. Integration with Identity and Access Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-into-autosar">12.3.2. Integration into AUTOSAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-level-and-system-service-level">12.3.3. Application Level and System Service Level</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crypto-provider">12.4. Crypto Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-storage-provider">12.5. Key Storage Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serializable-interface">12.5.1. Serializable interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-generation">12.5.2. Key Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#certificate-handling-x-509-provider">12.6. Certificate handling (X.509 Provider)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sequence-diagrams">12.7. Sequence Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span><strong>Cryptography</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/crypto/crypto.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cryptography">
+<h1><span class="section-number">12. </span><strong>Cryptography</strong><a class="headerlink" href="#cryptography" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Cryptography is the practice and study of hiding information. It is the Art or Science of converting a plain intelligible data into an unintelligible data and again retransforming that message into its original form. It provides Confidentiality, Integrity, and Accuracy.</p>
+<p>The FC Crypto is Adaptive Platform module offers applications and other Adaptive AUTOSAR Functional Cluster a standardized interface, which provides operations for cryptographic and related calculations.</p>
+<p>These operations include cryptographic operations, key management, and certificate handling. FC Crypto manages the actual implementations of all operations, the configuration, and the brokering of operations from applications to implementations. The standardized interface is exposed by the CryptoAPI.</p>
+<p>The FC Crypto and its CryptoAPI supports both public-key and symmetric-key cryptography. It allows applications to use mechanisms such as authentication, encryption, and decryption for automotive services.</p>
+</section>
+<section id="functional-specification">
+<h2><span class="section-number">12.2. </span>Functional Specification<a class="headerlink" href="#functional-specification" title="Link to this heading"></a></h2>
+<p>The AUTOSAR Adaptive architecture organizes the software of the AUTOSAR Adaptive foundation as functional clusters. These clusters offer common functionality as services to the applications. The Functional Cluster Cryptography (FC Crypto) is part of the AUTOSAR Adaptive Platform Foundation.</p>
+<p>The FC Crypto provides the infrastructure to access multiple implementations of cryptographic operations through a standardized interface, CryptoAPI. Operations provided by FC Crypto are grouped into different providers, each of them implements specific domain of cryptography-related functionality:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CryptoProvider</p></li>
+<li><p>KeyStorageProvider</p></li>
+<li><p>X.509 Certificate Management Provider</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="architecture-concepts">
+<h2><span class="section-number">12.3. </span>Architecture Concepts<a class="headerlink" href="#architecture-concepts" title="Link to this heading"></a></h2>
+<p>The interfaces defined by FC Crypto are designed to enable integration of 3rd party cryptographic libraries and hardware-based elements. This facilitates implementation of a security trust anchor or acceleration of cryptographic transformations in situations, where the FC Crypto’s default crypto-library will not provide the necessary primitives or hardware acceleration is needed.</p>
+<p>CryptoAPI provides a set of methods, which enable application and system developer to store and transmit information while safeguarding it from intruders. CryptoAPI provides cryptographic methods to keep critical information in confidential and / or authentic form, and to communicate in a way such that only the intended recipient can read the message. Therefore, FC Crypto provides mechanisms for building applications that ensure the following security goals:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Authentication:</strong> FC Crypto provides mechanisms that allow adaptive applications or functional clusters to prove their identity to other applications or functional clusters.</p></li>
+<li><p><strong>Non-Repudiation:</strong> FC Crypto supports the concept of non-repudiation, where someone cannot deny the validity of something.</p></li>
+<li><p><strong>Confidentiality:</strong> FC Crypto allows to keep information private. Cryptographic systems were originally developed to function in this capacity. Whether it be system or user specific data sent during system debugging or tracing, or storing confidential vehicle/ECU data, encryption can assure that only users who have access to the appropriate key will get read access to the data plaintext.</p></li>
+<li><p><strong>Integrity:</strong> FC Crypto ensures that secured data is not altered during storage or transmission without the receiver detecting this altering. Additionally, FC Crypto allows applications to build functionality, which guarantees the integrity of elements or services.</p></li>
+</ul>
+</div></blockquote>
+<p>Additionally, the FC Crypto integrates a Key Storage provider. The purpose of this element is secure persistent storage of any supported cryptographic objects and programmatic access to them via a unified interface, independently from actual physical storage implementations. A single logical Key Storage can aggregate multiple software or hardware-based physical storage managed by the correspondent Crypto Providers. This is done transparent for the user of the Key Storage interface. Guaranteeing correct access to the keys, CryptoAPI restricts access to this material.</p>
+<p>CryptoAPI allows to manage PKI certificates. These interfaces are grouped in a certificate management namespace. Here, all typical certificate handling mechanism, such as issuing, revocation, and replacement, are handled. Additionally, certificate management API provides a kind of permanent storage where all certificates are stored. All operations on certificates are done by certificate management, which enforces access permissions by implementing the policy enforcement point.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/Crypto_Architecture.png" class="with-border" src="../_images/Crypto_Architecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Crypto Architecture</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The architectural overview shows all parts, such as X.509 Provider for certificate handling, Crypto Provider and Key Storage Provider. Above depicts the high-level architecture of FC Crypto including the previously described elements.</p>
+<section id="integration-with-identity-and-access-management">
+<h3><span class="section-number">12.3.1. </span>Integration with Identity and Access Management<a class="headerlink" href="#integration-with-identity-and-access-management" title="Link to this heading"></a></h3>
+<p>To enable access control the FC Crypto shall implement a Policy Enforcement Point (PEP) to enforce the policy decision obtained from the Policy Decision Point (PDP) as specified by Identity and Access Management (IAM). Thus, an interaction is needed between FC Crypto (PEP) and some entity that implements the PDP.</p>
+<p>Since only key- and certificate-slots are subject to access control it makes sense to embed the PEP within the Key Storage Provider and the X.509 Provider. One possible implementation is illustrated in below figure a PDP interface (IAM unit) obtains policy information and decides whether access is granted; this decision is enforced by a PEP functional unit. Both units may be implemented as part of the Key Storage Provider.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/Integration_IAM.png" class="with-border" src="../_images/Integration_IAM.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Integration with IAM</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>IAM enables access control to modelled entities or resources. Currently, FC Crypto considers access control only for two types of resources: Key Slot (read/write) and Certificate Slot (write). To simplify IAM configuration FC Crypto specifies the exclusive-access-model, which states that access to a key-slot can only be granted to a single Adaptive Application (exclusive).</p>
+<p>Below figure showcases the scenario : The Adaptive Application has exclusive-access to a Key Slot, which is used by a library providing cryptographic services to a higher layer (business logic). At the same time another library independently manages Key Slot content (e.g. crypto-keys).</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/KeySlot.png" class="with-border" src="../_images/KeySlot.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Usage of Key Slot by Adaptive Aplication</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="integration-into-autosar">
+<h3><span class="section-number">12.3.2. </span>Integration into AUTOSAR<a class="headerlink" href="#integration-into-autosar" title="Link to this heading"></a></h3>
+<p>The FC Crypto provides its service to all AUTOSAR elements, such as untrusted Adaptive Applications or trusted system services (functional clusters). From cryptographic service point of view both could be treated equally. The integration of FC Crypto into AUTOSAR is described in below figure.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/Autosar_Architecture.png" class="with-border" src="../_images/Autosar_Architecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>AUTOSAR Architecture</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Their differential treatment is due to the underlying trust-model: system services (Functional Clusters) are the trusted foundation while Adaptive Applications are untrusted additions.</p>
+<p>To ensure secure access from application side the trust-model, in the form of IAM, is designed for and applied only to Adaptive Applications.</p>
+<p>Similarly, the exclusive-access-model aims at protecting an application’s own resources against access by other applications, but additionally also against access by functional clusters other than FC Crypto. On the other hand, some functional clusters specify their own key-slots, which contain key-material to be used when implementing certain system services (e.g. secure data storage, secure diagnostics or secure communication such as SecOC). Because key-management of Key Slots used by functional clusters should be possible from an Adaptive Application (e.g. OEM key manager), the exclusive-access-model defines two types of Key Slots:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Application:</strong> The application has exclusive access to this key slot. It is able to import/export, update/delete and use the contained key-material. No other application or functional cluster may access this Key Slot.</p></li>
+<li><p><strong>Machine:</strong> This type of Key Slot is defined by the adaptive machine and may be used by the functional cluster for which it is configured. Additionally, the Key Slot may be assigned to a single Adaptive Application that is then able to manage the contained key-material.</p></li>
+</ul>
+</div></blockquote>
+<p>Below figure gives an example for the use of machine and application key slots.</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/Application_KeySlots.png" class="with-border" src="../_images/Application_KeySlots.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Use of machine and application key slots</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="application-level-and-system-service-level">
+<h3><span class="section-number">12.3.3. </span>Application Level and System Service Level<a class="headerlink" href="#application-level-and-system-service-level" title="Link to this heading"></a></h3>
+<p>The FC Crypto has been primarily designed to enable Adaptive Applications to access cryptographic services, for a majority of which cryptographic key-material is needed. Therefore, an application may define the required Key Slots, Crypto Providers and certificates.</p>
+<p>Below figure shows the model elements that are used to configure access from an Adaptive Application to elements of FC Crypto.</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/Configure_Crypto.png" class="with-border" src="../_images/Configure_Crypto.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Adaptive Application to elements of FC Crypto</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Some Adaptive Platform Services such as update and configuration, communication, persistency or diagnostics also require cryptographic services as part of their functionality. If key-material is needed and must be configurable by an Adaptive Application (e.g. OEM key manager), the platform shall specify a Key Slot of slotType machine. To manage the key material a dedicated Adaptive Application (key-manager) may specify the same Key Slot (i.e. same parameters and slotType machine). During Integration this machine type key-slot resource must be linked to the key-manager.</p>
+</section>
+</section>
+<section id="crypto-provider">
+<h2><span class="section-number">12.4. </span>Crypto Provider<a class="headerlink" href="#crypto-provider" title="Link to this heading"></a></h2>
+<p>A Crypto Provider is a structural element that organizes cryptographic primitives. Every Crypto Provider represents exactly either one hardware element, e.g., trusted platform module (TPM) or hardware security module (HSM), or one software element, e.g., cryptographic library. When the systems provide multiple hardware elements and or software elements, then the same number of Crypto Providers exists as hardware and software elements are in the system.</p>
+<p>Each Crypto Provider implements its supporting cryptographic primitives and is represented by an instance of CryptoProvider and identified during runtime via call to LoadCryptoProvider with InstanceSpecifier as an input parameter.</p>
+<p>The application designer is able to define the request to use a CryptoProvider with the creation of an RPortPrototype that is typed by a CryptoProviderInterface. The integrator will map this RPortPrototype to a concrete CryptoProvider representation in the manifest with the CryptoProviderToPortPrototypeMapping. This mapping takes also the Process into account since the Executable that contains the SwComponent that in turn contains the RPortPrototype may be started several times.</p>
+<p>CryptoProvider provides multiple cryptography techniques implementation listed below:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Random Number Generator (RNG)</p></li>
+<li><p>Hashing</p></li>
+<li><p>Message Authentication Code (MAC)</p></li>
+<li><p>Symmetric encryption(Block Cipher, Stream Cipher)</p></li>
+<li><p>Authenticated Encryption</p></li>
+<li><p>Key Wrapping</p></li>
+<li><p>Digital signatures</p></li>
+<li><p>Asymmetric encryption</p></li>
+<li><p>Key Encapsulation Mechanism (KEM)</p></li>
+<li><p>Key Exchange Protocol, Key Exchange Mechanism, and Key Exchange Scheme</p></li>
+</ul>
+</div></blockquote>
+<p>Each CryptoProvider may provide zero, one, or more Random Number Generator (RNG) implementations. Therefore, the FC Crypto provides RandomGeneratorCtx context. The CryptoAPI provides the CreateRandomGeneratorCtx to generate this context. Application calls CreateRandomGeneratorCtx() to get handler to access RandomGeneratorCtx, later uses methods provided by RandomGeneratorCtx to perform operations(RNG). Similarly to access context and perform different operations, application needs to call respective methods of Hashing, MAC etc.</p>
+</section>
+<section id="key-storage-provider">
+<h2><span class="section-number">12.5. </span>Key Storage Provider<a class="headerlink" href="#key-storage-provider" title="Link to this heading"></a></h2>
+<p>The Key Storage Provider (KSP, namespace ara::crypto::keys) is responsible for secure (confidential and or authentic) storage of different type key material (public, private, secret keys, or seeds) and other security critical cryptographic objects (digital signatures, hash, MAC HMAC tags). These cryptographic objects are represented as a KeySlots.</p>
+<p>KeySlots used by application are defined by the integrator in the manifest via CryptoKeySlotInterface and CryptoKeySlotToPortPrototypeMapping.</p>
+<p>FC Crypto provides access to the CryptoKeySlots for every AdaptiveApplicationSwComponentType. Every CryptoKeySlot is represented by RPortPrototype typed by CryptoKeySlotInterface in application design.</p>
+<p>Assignment of CryptoKeySlots to a CryptoProvider is described in the manifest. So with the usage of a RPortPrototype that is typed by a CryptoKeySlotInterface the assignment to CryptoProvider is established.</p>
+<p>The CryptoAPI provides a function to obtain CryptoProvider and with a call of MyProvider the FC Crypto provides the correspinding CryptoProvider of a KeySlot.</p>
+<p>Below figure describes Key deployment:</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/Deployment_of_keys.png" class="with-border" src="../_images/Deployment_of_keys.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Deployment of keys</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The KeySlot identified during runtime. The CryptoAPI provides an interface with a call to LoadKeySlot to support this. The interface needs an InstanceSpecifier as an input parameter. Here, InstanceSpecifier represents a path to RPortPrototype mapped to needed CryptoKeySlot.</p>
+<section id="serializable-interface">
+<h3><span class="section-number">12.5.1. </span>Serializable interface<a class="headerlink" href="#serializable-interface" title="Link to this heading"></a></h3>
+<p>The CryptoAPI provides an interface for exporting of any public (by nature) objects, where additional integrity or confidentiality protection are not needed. Interfaces of all public (non-confidential) cryptographic objects and certificates that principally support serialization in plain (non-encrypted and non-authenticated) form are derived from the crypto::Serializable interface. Actually, this interface provides only one serialization method ExportPublicly.</p>
+</section>
+<section id="key-generation">
+<h3><span class="section-number">12.5.2. </span>Key Generation<a class="headerlink" href="#key-generation" title="Link to this heading"></a></h3>
+<p>Key Generation is the process of generating cryptographic keys. There are two types of Key Generation based on the used cryptographic algorithms:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Symmetric Algorithms: A symmetric system consists of a key, which is shared between the different parties.</p></li>
+</ul>
+<p>The FC Crypto supports symmetric cryptography and allocate a new symmetric key object by a call of function GenerateSymmetricKey.</p>
+<ul class="simple">
+<li><p>Asymmetric Algorithms: Asymmetric systems consist of public and private key, which are generated. The public key is used for encryption, key encapsulation, or signature verification. The private key is used for decryption, key encapsulation, key exchange, or digital signature calculation.</p></li>
+</ul>
+<p>The FC Crypto supports the asymmetric key generation and CrypotAPI provide such functionality. The private key is generated by calling GeneratePrivateKey.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="certificate-handling-x-509-provider">
+<h2><span class="section-number">12.6. </span>Certificate handling (X.509 Provider)<a class="headerlink" href="#certificate-handling-x-509-provider" title="Link to this heading"></a></h2>
+<p>X.509 Certificate Management Provider (X.509 Provider) is responsible for X.509 certificates parsing, verification, authentic storage and local searching by different attributes. In addition, X.509 Provider is responsible for storage, management, and processing of Certificate Revocation Lists (CRLs) and Delta CRLs. The X.509 Provider supports the preparation of requests, responses, and parsing according to the Online Certificate Status Protocol (OCSP).</p>
+<p>Applications or functional clusters can access certificates by CryptoCertificateInterface, which is provided by X.509 Provider.</p>
+<p>FC Crypto implementation includes a single X.509 Provider and responsibility of this provider is the support of Public Key Infrastructure (PKI).</p>
+<p>A PKI contains a root certificate and one or many certificates. Main feature are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Storages of certificates, certification signing requests (CSRs), and certificate revocation lists (CRLs).</p></li>
+<li><p>Complete parsing of X.509 certificates and certificate signing requests (CSR).</p></li>
+<li><p>Encoding of all public components of certificate signing requests (e.g. Distinguished Names and X.509 Extensions).</p></li>
+<li><p>Verification of certificates and certification chains (according to current set of trusted certificates).</p></li>
+<li><p>Trust management of the stored certificates.</p></li>
+<li><p>Search of certificates in local storage based on different parameters.</p></li>
+<li><p>Automatic building of the trust chains according to saved certificates, CRLs, and trust configuration.</p></li>
+</ul>
+</div></blockquote>
+<p>The X.509 Provider stores and provide the root certificate and all needed CAs along the certification path, together with the reference to the corresponding public and private keys, which are handled by the Key Storage Provider.</p>
+<p>Certificate deployment is shown in below figure:</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/Certificate_Deployment.png" class="with-border" src="../_images/Certificate_Deployment.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Certificate Deployment</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sequence-diagrams">
+<h2><span class="section-number">12.7. </span>Sequence Diagrams<a class="headerlink" href="#sequence-diagrams" title="Link to this heading"></a></h2>
+<p><strong>Generation of random number using RNG interface.</strong></p>
+<figure class="align-center" id="id9">
+<img alt="../_images/RNG.png" class="with-border" src="../_images/RNG.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Random Number Generation Sequence</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Generation of Symmetric Key and usage in MAC interface.</strong></p>
+<figure class="align-center" id="id10">
+<img alt="../_images/Generate_Symmetric_Key_MAC.png" class="with-border" src="../_images/Generate_Symmetric_Key_MAC.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Generation and usage of Symmetric Key</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Storing a Key using Key Storage Provider.</strong></p>
+<figure class="align-center" id="id11">
+<img alt="../_images/Storing_Key.png" class="with-border" src="../_images/Storing_Key.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Storing a Key using Key Storage Provider</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Crypto Certificate Functionality.</strong></p>
+<figure class="align-center" id="id12">
+<img alt="../_images/Certificate.png" class="with-border" src="../_images/Certificate.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Crypto Certificate</strong></span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../persistency/persistency.html" class="btn btn-neutral float-left" title="11. Persistency" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../idsm/idsm.html" class="btn btn-neutral float-right" title="13. Intrusion Detection System Manager (IDSM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+# Building a minimal yocto image {#asrbuild_introduction}
+
+*	Essentials: Packages needed to build an image on a headless system: 
+   ```
+     $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+    	build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
+     	xz-utils debianutils iputils-ping
+   ```
+>	Note:
+>	If your build system has the oss4-dev package installed, you might experience QEMU build failures due to the package installing its own custom /usr/include/linux/soundcard.h on the Debian system. If you run into this situation, either of the following solutions exist: 
+   ```
+    $ sudo apt-get build-dep qemu
+    $ sudo apt-get remove oss4-dev
+   ```
+*	Clone the poky from git repository and checkout to latest branch
+ ```
+    $ git clone http://git.yoctoproject.org/git/poky
+	$ cd poky
+	$ git checkout tags/yocto-2.4 -b poky_2.4
+
+```
+*	Clone the Intel-corei7-64 BSP for the rocko image in Poky dir
+```  
+  	$ git clone git://git.yoctoproject.org/meta-intel
+  	$ cd $HOME/poky/meta-intel
+	$ git checkout tags/8.0-rocko-2.4.2 -b meta-intel-rocko-2.4.2
+```
+*	Configure the build  in local.conf and bblayers.conf
+```
+	$ cd $HOME/poky/build
+	$ bitbake-layers add-layer "$HOME/poky/meta-intel"
+	$ echo 'MACHINE = "intel-corei7-64"' >> conf/local.conf
+```
+*	Bitbake the image
+````
+    $ cd $home/poky/
+    $ source oe-init-build-env
+    $ bitbake core-image-minimal
+````
+
+*	Run the image on qemu for thatyou shoul change the machine to "qemux86" in local.conf before bitbake 
+```
+	$ runqemu qemux86 core-image-minimal
+```
+
+*	Flash the image into USB to execute the image on minnow board, so skip the above step
+```
+	$ sudo dd if=tmp/deploy/images/intel-corei7-64/core-image-minimal-intel-corei7-64.hddimg   of=/dev/sdb
+```
+
+# Creating a hello world program
+*	Create a meta-mylayer for helloworld program in poky dir
+```
+		$ cd $home/poky/
+		$ source oe-init-build-env
+		$ cd ..
+		$ yocto-layer create mylayer
+``` 
+
+>   Note: when asked for example recipe creation : yes
+
+>	  When asked for recipe name             :  helloworld
+
+
+*	Add the meta-mylayer in bblayer.conf
+```
+  $ cd build
+  $ bitbake-layers add-layer "$HOME/poky/meta-mylayer" 
+```
+*	Add the helloworld in local.conf
+```
+  $ echo ‘IMAGE_INSTALL_append = “ helloworld”' >> conf/local.conf
+```
+*	Bitbake the helloworld program
+```
+  $ bitbake helloworld
+```
+*	Bitbake the image 
+```   
+  $ bitbake core-image-minimal
+```
+*	After flashing the image into USB, boot the image on board. To execute the hello world, type the command on target terminal , helloworld bin file will be in /usr/bin
+```
+	$ /usr/bin/helloworld
+```
+
+# Creating a program for LED blinking
+*	Create a meta-mylayer for helloworld program in poky dir
+```
+		$ cd $home/poky/
+		$ source oe-init-build-env
+		$ cd ..
+		$ yocto-layer create mylayer
+``` 
+
+>   Note: when asked for example recipe creation : yes
+
+>	  When askd for recipe name             :  leblink
+
+*	Remove helloworld program and add ledblink.c
+
+>	$ vi ledblink.c
+```{.c}
+#include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int LedExport(void);
+int LedDirection(void);
+int LedToggle(void);
+int main(int argc, char **argv)
+{
+	printf("Hellow Let's Blink LED\r\n");
+	int repeat = 9;
+	
+	 LedExport();
+	 LedDirection();
+
+	while(repeat--)
+	{
+		LedToggle();
+		usleep(500*100);
+		LedToggle();
+		usleep(500*100);	
+	}
+
+
+	return(0);
+}
+
+
+int LedExport(void)
+{
+	FILE *fd;
+        usleep(500*100);        
+        fd = fopen("/sys/class/gpio/export", "w");
+        if(NULL == fd)
+        {
+                printf("Failed to open export\r\n");
+        }       
+        else
+        {
+                printf("export file opened\r\n");
+                fputs("360", fd);
+
+                fclose(fd);
+        }
+
+}
+
+int LedDirection(void)
+{
+	FILE *fd;
+        usleep(500*100);
+        fd = fopen("/sys/class/gpio/gpio360/direction", "w");
+        if(NULL == fd)
+        {
+                printf("Failed to open direction\r\n");
+        }       
+        else
+        {
+                printf("direction file opened\r\n");
+                fputs("out", fd);
+
+                fclose(fd);
+        }
+
+}
+int LedToggle(void)
+{
+	static int tog = 0;
+
+	FILE *fd;
+        usleep(500*100);
+        fd = fopen("/sys/class/gpio/gpio360/value", "w");
+        if(NULL == fd)
+        {
+                printf("Failed to open value\r\n");
+        }
+	else
+	{
+		if (tog)
+		{		
+			fputs("1", fd);
+			tog = 0;
+
+		}else
+		{
+			fputs("0", fd);
+			tog = 1;	
+		}
+		fclose(fd);
+	}
+
+}
+
+
+```
+*	Create CMakeLists.txt file
+```
+project(ledblink)
+add_executable(led ledblink.c)
+install(TARGETS led RUNTIME DESTINATION bin)
+```
+
+*	Edit the ledblink.bb file
+```
+#
+# This file was derived from the 'Hello World!' example recipe in the
+# Yocto Project Development Manual.
+#
+
+DESCRIPTION = "Simple ledblink application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+inherit externalsrc
+EXTERNALSRC := "${THISDIR}/leblink-0.1"
+
+inherit cmake
+
+```
+
+*	Add the meta-mylayer in bblayer.conf
+```
+  $ bitbake-layers add-layer "$HOME/poky/meta-mylayer" 
+```
+*	Add the helloworld in local.conf
+```
+  $ echo ‘IMAGE_INSTALL_append = “ ledblink”' >> conf/local.conf
+```
+*	Bitbake the ledblink program
+```
+  $ bitbake ledblink
+```
+*	Bitbake the image 
+```   
+  $ bitbake core-image-minimal
+```
+*	After flashing the image into USB, boot the image on board. To execute the hello world, type the command on target terminal , ledblink bin file will be in /usr/bin
+```
+	$ /usr/bin/ledblink
+```
+
+# Add ledblink in core-image-minimal
+*	goto directory poky/meta/recipes-core/images
+>	$ cd poky/meta/recipes-core/images
+
+*	open core-image-minimal.bbfile
+>	$ vi core-image-minimal.bb
+
+* Add the follow at the end in core-image-minimal.bb file to add ledblink application
+>	IMAGE_INSTALL += " ledblink"
+ 		

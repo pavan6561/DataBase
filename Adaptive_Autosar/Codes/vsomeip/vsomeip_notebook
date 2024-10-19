@@ -1,0 +1,50 @@
+Vsomeip_notebook:
+------------------
+
+About someip:
+---------------
+https://www.engineersgarage.com/some-ip-protocol/
+
+vsomeip - userguide:
+---------------------
+https://github.com/COVESA/vsomeip/blob/master/documentation/vsomeipUserGuide
+
+vsomeip-implementation:
+------------------------
+https://github.com/COVESA/vsomeip/wiki/vsomeip-in-10-minutes#first
+
+
+1.As mentioned before vsomeip needs the Boost.Asio library,
+   so make sure that you have installed BOOST on your system (at least version 1.55).
+2.
+
+add-apt-repository deb https://ppa.launchpadcontent.net/boost-latest/ppa/ubuntu
+
+
+TCP/IP
+-------
+a: learn lowlevel socket programming : example: https://www.geeksforgeeks.org/socket-programming-cc/
+b: do socket programming but use a library: example: https://www.codeproject.com/Articles/12 ... ost-asio-T
+https://github.com/Mad-Scientist-Monkey/sockets-ccpp-rpi
+
+g++ server.cpp -o server -lboost_system -lpthread
+g++ client.cpp -o client -lboost_system -lpthread
+
+
+
+
+vsomeip/subscribe/notify
+----------------------------
+g++ notify-sample.cpp -o notify-sample -lvsomeip3 -lpthread
+g++ subscribe-sample.cpp -o subscribe-sample -lvsomeip3 -lpthread
+
+
+demo -program:
+--------------
+git clone https://github.com/lixiaolia/vsomeip_demo.git
+
+
+vsomeip/subscribe/notify using opencv
+--------------------------------------
+g++ notify-sample.cpp -o notify-sample -lvsomeip3 -lpthread `pkg-config --cflags --libs opencv4`
+g++ subscribe-sample.cpp -o subscribe-sample -lvsomeip3 -lpthread `pkg-config --cflags --libs opencv4`

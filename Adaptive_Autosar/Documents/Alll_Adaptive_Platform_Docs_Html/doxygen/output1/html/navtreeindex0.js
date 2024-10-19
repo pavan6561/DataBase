@@ -1,0 +1,25 @@
+var NAVTREEINDEX0 =
+{
+"_appendix.html":[0,5,2],
+"_appendix.html#Global_Supervision_Status":[0,5,2,1],
+"_appendix.html#Local_Supervision_Status":[0,5,2,0],
+"_architecture__design.html":[0,5,1],
+"_guideline__document_for__platform__health__management.html":[0,5],
+"_introduction.html":[0,5,0],
+"_performance_parameter.html":[0,6],
+"adaptive_communicationmanagement.html":[0,1],
+"adaptive_communicationmanagement_aracom.html":[0,1,2],
+"adaptive_communicationmanagement_introduction.html":[0,1,0],
+"adaptive_communicationmanagement_someip.html":[0,1,1],
+"adaptive_communicationmanagement_someip.html#on_wire_format":[0,1,1,0],
+"adaptive_communicationmanagement_someip.html#protocol":[0,1,1,1],
+"adaptive_communicationmanagement_someip.html#service_discovery":[0,1,1,2],
+"adaptive_configurationmethodology.html":[0,3],
+"adaptive_executionmanagement.html":[0,2],
+"adaptive_platform_introduction.html":[0,0],
+"adaptive_state_manager.html":[0,4],
+"adaptiveplatform_root.html":[0],
+"execution_management.html":[0,2,0],
+"index.html":[],
+"pages.html":[]
+};

@@ -1,0 +1,332 @@
+# Introduction to Yocto {#yocto_introduction}
+
+The Yocto Project is an open source collaboration project that helps developers create custom Linux-based systems for embedded products,regardless of the hardware architecture. 
+The project provides a flexible set of tools and a space where embedded developers worldwide can share technologies,software stacks, configurations and best practices which can 
+be used to create tailored Linux images for embedded devices. The project provides a standard to delivering hardware support and software stacks, allowing the interchange of 
+software configurations and builds. The tools allow users to build and support customizations for multiple hardware platforms and software stacks in a maintainable and scalable way. 
+
+The Yocto Project combines, maintains and validates three (3) key development elements.
+* A set of integrated tools to make working with embedded Linux successful, including tools for automated building and testing, processes for board support and license compliance, and component information for custom Linux-based embedded operating systems
+* A reference embedded distribution (called Poky)
+* The OpenEmbedded build system, co-maintained with the OpenEmbedded Project
+
+  
+
+## Yocto Project Terms
+	Following is a list of terms and definitions users new to the Yocto Project development environment might find helpful. While some of these terms are universal, the list includes them just in case: 
+
+*	**Append Files:** Files that append build information to a recipe file. Append files are known as BitBake append files and .bbappend files. The OpenEmbedded build system expects every append file to have a corresponding recipe (.bb) file. Furthermore, the append file and corresponding recipe file must use the same root filename. The filenames can differ only in the file type suffix used (e.g. formfactor_0.0.bb and formfactor_0.0.bbappend).
+	Information in append files extends or overrides the information in the similarly-named recipe file. For an example of an append file in use. 
+	Note
+	Append files can also use wildcard patterns in their version numbers so they can be applied to more than one version of the underlying recipe file. 
+
+*	**BitBake:** The task executor and scheduler used by the OpenEmbedded build system to build images. 
+		
+	BitBake is the tool at the heart of the OpenEmbedded build system and is responsible for parsing the Metadata, generating a list of tasks from it, and then executing those tasks. 
+	This section briefly introduces BitBake. If you want more information on BitBake, see the BitBake User Manual. 
+	To see a list of the options BitBake supports, use either of the following commands:
+	 
+		>		$ bitbake -h\n
+		>		$ bitbake --help
+	            
+
+	The most common usage for BitBake is bitbake packagename, where packagename is the name of the package you want to build (referred to as the "target" in this manual). The target often equates to the first part of a recipe's filename (e.g. "foo" for a recipe named foo_1.3.0-r0.bb). So, to process the matchbox-desktop_1.2.3.bb recipe file, you might type the following: 
+		>		$ bitbake matchbox-desktop
+	            
+	Several different versions of matchbox-desktop might exist. BitBake chooses the one selected by the distribution configuration. You can get more details about how BitBake chooses between different target versions and providers in the "Preferences" section of the BitBake User Manual. 
+	BitBake also tries to execute any dependent tasks first. So for example, before building matchbox-desktop, BitBake would build a cross compiler and glibc if they had not already been built. 
+	A useful BitBake option to consider is the -k or --continue option. This option instructs BitBake to try and continue processing the job as long as possible even after encountering an error. When an error occurs, the target that failed and those that depend on it cannot be remade. However, when you use this option other dependencies can still be processed. 
+
+*	**Board Support Package (BSP):** A group of drivers, definitions, and other components that provide support for a specific hardware configuration. 
+	
+*	**Build Directory:** This term refers to the area used by the OpenEmbedded build system for builds. The area is created when you source the setup environment script that is found in the Source Directory (i.e. oe-init-build-env). The TOPDIR variable points to the Build Directory.
+	You have a lot of flexibility when creating the Build Directory. Following are some examples that show how to create the directory. The examples assume your Source Directory is named poky: 
+	Create the Build Directory inside your Source Directory and let the name of the Build Directory default to build: 
+	
+		>     $ cd $HOME/poky
+		>     $ source oe-init-build-env
+	                        
+
+	Create the Build Directory inside your home directory and specifically name it test-builds: 
+	
+		>    $ cd $HOME
+		>    $ source poky/oe-init-build-env test-builds
+	                        
+
+	Provide a directory path and specifically name the Build Directory. Any intermediate folders in the pathname must exist. This next example creates a Build Directory named YP-19.0.2 in your home directory within the existing directory mybuilds: 
+	
+		>   $cd $HOME
+		>   $ source $HOME/poky/oe-init-build-env $HOME/mybuilds/YP-19.0.2
+		
+	                        
+		>	Note
+		> 	By default, the Build Directory contains TMPDIR, which is a temporary directory the build system uses for its work. TMPDIR cannot be under NFS. 
+		>	Thus, by default, the Build Directory cannot be under NFS. However, if you need the Build Directory to be under NFS, you can set this up by setting TMPDIR in your local.conf file to use a local drive. 
+		>	Doing so effectively separates TMPDIR from TOPDIR, which is the Build Directory. 
+
+*	**Build System:** The system used to build images in a Yocto Project Development environment. The build system is sometimes referred to as the development host. 
+
+*	**Cross-Development Toolchain:** In general, a cross-development toolchain is a collection of software development tools and utilities that run on one architecture and allow you to develop software for a different, or targeted, architecture. These toolchains contain cross-compilers, linkers, and debuggers that are specific to the target architecture.
+	The Yocto Project supports two different cross-development toolchains: 
+	A toolchain only used by and within BitBake when building an image for a target architecture. 
+	A relocatable toolchain used outside of BitBake by developers when developing applications that will run on a targeted device. 
+	Creation of these toolchains is simple and automated. For information on toolchain concepts as they apply to the Yocto Project. You can also find more information on using the relocatable toolchain in the Yocto Project Application Development and the Extensible Software Development Kit (eSDK) manual. 
+
+*	**Image:** An image is an artifact of the BitBake build process given a collection of recipes and related Metadata. Images are the binary output that run on specific hardware or QEMU and are used for specific use-cases. For a list of the supported image types that the Yocto Project provides.
+
+*	**Layer:** A collection of recipes representing the core, a BSP, or an application stack. For a discussion specifically on BSP Layers. 
+
+*	**Metadata:** The files that BitBake parses when building an image. In general, Metadata includes recipes, classes, and configuration files.
+
+	*	*Recipe:* A set of instructions for building packages. A recipe describes where you get source code, which patches to apply, how to configure the source, how to compile it and so on. Recipes also describe dependencies for libraries or for other recipes. Recipes represent the logical unit of execution, the software to build, the images to build, and use the .bb file extension. 
+	Files that have the .bb suffix are "recipes" files. In general, a recipe contains information about a single piece of software. This information includes the location from which to download the unaltered source, any source patches to be applied to that source (if needed), which special configuration options to apply, how to compile the source files, and how to package the compiled output. 
+	The term "package" is sometimes used to refer to recipes. However, the word "package" is used for the packaged output from the OpenEmbedded build system (i.e. .ipk or .deb files).
+	
+	*	*Classes:* Class files (.bbclass) contain information that is useful to share between Metadata files. It provides logic encapsulation and inheritance so that commonly used patterns can be defined once and then easily used in multiple recipes. An example is the autotools class, which contains common settings for any application that Autotools uses. 
+	
+	*	*Configuration:* The configuration files (.conf) define various configuration variables that govern the OpenEmbedded build process. These files fall into several areas that define machine 
+		configuration options, distribution configuration options, compiler tuning options, general common configuration options, and user configuration options in local.conf, 
+		which is found in the Build Directory. 
+		Configuration information in various .conf files provides global definitions of variables. The conf/local.conf configuration file in the Build Directory contains user-defined variables that affect every build. 
+		The meta-poky/conf/distro/poky.conf configuration file defines Yocto "distro" configuration variables used only when building with this policy. Machine configuration files, 
+		which are located throughout the Source Directory, define variables for specific hardware and are only used when building for that target (e.g. the machine/beaglebone.conf configuration file defines 
+		variables for the Texas Instruments ARM Cortex-A8 development board). Configuration files end with a .conf filename extension. 
+		
+*	**OE-Core:** A core set of Metadata originating with OpenEmbedded (OE) that is shared between OE and the Yocto Project. This Metadata is found in the meta directory of the Source Directory. 
+
+*	**OpenEmbedded Build System:** The build system specific to the Yocto Project. The OpenEmbedded build system is based on another project known as "Poky", which uses BitBake as the task executor. Throughout the Yocto Project documentation set, the OpenEmbedded build system is sometimes referred to simply as "the build system". If other build systems, such as a host or target build system are referenced, the documentation clearly states the difference. 
+
+
+*	**Package:** In the context of the Yocto Project, this term refers to a recipe's packaged output produced by BitBake (i.e. a "baked recipe"). A package is generally the compiled binaries produced from the recipe's sources. You "bake" something by running it through BitBake.
+	It is worth noting that the term "package" can, in general, have subtle meanings. For example, the packages referred to in the "The Build Host Packages" section in the Yocto Project Quick Start are compiled binaries that, when installed, add functionality to your Linux distribution.
+	Another point worth noting is that historically within the Yocto Project, recipes were referred to as packages - thus, the existence of several BitBake variables that are seemingly mis-named, (e.g. PR, PV, and PE). 
+
+*	**Package Groups:** Arbitrary groups of software Recipes. You use package groups to hold recipes that, when built, usually accomplish a single task. For example, a package group could contain the recipes for a company’s proprietary or value-add software. Or, the package group could contain the recipes that enable graphics. A package group is really just another recipe. Because package group files are recipes, they end with the .bb filename extension. 
+
+*	**Poky:** The term "poky", which is pronounced Pah-kee, can mean several things: 
+	In its most general sense, poky is an open-source project that was initially developed by OpenedHand. OpenedHand developed poky off of the existing OpenEmbedded build system to create a commercially supportable build system for embedded Linux. After Intel Corporation acquired OpenedHand, the poky project became the basis for the Yocto Project's build system. 
+	Within the Yocto Project Source Repositories, "poky" exists as a separate Git repository from which you can clone to yield a local Git repository that is a copy on your host system. Thus, "poky" can refer to the upstream or local copy of the files used for development within the Yocto Project. 
+	Finally, "poky" can refer to the default DISTRO (i.e. distribution) created when you use the Yocto Project in conjunction with the poky repository to build an image. 
+
+*	**Reference Kit:** A working example of a system, which includes a BSP as well as a build system and other components, that can work on specific hardware. 
+
+*	**Source Directory:** This term refers to the directory structure created as a result of creating a local copy of the poky Git repository git://git.yoctoproject.org/poky or expanding a released poky tarball. 
+
+		>	Note
+		>	Creating a local copy of the poky Git repository is the recommended method for setting up your Source Directory. 
+
+	Sometimes you might hear the term "poky directory" used to refer to this directory structure. 
+
+		>	Note
+		>	The OpenEmbedded build system does not support file or directory names that contain spaces. Be sure that the Source Directory you use does not contain these types of names. 
+
+	The Source Directory contains BitBake, Documentation, Metadata and other files that all support the Yocto Project. Consequently, you must have the Source Directory in place on your development system in order to do any development using the Yocto Project.
+	When you create a local copy of the Git repository, you can name the repository anything you like. Throughout much of the documentation, "poky" is used as the name of the top-level folder of the local copy of the poky Git repository. So, for example, cloning the poky Git repository results in a local Git repository whose top-level folder is also named "poky".
+	While it is not recommended that you use tarball expansion to set up the Source Directory, if you do, the top-level directory name of the Source Directory is derived from the Yocto Project release tarball. For example, downloading and unpacking poky-rocko-19.0.2.tar.bz2 results in a Source Directory whose root folder is named poky-rocko-19.0.2.
+	It is important to understand the differences between the Source Directory created by unpacking a released tarball as compared to cloning git://git.yoctoproject.org/poky. When you unpack a tarball, you have an exact copy of the files based on the time of release - a fixed release point. Any changes you make to your local files in the Source Directory are on top of the release and will remain local only. On the other hand, when you clone the poky Git repository, you have an active development repository with access to the upstream repository's branches and tags. In this case, any local changes you make to the local Source Directory can be later applied to active development branches of the upstream poky Git repository.
+
+*	**Task:** A unit of execution for BitBake (e.g. do_compile, do_fetch, do_patch, and so forth). 
+
+##Development concept
+	The following diagram represents development at a high level. The remainder of this chapter expands on the fundamental input, output, process, and Metadata) blocks that make up development in the Yocto Project environment. 
+	![Yocto Develpement processes](images/yocto-environment.png)
+In general, development consists of several functional areas: 
+*	**User Configuration:** Metadata you can use to control the build process. 
+
+*	**Metadata Layers:** Various layers that provide software, machine, and distro Metadata.
+
+*	**Source Files:** Upstream releases, local projects, and SCMs.
+
+*	**Build System:** Processes under the control of BitBake. This block expands on how BitBake fetches source, applies patches, completes compilation, analyzes output for package generation, creates and tests packages, generates images, and generates cross-development tools.
+
+*	**Package Feeds:** Directories containing output packages (RPM, DEB or IPK), which are subsequently used in the construction of an image or SDK, produced by the build system. These feeds can also be copied and shared using a web server or other means to facilitate extending or updating existing images on devices at runtime if runtime package management is enabled.
+
+*	**Images:** Images produced by the development process. 
+
+*	**Application Development SDK:** Cross-development tools that are produced along with an image or separately with BitBake.
+
+##Build process
+	The OpenEmbedded build system uses BitBake to produce images. You can see from the general Yocto Project Development Environment figure, the BitBake area consists of several functional areas.
+	which are divided into task as follows:
+	
+*	**Source Fetching**
+		The first stages of building a recipe are to fetch and unpack the source code: 
+	![Source Fetching](images/source_fetching.PNG)
+	
+	The *do_fetch* and *do_unpack* tasks fetch the source files and unpack them into the work directory. By default, everything is accomplished in the Build Directory, which has a defined structure
+	Unpacked source files are pointed to by the S variable. Each recipe has an area in the Build Directory where the unpacked source code resides. The name of that directory for any given recipe is defined from several different variables. 
+	You can see the variables that define these directories by looking at the figure: 
+	*	*TMPDIR* - The base directory where the OpenEmbedded build system performs all its work during the build. 
+	*	*PACKAGE_ARCH* - The architecture of the built package or packages. 
+	*	*PN* - The name of the built package. 
+	*	*PV* - The version of the recipe used to build the package. 
+	*	*PR* - The revision of the recipe used to build the package. 
+	*	*WORKDIR* - The location within TMPDIR where a specific package is built. 
+	*	*S* - Contains the unpacked source files for a given recipe. 
+	
+*	**Patching**
+		Once source code is fetched and unpacked, BitBake locates patch files and applies them to the source files
+	![Patching](images/Patching.png)
+	
+	The *do_patch* task processes recipes by using the *SRC_URI* variable to locate applicable patch files, which by default are *.patch or *.diff files, or any file if "apply=yes" is specified for the file in SRC_URI. 
+	BitBake finds and applies multiple patches for a single recipe in the order in which it finds the patches. Patches are applied to the recipe's source files located in the S directory. 
+
+*	**Configuration and Compilation**
+		After source code is patched, BitBake executes tasks that configure and compile the source code: 
+	![Compilation](images/compilation.png)
+	
+	This step in the build process consists of three tasks: 
+	*	*do_prepare_recipe_sysroot:* This task sets up the two sysroots in ${WORKDIR} (i.e. recipe-sysroot and recipe-sysroot-native) so that the sysroots contain the contents of the do_populate_sysroot tasks of the recipes on which the recipe containing the tasks depends. A sysroot exists for both the target and for the native binaries, which run on the host system. 
+	*	*do_configure:* This task configures the source by enabling and disabling any build-time and configuration options for the software being built. Configurations can come from the recipe itself as well as from an inherited class. Additionally, the software itself might configure itself depending on the target for which it is being built. 
+			The configurations handled by the do_configure task are specific to source code configuration for the source code being built by the recipe.
+			If you are using the autotools class, you can add additional configuration options by using the EXTRA_OECONF or PACKAGECONFIG_CONFARGS variables. For information on how this variable works within that class, see the meta/classes/autotools.bbclass file. 
+	*	*do_compile:* Once a configuration task has been satisfied, BitBake compiles the source using the do_compile task. Compilation occurs in the directory pointed to by the B variable. Realize that the B directory is, by default, the same as the S directory.
+	*	*do_install:* Once compilation is done, BitBake executes the *do_install* task. This task copies files from the B directory and places them in a holding area pointed to by the D variable.
+	
+*	**Package Splitting**	
+	After source code is configured and compiled, the OpenEmbedded build system analyzes the results and splits the output into packages:
+	![Package Splitting](images/package_splitting.png)
+	
+	The do_package and do_packagedata tasks combine to analyze the files found in the D directory and split them into subsets based on available packages and files. The analyzing process involves the following as well as other items: splitting out debugging symbols, looking at shared library dependencies between packages, and looking at package relationships. The do_packagedata task creates package metadata based on the analysis such that the OpenEmbedded build system can generate the final packages. Working, staged, and intermediate results of the analysis and package splitting process use these areas: 
+	
+	*	*PKGD* - The destination directory for packages before they are split. 
+	*	*PKGDATA_DIR* - A shared, global-state directory that holds data generated during the packaging process. 
+	*	*PKGDESTWORK* - A temporary work area used by the do_package task. 
+	*	*PKGDEST* - The parent directory for packages after they have been split. 
+	
+	The FILES variable defines the files that go into each package in PACKAGES. If you want details on how this is accomplished, you can look at the package class. 
+	Depending on the type of packages being created (RPM, DEB, or IPK), the *do_package_write_* task creates the actual packages and places them in the Package Feed area, which is ${TMPDIR}/deploy. You can see the "Package Feeds" section for more detail on that part of the build process. 
+
+*	**Image Generation**
+		Once packages are split and stored in the Package Feeds area, the OpenEmbedded build system uses BitBake to generate the root filesystem image:
+	![Package Splitting](images/image_generation.png)
+	
+	The image generation process consists of several stages and depends on several tasks and variables. The do_rootfs task creates the root filesystem (file and directory structure) for an image. This task uses several key variables to help create the list of packages to actually install: 
+	
+	*	*IMAGE_INSTALL:* Lists out the base set of packages to install from the Package Feeds area.
+	*	*PACKAGE_EXCLUDE:* Specifies packages that should not be installed. 
+	*	*IMAGE_FEATURES:* Specifies features to include in the image. Most of these features map to additional packages for installation.
+	*	*PACKAGE_CLASSES:* Specifies the package backend to use and consequently helps determine where to locate packages within the Package Feeds area.
+	*	*IMAGE_LINGUAS:* Determines the language(s) for which additional language support packages are installed. 
+	*	*PACKAGE_INSTALL:* The final list of packages passed to the package manager for installation into the image. 
+	
+	With IMAGE_ROOTFS pointing to the location of the filesystem under construction and the *PACKAGE_INSTALL* variable providing the final list of packages to install, the root file system is created. 
+	Package installation is under control of the package manager (e.g. dnf/rpm, opkg, or apt/dpkg) regardless of whether or not package management is enabled for the target. At the end of the process, if package management is not enabled for the target, the package manager's data files are deleted from the root filesystem. As part of the final stage of package installation, postinstall scripts that are part of the packages are run. Any scripts that fail to run on the build host are run on the target when the target system is first booted. If you are using a read-only root filesystem, all the post installation scripts must succeed during the package installation phase since the root filesystem is read-only. 
+	The final stages of the do_rootfs task handle post processing. Post processing includes creation of a manifest file and optimizations. 
+	The manifest file (.manifest) resides in the same directory as the root filesystem image. This file lists out, line-by-line, the installed packages. The manifest file is useful for the testimage class, for example, to determine whether or not to run specific tests. See the *IMAGE_MANIFEST* variable for additional information. 
+		
+	Optimizing processes run across the image include mklibs, prelink, and any other post-processing commands as defined by the ROOTFS_POSTPROCESS_COMMAND variable. The mklibs process optimizes the size of the libraries, while the prelink process optimizes the dynamic linking of shared libraries to reduce start up time of executables. 
+	After the root filesystem is built, processing begins on the image through the do_image task. The build system runs any pre-processing commands as defined by the IMAGE_PREPROCESS_COMMAND variable. This variable specifies a list of functions to call before the OpenEmbedded build system creates the final image output files. 
+	The OpenEmbedded build system dynamically creates do_image_* tasks as needed, based on the image types specified in the IMAGE_FSTYPES variable. The process turns everything into an image file or a set of image files and compresses the root filesystem image to reduce the overall size of the image. The formats used for the root filesystem depend on the IMAGE_FSTYPES variable. 
+	As an example, a dynamically created task when creating a particular image type would take the following form: 
+	
+	     do_image_type[depends]
+	                
+	So, if the type as specified by the IMAGE_FSTYPES were ext4, the dynamically generated task would be as follows:
+	 
+	     do_image_ext4[depends]
+	
+	The final task involved in image creation is the do_image_complete task. This task completes the image by applying any image post processing as defined through the IMAGE_POSTPROCESS_COMMAND variable. The variable specifies a list of functions to call once the OpenEmbedded build system has created the final image output files. 	
+
+*	**Image**
+		The images produced by the OpenEmbedded build system are compressed forms of the root filesystem that are ready to boot on a target device. You can see from the general Yocto Project Development Environment figure that BitBake output, in part, consists of images.
+	![Package Splitting](images/Image.png)
+	
+	For a list of example images that the Yocto Project provides, see the "Images" chapter. 
+	Images are written out to the Build Directory inside the tmp/deploy/images/machine/ folder as shown in the figure. This folder contains any files expected to be loaded on the target device. The DEPLOY_DIR variable points to the deploy directory, while the DEPLOY_DIR_IMAGE variable points to the appropriate directory containing images for the current configuration. 
+	*	*kernel-image:* A kernel binary file. The KERNEL_IMAGETYPE variable setting determines the naming scheme for the kernel image file. Depending on that variable, the file could begin with a variety of naming strings. The deploy/images/machine directory can contain multiple image files for the machine.
+	*	*root-filesystem-image:* Root filesystems for the target device (e.g. *.ext3 or *.bz2 files). The IMAGE_FSTYPES variable setting determines the root filesystem image type. The deploy/images/machine directory can contain multiple root filesystems for the machine.
+	*	*kernel-modules:* Tarballs that contain all the modules built for the kernel. Kernel module tarballs exist for legacy purposes and can be suppressed by setting the MODULE_TARBALL_DEPLOY variable to "0". The deploy/images/machine directory can contain multiple kernel module tarballs for the machine.
+	*	*bootloaders:* Bootloaders supporting the image, if applicable to the target machine. The deploy/images/machine directory can contain multiple bootloaders for the machine.
+	*	*symlinks:* The deploy/images/machine folder contains a symbolic link that points to the most recently built file for each machine. These links might be useful for external scripts that need to obtain the latest version of each file. 
+	
+## How does Bitbake build system use metadata to build an image?
+			The primary purpose for running BitBake is to produce some kind of output such as a single installable package, a kernel, a software development kit, or even a full, board-specific bootable Linux image, complete with bootloader, kernel, and root filesystem. Of course, you can execute the bitbake command with options that cause it to execute single tasks, compile single recipe files, capture or clear data, or simply return information about the execution environment. 
+	The execution process is launched using the following command form: 
+ 
+		    $ bitbake target
+ 
+*	 **Parsing the Base Configuration Metadata**
+		The first thing BitBake does is parse base configuration metadata. Base configuration metadata consists of your project's bblayers.conf file to determine what layers BitBake needs to recognize, all necessary layer.conf files (one from each layer), and bitbake.conf. The data itself is of various types: 
+		*	*Recipes:* Details about particular pieces of software. 
+		*	*Class Data:* An abstraction of common build information (e.g. how to build a Linux kernel). 
+		*	*Configuration Data:* Machine-specific settings, policy decisions, and so forth. Configuration data acts as the glue to bind everything together.
+
+		The layer.conf files are used to construct key variables such as BBPATH and BBFILES. BBPATH is used to search for configuration and class files under the conf and classes directories, respectively. BBFILES is used to locate both recipe and recipe append files (.bb and .bbappend). If there is no bblayers.conf file, it is assumed the user has set the BBPATH and BBFILES directly in the environment. 
+        
+		The base configuration metadata is global and therefore affects all recipes and tasks that are executed. 
+		BitBake first searches the current working directory for an optional conf/bblayers.conf configuration file. This file is expected to contain a BBLAYERS variable that is a space-delimited list of 'layer' directories. Recall that if BitBake cannot find a bblayers.conf file, then it is assumed the user has set the BBPATH and BBFILES variables directly in the environment. 
+		
+		For each directory (layer) in this list, a conf/layer.conf file is located and parsed with the LAYERDIR variable being set to the directory where the layer was found. The idea is these files automatically set up BBPATH and other variables correctly for a given build directory. 
+		
+		BitBake then expects to find the conf/bitbake.conf file somewhere in the user-specified BBPATH. That configuration file generally has include directives to pull in any other metadata such as files specific to the architecture, the machine, the local environment, and so forth. 
+		
+		Only variable definitions and include directives are allowed in BitBake .conf files. Some variables directly influence BitBake's behavior. These variables might have been set from the environment depending on the environment variables previously mentioned or set in the configuration files. The "Variables Glossary" chapter presents a full list of variables. 
+		
+		After parsing configuration files, BitBake uses its rudimentary inheritance mechanism, which is through class files, to inherit some standard classes. BitBake parses a class when the inherit directive responsible for getting that class is encountered. 
+		
+		The base.bbclass file is always included. Other classes that are specified in the configuration using the INHERIT variable are also included. BitBake searches for class files in a classes subdirectory under the paths in BBPATH in the same way as configuration files.
+	
+*	**Locating and Parsing Recipes**
+			During the configuration phase, BitBake will have set BBFILES. BitBake now uses it to construct a list of recipes to parse, along with any append files (.bbappend) to apply. BBFILES is a space-separated list of available files and supports wildcards. An example would be: 
+		
+>		 		BBFILES = "/path/to/bbfiles/*.bb /path/to/appends/*.bbappend" 
+			BitBake parses each recipe and append file located with BBFILES and stores the values of various variables into the datastore.
+
+			For each file, a fresh copy of the base configuration is made, then the recipe is parsed line by line. Any inherit statements cause BitBake to find and then parse class files (.bbclass) using BBPATH as the search path. Finally, BitBake parses in order any append files found in BBFILES	 
+
+			By the time parsing is complete for a recipe, BitBake has a list of tasks that the recipe defines and a set of data consisting of keys and values as well as dependency information about the tasks. 
+					
+			BitBake does not need all of this information. It only needs a small subset of the information to make decisions about the recipe. Consequently, BitBake caches the values in which it is interested and does not store the rest of the information. Experience has shown it is faster to re-parse the metadata than to try and write it out to the disk and then reload it. 
+
+			Where possible, subsequent BitBake commands reuse this cache of recipe information. The validity of this cache is determined by first computing a checksum of the base configuration data (see BB_HASHCONFIG_WHITELIST) and then checking if the checksum matches. If that checksum matches what is in the cache and the recipe and class files have not changed, Bitbake is able to use the cache. BitBake then reloads the cached information about the recipe instead of reparsing it from scratch. 
+
+			Recipe file collections exist to allow the user to have multiple repositories of .bb files that contain the same exact package. For example, one could easily use them to make one's own local copy of an upstream repository, but with custom modifications that one does not want upstream. Here is an example: 
+
+>	    BBFILES = "/stuff/openembedded/*/*.bb /stuff/openembedded.modified/*/*.bb"
+
+>	    BBFILE_COLLECTIONS = "upstream local"
+
+>	    BBFILE_PATTERN_upstream = "^/stuff/openembedded/"
+
+>	    BBFILE_PATTERN_local = "^/stuff/openembedded.modified/"
+
+>	    BBFILE_PRIORITY_upstream = "5"
+
+>	    BBFILE_PRIORITY_local = "10"
+
+	
+*	**Providers**
+			Assuming BitBake has been instructed to execute a target and that all the recipe files have been parsed, BitBake starts to figure out how to build the target. BitBake looks through the PROVIDES list for each of the recipes. A PROVIDES list is the list of names by which the recipe can be known. Each recipe's PROVIDES list is created implicitly through the recipe's PN variable and explicitly through the recipe's PROVIDES variable, which is optional. 
+	When a recipe uses PROVIDES, that recipe's functionality can be found under an alternative name or names other than the implicit PN name. As an example, suppose a recipe named keyboard_1.0.bb contained the following: 
+	
+>		PROVIDES += "fullkeyboard"
+		The PROVIDES list for this recipe becomes "keyboard", which is implicit, and "fullkeyboard", which is explicit. Consequently, the functionality found in keyboard_1.0.bb can be found under two different names. 	
+	
+*	**Dependencies**
+			Each target BitBake builds consists of multiple tasks such as fetch, unpack, patch, configure, and compile. For best performance on multi-core systems, BitBake considers each task as an independent entity with its own set of dependencies. 
+	
+	Dependencies are defined through several variables. You can find information about variables BitBake uses in the Variables Glossary near the end of this manual. At a basic level, it is sufficient to know that BitBake uses the DEPENDS and RDEPENDS variables when calculating dependencies. 	
+
+*	**The Task List**
+			Based on the generated list of providers and the dependency information, BitBake can now calculate exactly what tasks it needs to run and in what order it needs to run them. The "Executing Tasks" section has more information on how BitBake chooses which task to execute next. 
+
+	The build now starts with BitBake forking off threads up to the limit set in the BB_NUMBER_THREADS variable. BitBake continues to fork threads as long as there are tasks ready to run, those tasks have all their dependencies met, and the thread threshold has not been exceeded. 
+
+	It is worth noting that you can greatly speed up the build time by properly setting the BB_NUMBER_THREADS variable. 
+
+	As each task completes, a timestamp is written to the directory specified by the STAMP variable. On subsequent runs, BitBake looks in the build directory within tmp/stamps and does not rerun tasks that are already completed unless a timestamp is found to be invalid. Currently, invalid timestamps are only considered on a per recipe file basis. So, for example, if the configure stamp has a timestamp greater than the compile timestamp for a given target, then the compile task would rerun. Running the compile task again, however, has no effect on other providers that depend on that target. 
+	
+	The exact format of the stamps is partly configurable. In modern versions of BitBake, a hash is appended to the stamp so that if the configuration changes, the stamp becomes invalid and the task is automatically rerun. This hash, or signature used, is governed by the signature policy that is configured (see the "Checksums (Signatures)" section for information). It is also possible to append extra metadata to the stamp using the [stamp-extra-info] task flag. For example, OpenEmbedded uses this flag to make some tasks machine-specific. 	
+	
+*	**Executing Tasks**
+			Tasks can be either a shell task or a Python task. For shell tasks, BitBake writes a shell script to ${T}/run.do_taskname.pid and then executes the script. The generated shell script contains all the exported variables, and the shell functions with all variables expanded. Output from the shell script goes to the file ${T}/log.do_taskname.pid. Looking at the expanded shell functions in the run file and the output in the log files is a useful debugging technique. 
+
+	For Python tasks, BitBake executes the task internally and logs information to the controlling terminal. Future versions of BitBake will write the functions to files similar to the way shell tasks are handled. Logging will be handled in a way similar to shell tasks as well. 
+	
+	The order in which BitBake runs the tasks is controlled by its task scheduler. It is possible to configure the scheduler and define custom implementations for specific use cases. For more information, see these variables that control the behavior: 
+	*	BB_SCHEDULER 
+	*	BB_SCHEDULERS 
+
+	It is possible to have functions run before and after a task's main function. This is done using the [prefuncs] and [postfuncs] flags of the task that lists the functions to run. 	
+	

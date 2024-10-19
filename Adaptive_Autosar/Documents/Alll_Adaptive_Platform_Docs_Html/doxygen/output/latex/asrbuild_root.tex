@@ -1,0 +1,1865 @@
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{yocto_introduction}{Introduction to Yocto}}
+\item \mbox{\hyperlink{yocto_intro}{Yocto Project overview}}
+\item \mbox{\hyperlink{asrbuild_introduction}{Building a minimal yocto image}}
+\item \mbox{\hyperlink{adaptive_application}{Setup Adaptive platform demonstrator}}
+\item \mbox{\hyperlink{sdk_introduction}{Building a sdk}}
+\item \mbox{\hyperlink{gdb_yoctoimage}{Debugging an Application}} 
+\end{DoxyItemize}\hypertarget{yocto_introduction}{}\section{Introduction to Yocto}\label{yocto_introduction}
+The Yocto Project is an open source collaboration project that helps developers create custom Linux-\/based systems for embedded products,regardless of the hardware architecture. The project provides a flexible set of tools and a space where embedded developers worldwide can share technologies,software stacks, configurations and best practices which can be used to create tailored Linux images for embedded devices. The project provides a standard to delivering hardware support and software stacks, allowing the interchange of software configurations and builds. The tools allow users to build and support customizations for multiple hardware platforms and software stacks in a maintainable and scalable way.
+
+The Yocto Project combines, maintains and validates three (3) key development elements.
+\begin{DoxyItemize}
+\item A set of integrated tools to make working with embedded Linux successful, including tools for automated building and testing, processes for board support and license compliance, and component information for custom Linux-\/based embedded operating systems
+\item A reference embedded distribution (called Poky)
+\item The Open\+Embedded build system, co-\/maintained with the Open\+Embedded Project
+\end{DoxyItemize}
+
+\subsection*{Yocto Project Terms}
+
+Following is a list of terms and definitions users new to the Yocto Project development environment might find helpful. While some of these terms are universal, the list includes them just in case\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Append Files\+:} Files that append build information to a recipe file. Append files are known as Bit\+Bake append files and .bbappend files. The Open\+Embedded build system expects every append file to have a corresponding recipe (.bb) file. Furthermore, the append file and corresponding recipe file must use the same root filename. The filenames can differ only in the file type suffix used (e.\+g. formfactor\+\_\+0.\+0.\+bb and formfactor\+\_\+0.\+0.\+bbappend). Information in append files extends or overrides the information in the similarly-\/named recipe file. For an example of an append file in use. Note Append files can also use wildcard patterns in their version numbers so they can be applied to more than one version of the underlying recipe file.
+\item {\bfseries Bit\+Bake\+:} The task executor and scheduler used by the Open\+Embedded build system to build images.
+
+Bit\+Bake is the tool at the heart of the Open\+Embedded build system and is responsible for parsing the Metadata, generating a list of tasks from it, and then executing those tasks. This section briefly introduces Bit\+Bake. If you want more information on Bit\+Bake, see the Bit\+Bake User Manual. To see a list of the options Bit\+Bake supports, use either of the following commands\+: \begin{DoxyVerb}>       $ bitbake -h\n
+>       $ bitbake --help
+\end{DoxyVerb}
+
+
+The most common usage for Bit\+Bake is bitbake packagename, where packagename is the name of the package you want to build (referred to as the \char`\"{}target\char`\"{} in this manual). The target often equates to the first part of a recipe\textquotesingle{}s filename (e.\+g. \char`\"{}foo\char`\"{} for a recipe named foo\+\_\+1.\+3.\+0-\/r0.\+bb). So, to process the matchbox-\/desktop\+\_\+1.\+2.\+3.\+bb recipe file, you might type the following\+: $>$ \$ bitbake matchbox-\/desktop
+
+Several different versions of matchbox-\/desktop might exist. Bit\+Bake chooses the one selected by the distribution configuration. You can get more details about how Bit\+Bake chooses between different target versions and providers in the \char`\"{}\+Preferences\char`\"{} section of the Bit\+Bake User Manual. Bit\+Bake also tries to execute any dependent tasks first. So for example, before building matchbox-\/desktop, Bit\+Bake would build a cross compiler and glibc if they had not already been built. A useful Bit\+Bake option to consider is the -\/k or --continue option. This option instructs Bit\+Bake to try and continue processing the job as long as possible even after encountering an error. When an error occurs, the target that failed and those that depend on it cannot be remade. However, when you use this option other dependencies can still be processed.
+\item {\bfseries Board Support Package (B\+SP)\+:} A group of drivers, definitions, and other components that provide support for a specific hardware configuration.
+\item {\bfseries Build Directory\+:} This term refers to the area used by the Open\+Embedded build system for builds. The area is created when you source the setup environment script that is found in the Source Directory (i.\+e. oe-\/init-\/build-\/env). The T\+O\+P\+D\+IR variable points to the Build Directory. You have a lot of flexibility when creating the Build Directory. Following are some examples that show how to create the directory. The examples assume your Source Directory is named poky\+: Create the Build Directory inside your Source Directory and let the name of the Build Directory default to build\+: \begin{DoxyVerb}>     $ cd $HOME/poky
+>     $ source oe-init-build-env
+\end{DoxyVerb}
+
+
+Create the Build Directory inside your home directory and specifically name it test-\/builds\+: \begin{DoxyVerb}>    $ cd $HOME
+>    $ source poky/oe-init-build-env test-builds
+\end{DoxyVerb}
+
+
+Provide a directory path and specifically name the Build Directory. Any intermediate folders in the pathname must exist. This next example creates a Build Directory named Y\+P-\/19.\+0.\+2 in your home directory within the existing directory mybuilds\+: \begin{DoxyVerb}>   $cd $HOME
+>   $ source $HOME/poky/oe-init-build-env $HOME/mybuilds/YP-19.0.2
+
+
+>   Note
+>   By default, the Build Directory contains TMPDIR, which is a temporary directory the build system uses for its work. TMPDIR cannot be under NFS. 
+>   Thus, by default, the Build Directory cannot be under NFS. However, if you need the Build Directory to be under NFS, you can set this up by setting TMPDIR in your local.conf file to use a local drive. 
+>   Doing so effectively separates TMPDIR from TOPDIR, which is the Build Directory. 
+\end{DoxyVerb}
+
+\item {\bfseries Build System\+:} The system used to build images in a Yocto Project Development environment. The build system is sometimes referred to as the development host.
+\item {\bfseries Cross-\/\+Development Toolchain\+:} In general, a cross-\/development toolchain is a collection of software development tools and utilities that run on one architecture and allow you to develop software for a different, or targeted, architecture. These toolchains contain cross-\/compilers, linkers, and debuggers that are specific to the target architecture. The Yocto Project supports two different cross-\/development toolchains\+: A toolchain only used by and within Bit\+Bake when building an image for a target architecture. A relocatable toolchain used outside of Bit\+Bake by developers when developing applications that will run on a targeted device. Creation of these toolchains is simple and automated. For information on toolchain concepts as they apply to the Yocto Project. You can also find more information on using the relocatable toolchain in the Yocto Project Application Development and the Extensible Software Development Kit (e\+S\+DK) manual.
+\item {\bfseries Image\+:} An image is an artifact of the Bit\+Bake build process given a collection of recipes and related Metadata. Images are the binary output that run on specific hardware or Q\+E\+MU and are used for specific use-\/cases. For a list of the supported image types that the Yocto Project provides.
+\item {\bfseries Layer\+:} A collection of recipes representing the core, a B\+SP, or an application stack. For a discussion specifically on B\+SP Layers.
+\item {\bfseries Metadata\+:} The files that Bit\+Bake parses when building an image. In general, Metadata includes recipes, classes, and configuration files.
+\begin{DoxyItemize}
+\item {\itshape Recipe\+:} A set of instructions for building packages. A recipe describes where you get source code, which patches to apply, how to configure the source, how to compile it and so on. Recipes also describe dependencies for libraries or for other recipes. Recipes represent the logical unit of execution, the software to build, the images to build, and use the .bb file extension. Files that have the .bb suffix are \char`\"{}recipes\char`\"{} files. In general, a recipe contains information about a single piece of software. This information includes the location from which to download the unaltered source, any source patches to be applied to that source (if needed), which special configuration options to apply, how to compile the source files, and how to package the compiled output. The term \char`\"{}package\char`\"{} is sometimes used to refer to recipes. However, the word \char`\"{}package\char`\"{} is used for the packaged output from the Open\+Embedded build system (i.\+e. .ipk or .deb files).
+\item {\itshape Classes\+:} Class files (.bbclass) contain information that is useful to share between Metadata files. It provides logic encapsulation and inheritance so that commonly used patterns can be defined once and then easily used in multiple recipes. An example is the autotools class, which contains common settings for any application that Autotools uses.
+\item {\itshape Configuration\+:} The configuration files (.conf) define various configuration variables that govern the Open\+Embedded build process. These files fall into several areas that define machine configuration options, distribution configuration options, compiler tuning options, general common configuration options, and user configuration options in local.\+conf, which is found in the Build Directory. Configuration information in various .conf files provides global definitions of variables. The conf/local.\+conf configuration file in the Build Directory contains user-\/defined variables that affect every build. The meta-\/poky/conf/distro/poky.\+conf configuration file defines Yocto \char`\"{}distro\char`\"{} configuration variables used only when building with this policy. Machine configuration files, which are located throughout the Source Directory, define variables for specific hardware and are only used when building for that target (e.\+g. the machine/beaglebone.\+conf configuration file defines variables for the Texas Instruments A\+RM Cortex-\/\+A8 development board). Configuration files end with a .conf filename extension.
+\end{DoxyItemize}
+\item {\bfseries O\+E-\/\+Core\+:} A core set of Metadata originating with Open\+Embedded (OE) that is shared between OE and the Yocto Project. This Metadata is found in the meta directory of the Source Directory.
+\item {\bfseries Open\+Embedded Build System\+:} The build system specific to the Yocto Project. The Open\+Embedded build system is based on another project known as \char`\"{}\+Poky\char`\"{}, which uses Bit\+Bake as the task executor. Throughout the Yocto Project documentation set, the Open\+Embedded build system is sometimes referred to simply as \char`\"{}the build system\char`\"{}. If other build systems, such as a host or target build system are referenced, the documentation clearly states the difference.
+\item {\bfseries Package\+:} In the context of the Yocto Project, this term refers to a recipe\textquotesingle{}s packaged output produced by Bit\+Bake (i.\+e. a \char`\"{}baked recipe\char`\"{}). A package is generally the compiled binaries produced from the recipe\textquotesingle{}s sources. You \char`\"{}bake\char`\"{} something by running it through Bit\+Bake. It is worth noting that the term \char`\"{}package\char`\"{} can, in general, have subtle meanings. For example, the packages referred to in the \char`\"{}\+The Build Host Packages\char`\"{} section in the Yocto Project Quick Start are compiled binaries that, when installed, add functionality to your Linux distribution. Another point worth noting is that historically within the Yocto Project, recipes were referred to as packages -\/ thus, the existence of several Bit\+Bake variables that are seemingly mis-\/named, (e.\+g. PR, PV, and PE).
+\item {\bfseries Package Groups\+:} Arbitrary groups of software Recipes. You use package groups to hold recipes that, when built, usually accomplish a single task. For example, a package group could contain the recipes for a company’s proprietary or value-\/add software. Or, the package group could contain the recipes that enable graphics. A package group is really just another recipe. Because package group files are recipes, they end with the .bb filename extension.
+\item {\bfseries Poky\+:} The term \char`\"{}poky\char`\"{}, which is pronounced Pah-\/kee, can mean several things\+: In its most general sense, poky is an open-\/source project that was initially developed by Opened\+Hand. Opened\+Hand developed poky off of the existing Open\+Embedded build system to create a commercially supportable build system for embedded Linux. After Intel Corporation acquired Opened\+Hand, the poky project became the basis for the Yocto Project\textquotesingle{}s build system. Within the Yocto Project Source Repositories, \char`\"{}poky\char`\"{} exists as a separate Git repository from which you can clone to yield a local Git repository that is a copy on your host system. Thus, \char`\"{}poky\char`\"{} can refer to the upstream or local copy of the files used for development within the Yocto Project. Finally, \char`\"{}poky\char`\"{} can refer to the default D\+I\+S\+T\+RO (i.\+e. distribution) created when you use the Yocto Project in conjunction with the poky repository to build an image.
+\item {\bfseries Reference Kit\+:} A working example of a system, which includes a B\+SP as well as a build system and other components, that can work on specific hardware.
+\item {\bfseries Source Directory\+:} This term refers to the directory structure created as a result of creating a local copy of the poky Git repository git\+://git.yoctoproject.\+org/poky or expanding a released poky tarball. \begin{DoxyVerb}>   Note
+>   Creating a local copy of the poky Git repository is the recommended method for setting up your Source Directory. 
+\end{DoxyVerb}
+
+
+Sometimes you might hear the term \char`\"{}poky directory\char`\"{} used to refer to this directory structure. \begin{DoxyVerb}>   Note
+>   The OpenEmbedded build system does not support file or directory names that contain spaces. Be sure that the Source Directory you use does not contain these types of names. 
+\end{DoxyVerb}
+
+
+The Source Directory contains Bit\+Bake, Documentation, Metadata and other files that all support the Yocto Project. Consequently, you must have the Source Directory in place on your development system in order to do any development using the Yocto Project. When you create a local copy of the Git repository, you can name the repository anything you like. Throughout much of the documentation, \char`\"{}poky\char`\"{} is used as the name of the top-\/level folder of the local copy of the poky Git repository. So, for example, cloning the poky Git repository results in a local Git repository whose top-\/level folder is also named \char`\"{}poky\char`\"{}. While it is not recommended that you use tarball expansion to set up the Source Directory, if you do, the top-\/level directory name of the Source Directory is derived from the Yocto Project release tarball. For example, downloading and unpacking poky-\/rocko-\/19.\+0.\+2.\+tar.\+bz2 results in a Source Directory whose root folder is named poky-\/rocko-\/19.\+0.\+2. It is important to understand the differences between the Source Directory created by unpacking a released tarball as compared to cloning git\+://git.yoctoproject.\+org/poky. When you unpack a tarball, you have an exact copy of the files based on the time of release -\/ a fixed release point. Any changes you make to your local files in the Source Directory are on top of the release and will remain local only. On the other hand, when you clone the poky Git repository, you have an active development repository with access to the upstream repository\textquotesingle{}s branches and tags. In this case, any local changes you make to the local Source Directory can be later applied to active development branches of the upstream poky Git repository.
+\item {\bfseries Task\+:} A unit of execution for Bit\+Bake (e.\+g. do\+\_\+compile, do\+\_\+fetch, do\+\_\+patch, and so forth).
+\end{DoxyItemize}
+
+\subsection*{Development concept}
+
+The following diagram represents development at a high level. The remainder of this chapter expands on the fundamental input, output, process, and Metadata) blocks that make up development in the Yocto Project environment. In general, development consists of several functional areas\+:
+\begin{DoxyItemize}
+\item {\bfseries User Configuration\+:} Metadata you can use to control the build process.
+\item {\bfseries Metadata Layers\+:} Various layers that provide software, machine, and distro Metadata.
+\item {\bfseries Source Files\+:} Upstream releases, local projects, and S\+C\+Ms.
+\item {\bfseries Build System\+:} Processes under the control of Bit\+Bake. This block expands on how Bit\+Bake fetches source, applies patches, completes compilation, analyzes output for package generation, creates and tests packages, generates images, and generates cross-\/development tools.
+\item {\bfseries Package Feeds\+:} Directories containing output packages (R\+PM, D\+EB or I\+PK), which are subsequently used in the construction of an image or S\+DK, produced by the build system. These feeds can also be copied and shared using a web server or other means to facilitate extending or updating existing images on devices at runtime if runtime package management is enabled.
+\item {\bfseries Images\+:} Images produced by the development process.
+\item {\bfseries Application Development S\+DK\+:} Cross-\/development tools that are produced along with an image or separately with Bit\+Bake.
+\end{DoxyItemize}
+
+\subsection*{Build process}
+
+The Open\+Embedded build system uses Bit\+Bake to produce images. You can see from the general Yocto Project Development Environment figure, the Bit\+Bake area consists of several functional areas. which are divided into task as follows\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Source Fetching} The first stages of building a recipe are to fetch and unpack the source code\+:  The {\itshape do\+\_\+fetch} and {\itshape do\+\_\+unpack} tasks fetch the source files and unpack them into the work directory. By default, everything is accomplished in the Build Directory, which has a defined structure Unpacked source files are pointed to by the S variable. Each recipe has an area in the Build Directory where the unpacked source code resides. The name of that directory for any given recipe is defined from several different variables. You can see the variables that define these directories by looking at the figure\+:
+\begin{DoxyItemize}
+\item {\itshape T\+M\+P\+D\+IR} -\/ The base directory where the Open\+Embedded build system performs all its work during the build.
+\item {\itshape P\+A\+C\+K\+A\+G\+E\+\_\+\+A\+R\+CH} -\/ The architecture of the built package or packages.
+\item {\itshape PN} -\/ The name of the built package.
+\item {\itshape PV} -\/ The version of the recipe used to build the package.
+\item {\itshape PR} -\/ The revision of the recipe used to build the package.
+\item {\itshape W\+O\+R\+K\+D\+IR} -\/ The location within T\+M\+P\+D\+IR where a specific package is built.
+\item {\itshape S} -\/ Contains the unpacked source files for a given recipe.
+\end{DoxyItemize}
+\item {\bfseries Patching} Once source code is fetched and unpacked, Bit\+Bake locates patch files and applies them to the source files  The {\itshape do\+\_\+patch} task processes recipes by using the {\itshape S\+R\+C\+\_\+\+U\+RI} variable to locate applicable patch files, which by default are $\ast$.patch or $\ast$.diff files, or any file if \char`\"{}apply=yes\char`\"{} is specified for the file in S\+R\+C\+\_\+\+U\+RI. Bit\+Bake finds and applies multiple patches for a single recipe in the order in which it finds the patches. Patches are applied to the recipe\textquotesingle{}s source files located in the S directory.
+\item {\bfseries Configuration and Compilation} After source code is patched, Bit\+Bake executes tasks that configure and compile the source code\+:  This step in the build process consists of three tasks\+:
+\begin{DoxyItemize}
+\item {\itshape do\+\_\+prepare\+\_\+recipe\+\_\+sysroot\+:} This task sets up the two sysroots in \$\{W\+O\+R\+K\+D\+IR\} (i.\+e. recipe-\/sysroot and recipe-\/sysroot-\/native) so that the sysroots contain the contents of the do\+\_\+populate\+\_\+sysroot tasks of the recipes on which the recipe containing the tasks depends. A sysroot exists for both the target and for the native binaries, which run on the host system.
+\item {\itshape do\+\_\+configure\+:} This task configures the source by enabling and disabling any build-\/time and configuration options for the software being built. Configurations can come from the recipe itself as well as from an inherited class. Additionally, the software itself might configure itself depending on the target for which it is being built. The configurations handled by the do\+\_\+configure task are specific to source code configuration for the source code being built by the recipe. If you are using the autotools class, you can add additional configuration options by using the E\+X\+T\+R\+A\+\_\+\+O\+E\+C\+O\+NF or P\+A\+C\+K\+A\+G\+E\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+N\+F\+A\+R\+GS variables. For information on how this variable works within that class, see the meta/classes/autotools.\+bbclass file.
+\item {\itshape do\+\_\+compile\+:} Once a configuration task has been satisfied, Bit\+Bake compiles the source using the do\+\_\+compile task. Compilation occurs in the directory pointed to by the B variable. Realize that the B directory is, by default, the same as the S directory.
+\item {\itshape do\+\_\+install\+:} Once compilation is done, Bit\+Bake executes the {\itshape do\+\_\+install} task. This task copies files from the B directory and places them in a holding area pointed to by the D variable.
+\end{DoxyItemize}
+\item {\bfseries Package Splitting} ~\newline
+ After source code is configured and compiled, the Open\+Embedded build system analyzes the results and splits the output into packages\+:  The do\+\_\+package and do\+\_\+packagedata tasks combine to analyze the files found in the D directory and split them into subsets based on available packages and files. The analyzing process involves the following as well as other items\+: splitting out debugging symbols, looking at shared library dependencies between packages, and looking at package relationships. The do\+\_\+packagedata task creates package metadata based on the analysis such that the Open\+Embedded build system can generate the final packages. Working, staged, and intermediate results of the analysis and package splitting process use these areas\+:
+\begin{DoxyItemize}
+\item {\itshape P\+K\+GD} -\/ The destination directory for packages before they are split.
+\item {\itshape P\+K\+G\+D\+A\+T\+A\+\_\+\+D\+IR} -\/ A shared, global-\/state directory that holds data generated during the packaging process.
+\item {\itshape P\+K\+G\+D\+E\+S\+T\+W\+O\+RK} -\/ A temporary work area used by the do\+\_\+package task.
+\item {\itshape P\+K\+G\+D\+E\+ST} -\/ The parent directory for packages after they have been split.
+\end{DoxyItemize}
+
+The F\+I\+L\+ES variable defines the files that go into each package in P\+A\+C\+K\+A\+G\+ES. If you want details on how this is accomplished, you can look at the package class. Depending on the type of packages being created (R\+PM, D\+EB, or I\+PK), the {\itshape do\+\_\+package\+\_\+write\+\_\+} task creates the actual packages and places them in the Package Feed area, which is \$\{T\+M\+P\+D\+IR\}/deploy. You can see the \char`\"{}\+Package Feeds\char`\"{} section for more detail on that part of the build process.
+\item {\bfseries Image Generation} Once packages are split and stored in the Package Feeds area, the Open\+Embedded build system uses Bit\+Bake to generate the root filesystem image\+:  The image generation process consists of several stages and depends on several tasks and variables. The do\+\_\+rootfs task creates the root filesystem (file and directory structure) for an image. This task uses several key variables to help create the list of packages to actually install\+:
+\begin{DoxyItemize}
+\item {\itshape I\+M\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL\+:} Lists out the base set of packages to install from the Package Feeds area.
+\item {\itshape P\+A\+C\+K\+A\+G\+E\+\_\+\+E\+X\+C\+L\+U\+DE\+:} Specifies packages that should not be installed.
+\item {\itshape I\+M\+A\+G\+E\+\_\+\+F\+E\+A\+T\+U\+R\+ES\+:} Specifies features to include in the image. Most of these features map to additional packages for installation.
+\item {\itshape P\+A\+C\+K\+A\+G\+E\+\_\+\+C\+L\+A\+S\+S\+ES\+:} Specifies the package backend to use and consequently helps determine where to locate packages within the Package Feeds area.
+\item {\itshape I\+M\+A\+G\+E\+\_\+\+L\+I\+N\+G\+U\+AS\+:} Determines the language(s) for which additional language support packages are installed.
+\item {\itshape P\+A\+C\+K\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL\+:} The final list of packages passed to the package manager for installation into the image.
+\end{DoxyItemize}
+
+With I\+M\+A\+G\+E\+\_\+\+R\+O\+O\+T\+FS pointing to the location of the filesystem under construction and the {\itshape P\+A\+C\+K\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL} variable providing the final list of packages to install, the root file system is created. Package installation is under control of the package manager (e.\+g. dnf/rpm, opkg, or apt/dpkg) regardless of whether or not package management is enabled for the target. At the end of the process, if package management is not enabled for the target, the package manager\textquotesingle{}s data files are deleted from the root filesystem. As part of the final stage of package installation, postinstall scripts that are part of the packages are run. Any scripts that fail to run on the build host are run on the target when the target system is first booted. If you are using a read-\/only root filesystem, all the post installation scripts must succeed during the package installation phase since the root filesystem is read-\/only. The final stages of the do\+\_\+rootfs task handle post processing. Post processing includes creation of a manifest file and optimizations. The manifest file (.manifest) resides in the same directory as the root filesystem image. This file lists out, line-\/by-\/line, the installed packages. The manifest file is useful for the testimage class, for example, to determine whether or not to run specific tests. See the {\itshape I\+M\+A\+G\+E\+\_\+\+M\+A\+N\+I\+F\+E\+ST} variable for additional information.
+
+Optimizing processes run across the image include mklibs, prelink, and any other post-\/processing commands as defined by the R\+O\+O\+T\+F\+S\+\_\+\+P\+O\+S\+T\+P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+M\+M\+A\+ND variable. The mklibs process optimizes the size of the libraries, while the prelink process optimizes the dynamic linking of shared libraries to reduce start up time of executables. After the root filesystem is built, processing begins on the image through the do\+\_\+image task. The build system runs any pre-\/processing commands as defined by the I\+M\+A\+G\+E\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+M\+M\+A\+ND variable. This variable specifies a list of functions to call before the Open\+Embedded build system creates the final image output files. The Open\+Embedded build system dynamically creates do\+\_\+image\+\_\+$\ast$ tasks as needed, based on the image types specified in the I\+M\+A\+G\+E\+\_\+\+F\+S\+T\+Y\+P\+ES variable. The process turns everything into an image file or a set of image files and compresses the root filesystem image to reduce the overall size of the image. The formats used for the root filesystem depend on the I\+M\+A\+G\+E\+\_\+\+F\+S\+T\+Y\+P\+ES variable. As an example, a dynamically created task when creating a particular image type would take the following form\+: \begin{DoxyVerb} do_image_type[depends]
+\end{DoxyVerb}
+
+
+So, if the type as specified by the I\+M\+A\+G\+E\+\_\+\+F\+S\+T\+Y\+P\+ES were ext4, the dynamically generated task would be as follows\+: \begin{DoxyVerb} do_image_ext4[depends]
+\end{DoxyVerb}
+
+
+The final task involved in image creation is the do\+\_\+image\+\_\+complete task. This task completes the image by applying any image post processing as defined through the I\+M\+A\+G\+E\+\_\+\+P\+O\+S\+T\+P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+M\+M\+A\+ND variable. The variable specifies a list of functions to call once the Open\+Embedded build system has created the final image output files. ~\newline
+
+\item {\bfseries Image} The images produced by the Open\+Embedded build system are compressed forms of the root filesystem that are ready to boot on a target device. You can see from the general Yocto Project Development Environment figure that Bit\+Bake output, in part, consists of images.  For a list of example images that the Yocto Project provides, see the \char`\"{}\+Images\char`\"{} chapter. Images are written out to the Build Directory inside the tmp/deploy/images/machine/ folder as shown in the figure. This folder contains any files expected to be loaded on the target device. The D\+E\+P\+L\+O\+Y\+\_\+\+D\+IR variable points to the deploy directory, while the D\+E\+P\+L\+O\+Y\+\_\+\+D\+I\+R\+\_\+\+I\+M\+A\+GE variable points to the appropriate directory containing images for the current configuration.
+\begin{DoxyItemize}
+\item {\itshape kernel-\/image\+:} A kernel binary file. The K\+E\+R\+N\+E\+L\+\_\+\+I\+M\+A\+G\+E\+T\+Y\+PE variable setting determines the naming scheme for the kernel image file. Depending on that variable, the file could begin with a variety of naming strings. The deploy/images/machine directory can contain multiple image files for the machine.
+\item {\itshape root-\/filesystem-\/image\+:} Root filesystems for the target device (e.\+g. $\ast$.ext3 or $\ast$.bz2 files). The I\+M\+A\+G\+E\+\_\+\+F\+S\+T\+Y\+P\+ES variable setting determines the root filesystem image type. The deploy/images/machine directory can contain multiple root filesystems for the machine.
+\item {\itshape kernel-\/modules\+:} Tarballs that contain all the modules built for the kernel. Kernel module tarballs exist for legacy purposes and can be suppressed by setting the M\+O\+D\+U\+L\+E\+\_\+\+T\+A\+R\+B\+A\+L\+L\+\_\+\+D\+E\+P\+L\+OY variable to \char`\"{}0\char`\"{}. The deploy/images/machine directory can contain multiple kernel module tarballs for the machine.
+\item {\itshape bootloaders\+:} Bootloaders supporting the image, if applicable to the target machine. The deploy/images/machine directory can contain multiple bootloaders for the machine.
+\item {\itshape symlinks\+:} The deploy/images/machine folder contains a symbolic link that points to the most recently built file for each machine. These links might be useful for external scripts that need to obtain the latest version of each file.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{How does Bitbake build system use metadata to build an image?}
+
+The primary purpose for running Bit\+Bake is to produce some kind of output such as a single installable package, a kernel, a software development kit, or even a full, board-\/specific bootable Linux image, complete with bootloader, kernel, and root filesystem. Of course, you can execute the bitbake command with options that cause it to execute single tasks, compile single recipe files, capture or clear data, or simply return information about the execution environment. The execution process is launched using the following command form\+: \begin{DoxyVerb}    $ bitbake target
+\end{DoxyVerb}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parsing the Base Configuration Metadata} The first thing Bit\+Bake does is parse base configuration metadata. Base configuration metadata consists of your project\textquotesingle{}s bblayers.\+conf file to determine what layers Bit\+Bake needs to recognize, all necessary layer.\+conf files (one from each layer), and bitbake.\+conf. The data itself is of various types\+:
+\begin{DoxyItemize}
+\item {\itshape Recipes\+:} Details about particular pieces of software.
+\item {\itshape Class Data\+:} An abstraction of common build information (e.\+g. how to build a Linux kernel).
+\item {\itshape Configuration Data\+:} Machine-\/specific settings, policy decisions, and so forth. Configuration data acts as the glue to bind everything together.
+\end{DoxyItemize}
+
+The layer.\+conf files are used to construct key variables such as B\+B\+P\+A\+TH and B\+B\+F\+I\+L\+ES. B\+B\+P\+A\+TH is used to search for configuration and class files under the conf and classes directories, respectively. B\+B\+F\+I\+L\+ES is used to locate both recipe and recipe append files (.bb and .bbappend). If there is no bblayers.\+conf file, it is assumed the user has set the B\+B\+P\+A\+TH and B\+B\+F\+I\+L\+ES directly in the environment.
+
+The base configuration metadata is global and therefore affects all recipes and tasks that are executed. Bit\+Bake first searches the current working directory for an optional conf/bblayers.\+conf configuration file. This file is expected to contain a B\+B\+L\+A\+Y\+E\+RS variable that is a space-\/delimited list of \textquotesingle{}layer\textquotesingle{} directories. Recall that if Bit\+Bake cannot find a bblayers.\+conf file, then it is assumed the user has set the B\+B\+P\+A\+TH and B\+B\+F\+I\+L\+ES variables directly in the environment.
+
+For each directory (layer) in this list, a conf/layer.\+conf file is located and parsed with the L\+A\+Y\+E\+R\+D\+IR variable being set to the directory where the layer was found. The idea is these files automatically set up B\+B\+P\+A\+TH and other variables correctly for a given build directory.
+
+Bit\+Bake then expects to find the conf/bitbake.\+conf file somewhere in the user-\/specified B\+B\+P\+A\+TH. That configuration file generally has include directives to pull in any other metadata such as files specific to the architecture, the machine, the local environment, and so forth.
+
+Only variable definitions and include directives are allowed in Bit\+Bake .conf files. Some variables directly influence Bit\+Bake\textquotesingle{}s behavior. These variables might have been set from the environment depending on the environment variables previously mentioned or set in the configuration files. The \char`\"{}\+Variables Glossary\char`\"{} chapter presents a full list of variables.
+
+After parsing configuration files, Bit\+Bake uses its rudimentary inheritance mechanism, which is through class files, to inherit some standard classes. Bit\+Bake parses a class when the inherit directive responsible for getting that class is encountered.
+
+The base.\+bbclass file is always included. Other classes that are specified in the configuration using the I\+N\+H\+E\+R\+IT variable are also included. Bit\+Bake searches for class files in a classes subdirectory under the paths in B\+B\+P\+A\+TH in the same way as configuration files.
+\item {\bfseries Locating and Parsing Recipes} During the configuration phase, Bit\+Bake will have set B\+B\+F\+I\+L\+ES. Bit\+Bake now uses it to construct a list of recipes to parse, along with any append files (.bbappend) to apply. B\+B\+F\+I\+L\+ES is a space-\/separated list of available files and supports wildcards. An example would be\+:
+\end{DoxyItemize}
+
+\begin{quote}
+B\+B\+F\+I\+L\+ES = \char`\"{}/path/to/bbfiles/$\ast$.\+bb /path/to/appends/$\ast$.\+bbappend\char`\"{} \end{quote}
+Bit\+Bake parses each recipe and append file located with B\+B\+F\+I\+L\+ES and stores the values of various variables into the datastore.
+
+For each file, a fresh copy of the base configuration is made, then the recipe is parsed line by line. Any inherit statements cause Bit\+Bake to find and then parse class files (.bbclass) using B\+B\+P\+A\+TH as the search path. Finally, Bit\+Bake parses in order any append files found in B\+B\+F\+I\+L\+ES ~\newline
+ By the time parsing is complete for a recipe, Bit\+Bake has a list of tasks that the recipe defines and a set of data consisting of keys and values as well as dependency information about the tasks.
+
+Bit\+Bake does not need all of this information. It only needs a small subset of the information to make decisions about the recipe. Consequently, Bit\+Bake caches the values in which it is interested and does not store the rest of the information. Experience has shown it is faster to re-\/parse the metadata than to try and write it out to the disk and then reload it.
+
+Where possible, subsequent Bit\+Bake commands reuse this cache of recipe information. The validity of this cache is determined by first computing a checksum of the base configuration data (see B\+B\+\_\+\+H\+A\+S\+H\+C\+O\+N\+F\+I\+G\+\_\+\+W\+H\+I\+T\+E\+L\+I\+ST) and then checking if the checksum matches. If that checksum matches what is in the cache and the recipe and class files have not changed, Bitbake is able to use the cache. Bit\+Bake then reloads the cached information about the recipe instead of reparsing it from scratch.
+
+Recipe file collections exist to allow the user to have multiple repositories of .bb files that contain the same exact package. For example, one could easily use them to make one\textquotesingle{}s own local copy of an upstream repository, but with custom modifications that one does not want upstream. Here is an example\+:
+
+\begin{quote}
+B\+B\+F\+I\+L\+ES = \char`\"{}/stuff/openembedded/$\ast$/$\ast$.\+bb /stuff/openembedded.\+modified/$\ast$/$\ast$.\+bb\char`\"{} \end{quote}
+
+
+\begin{quote}
+B\+B\+F\+I\+L\+E\+\_\+\+C\+O\+L\+L\+E\+C\+T\+I\+O\+NS = \char`\"{}upstream local\char`\"{} \end{quote}
+
+
+\begin{quote}
+B\+B\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+upstream = \char`\"{}$^\wedge$/stuff/openembedded/\char`\"{} \end{quote}
+
+
+\begin{quote}
+B\+B\+F\+I\+L\+E\+\_\+\+P\+A\+T\+T\+E\+R\+N\+\_\+local = \char`\"{}$^\wedge$/stuff/openembedded.\+modified/\char`\"{} \end{quote}
+
+
+\begin{quote}
+B\+B\+F\+I\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+upstream = \char`\"{}5\char`\"{} \end{quote}
+
+
+\begin{quote}
+B\+B\+F\+I\+L\+E\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+local = \char`\"{}10\char`\"{} \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries Providers} Assuming Bit\+Bake has been instructed to execute a target and that all the recipe files have been parsed, Bit\+Bake starts to figure out how to build the target. Bit\+Bake looks through the P\+R\+O\+V\+I\+D\+ES list for each of the recipes. A P\+R\+O\+V\+I\+D\+ES list is the list of names by which the recipe can be known. Each recipe\textquotesingle{}s P\+R\+O\+V\+I\+D\+ES list is created implicitly through the recipe\textquotesingle{}s PN variable and explicitly through the recipe\textquotesingle{}s P\+R\+O\+V\+I\+D\+ES variable, which is optional. When a recipe uses P\+R\+O\+V\+I\+D\+ES, that recipe\textquotesingle{}s functionality can be found under an alternative name or names other than the implicit PN name. As an example, suppose a recipe named keyboard\+\_\+1.\+0.\+bb contained the following\+:
+\end{DoxyItemize}
+
+\begin{quote}
+P\+R\+O\+V\+I\+D\+ES += \char`\"{}fullkeyboard\char`\"{} \end{quote}
+The P\+R\+O\+V\+I\+D\+ES list for this recipe becomes \char`\"{}keyboard\char`\"{}, which is implicit, and \char`\"{}fullkeyboard\char`\"{}, which is explicit. Consequently, the functionality found in keyboard\+\_\+1.\+0.\+bb can be found under two different names. ~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries Dependencies} Each target Bit\+Bake builds consists of multiple tasks such as fetch, unpack, patch, configure, and compile. For best performance on multi-\/core systems, Bit\+Bake considers each task as an independent entity with its own set of dependencies.
+
+Dependencies are defined through several variables. You can find information about variables Bit\+Bake uses in the Variables Glossary near the end of this manual. At a basic level, it is sufficient to know that Bit\+Bake uses the D\+E\+P\+E\+N\+DS and R\+D\+E\+P\+E\+N\+DS variables when calculating dependencies. ~\newline
+
+\item {\bfseries The Task List} Based on the generated list of providers and the dependency information, Bit\+Bake can now calculate exactly what tasks it needs to run and in what order it needs to run them. The \char`\"{}\+Executing Tasks\char`\"{} section has more information on how Bit\+Bake chooses which task to execute next.
+
+The build now starts with Bit\+Bake forking off threads up to the limit set in the B\+B\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS variable. Bit\+Bake continues to fork threads as long as there are tasks ready to run, those tasks have all their dependencies met, and the thread threshold has not been exceeded.
+
+It is worth noting that you can greatly speed up the build time by properly setting the B\+B\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS variable.
+
+As each task completes, a timestamp is written to the directory specified by the S\+T\+A\+MP variable. On subsequent runs, Bit\+Bake looks in the build directory within tmp/stamps and does not rerun tasks that are already completed unless a timestamp is found to be invalid. Currently, invalid timestamps are only considered on a per recipe file basis. So, for example, if the configure stamp has a timestamp greater than the compile timestamp for a given target, then the compile task would rerun. Running the compile task again, however, has no effect on other providers that depend on that target.
+
+The exact format of the stamps is partly configurable. In modern versions of Bit\+Bake, a hash is appended to the stamp so that if the configuration changes, the stamp becomes invalid and the task is automatically rerun. This hash, or signature used, is governed by the signature policy that is configured (see the \char`\"{}\+Checksums (\+Signatures)\char`\"{} section for information). It is also possible to append extra metadata to the stamp using the \mbox{[}stamp-\/extra-\/info\mbox{]} task flag. For example, Open\+Embedded uses this flag to make some tasks machine-\/specific. ~\newline
+
+\item {\bfseries Executing Tasks} Tasks can be either a shell task or a Python task. For shell tasks, Bit\+Bake writes a shell script to \$\{T\}/run.do\+\_\+taskname.\+pid and then executes the script. The generated shell script contains all the exported variables, and the shell functions with all variables expanded. Output from the shell script goes to the file \$\{T\}/log.do\+\_\+taskname.\+pid. Looking at the expanded shell functions in the run file and the output in the log files is a useful debugging technique.
+
+For Python tasks, Bit\+Bake executes the task internally and logs information to the controlling terminal. Future versions of Bit\+Bake will write the functions to files similar to the way shell tasks are handled. Logging will be handled in a way similar to shell tasks as well.
+
+The order in which Bit\+Bake runs the tasks is controlled by its task scheduler. It is possible to configure the scheduler and define custom implementations for specific use cases. For more information, see these variables that control the behavior\+:
+\begin{DoxyItemize}
+\item B\+B\+\_\+\+S\+C\+H\+E\+D\+U\+L\+ER
+\item B\+B\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+RS
+\end{DoxyItemize}
+
+It is possible to have functions run before and after a task\textquotesingle{}s main function. This is done using the \mbox{[}prefuncs\mbox{]} and \mbox{[}postfuncs\mbox{]} flags of the task that lists the functions to run. 
+\end{DoxyItemize}\hypertarget{yocto_intro}{}\section{Yocto Project overview}\label{yocto_intro}
+The Yocto Project is an open source collaboration project that helps developers create custom Linux-\/based systems for embedded products,regardless of the hardware architecture.
+\begin{DoxyItemize}
+\item YP builds packages -\/ then uses these packages to build bootable images.
+\item Supports use of popular package formats i.\+e rpm, deb, ipk.
+\item The Open\+Embedded Project co-\/maintains O\+E-\/core build system\+:
+\begin{DoxyItemize}
+\item bitbake build tool and scripts
+\item Metadata and configuration ~\newline
+ $\ast$ Provides a central point for new metadata
+\end{DoxyItemize}
+\item There are different releases of Yocto
+\begin{DoxyItemize}
+\item 2.\+5 Sumo
+\item 2.\+4 Rocko
+\item 2.\+3 Pyro
+\item 2.\+2 Morty
+\item 2.\+1 Krogoth (Currently used by Adaptive Autosar) 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{What is Poky?}
+
+
+\begin{DoxyItemize}
+\item Poky is a reference distribution and it is the starting point for building things with the Yocto Project.
+\item Poky has its own git repository and Primary Poky layer consist of as follows\+:
+\begin{DoxyItemize}
+\item oe-\/core (poky/meta)
+\item meta-\/poky (poky/meta-\/poky)
+\item meta-\/yocto-\/bsp
+\end{DoxyItemize}
+\item The core component of poky contains
+\begin{DoxyItemize}
+\item Bitbake tool\+: A python-\/based build engine
+\item Build scripts (infrastructure)
+\item Foundation package recipes (oe-\/core)
+\item meta-\/poky (Contains distribution policy)
+\item Reference B\+S\+Ps
+\item Yocto Project 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{What is Metadata?}
+
+Most common form of metadata\+: The Recipe A Recipe provides a “list of ingredients” and “cooking instructions” and it defines settings and a set of tasks used by bitbake to build binary packages
+
+Metadata exists in four general categories\+:
+\begin{DoxyItemize}
+\item Recipes ($\ast$.bb)\+: Usually describe build instructions for a single package
+\item Package\+Groups (special $\ast$.bb)\+: Often used to group packages together for a FS image ~\newline
+ $\ast$ Classes ($\ast$.bbclass)\+: Inheritance mechanism for common functionality
+\item Configuration ($\ast$.conf)\+: Drives the overall behavior of the build process.
+\item Append files ($\ast$.bbappend)\+: Define additional metadata for a similarly named .bb file ~\newline
+ Can add or override previously set values ~\newline
+ $\ast$ Include files ($\ast$.inc)\+: Files which are used with the include directive Include files are typical found via the B\+B\+P\+A\+TH variable
+\end{DoxyItemize}
+
+\section*{Layers}
+
+
+\begin{DoxyItemize}
+\item Metadata is provided in a series of layers which allow you to override any value without editing the originally provided files
+\item A layer is a logical collection of metadata in the form of recipes
+\item A layer is used to represent oe-\/core, a Board Support Package (B\+SP), an application stack, and your new code
+\item All layers have a priority and can override policy, metadata and config settings of layers with a lesser priority
+\item Layers are added to your build by inserting them into the B\+B\+L\+A\+Y\+E\+RS variable within your bblayers file \begin{quote}
+\$\+H\+O\+ME/yocto/build/conf/bblayers.conf \end{quote}
+
+\begin{DoxyCode}
+BBLAYERS ?= "                           \(\backslash\)
+     $\{HOME\}/yocto/poky/meta            \(\backslash\)
+     $\{HOME\}/yocto/poky/meta-poky       \(\backslash\)
+     $\{HOME\}/yocto/poky/meta-yocto-bsp  \(\backslash\)
+     "
+\end{DoxyCode}
+
+\item Poky Host system layout 
+\begin{DoxyCode}
+$HOME/yocto/
+|---build       (or whatever name you choose)
+        Project build directory
+|---downloads   (DL\_DIR)
+        Downloaded source cache
+|---poky            (Do Not Modify anything in here*)
+        Poky, bitbake, scripts, oe-core, metadata
+|---sstate-cache    (SSTATE\_DIR)
+        Binary build cache
+\end{DoxyCode}
+
+\item Poky layout are as follow 
+\begin{DoxyCode}
+$HOME/yocto/poky/
+|---LICENSE
+|---README
+|---README.hardware
+|---bitbake/            (The build tool)
+|---documentation/
+|---meta/               (oe-core)
+|---meta-poky/          (Yocto distro metadata)
+|---meta-yocto-bsp/     (Yocto Reference BSPs)
+|---oe-init-build-env   (Project setup script)
+|---scripts/            (Scripts and utilities)
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\section*{What is Bitbake?}
+
+
+\begin{DoxyItemize}
+\item Bitbake is a Powerful and flexible build engine (Python) which reads metadata and determines dependencies then schedules tasks.
+\item Bitbake is a task executor and scheduler. 
+\item By default the build task for the specified recipe is executed \begin{quote}
+\$ bitbake myrecipe \end{quote}
+
+\item You can indicate which task you want run \begin{quote}
+\$ bitbake -\/c clean myrecipe \end{quote}
+
+\item You can get a list of tasks with \begin{quote}
+\$ bitbake -\/c listtasks myrecipe \end{quote}
+
+\item Bitbake builds recipes by scheduling build tasks in parallel \begin{quote}
+\$ bitbake recipe \end{quote}
+
+\item Bitbake looks for recipe.\+bb in B\+B\+F\+I\+L\+ES
+\item Each recipe defines build tasks, each which can depend on other tasks
+\item Recipes can also depend on other recipes, meaning more than one recipe may be built
+\item Tasks from more than one recipe are often executed in parallel at once on multi-\/cpu build machines
+\item Following are the bitbake task\+:
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Task  }&\textbf{ Description   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Task  }&\textbf{ Description   }\\\cline{1-2}
+\endhead
+do fetch  &Locate and download source code   \\\cline{1-2}
+do unpack  &Unpack source into working directory   \\\cline{1-2}
+do patch  &Apply any patches   \\\cline{1-2}
+do configure  &Perform any necessary pre-\/build configuration   \\\cline{1-2}
+do compile  &Compile the source code   \\\cline{1-2}
+do install  &Installation of resulting build artifacts in W\+O\+R\+K\+D\+IR   \\\cline{1-2}
+do populate  &Copy artifacts to sysroot   \\\cline{1-2}
+do package  &Create binary package(s)   \\\cline{1-2}
+\end{longtabu}
+
+
+\section*{What is a Recipe?}
+
+
+\begin{DoxyItemize}
+\item A recipe is a set of instructions for building packages, including\+:
+\begin{DoxyItemize}
+\item Where to obtain the upstream sources and which patches to apply (this is called “fetching”)
+\begin{DoxyItemize}
+\item S\+R\+C\+\_\+\+U\+RI
+\end{DoxyItemize}
+\item Dependencies (on libraries or other recipes)
+\begin{DoxyItemize}
+\item D\+E\+P\+E\+N\+DS, R\+D\+E\+P\+E\+N\+DS
+\end{DoxyItemize}
+\item Configuration/compilation options
+\begin{DoxyItemize}
+\item E\+X\+T\+R\+A\+\_\+\+O\+E\+C\+O\+NF, E\+X\+T\+R\+A\+\_\+\+O\+E\+M\+A\+KE
+\end{DoxyItemize}
+\item Define which files go into what output packages
+\begin{DoxyItemize}
+\item F\+I\+L\+E\+S\+\_\+$\ast$
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Build one or more packages from source code
+\begin{DoxyItemize}
+\item Host tools, compiler, utilities
+\item Bootloader, Kernel, etc
+\item Libraries, interpretors, etc
+\item Userspace applications
+\end{DoxyItemize}
+\item Package Groups
+\item Full System Images
+\end{DoxyItemize}
+
+\subsection*{Bitbake variables and metadata}
+
+
+\begin{DoxyItemize}
+\item These are set automatically by bitbake
+\begin{DoxyItemize}
+\item T\+O\+P\+D\+IR – The build directory
+\item L\+A\+Y\+E\+R\+D\+IR – Current layer directory
+\item F\+I\+LE – Path and filename of file being processed
+\end{DoxyItemize}
+\item Policy variables control the build
+\begin{DoxyItemize}
+\item B\+U\+I\+L\+D\+\_\+\+A\+R\+CH – Host machine architecture
+\item T\+A\+R\+G\+E\+T\+\_\+\+A\+R\+CH – Target architecture
+\end{DoxyItemize}
+\item Build time metadata
+\begin{DoxyItemize}
+\item PN – Pakage name (“myrecipe”)
+\item PV – Package version (1.\+0)
+\item PR – Package Release (r0)
+\item P = “\$\{PN\}-\/\$\{PV\}”
+\item PF = “\$\{PN\}-\/\$\{PV\}-\/\$\{PR\}”
+\item F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME – Directory for F\+I\+LE
+\item F\+I\+L\+E\+S\+P\+A\+TH = "\$\{F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME\}/\$\{PF\}\+:\textbackslash{}
+\item \$\{F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME\}/\$\{P\}\+:\textbackslash{}
+\item \$\{F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME\}/\$\{PN\}\+:\textbackslash{}
+\item \$\{F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME\}/files\+:\$\{F\+I\+L\+E\+\_\+\+D\+I\+R\+N\+A\+ME\}
+\item T\+O\+P\+D\+IR – The build directory
+\item T\+M\+P\+D\+IR = “\$\{T\+O\+P\+D\+IR\}/tmp”
+\item W\+O\+R\+K\+D\+IR = \$\{T\+M\+P\+D\+IR\}/work/\$\{PF\}”
+\item S = “\$\{W\+O\+R\+K\+D\+IR\}/\$\{P\}” (Source dir)
+\item B = “\$\{S\}” (Build dir)
+\item D = “\$\{W\+O\+R\+K\+D\+IR\}/\$\{image\}” (Destination dir)
+\item D\+E\+P\+L\+O\+Y\+\_\+\+D\+IR = “\$\{T\+M\+P\+D\+IR\}/deploy”
+\item D\+E\+P\+L\+O\+Y\+\_\+\+D\+I\+R\+\_\+\+I\+M\+A\+GE = “\$\{D\+E\+P\+L\+O\+Y\+\_\+\+D\+IR\}/images”
+\end{DoxyItemize}
+\item Dependancy metadata
+\begin{DoxyItemize}
+\item Build time package variables
+\begin{DoxyItemize}
+\item D\+E\+P\+E\+N\+DS – Build time package dependencies
+\item P\+R\+O\+V\+I\+D\+ES = “\$\{P\} \$\{PF\} \$\{PN\}”
+\end{DoxyItemize}
+\item Runtime package variables
+\begin{DoxyItemize}
+\item R\+D\+E\+P\+E\+N\+DS – Runtime package dependencies
+\item R\+R\+E\+C\+O\+M\+M\+E\+N\+DS – Runtime recommended packages
+\item R\+S\+U\+G\+G\+E\+S\+TS – Runtime suggested packages
+\item R\+P\+R\+O\+V\+I\+D\+ES – Runtime provides
+\item R\+C\+O\+N\+F\+L\+I\+C\+TS – Runtime package conflicts
+\item R\+R\+E\+P\+L\+A\+C\+ES – Runtime package replaces
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Recipe Operators}
+
+
+\begin{DoxyItemize}
+\item Basic Variable Setting
+\begin{DoxyItemize}
+\item The following example sets V\+A\+R\+I\+A\+B\+LE to \char`\"{}value\char`\"{}. This assignment occurs immediately as the statement is parsed. It is a \char`\"{}hard\char`\"{} assignment. 
+\begin{DoxyCode}
+VARIABLE = "value"
+\end{DoxyCode}
+
+\item As expected, if you include leading or trailing spaces as part of an assignment, the spaces are retained\+: 
+\begin{DoxyCode}
+VARIABLE = " value"
+VARIABLE = "value "
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item Variable Expansion
+\begin{DoxyItemize}
+\item Bit\+Bake supports variables referencing one another\textquotesingle{}s contents using a syntax that is similar to shell scripting. Following is an example that results in A containing \char`\"{}aval\char`\"{} and B evaluating to \char`\"{}preavalpost\char`\"{} based on that current value of A. 
+\begin{DoxyCode}
+A = "aval"
+B = "pre$\{A\}post"
+\end{DoxyCode}
+
+\item You should realize that whenever B is referenced, its evaluation will depend on the state of A at that time. Thus, later evaluations of B in the previous example could result in different values depending on the value of A. ~\newline
+$\ast$ Setting a default value (?=)
+\item You can use the \char`\"{}?=\char`\"{} operator to achieve a \char`\"{}softer\char`\"{} assignment for a variable. This type of assignment allows you to define a variable if it is undefined when the statement is parsed, but to leave the value alone if the variable has a value. Here is an example\+: 
+\begin{DoxyCode}
+A ?= "aval"
+\end{DoxyCode}
+
+\item If A is set at the time this statement is parsed, the variable retains its value. However, if A is not set, the variable is set to \char`\"{}aval\char`\"{}.
+\end{DoxyItemize}
+\item Setting a weak default value (??=)
+\begin{DoxyItemize}
+\item It is possible to use a \char`\"{}weaker\char`\"{} assignment than in the previous section by using the \char`\"{}??=\char`\"{} operator. This assignment behaves identical to \char`\"{}?=\char`\"{} except that the assignment is made at the end of the parsing process rather than immediately. Consequently, when multiple \char`\"{}??=\char`\"{} assignments exist, the last one is used. Also, any \char`\"{}=\char`\"{} or \char`\"{}?=\char`\"{} assignment will override the value set with \char`\"{}??=\char`\"{}. Here is an example\+: 
+\begin{DoxyCode}
+A ??= "somevalue"
+A ??= "someothervalue"
+\end{DoxyCode}
+
+\item If A is set before the above statements are parsed, the variable retains its value. If A is not set, the variable is set to \char`\"{}someothervalue\char`\"{}.
+\item Again, this assignment is a \char`\"{}lazy\char`\"{} or \char`\"{}weak\char`\"{} assignment because it does not occur until the end of the parsing process
+\end{DoxyItemize}
+\item  \+Immediate variable expansion (\+:=)
+\begin{DoxyItemize}
+\item The \char`\"{}\+:=\char`\"{} operator results in a variable\textquotesingle{}s contents being expanded immediately, rather than when the variable is actually used\+: 
+\begin{DoxyCode}
+T = "123"
+A := "$\{B\} $\{A\} test $\{T\}"
+T = "456"
+B = "$\{T\} bval"
+C = "cval"
+C := "$\{C\}append"        
+\end{DoxyCode}
+
+\item In this example, A contains \char`\"{}test 123\char`\"{} because \$\{B\} and \$\{A\} at the time of parsing are undefined, which leaves \char`\"{}test 123\char`\"{}. And, the variable C contains \char`\"{}cvalappend\char`\"{} since \$\{C\} immediately expands to \char`\"{}cval\char`\"{}.
+\end{DoxyItemize}
+\item Appending (+=) and prepending (=+) With Spaces
+\begin{DoxyItemize}
+\item Appending and prepending values is common and can be accomplished using the \char`\"{}+=\char`\"{} and \char`\"{}=+\char`\"{} operators. These operators insert a space between the current value and prepended or appended value. Here are some examples\+: 
+\begin{DoxyCode}
+B = "bval"
+B += "additionaldata"
+C = "cval"
+C =+ "test"
+\end{DoxyCode}
+
+\item The variable B contains \char`\"{}bval additionaldata\char`\"{} and C contains \char`\"{}test cval\char`\"{}.
+\end{DoxyItemize}
+\item Appending (.=) and Prepending (=.) Without Spaces
+\begin{DoxyItemize}
+\item If you want to append or prepend values without an inserted space, use the \char`\"{}.=\char`\"{} and \char`\"{}=.\char`\"{} operators. Here are some examples\+: 
+\begin{DoxyCode}
+B = "bval"
+B .= "additionaldata"
+C = "cval"
+C =. "test"
+\end{DoxyCode}
+
+\item The variable B contains \char`\"{}bvaladditionaldata\char`\"{} and C contains \char`\"{}testcval\char`\"{}.
+\end{DoxyItemize}
+\item Appending and Prepending (Override Style Syntax)
+\begin{DoxyItemize}
+\item You can also append and prepend a variable\textquotesingle{}s value using an override style syntax. When you use this syntax, no spaces are inserted. Here are some examples\+: 
+\begin{DoxyCode}
+B = "bval"
+B\_append = " additional data"
+C = "cval"
+C\_prepend = "additional data "
+D = "dval"
+D\_append = "additional data"
+\end{DoxyCode}
+
+\item The variable B becomes \char`\"{}bval additional data\char`\"{} and C becomes \char`\"{}additional data cval\char`\"{}. The variable D becomes \char`\"{}dvaladditional data\char`\"{}.
+\item The operators \char`\"{} append\char`\"{} and \char`\"{} prepend\char`\"{} differ from the operators \char`\"{}.=\char`\"{} and \char`\"{}=.\char`\"{} in that they are deferred until after parsing completes rather than being immediately applied.
+\end{DoxyItemize}
+\item Removal (Override Style Syntax)
+\begin{DoxyItemize}
+\item You can remove values from lists using the removal override style syntax. Specifying a value for removal causes all occurrences of that value to be removed from the variable.
+\item When you use this syntax, Bit\+Bake expects one or more strings. Surrounding spaces are removed as well. Here is an example\+: 
+\begin{DoxyCode}
+FOO = "123 456 789 123456 123 456 123 456"
+FOO\_remove = "123"
+FOO\_remove = "456"
+FOO2 = "abc def ghi abcdef abc def abc def"
+FOO2\_remove = "abc def"
+\end{DoxyCode}
+
+\item The variable F\+OO becomes \char`\"{}789 123456\char`\"{} and F\+O\+O2 becomes \char`\"{}ghi abcdef\char`\"{}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Recipe Example}
+
+Following is an example recipe\+: 
+\begin{DoxyCode}
+# This file was derived from the 'Hello World!' example recipe in the
+# Yocto Project Development Manual.
+#
+
+DESCRIPTION = "Simple helloworld application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC\_FILES\_CHKSUM = "file://$\{COMMON\_LICENSE\_DIR\}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+PR = "r0"
+
+SRC\_URI = "file://helloworld.c"
+
+S = "$\{WORKDIR\}"
+
+do\_compile() \{
+         $\{CC\} helloworld.c -o helloworld
+\}
+
+do\_install() \{
+         install -d $\{D\}$\{bindir\}
+         install -m 0755 helloworld $\{D\}$\{bindir\}
+\}
+\end{DoxyCode}
+
+
+\section*{S\+S\+T\+A\+TE C\+A\+C\+HE}
+
+Several bitbake tasks can use past versions of build artefacts if there have been no changes since the last time you built them
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Task  }&\textbf{ Description   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Task  }&\textbf{ Description   }\\\cline{1-2}
+\endhead
+do\+\_\+packagedata  &Creates package metadata used by the build system to generate the final packages   \\\cline{1-2}
+do\+\_\+package  &Analyzes the content of the holding area and splits it into subsets based on available packages and files   \\\cline{1-2}
+do\+\_\+package\+\_\+write\+\_\+rpm  &Creates the actual R\+PM packages and places them in the Package Feed area   \\\cline{1-2}
+do\+\_\+populate\+\_\+lic  &Writes license information for the recipe that is collected later when the image is constructed   \\\cline{1-2}
+do\+\_\+populate\+\_\+sysroot  &Copies a subset of files installed by do\+\_\+install into the sysroot in order to make them available to other recipes   \\\cline{1-2}
+\end{longtabu}
+
+
+\section*{Board Support Packages}
+
+
+\begin{DoxyItemize}
+\item B\+S\+Ps are layers to enable support for specific hardware platforms
+\item Defines machine configuration variables for the board (M\+A\+C\+H\+I\+NE)
+\item Adds machine-\/specific recipes and customizations
+\begin{DoxyItemize}
+\item Boot loader
+\item Kernel config
+\item Graphics drivers (e.\+g, Xorg)
+\item Additional recipes to support hardware features
+\end{DoxyItemize}
+\item When doing development with Yocto, do not edit files within the Poky source tree
+\item Use a new custom layer for modularity and maintainability
+\item Layers also allow you to easily port from one version of Yocto/\+Poky to the next version
+\end{DoxyItemize}
+
+\section*{What is an Image?}
+
+
+\begin{DoxyItemize}
+\item Building an image creates an entire Linux distribution from source
+\begin{DoxyItemize}
+\item Compiler, tools, libraries
+\item B\+SP\+: Bootloader, Kernel
+\item Root filesystem\+:
+\begin{DoxyItemize}
+\item Base OS
+\item services
+\item Applications
+\item etc
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item You often need to create your own Image recipe in order to add new packages or functionality
+\item With Yocto/\+Open\+Embedded it is always preferable to extend an existing recipe or inherit a class
+\item The simplest way is to inherit the core-\/image bbclass
+\item You add packages to the image by adding them to I\+M\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL
+\end{DoxyItemize}
+
+\section*{Work flow process}
+
+
+\begin{DoxyItemize}
+\item The work flow process steps of yocto build system are as follow\+:
+\begin{DoxyEnumerate}
+\item Fetch
+\item Extract
+\item Patch
+\item Configure
+\item Build
+\item Install
+\item Package ~\newline
+ 
+\end{DoxyEnumerate}
+\item Source fetch\+:
+\begin{DoxyItemize}
+\item Bit\+Bake can retrieve sources – Locally from the build host – Remotely from the external repos via network
+\item Source file formats varies, – Plain – Compressed tarballs
+\begin{DoxyItemize}
+\item Frequently used formats are G\+Z\+IP and B\+Z\+IP
+\end{DoxyItemize}
+\item Source file can be obtained using, – File transfer protocols
+\begin{DoxyItemize}
+\item H\+T\+TP
+\item H\+T\+T\+PS
+\item F\+TP
+\item S\+F\+TP etc – S\+CM such as git, svn etc...
+\end{DoxyItemize}
+\item Some projects provides access to
+\begin{DoxyItemize}
+\item Released versions
+\item Development branches through, git, S\+VN etc
+\end{DoxyItemize}
+\item Download packages contains,
+\begin{DoxyItemize}
+\item Source code
+\item Patch files
+\item Auxiliary files
+\end{DoxyItemize}
+\item S\+R\+C\+\_\+\+U\+RI – Contains the U\+RI\textquotesingle{}s of the source files – Remotely from the external repos via network
+\item Order in which queries are made, – Local download directory
+\begin{DoxyItemize}
+\item Bitbake first checks this Dir to see whether correct version of the source files are already retrieved – Premirrors
+\item List of mirror file servers – Upstream repositories
+\item In open source, upstream refers to original authors or maintainers of the software packages. – Postmirrors
+\item Second list of mirror servers
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Extract\+:
+\begin{DoxyItemize}
+\item After downloading into the local download directory, they are extracted into the local BE
+\item If source code obtained from the S\+CM, then extract refers to checking them out to the area where bitbake builds them ~\newline
+
+\end{DoxyItemize}
+\item Patch\+:
+\begin{DoxyItemize}
+\item Process of incrementally modifying the source code by adding, deleting or changing the source files
+\item Build System needs to know where to copy the patch files
+\item Order in which patches are applied is important, because patches may be dependent on each other
+\end{DoxyItemize}
+\item Configure\+:
+\begin{DoxyItemize}
+\item Accurate configuration is very important for the cross build environment, – C\+PU architecture of the build host is different from C\+PU architecture of the target host
+\item Many S/W packages uses A\+U\+T\+O\+T\+O\+O\+LS for configuration, these tools are hard to use
+\item O\+E–\+BS automates the configuration tasks
+\item Some S/W packages uses their own configuration system, O\+E-\/\+BS provides flexibility to adjust the configuration step accordingly ~\newline
+$\ast$ Build\+:
+\item Source codes are converted into the binary images
+\item Some S/W packages will use utilities such as,
+\begin{DoxyItemize}
+\item Make
+\item C\+Make
+\item qmake
+\end{DoxyItemize}
+\item OE uses bitbake to achieve this job
+\end{DoxyItemize}
+\item Install\+:
+\begin{DoxyItemize}
+\item Copying the binaries, libraries, docs, configuration files to the correct location in the target machines.
+\item Examples,
+\begin{DoxyItemize}
+\item User programs should be installed in /usr/bin
+\item System programs should be installed in /usr/sbin
+\item Config files to be installed in /etc
+\item Libraries to be installed in /usr/lib
+\end{DoxyItemize}
+\item Install target in the Makefile correctly written will do the job of installing
+\item Install utility also sets file permissions and the file ownership while copying the files to the target machine
+\end{DoxyItemize}
+\item Packaging\+:
+\begin{DoxyItemize}
+\item It the process of bundling the
+\begin{DoxyItemize}
+\item Software
+\item Binaries
+\item Auxiliary files into the single archive.
+\end{DoxyItemize}
+\item This step is needed for the distribution purpose.
+\begin{DoxyItemize}
+\item R\+PM (Red hat package manager)
+\item Dpkg (Debian package manager)
+\item Opkg (Openmoko for the Embedded projects)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{Bitbake execution environment}
+
+
+\begin{DoxyItemize}
+\item Bit\+Bake first searches for the conf/bblayers.\+conf file.
+\item Bitbake expects this file to contain the variable, B\+B\+L\+A\+Y\+E\+RS
+\item Layers contained in this path is expected to contain conf/layer.\+conf file
+\item The purpose of the layer.\+conf file is to set-\/up, B\+B\+P\+A\+TH and B\+B\+F\+I\+L\+ES variables, so that bitbake can find recipes, classes, config files.
+\item B\+B\+P\+A\+TH \+: Contains path to classes(.bbclass files) and conf files(.conf files) in the sub-\/directories classes and the configuration D\+IR conf.
+\item B\+B\+F\+I\+L\+ES \+: Contains path to recipes files ~\newline
+$\ast$ After parsing conf/bblayers.\+conf, bitbake looks for conf/bitbake.\+conf which provides build system set-\/up.
+\item After parsing conf/bitbake.\+conf and other .conf files, it locates and parses all classes. 
+\end{DoxyItemize}\hypertarget{asrbuild_introduction}{}\section{Building a minimal yocto image}\label{asrbuild_introduction}
+
+\begin{DoxyItemize}
+\item Essentials\+: Packages needed to build an image on a headless system\+: 
+\begin{DoxyCode}
+$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \(\backslash\)
+   build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \(\backslash\)
+   xz-utils debianutils iputils-ping
+\end{DoxyCode}
+ \begin{quote}
+Note\+: If your build system has the oss4-\/dev package installed, you might experience Q\+E\+MU build failures due to the package installing its own custom /usr/include/linux/soundcard.h on the Debian system. If you run into this situation, either of the following solutions exist\+: \end{quote}
+
+\begin{DoxyCode}
+$ sudo apt-get build-dep qemu
+$ sudo apt-get remove oss4-dev
+\end{DoxyCode}
+
+\item Clone the poky from git repository and checkout to latest branch 
+\begin{DoxyCode}
+$ git clone http://git.yoctoproject.org/git/poky
+$ cd poky
+$ git checkout tags/yocto-2.4 -b poky\_2.4
+\end{DoxyCode}
+
+\item Clone the Intel-\/corei7-\/64 B\+SP for the rocko image in Poky dir 
+\begin{DoxyCode}
+$ git clone git://git.yoctoproject.org/meta-intel
+$ cd $HOME/poky/meta-intel
+$ git checkout tags/8.0-rocko-2.4.2 -b meta-intel-rocko-2.4.2
+\end{DoxyCode}
+
+\item Configure the build in local.\+conf and bblayers.\+conf 
+\begin{DoxyCode}
+$ cd $HOME/poky/build
+$ bitbake-layers add-layer "$HOME/poky/meta-intel"
+$ echo 'MACHINE = "intel-corei7-64"' >> conf/local.conf
+\end{DoxyCode}
+
+\item Bitbake the image 
+\begin{DoxyCode}
+$ cd $home/poky/
+$ source oe-init-build-env
+$ bitbake core-image-base
+\end{DoxyCode}
+
+\item Run the image on qemu for thatyou shoul change the machine to \char`\"{}qemux86\char`\"{} in local.\+conf before bitbake 
+\begin{DoxyCode}
+$ runqemu qemux86 core-image-base
+\end{DoxyCode}
+
+\item Flash the image into U\+SB to execute the image on minnow board, so skip the above step 
+\begin{DoxyCode}
+$ sudo dd if=tmp/deploy/images/intel-corei7-64/core-image-base-intel-corei7-64.hddimg   of=/dev/sdb
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\section*{Creating a hello world program}
+
+
+\begin{DoxyItemize}
+\item Create a meta-\/mylayer for helloworld program in poky dir 
+\begin{DoxyCode}
+$ cd $home/poky/
+$ source oe-init-build-env
+$ cd ..
+$ yocto-layer create mylayer
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\begin{quote}
+Note\+: when asked for example recipe creation \+: yes \end{quote}
+
+
+\begin{quote}
+When askd for recipe name \+: helloworld \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item Ads the meta-\/mylayer in bblayer.\+conf 
+\begin{DoxyCode}
+$ bitbake-layers add-layer "$HOME/poky/meta-mylayer" 
+\end{DoxyCode}
+
+\item Add the helloworld in local.\+conf 
+\begin{DoxyCode}
+$ echo ‘IMAGE\_INSTALL\_append = “ helloworld”' >> conf/local.conf
+\end{DoxyCode}
+
+\item Bitbake the helloworld program 
+\begin{DoxyCode}
+$ bitbake helloworld
+\end{DoxyCode}
+
+\item Bitbake the image 
+\begin{DoxyCode}
+$ bitbake core-image-base
+\end{DoxyCode}
+
+\item After flashing the image into U\+SB, boot the image on board. To execute the hello world, type the command on target terminal , helloworld bin file will be in /usr/bin 
+\begin{DoxyCode}
+$ /usr/bin/helloworld
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\section*{Creating a program for L\+ED blinking}
+
+
+\begin{DoxyItemize}
+\item Create a meta-\/mylayer for helloworld program in poky dir 
+\begin{DoxyCode}
+$ cd $home/poky/
+$ source oe-init-build-env
+$ cd ..
+$ yocto-layer create mylayer
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\begin{quote}
+Note\+: when asked for example recipe creation \+: yes \end{quote}
+
+
+\begin{quote}
+When askd for recipe name \+: leblink \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item Remove helloworld program and add ledblink.\+c
+\end{DoxyItemize}
+
+\begin{quote}
+\$ vi ledblink.\+c \end{quote}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stdio.h>}
+\textcolor{preprocessor}{#include <sys/stat.h>}
+\textcolor{preprocessor}{#include <sys/types.h>}
+\textcolor{preprocessor}{#include <fcntl.h>}
+\textcolor{preprocessor}{#include <stdlib.h>}
+\textcolor{preprocessor}{#include <unistd.h>}
+
+\textcolor{keywordtype}{int} LedExport(\textcolor{keywordtype}{void});
+\textcolor{keywordtype}{int} LedDirection(\textcolor{keywordtype}{void});
+\textcolor{keywordtype}{int} LedToggle(\textcolor{keywordtype}{void});
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)
+\{
+    printf(\textcolor{stringliteral}{"Hellow Let's Blink LED\(\backslash\)r\(\backslash\)n"});
+    \textcolor{keywordtype}{int} repeat = 9;
+
+     LedExport();
+     LedDirection();
+
+    \textcolor{keywordflow}{while}(repeat--)
+    \{
+        LedToggle();
+        usleep(500*100);
+        LedToggle();
+        usleep(500*100);    
+    \}
+
+
+    \textcolor{keywordflow}{return}(0);
+\}
+
+
+\textcolor{keywordtype}{int} LedExport(\textcolor{keywordtype}{void})
+\{
+    FILE *fd;
+        usleep(500*100);        
+        fd = fopen(\textcolor{stringliteral}{"/sys/class/gpio/export"}, \textcolor{stringliteral}{"w"});
+        \textcolor{keywordflow}{if}(NULL == fd)
+        \{
+                printf(\textcolor{stringliteral}{"Failed to open export\(\backslash\)r\(\backslash\)n"});
+        \}       
+        \textcolor{keywordflow}{else}
+        \{
+                printf(\textcolor{stringliteral}{"export file opened\(\backslash\)r\(\backslash\)n"});
+                fputs(\textcolor{stringliteral}{"360"}, fd);
+
+                fclose(fd);
+        \}
+
+\}
+
+\textcolor{keywordtype}{int} LedDirection(\textcolor{keywordtype}{void})
+\{
+    FILE *fd;
+        usleep(500*100);
+        fd = fopen(\textcolor{stringliteral}{"/sys/class/gpio/gpio360/direction"}, \textcolor{stringliteral}{"w"});
+        \textcolor{keywordflow}{if}(NULL == fd)
+        \{
+                printf(\textcolor{stringliteral}{"Failed to open direction\(\backslash\)r\(\backslash\)n"});
+        \}       
+        \textcolor{keywordflow}{else}
+        \{
+                printf(\textcolor{stringliteral}{"direction file opened\(\backslash\)r\(\backslash\)n"});
+                fputs(\textcolor{stringliteral}{"out"}, fd);
+
+                fclose(fd);
+        \}
+
+\}
+\textcolor{keywordtype}{int} LedToggle(\textcolor{keywordtype}{void})
+\{
+    \textcolor{keyword}{static} \textcolor{keywordtype}{int} tog = 0;
+
+    FILE *fd;
+        usleep(500*100);
+        fd = fopen(\textcolor{stringliteral}{"/sys/class/gpio/gpio360/value"}, \textcolor{stringliteral}{"w"});
+        \textcolor{keywordflow}{if}(NULL == fd)
+        \{
+                printf(\textcolor{stringliteral}{"Failed to open value\(\backslash\)r\(\backslash\)n"});
+        \}
+    \textcolor{keywordflow}{else}
+    \{
+        \textcolor{keywordflow}{if} (tog)
+        \{       
+            fputs(\textcolor{stringliteral}{"1"}, fd);
+            tog = 0;
+
+        \}\textcolor{keywordflow}{else}
+        \{
+            fputs(\textcolor{stringliteral}{"0"}, fd);
+            tog = 1;    
+        \}
+        fclose(fd);
+    \}
+
+\}
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Create C\+Make\+Lists.\+txt file 
+\begin{DoxyCode}
+add\_executable(led ledblink.c)
+
+install(TARGETS led RUNTIME DESTINATION opt/led/bin)
+\end{DoxyCode}
+
+\item Edit the ledblink.\+bb file 
+\begin{DoxyCode}
+#
+# This file was derived from the 'Hello World!' example recipe in the
+# Yocto Project Development Manual.
+#
+
+DESCRIPTION = "Simple ledblink application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC\_FILES\_CHKSUM = "file://$\{COMMON\_LICENSE\_DIR\}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+PR = "r0"
+
+SRC\_URI = "path to /CMakeList.txt"
+inherit cmake
+\end{DoxyCode}
+
+\item Add the meta-\/mylayer in bblayer.\+conf 
+\begin{DoxyCode}
+$ bitbake-layers add-layer "$HOME/poky/meta-mylayer" 
+\end{DoxyCode}
+
+\item Add the helloworld in local.\+conf 
+\begin{DoxyCode}
+$ echo ‘IMAGE\_INSTALL\_append = “ ledblink”' >> conf/local.conf
+\end{DoxyCode}
+
+\item Bitbake the ledblink program 
+\begin{DoxyCode}
+$ bitbake ledblink
+\end{DoxyCode}
+
+\item Bitbake the image 
+\begin{DoxyCode}
+$ bitbake core-image-base
+\end{DoxyCode}
+
+\item After flashing the image into U\+SB, boot the image on board. To execute the hello world, type the command on target terminal , ledblink bin file will be in /usr/bin 
+\begin{DoxyCode}
+$ /usr/bin/ledblink
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\section*{Add ledblink in core-\/image-\/minimal}
+
+
+\begin{DoxyItemize}
+\item goto directory poky/meta/recipes-\/core/images \begin{quote}
+\$ cd poky/meta/recipes-\/core/images \end{quote}
+
+\item open core-\/image-\/minimal.\+bbfile \begin{quote}
+\$ vi core-\/image-\/minimal.\+bb \end{quote}
+
+\item Add the follow at the end in core-\/image-\/minimal.\+bb file to add ledblink application \begin{quote}
+I\+M\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL += \char`\"{} ledblink\char`\"{}\end{quote}
+
+\end{DoxyItemize}\hypertarget{adaptive_application}{}\section{Setup Adaptive platform demonstrator}\label{adaptive_application}
+\#\# Prepare the linux environment 
+\begin{DoxyCode}
+>   ~$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath
+       socat libsdl1.2-dev xterm
+\end{DoxyCode}
+
+
+\subsection*{Setup the build environment}
+
+
+\begin{DoxyItemize}
+\item To setup the build environment necessary setup has to be downloaded and configuration has be done.
+\item setup a folder for the source code of adaptive demonstrator 
+\begin{DoxyCode}
+>   ~$ mkdir ara-project && cd ara-project  
+\end{DoxyCode}
+
+\item obtain the demonstartor code i.\+e adaptive demonstarator release zip and extract it into the newly created folder and the folder structure will be like below 
+\begin{DoxyCode}
+ara-project$ tree -L 1
+ ├── ara-api
+ ├── sample-applications
+ └── yocto-layers
+\end{DoxyCode}
+
+\item The Demonstrator has additional dependencies, which are handled by the Yocto build system. In order to provide it with the recipes for building a complete operating system 
+\begin{DoxyCode}
+>   $ git clone https://git.yoctoproject.org/git/poky
+>   $ git clone https://github.com/openembedded/meta-openembedded
+>   $ git -C poky checkout krogoth
+>   $ git -C meta-openembedded checkout krogoth
+\end{DoxyCode}
+ after the above step the directory will look like below 
+\begin{DoxyCode}
+ara-project$ tree -L 1
+ ├── ara-api
+ ├── meta-openembedded
+ ├── poky
+ ├── sample-applications
+ └── yocto-layers   
+\end{DoxyCode}
+
+\item To build the right target some configuration has to be done, create initial build directory 
+\begin{DoxyCode}
+>   ara-project$ source poky/oe-init-build-env
+\end{DoxyCode}
+
+\item This command also changes the directory now here we add layer additional board support package (B\+SP) and adaptive autosar layer like meta-\/ara, meta-\/oe, meta-\/pyhton in bblayers.\+conf 
+\begin{DoxyCode}
+>       $build$ bitbake-layers add-layer ../yocto-layers/meta-ara
+>       $build$ bitbake-layers add-layer ../meta-openembedded/meta-oe
+>       $build$ bitbake-layers add-layer ../meta-openembedded/meta-python
+\end{DoxyCode}
+
+\item Finally add target and download/cache folder to conf/local.\+conf 
+\begin{DoxyCode}
+>       build$ echo "MACHINE ??= \(\backslash\)"qemux86\(\backslash\)"" >> conf/local.conf 
+>       build$ echo "DL\_DIR = \(\backslash\)"$HOME/yocto/downloads\(\backslash\)"" >> conf/local.conf 
+>       build$ echo "SSTATE\_DIR = \(\backslash\)"$HOME/yocto/sstate-cache\(\backslash\)"" >> conf/local.conf 
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{Building development image}
+
+
+\begin{DoxyItemize}
+\item Go to the initial poky source directory (named ara-\/project in the steps above) and execute the following commands for building the default image core-\/image-\/apd-\/devel 
+\begin{DoxyCode}
+>       ara-project$ source poky/oe-init-build-env
+>       build$ bitbake core-image-apd-devel
+\end{DoxyCode}
+
+\item Now the build process starts and it will take a couple of hours to finish it the first time. When the build finishes, there should be the following files in the directory tmp/deploy/images/qemux86/\+: 
+\begin{DoxyCode}
+core-image-apd-devel-qemux86-<datetime>.rootfs.ext4
+core-image-apd-devel-qemux86-<datetime>.rootfs.manifest
+core-image-apd-devel-qemux86-<datetime>.rootfs.tar.bz2
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\section*{Creating an Adaptive Application}
+
+
+\begin{DoxyItemize}
+\item Create a meta-\/mylayer for helloworld program in ara-\/project dir 
+\begin{DoxyCode}
+>        $ cd ara-project
+>        $ source poky/oe-init-build-env
+>        $ cd ..
+>        $ yocto-layer create mylayer
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+Note: when asked for example recipe creation : yes
+   When askd for recipe name             :  demo
+\end{DoxyCode}
+
+\item Ads the meta-\/mylayer in bblayer.\+conf 
+\begin{DoxyCode}
+>  $ bitbake-layers add-layer "$HOME/ara-project/meta-mylayer" 
+\end{DoxyCode}
+
+\item Go to meta-\/mylayer/recipes-\/exzmple/example/demo-\/0.\+1 and remove the helloworld.\+c and add demo.\+cpp 
+\begin{DoxyCode}
+>   $ rm hello.c
+>   $ vi demo.cpp
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <exec/application\_client.h>}
+\textcolor{preprocessor}{#include <boost/filesystem/path.hpp>}
+\textcolor{preprocessor}{#include <boost/filesystem/operations.hpp>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <unistd.h>}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char}** argv)
+\{
+    \textcolor{keyword}{namespace }fs = boost::filesystem;
+
+    ara::exec::ApplicationClient app\_client;
+    app\_client.ReportApplicationState(ara::exec::ApplicationState::kRunning);
+
+    fs::path absolute\_arg0 = fs::absolute(argv[0]);
+    std::cout << \textcolor{stringliteral}{"Hello, "} << absolute\_arg0 << \textcolor{stringliteral}{"\(\backslash\)n"};
+    sleep(5);
+
+    app\_client.ReportApplicationState(ara::exec::ApplicationState::kTerminating);
+\}
+\end{DoxyCode}
+
+\item Now add Cmake file 
+\begin{DoxyCode}
+>   $ vi CMakeLists.txt
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+set(CMAKE\_CXX\_STANDARD 11)
+
+find\_package(ARAExec REQUIRED)
+find\_package(AdaptivePlatform REQUIRED)
+find\_package(Boost REQUIRED COMPONENTS filesystem system)
+
+add\_executable(demo1 demo.cpp)
+
+target\_link\_libraries(demo1 $\{ARAEXEC\_LIBRARIES\} $\{ADAPTIVEPLATFORM\_LIBRARIES\} $\{Boost\_LIBRARIES\})
+target\_include\_directories(demo1  PRIVATE $\{Boost\_INCLUDE\_DIRS\})
+
+install(TARGETS demo1 RUNTIME DESTINATION opt/demo1/bin)
+install(FILES MANIFEST-demo1.json PERMISSIONS OWNER\_READ GROUP\_READ WORLD\_READ DESTINATION opt/demo1/etc
+       RENAME MANIFEST.json)
+\end{DoxyCode}
+
+\item Add a manifest file 
+\begin{DoxyCode}
+>   $ vi MANIFST-demo1.json
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+ [
+    \{
+        "key": "platform\_application",
+        "value": \{
+            "bool": false
+        \},
+        "checksum": 1639441683
+    \},
+    \{
+        "key": "application\_states",
+        "value": \{
+            "string[]": [ ]
+        \},
+        "checksum": 1639441683
+    \},
+    \{
+        "key": "timer\_resolution\_ns",
+        "value": \{
+            "uint32": 1000
+        \},
+        "checksum": 1405615546
+    \},
+    \{
+        "key": "startup\_configs",
+        "value": \{
+            "object[]": [
+                \{
+                    "key": "Machine: Startup, Driving, Parking",
+                    "value": \{
+                        "object[]": [
+                            \{
+                                "key": "depends",
+                                "value": \{
+                                    "string[]": [ ]
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "machine\_states",
+                                "value": \{
+                                    "string[]": [ "Startup", "Driving", "Parking" ]
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "function\_group\_states",
+                                "value": \{
+                                    "string[]": [ ]
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "resource\_group",
+                                "value": \{
+                                    "string": "Resource group 1"
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "scheduling\_policy",
+                                "value": \{
+                                    "string": "Round Robin"
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "scheduling\_priority",
+                                "value": \{
+                                    "uint32": 12
+                                \},
+                                "checksum": 2301152528
+                            \},
+                            \{
+                                "key": "arguments",
+                                "value": \{
+                                    "string[]": [ "--dbg", "arg2", "arg3" ]
+                                \},
+                                "checksum": 2301152528
+                            \}
+                        ]
+                    \},
+                    "checksum": 870226170
+                \}
+            ]
+        \},
+        "checksum": 870226170
+    \}
+]
+\end{DoxyCode}
+
+\item Edit the demo\+\_\+0.\+1.\+bb file 
+\begin{DoxyCode}
+>   $ vi demo\_0.1.bb
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+SUMMARY = "Simple helloworld application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC\_FILES\_CHKSUM = "file://$\{COMMON\_LICENSE\_DIR\}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+
+inherit externalsrc
+EXTERNALSRC := "/path /to /meta-mylayer/recipes-example/example/demo-0.1"
+
+
+DEPENDS = "ara-exec-api"
+
+inherit cmake
+
+EXTRA\_OECMAKE += "\(\backslash\)
+        -DCMAKE\_INSTALL\_PREFIX=/ \(\backslash\)
+"
+
+python do\_package\_qa() \{
+   pass
+\}
+
+# Add test applications to package
+FILES\_$\{PN\} += "\(\backslash\)
+        /opt/demo1 \(\backslash\)
+"
+
+FILES\_$\{PN\}-dbg += "\(\backslash\)
+        /opt/demo1/bin/.debug \(\backslash\)
+        "
+
+do\_install\_append() \{
+  mkdir $\{D\}/opt/demo1/run/
+  mkfifo -m 0666 $\{D\}/opt/demo1/run/sysstate-client-fifo
+\}
+\end{DoxyCode}
+
+\item Add the application in core-\/image-\/apd-\/minimal.\+bb file below rootfs-\/open in I\+M\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL 
+\begin{DoxyCode}
+>   $ cd /ara-project/yocto-layers/meta-ara/recipes-core/images
+>   $ vi core-image-apd-minimal.bb
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+ IMAGE\_INSTALL += " \(\backslash\)
+        vsomeip \(\backslash\)
+        vsomeip-examples \(\backslash\)
+        ara-genivi-dlt \(\backslash\)
+        diagnostic-manager \(\backslash\)
+        ucm-package-manager \(\backslash\)
+        diag-calculator-example \(\backslash\)
+        diag-seedkey-example \(\backslash\)
+        per-examples \(\backslash\)
+        network-init \(\backslash\)
+        filesys-init \(\backslash\)
+        execution-manager \(\backslash\)
+        access-manager \(\backslash\)
+        emo-samples \(\backslash\)
+        machine-manifest \(\backslash\)
+        system-shutdown \(\backslash\)
+        system-restart \(\backslash\)
+        rootfs-open \(\backslash\)
+        demo \(\backslash\)
+"
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Bitbake the image 
+\begin{DoxyCode}
+>   $ bitbake core-image-apd-minimal
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}\hypertarget{sdk_introduction}{}\section{Building a sdk}\label{sdk_introduction}
+
+\begin{DoxyItemize}
+\item Once setup is complete, simply enter the following command from the build directory\+:
+\end{DoxyItemize}
+
+\begin{quote}
+\$ bitbake core-\/image-\/apd-\/devel ara-\/sdk \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item This will build both the target image, and the S\+DK. If you already have a working image built, then simply enter
+\end{DoxyItemize}
+
+\begin{quote}
+\$ bitbake ara-\/sdk \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item You will find the generated S\+DK under tmp/deploy/sdk. It will be the file with a suffix of .sh
+\end{DoxyItemize}
+
+\begin{quote}
+N\+O\+TE\+: It is important to update the S\+DK whenever you rebuild the image, and that includes re-\/installing it. \end{quote}
+
+
+\section*{Installing an S\+DK}
+
+
+\begin{DoxyItemize}
+\item Once you have an S\+DK installer, either from Jenkins or by building your own, it needs to be unpacked installed before you can use it.
+\item The actual filename will change depending on the target machine and where you got it from, so this page will just refer to it as sdk\+\_\+installer.\+sh.
+\item By default, the S\+DK is installed under /opt. That requires sudo privileges, and also poses the potential for clashes if your Linux machine is shared with other users.
+\item This example installs the S\+DK for the qemux86 emulator home/\+A\+U\+T\+O\+S\+A\+R/sdks and install all S\+D\+Ks there
+\end{DoxyItemize}
+
+\begin{quote}
+\$ cd $\sim$/\+A\+U\+T\+O\+S\+A\+R/sdks \end{quote}
+
+
+\begin{quote}
+\$ rm -\/rf qemux86 \# remove any previous installation \end{quote}
+
+
+\begin{quote}
+\$ $<$path/to/sdk\+\_\+installer.\+sh$>$ -\/y -\/d ./qemux86 \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item In this example, $<$path/to/sdk\+\_\+installer.\+sh$>$ could be equal to ./sdks/poky-\/glibc-\/x86\+\_\+64-\/ara-\/sdk-\/i586-\/toolchain-\/2.1.\+3.\+sh, but the exact location and filename will change with platform and version.
+\item You will need to repeat this process every time you create or obtain a new version of the S\+DK installer. It should always have been built at the same time as the image you have flashed onto your target machine.
+\end{DoxyItemize}
+
+\section*{Using an S\+DK}
+
+Once an S\+DK is installed, you need to activate it to make all the compilers and include files etc available. As a best practice, always open a new terminal session before activating the S\+DK. This avoids any possible contamination in your environment from the build process, or from using a different S\+DK -\/ perhaps for a different target machine, or a previous version. Sourcing this script activates the S\+DK.
+
+\subsection*{Example Activation}
+
+When you source this script, a lot of changes will be made to your terminal\textquotesingle{}s environment and P\+A\+TH variables etc. Your compilers and many tools will be redirected to use the ones in the S\+DK. You can see this in the following snippet 
+\begin{DoxyCode}
+$ cd AUTOSAR/sdks/qemux86
+ 
+#checks paths without SDK
+$ which make
+/usr/bin/make
+$ which cmake
+/usr/bin/cmake
+ 
+# with SDK
+$ source environment-setup-i586-poky-linux 
+$ which make
+~/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/make
+$ which cmake
+~/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/cmake
+\end{DoxyCode}
+ So let\textquotesingle{}s do an out-\/of-\/tree build for the E\+M\+O\+\_\+samples directory in a fresh terminal 
+\begin{DoxyCode}
+$ cd ~/AUTOSAR
+/home/.../AUTOSAR$ source sdks/qemux86/environment-setup-i586-poky-linux 
+/home/.../AUTOSAR$ mkdir BUILD && cd BUILD
+/home/.../AUTOSAR/BUILD$ cmake ../.../sample-applications/EMO\_samples
+-- The C compiler identification is GNU 5.3.0
+-- The CXX compiler identification is GNU 5.3.0
+-- Check for working C compiler:
+       /home/me/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-gcc
+-- Check for working C compiler:
+       /home/me/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler:
+       /home/me/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-g++
+-- Check for working CXX compiler:
+       /home/me/AUTOSAR/sdks/qemux86/sysroots/x86\_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake\_minimum\_required command is present.  A line of code such as
+ 
+    cmake\_minimum\_required(VERSION 3.4)
+ 
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+ 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/me/AUTOSAR/BUILD
+/home/.../AUTOSAR/BUILD$ make
+Scanning dependencies of target TestAppl1
+[ 12%] Building CXX object CMakeFiles/TestAppl1.dir/TestAppl.o
+[ 25%] Linking CXX executable TestAppl1
+[ 25%] Built target TestAppl1
+Scanning dependencies of target TestAppl2
+[ 37%] Building CXX object CMakeFiles/TestAppl2.dir/TestAppl.o
+[ 50%] Linking CXX executable TestAppl2
+[ 50%] Built target TestAppl2
+Scanning dependencies of target TestAppl3
+[ 62%] Building CXX object CMakeFiles/TestAppl3.dir/TestAppl.o
+[ 75%] Linking CXX executable TestAppl3
+[ 75%] Built target TestAppl3
+Scanning dependencies of target TestAppl4
+[ 87%] Building CXX object CMakeFiles/TestAppl4.dir/TestAppl.o
+[100%] Linking CXX executable TestAppl4
+[100%] Built target TestAppl4
+/home/.../AUTOSAR/BUILD$ ls
+CMakeCache.txt  CMakeFiles  cmake\_install.cmake  Makefile  TestAppl1  TestAppl2  TestAppl3  TestAppl4
+/home/.../AUTOSAR/BUILD$ 
+\end{DoxyCode}
+ There are now four executables (Test\+Appl1 … Test\+Appl4) in build directory and it cab be copoied to target machine (perhaps using scp) and execute them. there was no need to write a bitbake recipe, and merge it to yocto-\/layers. Or even build a full image.
+
+\section*{Writing hello world program in S\+DK}
+
+
+\begin{DoxyEnumerate}
+\item Create an empty folder anywhere in home directory, e.\+g. /home/me/\+A\+U\+T\+O\+S\+A\+R/demo\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+$ cd AUTOSAR/
+
+$ mkdir demo
+
+$ cd demo
+
+demo$
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Within that folder create 2 subdirectroy files and src, create two files with the following contents \begin{quote}
+\$ mkdir src \&\& cd src \$ vi demo.\+cpp \end{quote}
+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+#include <exec/application\_client.h>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <iostream>
+#include <unistd.h>
+ 
+int main(int, char** argv)
+\{
+    namespace fs = boost::filesystem;
+ 
+    ara::exec::ApplicationClient app\_client;
+    app\_client.ReportApplicationState(ara::exec::ApplicationState::kRunning);
+ 
+    fs::path absolute\_arg0 = fs::absolute(argv[0]);
+    std::cout << "Hello, " << absolute\_arg0 << "\(\backslash\)n";
+    sleep(5);
+ 
+    app\_client.ReportApplicationState(ara::exec::ApplicationState::kTerminating);
+\}
+\end{DoxyCode}
+ \begin{quote}
+\$ cd .. \$ vi C\+Make1\+Lists.\+txt \end{quote}
+
+
+
+\begin{DoxyCode}
+cmake\_minimum\_required(VERSION 3.4)
+project(adaptive-demo VERSION 1.0.0 LANGUAGES CXX)
+ 
+# Set default build type, if none is given
+if(NOT CMAKE\_BUILD\_TYPE)
+    set(CMAKE\_BUILD\_TYPE "Debug" CACHE STRING
+        "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel."
+        FORCE)
+endif()
+ 
+# Set default language settings
+set(CMAKE\_CXX\_STANDARD 14)
+set(CMAKE\_CXX\_EXTENSIONS OFF)
+ 
+# Set default compiler options
+if(CMAKE\_COMPILER\_IS\_GNUCXX)
+    list(APPEND common\_flags -pedantic -Wall -Wextra -Wdeprecated -Werror)
+    list(APPEND common\_flags -Wshadow -Wunused -Wuninitialized)
+    list(APPEND common\_flags -Wpointer-arith -Winit-self -Wfloat-equal)
+    list(APPEND common\_flags -fno-strict-aliasing)
+    list(APPEND cxx\_only\_flags -Wsign-promo -Wnon-virtual-dtor -Wctor-dtor-privacy)
+    list(APPEND cxx\_only\_flags -Woverloaded-virtual -Wold-style-cast)
+ 
+    add\_compile\_options($\{common\_flags\})
+    add\_compile\_options("$<$<COMPILE\_LANGUAGE:CXX>:$\{cxx\_only\_flags\}>")
+endif()
+ 
+set(APD\_INSTALL\_ROOT "" CACHE STRING "Install prefix for absolute paths")
+ 
+find\_package(Boost REQUIRED COMPONENTS filesystem system)
+find\_package(ARAExec REQUIRED)
+find\_package(AdaptivePlatform REQUIRED)
+ 
+add\_executable($\{CMAKE\_PROJECT\_NAME\} src/demo.cpp)
+target\_link\_libraries($\{CMAKE\_PROJECT\_NAME\}
+    PRIVATE
+    $\{ARAEXEC\_LIBRARIES\}
+    $\{ADAPTIVEPLATFORM\_LIBRARIES\}
+    $\{Boost\_LIBRARIES\}
+)
+target\_include\_directories($\{CMAKE\_PROJECT\_NAME\}
+    PRIVATE
+    $\{Boost\_INCLUDE\_DIRS\}
+)
+ 
+install(TARGETS $\{CMAKE\_PROJECT\_NAME\}
+    RUNTIME DESTINATION $\{APD\_INSTALL\_ROOT\}/opt/$\{CMAKE\_PROJECT\_NAME\}/bin)
+\end{DoxyCode}
+ \begin{quote}
+\$ mkdir files \&\& cd files \$ vi M\+A\+N\+I\+F\+E\+S\+T.\+json \end{quote}
+
+\begin{DoxyCode}
+[
+    \{
+        "key": "states",
+        "value": \{
+            "string[]": [
+                "Driving"
+            ]
+        \},
+        "checksum": 1639441683
+    \}
+]
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Building the demo 
+\begin{DoxyCode}
+demo$ mkdir build && cd build
+build$ cmake -DCMAKE\_TOOLCHAIN\_FILE=$OECORE\_NATIVE\_SYSROOT/usr/share/cmake/OEToolchainConfig.cmake
+       /home/AUTOSAR/demo
+# [...]
+# Build files have been written to: /home/me/AUTOSAR/demo/build
+build$ make
+# [...]
+# [100%] Built target adaptive-demo
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}\hypertarget{gdb_yoctoimage}{}\section{Debugging an Application}\label{gdb_yoctoimage}
+\subsection*{Setting up yocto environment for Remote Debugging}
+
+
+\begin{DoxyItemize}
+\item In order to be able to do debugging on the target image you need a working ssh connection and a sftp server available on the target The following packages need to be added to variable I\+M\+A\+G\+E\+\_\+\+I\+N\+S\+T\+A\+LL in recipe yocto-\/layers/meta-\/ara/recipes-\/core/images/core-\/image-\/apd-\/debug.\+bb\+: 
+\begin{DoxyCode}
+openssh-sftp-server \(\backslash\) 
+glibc-utils \(\backslash\) 
+localedef \(\backslash\)
+\end{DoxyCode}
+
+\item For debugging into other libraries (see below), also add these lines to file build/local.\+conf\+: 
+\begin{DoxyCode}
+IMAGE\_GEN\_DEBUGFS = "1"
+IMAGE\_FSTYPES\_DEBUGFS = "tar.bz2"
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{Setting up eclipse}
+
+
+\begin{DoxyItemize}
+\item Instatllaton of eclipse To develop within the Eclipse I\+DE, you need to do the following\+:
+\begin{DoxyItemize}
+\item Install the optimal version of the Eclipse I\+DE.
+\item Configure the Eclipse I\+DE.
+\item Install the Eclipse Yocto Plug-\/in.
+\item Configure the Eclipse Yocto Plug-\/in.
+\end{DoxyItemize}
+\item install eclipse
+\begin{DoxyItemize}
+\item Find the tarball at \href{http://www.eclipse.org/downloads}{\tt http\+://www.\+eclipse.\+org/downloads}. From that site, choose the appropriate download from the \char`\"{}\+Eclipse I\+D\+E for C/\+C++ Developers\char`\"{}. This version contains the Eclipse Platform, the Java Development Tools (J\+DT), and the Plug-\/in Development Environment.
+\item Once you have downloaded the tarball, extract it into a clean directory. For example, the following commands unpack and install the downloaded Eclipse I\+DE tarball into a clean directory using the default name eclipse\+: \begin{quote}
+\$ cd $\sim$ \$ tar -\/xzvf $\sim$/\+Downloads/eclipse-\/cpp-\/neon-\/\+S\+R2-\/linux-\/gtk-\/x86\+\_\+64.tar.\+gz \end{quote}
+
+\end{DoxyItemize}
+\item Configuring the Eclipse I\+DE
+\begin{DoxyItemize}
+\item This section presents the steps needed to configure the Eclipse I\+DE.
+\item Before installing and configuring the Eclipse Yocto Plug-\/in, you need to configure the Eclipse I\+DE. Follow these general steps\+:
+\begin{DoxyItemize}
+\item Start the Eclipse I\+DE.
+\item Make sure you are in your Workbench and select \char`\"{}\+Install New Software\char`\"{} from the \char`\"{}\+Help\char`\"{} pull-\/down menu.
+\item Select Neon -\/ \href{http://download.eclipse.org/releases/neon}{\tt http\+://download.\+eclipse.\+org/releases/neon} from the \char`\"{}\+Work with\+:\char`\"{} pull-\/down menu.
+\item Expand the box next to \char`\"{}\+Linux Tools\char`\"{} and select the Linux Tools L\+T\+Tng Tracer Control, Linux Tools L\+T\+Tng Userspace Analysis, and L\+T\+Tng Kernel Analysis boxes. If these selections do not appear in the list, that means the items are already installed.
+\item Expand the box next to \char`\"{}\+Mobile and Device Development\char`\"{} and select the following boxes. Again, if any of the following items are not available for selection, that means the items are already installed\+:
+\begin{DoxyItemize}
+\item C/\+C++ Remote Launch (Requires R\+SE Remote System Explorer)
+\item Remote System Explorer End-\/user Runtime
+\item Remote System Explorer User Actions
+\item Target Management Terminal (Core S\+DK)
+\item T\+CF Remote System Explorer add-\/in
+\item T\+CF Target Explorer
+\end{DoxyItemize}
+\item Expand the box next to \char`\"{}\+Programming Languages\char`\"{} and select the C/\+C++ Autotools Support and C/\+C++ Development Tools boxes. For Neon, these items do not appear on the list as they are already installed.
+\item Complete the installation and restart the Eclipse I\+DE. ~\newline
+$\ast$ Installing the Pre-\/built Plug-\/in from the Yocto Project Eclipse Update Site
+\end{DoxyItemize}
+\item To install the Eclipse Yocto Plug-\/in from the update site, follow these steps\+:
+\begin{DoxyItemize}
+\item Start up the Eclipse I\+DE.
+\item In Eclipse, select \char`\"{}\+Install New Software\char`\"{} from the \char`\"{}\+Help\char`\"{} menu.
+\item Click \char`\"{}\+Add...\char`\"{} in the \char`\"{}\+Work with\+:\char`\"{} area.
+\item Enter \href{http://downloads.yoctoproject.org/releases/eclipse-plugin/2.3.2/neon}{\tt http\+://downloads.\+yoctoproject.\+org/releases/eclipse-\/plugin/2.\+3.\+2/neon} in the U\+RL field and provide a meaningful name in the \char`\"{}\+Name\char`\"{} field.
+\item Click \char`\"{}\+O\+K\char`\"{} to have the entry added to the \char`\"{}\+Work with\+:\char`\"{} drop-\/down list.
+\item Select the entry for the plug-\/in from the \char`\"{}\+Work with\+:\char`\"{} drop-\/down list.
+\item Check the boxes next to Yocto Project A\+DT Plug-\/in, Yocto Project Bitbake Commander Plug-\/in, and Yocto Project Documentation plug-\/in.
+\item Complete the remaining software installation steps and then restart the Eclipse I\+DE to finish the installation of the plug-\/in.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Configure the Eclipse environment
+\begin{DoxyItemize}
+\item When Eclipse has started the first time the Yocto Project S\+DK tools configuration should be done.
+\item This is done in Eclipse Preferences under the Window menu.
+\item In order to get the paths right for compilers and make you should start Eclipse from a shell where you first has sourced the S\+DK setup script.
+\item When Eclipse has started the first time the Yocto Project S\+DK tools configuration should be done. This is done in Eclipse Preferences under the Window menu. ~\newline
+ 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Import application to eclipse}
+
+
+\begin{DoxyItemize}
+\item Create a workspace and cd into that workspace
+\end{DoxyItemize}
+
+\begin{quote}
+\$ mkdir workspace \&\& cd workspace \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item Source sdk environment ~\newline
+ \begin{quote}
+\$ source path/to/sdk/environment \end{quote}
+
+\item Cmake the application into the Workspace
+\end{DoxyItemize}
+
+\begin{quote}
+\$ cmake -\/\+D\+C\+M\+A\+K\+E\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+C\+O\+M\+P\+I\+L\+E\+\_\+\+C\+O\+M\+M\+A\+N\+DS=ON -\/\+D\+E\+N\+A\+B\+L\+E\+\_\+\+D\+O\+X\+Y\+G\+EN=ON -\/\+D\+C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE=Debug -\/\+D\+B\+U\+I\+L\+D\+\_\+\+T\+E\+S\+TS=ON -\/G\char`\"{}\+Eclipse C\+D\+T4 -\/ Unix Makefiles\char`\"{} /path/to/persistency\+\_\+demo/\+Cmake \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item Import the application into eclpse
+\begin{DoxyItemize}
+\item Click on File -\/$>$ Import
+\item In C/\+C++ -\/$>$ Existing code as Makefile project then click next
+\item Select Yocto Cmake Build (Toolchain) and Browse to project in Workspace that was created.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Debug the imported application}
+
+
+\begin{DoxyItemize}
+\item During the creation of the project also a debug configuration should have been created. It is now time to do the final configuration of this and start a debugging session. Right click on your project and select Debug As → Debug Configurations. Open up C/\+C++ Remote application and you should find a template of your project debug configuration. Select that configuration. In the connection part select new.
+\begin{DoxyEnumerate}
+\item Select S\+SH and
+\item Give it a name and add a user name and I\+P-\/address to login to your target.
+\end{DoxyEnumerate}
+\item Click on the Browse button in the “\+Remote Absoulte Path for C/\+C++ Applciations” section. Now you should be able to login to your target and select a filesystem place where to store your executables. N\+O\+T\+E! it should be the executable file name that should be selected and not just the ~\newline
+ 
+\end{DoxyItemize}

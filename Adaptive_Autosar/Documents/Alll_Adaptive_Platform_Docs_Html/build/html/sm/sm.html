@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. State Management (SM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Execution Management (EM)" href="../em/em.html" />
+    <link rel="prev" title="8. Update and Configuration Management (UCM)" href="../ucm/ucm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. <strong>State Management (SM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">9.2. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies-of-state-management">9.3. Dependencies of State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-of-sm">9.4. Architecture of SM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactions-with-different-applications">9.5. Interactions with different Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-management-and-adaptive-platform-applications">9.5.1. State Management and Adaptive (Platform) Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-synchronized-application-state-handling">9.5.2. Non-Synchronized Application State handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synchronization-across-multiple-adaptive-applications">9.5.3. Synchronization across multiple Adaptive Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#powermodes-for-adaptive-platform-applications">9.6. PowerModes for Adaptive (Platform) Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diagnostic-reset-for-adaptive-platform-applications">9.7. Diagnostic Reset for Adaptive (Platform) Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction-with-platform-health-management">9.8. Interaction with Platform Health Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction-with-adaptive-diagnostics">9.9. Interaction with Adaptive Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction-with-update-and-config-management">9.10. Interaction with Update and Config Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-management-in-a-virtualized-hierarchical-environment">9.11. State Management in a virtualized/hierarchical environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">9.12. Configuration Methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#service-interfaces">9.12.1. Service Interfaces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">9. </span><strong>State Management (SM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sm/sm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="state-management-sm">
+<h1><span class="section-number">9. </span><strong>State Management (SM)</strong><a class="headerlink" href="#state-management-sm" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>State Management is the functional cluster which is responsible for determining the current internal States, and for initiating Function Group and Machine State transitions by requesting them from Execution Management.</p>
+<p>The state change request for Function Groups can be issued by several AUTOSAR Adaptive Platform Applications:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Platform Health Management to trigger error recovery, e.g. to activate fallback Functionality.</p></li>
+<li><p>Adaptive Diagnostics, to switch the system into different diagnostic states and to issue resets of the system.</p></li>
+<li><p>Update and Config Management to switch the system into states where software or configuration can be updated, and updates can be verified.</p></li>
+<li><p>Network Management to coordinate required functionality and network state. Network Management provides several sets of NetworkHandle fields, where State Management registers to and reacts on changes of these fields issued by Network Management.</p></li>
+</ul>
+</div></blockquote>
+<p>The final decision if any effect is performed is taken by State Managements internal logic based on project specific requirements.</p>
+</section>
+<section id="overview">
+<h2><span class="section-number">9.2. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>State Management (ara::sm) is responsible for defining the current active state of the ECU. For finer granularity, so-called functional groups allow separate state transitions for groups of functional clusters and/or Adaptive Applications. In case of a state change request, it triggers Execution Management for performing the necessary changes. The Application consumes the time information provided and managed by the TBRs. Therefore, the TBRs serve as Time Base brokers, offering access to Synchronized Time Bases. By doing so, the TS module abstracts from the “real” Time Base provider.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/sm_feature.png" class="with-border" src="../_images/sm_feature.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Feature Diagram of SM</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="dependencies-of-state-management">
+<h2><span class="section-number">9.3. </span>Dependencies of State Management<a class="headerlink" href="#dependencies-of-state-management" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Operating System Interface:</strong></dt><dd><ul>
+<li><p>State Management has no direct interface to the Operating System, all OS dependencies are abstracted by the Execution Management and Persistency.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Execution Manager Interface:</strong></dt><dd><ul>
+<li><p>State Management is dependent on Execution Management to control operation state.</p></li>
+<li><p>Execution Manager will fork or terminate an application depending upon the state requested and state defined in the application manifest.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Persistency:</strong></dt><dd><ul>
+<li><p>State Management is dependent on the Persistency functional cluster to access persistent storage.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Adaptive Diagnostics:</strong></dt><dd><ul>
+<li><p>State Manager will evaluate the information received from the Diagnostic Manager about the ongoing Session and decide the operational states based on the evaluation.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Update And Configuration Management:</strong></dt><dd><ul>
+<li><p>State Manager will interact with Update and Configuration Management to check the ongoing update session and decide the operation states.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Network Management:</strong></dt><dd><ul>
+<li><p>Network Management provides multiple NetworkHandle fields which represents a set of (partial) networks.</p></li>
+<li><p>State Management evaluates this fields to set Function Groups to the corresponding Function Group State defined in Manifest and vice versa.</p></li>
+<li><p>Additionally State Management shall prevent system from shutting down during an update session is ongoing.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="architecture-of-sm">
+<h2><span class="section-number">9.4. </span>Architecture of SM<a class="headerlink" href="#architecture-of-sm" title="Link to this heading"></a></h2>
+<p>State Management is the functional cluster which is responsible for determining the current set of active Function Group States, including the Machine State, and for initiating State transitions by requesting them from Execution Management. Execution Management performs the State transitions and controls the actual set of running Modelled Processes, depending on the current States.</p>
+<p>State Management is the central point where new Function Group States can be requested and where the requests are arbitrated, including coordination of contradicting requests from different sources.</p>
+<p>An overview of the interaction of State Management, AUTOSAR Adaptive Platform Applications and Adaptive Applications is shown below.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/Architecture.png" class="with-border" src="../_images/Architecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>State Management Architecture</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="interactions-with-different-applications">
+<h2><span class="section-number">9.5. </span>Interactions with different Applications<a class="headerlink" href="#interactions-with-different-applications" title="Link to this heading"></a></h2>
+<section id="state-management-and-adaptive-platform-applications">
+<h3><span class="section-number">9.5.1. </span>State Management and Adaptive (Platform) Applications<a class="headerlink" href="#state-management-and-adaptive-platform-applications" title="Link to this heading"></a></h3>
+<p>Some Adaptive Applications, including AUTOSAR Adaptive Platform Applications, might have the need to interact with State Management. Therefore, State Management provides a service interface with a “Notifier” field, where each Adaptive Application can subscribe to, thus it is informed whenever a State Managements internal State changes. When an Adaptive Application recognizes the change, it can carry out the appropriate action.</p>
+<p>In the opposite way each Adaptive Application can influence the behavior of State Management by writing to the “Trigger” fields provided by State Management. Therefore, the Adaptive Application has to configure in a way that write access to State Managements fields is granted.</p>
+<p>State Management provides a third service interface, where both fields are available: “Trigger” and “Notifier”’. This combined field is provided with the intention that whenever the “Trigger” field changes the “Notifier” field changes as well after State Management has carried out its operation issued by the “Trigger” change.</p>
+</section>
+<section id="non-synchronized-application-state-handling">
+<h3><span class="section-number">9.5.2. </span>Non-Synchronized Application State handling<a class="headerlink" href="#non-synchronized-application-state-handling" title="Link to this heading"></a></h3>
+<p>An overview of the interaction of State Management and Adaptive Applications
+for a non-synchronized behavior is shown below.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/Non-Synchronized_Application_State_handling.png" class="with-border" src="../_images/Non-Synchronized_Application_State_handling.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Non-Synchronized_Application_State_handling</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="synchronization-across-multiple-adaptive-applications">
+<h3><span class="section-number">9.5.3. </span>Synchronization across multiple Adaptive Applications<a class="headerlink" href="#synchronization-across-multiple-adaptive-applications" title="Link to this heading"></a></h3>
+<p>Synchronization across multiple Adaptive Applications probably dedicated to a different set of Processes, depending on the functionality to be achieved. State Management sees currently two different use-cases:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Addressing all running Modelled Processes in a machine for PowerModes</p></li>
+<li><p>Addressing running Modelled Processes for diagnostic reset reasons.</p></li>
+</ul>
+</div></blockquote>
+<p>To have the possibility and flexibility to address different groups of Modelled Processes a new communication pattern called CommunicationGroups was introduced.</p>
+<p>This pattern defines a kind of compound service with a proxy and a skeleton for the server as well as for the clients.</p>
+<p>With this approach a server can:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Broadcast a message to all clients in the group</p></li>
+<li><p>Send a message to a dedicated client in the group</p></li>
+<li><p>Can get a list of all clients in the group</p></li>
+<li><p>Receive the replies from all clients in the group</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Conclusively a client can</dt><dd><ul class="simple">
+<li><p>Receive messages from the server</p></li>
+<li><p>Send a reply to the server</p></li>
+</ul>
+</dd>
+</dl>
+<p>State Management as a server of (multiple) CommunicationGroups can send a message to all the clients in a group and can check if</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All clients answered the request</p></li>
+<li><p>All clients sent the expected answer</p></li>
+</ul>
+</div></blockquote>
+<p>If any of the clients did not answer or did not reply with the expected answer State Management can retry to achieve the requested state by addressing the misbehaving client directly. When the client still does not answer(or does not answer with expected reply) State Management can do further project-specific actions. Due to the asynchronous nature of CommunicationGroups it is necessary that State Management supervises the reception of the answers from all clients with a project-specific timeout.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/PowerModes_as_example_of_Synchronized_Application_State_handling.png" class="with-border" src="../_images/PowerModes_as_example_of_Synchronized_Application_State_handling.png" />
+<figcaption>
+<p><span class="caption-text"><strong>PowerModes_as_example_of_Synchronized_Application_State_handling</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="powermodes-for-adaptive-platform-applications">
+<h2><span class="section-number">9.6. </span>PowerModes for Adaptive (Platform) Applications<a class="headerlink" href="#powermodes-for-adaptive-platform-applications" title="Link to this heading"></a></h2>
+<p>The PowerModes are intended to influence the internal behavior of all Processes in the system. Currently, there are three modes supported.</p>
+<p>The modes are defined as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“On” : A Modelled Process that receives this PowerMode behaves normally as it has been spawned by ExecutionManagement. It is used to “undo” the other PowerMode requests. Modelled Processes that are just spawned should behave like an “On” is requested as PowerMode.</p></li>
+<li><p>“Suspend” : This PowerMode is intended to be used as a signal to the Modelled Processes that the system is suspended( e.g. to RAM or to disc). The implementation of the necessary actions(e.g. setting drivers to a proprietary mode, …) will be project-specific and might depend on the environment(e.g. used OS).</p></li>
+<li><p>“Off” : A Modelled Process that receives this PowerMode behaves like it receives a SIGTERM from Execution Management, beside exiting.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="diagnostic-reset-for-adaptive-platform-applications">
+<h2><span class="section-number">9.7. </span>Diagnostic Reset for Adaptive (Platform) Applications<a class="headerlink" href="#diagnostic-reset-for-adaptive-platform-applications" title="Link to this heading"></a></h2>
+<p>The Diagnostic Reset Service is provided for Diagnostic Reset functionality of Adaptive Diagnostics. The rationale behind this is to change the behavior of Modelled Processes without the need to terminate and restart them. This service is intended to influence Modelled Processes that are addressed by Diagnostic Address. If all Modelled Processes or only a subset is affected depends on the system design.</p>
+</section>
+<section id="interaction-with-platform-health-management">
+<h2><span class="section-number">9.8. </span>Interaction with Platform Health Management<a class="headerlink" href="#interaction-with-platform-health-management" title="Link to this heading"></a></h2>
+<p>Platform Health Management is responsible for monitoring supervised entities via local supervision(s) and checking the status of health channels. Failures in local super- vision(s) will be accumulated in a global supervision. The scope of a global supervision is a single Function Group (or a part of it). As soon as a global supervision enters the stopped state or a health channel contains information that is relevant for State Management, Platform Health Management will notify State Management via C++ API provided by Platform Health Manager. C++ interface is provided as a class with virtual functions, which have to be implemented by State Management.</p>
+<p>When State Management receives notification from Platform Health Management it can evaluate the information from the notification and initiate the project-specific actions to recover from the failure(e.g. request Execution Management to switch a Function Group to another Function Group State, request Execution Management for a restart of the Machine, …).</p>
+<p>Note: Platform Health Management monitors the return of the RecoverHandler() with a configurable timeout. If after a configurable amount of retries the State Management will still not regularly return from the RecoveryHandler() Platform Health Management will do its own countermeasures by wrongly triggering or stop triggering the serviced watchdog.</p>
+</section>
+<section id="interaction-with-adaptive-diagnostics">
+<h2><span class="section-number">9.9. </span>Interaction with Adaptive Diagnostics<a class="headerlink" href="#interaction-with-adaptive-diagnostics" title="Link to this heading"></a></h2>
+<p>Adaptive Diagnostics is responsible for diagnosing, configuring and resetting Diagnostic Addresses. The relation between a Diagnostic Addresses and a Software Cluster is project specific. The interface between Adaptive Diagnostics and State Management is provided by Adaptive Diagnostics as C++ API. The interface is provided as a class with virtual functions, which have to be implemented by State Management.</p>
+<p>State Management shall not shutdown the system during processing requests from Adaptive Diagnostics.</p>
+<p>From Adaptive Diagnostics point of view several different reset types have to be carried out to fulfill functionality of Adaptive Diagnostics. Because the interpretation of the reset types (defined in ISO 14229-1)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>hardReset</p></li>
+<li><p>keyOffOnReset</p></li>
+<li><p>softReset</p></li>
+<li><p>customReset</p></li>
+</ul>
+</div></blockquote>
+<p>is done differently by each OEM, parts of the reset functionality have to be delegated by State Management to Adaptive Applications and AUTOSAR Adaptive Platform Applications.</p>
+<p>A “keyOffOnReset” may be translated by State Managements internal logic to stop and start the Function Group which relate to the requested Diagnostic Addresses.</p>
+<p>A “softReset” may be translated by State Managements internal logic to request Modelled Processes (within the Function Groups which relate to the requested Diagnostic Address) to perform internal functionality without the need to terminate and start them again. Therefor State Management provides a service interface in the scope of a CommunicationGroup. All Modelled Processes which should support this feature have to use the ara::com methods and fields generated from the message and reply message definition.</p>
+<p>State Management shall implement means to receive reset requests for Diagnostic Addresses from Adaptive Diagnostics and also persist reset type before Machine reset is carried out.</p>
+</section>
+<section id="interaction-with-update-and-config-management">
+<h2><span class="section-number">9.10. </span>Interaction with Update and Config Management<a class="headerlink" href="#interaction-with-update-and-config-management" title="Link to this heading"></a></h2>
+<p>Update and Config Management is responsible for installing, removing or updating Software Clusters as smallest updatable entity. To enable Update and Config Management to fulfill its functionality State Management offers service interfaces UpdateRequests to be used by Update and Config Management.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Start update session</p></li>
+<li><p>Prevent Shutdown during to Update Session</p></li>
+<li><p>Persist session status</p></li>
+<li><p>Reset Execution</p></li>
+<li><p>Stop update session</p></li>
+<li><p>Prepare update</p></li>
+<li><p>Prepare verify</p></li>
+<li><p>Prepare rollback</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="state-management-in-a-virtualized-hierarchical-environment">
+<h2><span class="section-number">9.11. </span>State Management in a virtualized/hierarchical environment<a class="headerlink" href="#state-management-in-a-virtualized-hierarchical-environment" title="Link to this heading"></a></h2>
+<p>On an ECU several machines might run in a virtualized environment. Each of the virtual machines might contain an AUTOSAR Adaptive platform. So therefore each of the virtual machines contain State Management. To have coordinated control over the several virtual machines there has to be virtual machine which supervises the whole ECU state. This is not only valid for a virtualized environment, but for a hierarchical environment too.</p>
+<p>Virtualized/hierarchical State Management shall be able to register to the “Trigger” fields of a supervising State Management instance to receive information about the whole ECU state.</p>
+<p>State Management shall implement means to calculate its internal States based on information from a supervising State Management instance.</p>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">9.12. </span>Configuration Methodology<a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<section id="service-interfaces">
+<h3><span class="section-number">9.12.1. </span>Service Interfaces<a class="headerlink" href="#service-interfaces" title="Link to this heading"></a></h3>
+<p><strong>Provided Service Interfaces</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>State Management TriggerIn</p></li>
+<li><p>State Management TriggerOut</p></li>
+<li><p>State Management TriggerInOut</p></li>
+<li><p>UpdateRequests</p></li>
+<li><dl class="simple">
+<dt>Application interaction:</dt><dd><ul>
+<li><p>PowerMode</p></li>
+<li><p>DiagnosticReset</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>Required Service Interfaces</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NetworkManagement NetworkState</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ucm/ucm.html" class="btn btn-neutral float-left" title="8. Update and Configuration Management (UCM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../em/em.html" class="btn btn-neutral float-right" title="10. Execution Management (EM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

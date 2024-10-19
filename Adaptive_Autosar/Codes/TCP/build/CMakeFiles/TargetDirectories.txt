@@ -1,0 +1,4 @@
+/home/pavan/TCP/build/CMakeFiles/server.dir
+/home/pavan/TCP/build/CMakeFiles/client.dir
+/home/pavan/TCP/build/CMakeFiles/edit_cache.dir
+/home/pavan/TCP/build/CMakeFiles/rebuild_cache.dir

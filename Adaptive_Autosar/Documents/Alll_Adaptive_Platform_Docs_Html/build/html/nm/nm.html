@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Network Management(NM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Update and Configuration Management (UCM)" href="../ucm/ucm.html" />
+    <link rel="prev" title="6. Platform Health Management(PHM)" href="../phm/phm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. <strong>Network Management(NM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-network-management">7.1. <strong>Overview of Network Management</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#network-management-algorithm">7.2. <strong>Network Management Algorithm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operational-modes">7.3. <strong>Operational Modes</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message-format">7.4. <strong>Message format</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-request">7.5. <strong>Communication request</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-release">7.6. <strong>Communication release</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partial-networking">7.7. <strong>Partial Networking</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-of-rx-nm-messages">7.8. <strong>Handling of Rx NM messages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-of-tx-nm-messages">7.9. <strong>Handling of Tx NM messages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">7.10. <strong>Configuration Methodology</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management(EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager(IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span><strong>Network Management(NM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/nm/nm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="network-management-nm">
+<h1><span class="section-number">7. </span><strong>Network Management(NM)</strong><a class="headerlink" href="#network-management-nm" title="Link to this heading"></a></h1>
+<section id="overview-of-network-management">
+<h2><span class="section-number">7.1. </span><strong>Overview of Network Management</strong><a class="headerlink" href="#overview-of-network-management" title="Link to this heading"></a></h2>
+<p>Adaptive Network Management (NM) is intended to work independent of the communication stack used.
+The  main purpose is to coordinate the transition between normal operation and bus-sleep mode of the underlying networks (physical and partial networks).
+AUTOSAR CAN Network Management provides implement a service to detect all present nodes or to detect if all other nodes are ready to sleep.</p>
+<figure class="align-center" id="id1">
+<img alt="Features of NM" class="with-border" src="../_images/image1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Architecture overview with example applications</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Adaptive Network Management offers services that allows to request and query the network states for logical network handles that can be mapped to physical or partial networks.
+To do so, the following functionalities are provided :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Field for requesting and releasing logical network handles</p></li>
+<li><p>Support for partial networking</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id2">
+<a class="with-border reference internal image-reference" href="../_images/image2.png"><img alt="Features of NM" class="with-border" src="../_images/image2.png" style="width: 649.6px; height: 606.4px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Partial Networking</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="network-management-algorithm">
+<h2><span class="section-number">7.2. </span><strong>Network Management Algorithm</strong><a class="headerlink" href="#network-management-algorithm" title="Link to this heading"></a></h2>
+<p>The AUTOSAR Adaptive NM is based on decentralized direct network management strategy,  which means that every network node performs activities self-sufficient depending only on the NM packets received and/or transmitted within the communication system.</p>
+<p>The AUTOSAR Adaptive NM algorithm is based on periodic NM packets, NM packets are received by all nodes in the cluster via multicast. Reception of NM packets indicates that sending nodes want to keep the NM-cluster awake.</p>
+<p>If any node is ready to go to sleep mode, it stops sending NM packets, but as long as NM packets from other nodes are received, it postpones transition to sleep mode.
+Finally, if a dedicated timer elapses because no NM packets are received anymore, every node initiates transition to the sleep mode.</p>
+<p>If any node in the NM-cluster requires bus-communication, it can keep the NM-cluster awake by transmitting NM packets.
+Every network node transmits periodic NM messages as long as it requires bus communication; otherwise, it does not transmit NM messages.</p>
+<p>Logical network handles are a mapped to one or more partial or physical networks, while a partial network itself can be mapped to one or multiple physical networks.</p>
+<p>By using the logical network handle all assigned partial networks, VLANs and underlying physical channel(s) are controlled together.</p>
+<p>Network Management no longer receives logical network requests from applications directly, instead they are controlled by the State Management.</p>
+<p>State Management can split the one or more applications in multiple functions that might require network communication.</p>
+<p>Applications (or part of) would then request different functions to be activated/deactivated from State Management and then State Management would in turn, depending on configuration, request/release different logical networks.</p>
+<p>NM checks then the requested state over all logical networks handles and will activate or deactivate the according physical networks.</p>
+</section>
+<section id="operational-modes">
+<h2><span class="section-number">7.3. </span><strong>Operational Modes</strong><a class="headerlink" href="#operational-modes" title="Link to this heading"></a></h2>
+<p>The AUTOSAR Adaptive NM shall contain three operational modes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NetworkMode</p></li>
+<li><p>PrepareBus-SleepMode</p></li>
+<li><p>Bus-SleepMode</p></li>
+</ul>
+</div></blockquote>
+<p>When the NM is in Network mode it implies that the network is requested or active And the logical network information bit will be set to 1.</p>
+<p>When the NM is in Prepare Bus-Sleep or Bus-Sleep Mode, It implies that the network is released or inactive. And the logical network information bit will be set to 0.</p>
+<figure class="align-center" id="id3">
+<img alt="Features of NM" class="with-border" src="../_images/image3.png" />
+<figcaption>
+<p><span class="caption-text"><strong>State Chart Diagram</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>NetworkMode</strong></p>
+<p>The Network Mode shall consist of three internal states:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RepeatMessageState</p></li>
+<li><p>NormalOperationState</p></li>
+<li><p>ReadySleepState</p></li>
+</ul>
+</div></blockquote>
+<p><strong>RepeatMessageState</strong></p>
+<p>The Repeat Message State ensures, that any transition from Bus-Sleep or Prepare Bus-Sleep to the Network Mode becomes visible for the other nodes on the network. Additionally, it ensures that any node stays active for a minimum amount of time transmission of NM messages shall be started from here. When timer expires, timers will get restarted.</p>
+<p><strong>Normal Operation State</strong></p>
+<p>The Normal Operation State ensures that any node can keep the NM-cluster awake as long as the network functionality is required. When the Normal Operation State is entered from Ready Sleep State, transmission of NM messages shall be started immediately.</p>
+<p><strong>Ready Sleep State</strong></p>
+<p>The Ready Sleep State ensures that any node in the NM-cluster waits with the transition to the Prepare Bus-Sleep Mode as long as any other node keeps the NM-cluster awake. When the Ready Sleep State is entered from Repeat Message State or Normal Operation State, transmission of NM messages shall be stopped.</p>
+<p><strong>PrepareBus-SleepMode</strong></p>
+<p>The purpose of the Prepare Bus Sleep state is to ensure that all nodes have time to stop their network activity before the Bus Sleep state is entered.  Bus activity is calmed down (i.e. queued messages are transmitted in order to empty all TX-buffers) and Finally, there is no activity on the bus in the Prepare Bus-Sleep Mode.</p>
+<p><strong>Bus-Sleep Mode</strong></p>
+<p>The purpose of the Bus-Sleep state is to reduce power consumption in the node, when no messages are to be exchanged.
+Transmission and reception capabilities can be switched off if supported by hardware.
+If a configurable amount of time determined by nmNetworkTimeout + nmWaitBusSleepTime is identically configured for all nodes in the network management cluster,
+all nodes in the network management cluster that are coordinated with use of the AUTOSAR NM algorithm perform the transition into the Bus-Sleep Mode at approximately the same time.</p>
+</section>
+<section id="message-format">
+<h2><span class="section-number">7.4. </span><strong>Message format</strong><a class="headerlink" href="#message-format" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<img alt="Features of NM" class="with-border" src="../_images/image4.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Message format</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Control Bit Vector shall consist of:</p>
+<dl class="simple">
+<dt><em>Bit0: Repeat Message Request</em></dt><dd><ul class="simple">
+<li><p>0: Repeat Message State not requested</p></li>
+<li><p>1: Repeat Message State requested</p></li>
+</ul>
+</dd>
+<dt><em>Bit1: PN Shutdown Request Bit (PNSR)</em></dt><dd><ul class="simple">
+<li><p>0: NM message does not contain synchronized Partial Network shutdown request</p></li>
+<li><p>1: NM message does contain synchronized Partial Network shutdown request for at least one PNC</p></li>
+</ul>
+</dd>
+<dt><em>Bit3: NM Coordinator Sleep Ready Bit</em></dt><dd><ul class="simple">
+<li><p>0: Start of synchronized shutdown is not requested by main coordinator</p></li>
+<li><p>1: Start of synchronized shutdown is requested by main coordinator</p></li>
+</ul>
+</dd>
+<dt><em>Bit4: Active Wakeup Bit</em></dt><dd><ul class="simple">
+<li><p>0: Node has not woken up the network (passive wakeup)</p></li>
+<li><p>1: Node has woken up the network (active wakeup)</p></li>
+</ul>
+</dd>
+<dt><em>Bit5: Partial Network Learning Bit (PNL)</em></dt><dd><ul class="simple">
+<li><p>0: PNC learning is not requested</p></li>
+<li><p>1: PNC learning is requested</p></li>
+</ul>
+</dd>
+<dt><em>Bit6: Partial Network Information Bit (PNI)</em></dt><dd><ul class="simple">
+<li><p>0: NM message contains no Partial Network request information</p></li>
+<li><p>1: NM message contains Partial Network request information</p></li>
+</ul>
+</dd>
+<dt><em>Bits 2,7 are reserved for future extensions</em></dt><dd><ul class="simple">
+<li><p>0: Disabled/Reserved for future usage</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="communication-request">
+<h2><span class="section-number">7.5. </span><strong>Communication request</strong><a class="headerlink" href="#communication-request" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<img alt="Features of NM" class="with-border" src="../_images/image5.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Communication Request</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="communication-release">
+<h2><span class="section-number">7.6. </span><strong>Communication release</strong><a class="headerlink" href="#communication-release" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id6">
+<img alt="Features of NM" class="with-border" src="../_images/image6.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Communication Release</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="partial-networking">
+<h2><span class="section-number">7.7. </span><strong>Partial Networking</strong><a class="headerlink" href="#partial-networking" title="Link to this heading"></a></h2>
+<p>The adaptive AUTOSAR supports power saving during vehicle operation time with the partial networking mechanism.</p>
+<p>Partial networking allows either individual ECUs or groups of ECUs to be woken up simultaneously, with the remainder of the network kept in low-power mode.</p>
+<p>Partial Network Cluster (PNC)
+A PNC is a (logical) group of ECUs which have to be active at the same time to realize some distributed functionality.</p>
+<p>With Partial networking, a set of ECUs of a domain or some ECUs in different domains (different networks) can be grouped to wakeup and shutdown together depending on vehicle features.</p>
+<figure class="align-center" id="id7">
+<a class="with-border reference internal image-reference" href="../_images/image7.png"><img alt="Features of NM" class="with-border" src="../_images/image7.png" style="width: 514.1999999999999px; height: 372.59999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Partial Network Cluster</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Internal PNC requests indicate communication needs locally on the ECU and are also called Active PNC request.
+External PNC requests indicate communication needs of a remote ECU in the network and are also called Passive PNC request.</p>
+<p>In case 4 ECUs are awake, this is what happens if the function requiring PNC2 on ECU C is terminated: ECU C stops requesting PNC2 to be active. ECUs C and D are no longer participating in any PNC and can be shutdown.</p>
+<p>ECU B ceases transmission and reception of all signals associated with PNC2.
+ECU B still participates in PNC1. That means it remains awake and continues to transmit and receive all signals associated with PNC1. ECU A is not affected at all.</p>
+<p>Partial network support is optional, can enable or disable.
+If synchronized PNC shutdown handling is enabled , PN support can also enable or disable.
+The synchronized PNC shutdown is handled by ECUs with the role of top-level and intermediate PNC coordinators, where the PNC gateway is enabled. It starts when top-level PNC coordinator detects that a PNC is released, then requesting a PNC shutdown to NM.
+Nodes participating in the communication of partial networking shall be pre-configured with the offset and range (in bytes) of the Partial Network Information within the NM message</p>
+</section>
+<section id="handling-of-rx-nm-messages">
+<h2><span class="section-number">7.8. </span><strong>Handling of Rx NM messages</strong><a class="headerlink" href="#handling-of-rx-nm-messages" title="Link to this heading"></a></h2>
+<p>PN support is disabled - NM shall ignore any partial networking information contained in the received message. The PN support is enabled &amp; PNI is 0 - NM shall ignore the partial networking information bytes of the message. If the PN support is enabled , PNI bit 1, PNSR bit 0 – process the NM PN info.</p>
+<p>If synchronized PNC shutdown is enabled , NM message is received in the role of a top-level PNC coordinator and PNI bit and PNSR bit are set to 1 - NM shall discard the NM message.
+In case of PN synchronized shutdown error reaction is enabled, NM message is discarded, then top-level coordinator immediately transmit the NM message with all internally and externally requested PNCs as PN info.
+If synchronized PNC shutdown is enabled, a NM message is received in the role of an intermediate PNC coordinator and PNI bit and PNSR bit are set to 1, then NM shall release the indicated PNCs and reset timer.</p>
+</section>
+<section id="handling-of-tx-nm-messages">
+<h2><span class="section-number">7.9. </span><strong>Handling of Tx NM messages</strong><a class="headerlink" href="#handling-of-tx-nm-messages" title="Link to this heading"></a></h2>
+<p>PN support is enabled in a node – PNI is set to 1 in Tx message.
+PN support is disabled in a node – PNI is set to 0 in Tx message.
+For PNCs that are “internally requested” the corresponding bit in the PN request information shall be set to 1 before sending the NM message.
+For PNCs that are “‘internally requested”’ or “‘externally requested”’ the corresponding bit in the PN request information shall be set to 1 before sending the NM message in the role of a top-level PNC coordinator or an intermediate PNC coordinator.
+If synchronized PNC shutdown is enabled and NM detect A transition of PNCs from “‘requested”’ to “‘released”’ (independent if externally or internally requested), the corresponding bit of those released PNCs shall be set to 1, the remaining shall be set 0 and the PNSR bit in CBV shall be set to 1 before sending the PN shutdown message.</p>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">7.10. </span><strong>Configuration Methodology</strong><a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<p>Machine specific configuration settings for NM module:</p>
+<figure class="align-center" id="id8">
+<img alt="Features of NM" class="with-border" src="../_images/network_management.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Network Management</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>NMInstantiation is a meta-class defines the attributes for the NM configurations on a specific machine. NetworkHandle is used to control the partial network clusters.</p>
+<p>The UdpNmCluster with all included UdpNmNodes is described in the System design model. With the reference NmNode.machine the relation between the System design model and the NmInstantiation on a Machine is established. Typically, the System design model is provided by an OEM that defines the network configuration and provides all configuration settings that are relevant for a network management cluster to an integrator.</p>
+<p>The NM configuration options that will typically be set by an Integrator are collected in the NmInstantiation element. The Machine Manifest delivery to configure UdpNm consists of both, the NmInstantiation settings together with the UdpNmCluster and UdpNmNode settings. The NmConfig element is a wrapper that contains all network management specific configuration settings in the System model.</p>
+<p>AUTOSAR Adaptive Network Management is based on periodic NM messages, which are received by all UdpNmNodes in the UdpNmCluster via multicast. Reception of NM packets indicates that sending UdpNmNodes want to keep the UdpNmCluster awake. If any node is ready to go to sleep mode, it stops sending NM messages, but as long as NM packets from other UdpNmNodes are received, it postpones transition to sleep mode.</p>
+<figure class="align-center" id="id9">
+<img alt="Features of NM" class="with-border" src="../_images/nw_clusterconfig.png" />
+<figcaption>
+<p><span class="caption-text"><strong>NW Cluster Config</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The UDP multicast connection over which Network Management messages are transported is configured with the UdpNmNetworkConfiguration that is aggregated by the UdpNmCluster in the role networkConfiguration. The attribute udpPort is used to configure the port number over which the Nm message is transmitted and received. The IP Address is configured either by ipv4MulticastIpAddress or ipv6MulticastIpAddress.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../phm/phm.html" class="btn btn-neutral float-left" title="6. Platform Health Management(PHM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ucm/ucm.html" class="btn btn-neutral float-right" title="8. Update and Configuration Management (UCM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

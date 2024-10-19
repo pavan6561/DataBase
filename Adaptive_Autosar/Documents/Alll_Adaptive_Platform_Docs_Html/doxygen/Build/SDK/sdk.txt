@@ -1,0 +1,228 @@
+# Building a sdk {#sdk_introduction}
+*	Once setup is complete, simply enter the following command from the build directory: 
+	
+>	$ bitbake core-image-apd-devel ara-sdk
+
+*	This will build both the target image, and the SDK. If you already have a working image built, then simply enter 
+
+>	$ bitbake ara-sdk
+
+*	You will find the generated SDK under tmp/deploy/sdk. It will be the file with a suffix of .sh 
+
+>	NOTE: It is important to update the SDK whenever you rebuild the image, and that includes re-installing it. 
+
+# Installing an SDK
+*	Once you have an SDK installer, either from Jenkins or by building your own, it needs to be unpacked installed before you can use it. 
+*	The actual filename will change depending on the target machine and where you got it from, so this page will just refer to it as sdk_installer.sh. 
+*	By default, the SDK is installed under /opt. That requires sudo privileges, and also poses the potential for clashes if your Linux machine is shared with other users. 
+*	This example installs the SDK for the qemux86 emulator  home/AUTOSAR/sdks and install all SDKs there
+
+>	$ cd ~/AUTOSAR/sdks
+
+>	$ rm -rf qemux86 # remove any previous installation
+
+>	$ <path/to/sdk_installer.sh> -y -d ./qemux86
+
+*	In this example, <path/to/sdk_installer.sh> could be equal to ./sdks/poky-glibc-x86_64-ara-sdk-i586-toolchain-2.1.3.sh, but the exact location and filename will change with platform and version. 
+
+*	You will need to repeat this process every time you create or obtain a new version of the SDK installer. It should always have been built at the same time as the image you have flashed onto your target machine. 
+
+# Using an SDK
+	Once an SDK is installed, you need to activate it to make all the compilers and include files etc available. 
+As a best practice, always open a new terminal session before activating the SDK. This avoids any possible contamination in your environment from the build process, or from using a different SDK - perhaps for a different target machine, or a previous version. 
+Sourcing this script activates the SDK. 
+
+##Example Activation
+When you source this script, a lot of changes will be made to your terminal's environment and PATH variables etc. Your compilers and many tools will be redirected to use the ones in the SDK. You can see this in the following snippet 
+````
+$ cd AUTOSAR/sdks/qemux86
+ 
+#checks paths without SDK
+$ which make
+/usr/bin/make
+$ which cmake
+/usr/bin/cmake
+ 
+# with SDK
+$ source environment-setup-i586-poky-linux 
+$ which make
+~/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/make
+$ which cmake
+~/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/cmake
+````
+So let's do an out-of-tree build for the EMO_samples directory in a fresh terminal 
+```
+$ cd ~/AUTOSAR
+/home/.../AUTOSAR$ source sdks/qemux86/environment-setup-i586-poky-linux 
+/home/.../AUTOSAR$ mkdir BUILD && cd BUILD
+/home/.../AUTOSAR/BUILD$ cmake ../.../sample-applications/EMO_samples
+-- The C compiler identification is GNU 5.3.0
+-- The CXX compiler identification is GNU 5.3.0
+-- Check for working C compiler: /home/me/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-gcc
+-- Check for working C compiler: /home/me/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/me/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-g++
+-- Check for working CXX compiler: /home/me/AUTOSAR/sdks/qemux86/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/i586-poky-linux-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+ 
+    cmake_minimum_required(VERSION 3.4)
+ 
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+ 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/me/AUTOSAR/BUILD
+/home/.../AUTOSAR/BUILD$ make
+Scanning dependencies of target TestAppl1
+[ 12%] Building CXX object CMakeFiles/TestAppl1.dir/TestAppl.o
+[ 25%] Linking CXX executable TestAppl1
+[ 25%] Built target TestAppl1
+Scanning dependencies of target TestAppl2
+[ 37%] Building CXX object CMakeFiles/TestAppl2.dir/TestAppl.o
+[ 50%] Linking CXX executable TestAppl2
+[ 50%] Built target TestAppl2
+Scanning dependencies of target TestAppl3
+[ 62%] Building CXX object CMakeFiles/TestAppl3.dir/TestAppl.o
+[ 75%] Linking CXX executable TestAppl3
+[ 75%] Built target TestAppl3
+Scanning dependencies of target TestAppl4
+[ 87%] Building CXX object CMakeFiles/TestAppl4.dir/TestAppl.o
+[100%] Linking CXX executable TestAppl4
+[100%] Built target TestAppl4
+/home/.../AUTOSAR/BUILD$ ls
+CMakeCache.txt  CMakeFiles  cmake_install.cmake  Makefile  TestAppl1  TestAppl2  TestAppl3  TestAppl4
+/home/.../AUTOSAR/BUILD$ 
+```
+There are now four executables (TestAppl1 … TestAppl4) in build directory and it cab be copoied to target machine (perhaps using scp) and execute them. 
+there was no need to write a bitbake recipe, and merge it to yocto-layers. Or even build a full image. 
+
+# Writing hello world program in SDK
+
+1.	Create an empty folder anywhere in home directory, e.g. /home/me/AUTOSAR/demo: 
+
+```
+$ cd AUTOSAR/
+
+$ mkdir demo
+
+$ cd demo
+
+demo$
+```
+
+2.	Within that folder create 2 subdirectroy files and src, create two files with the following contents
+>	$ mkdir src && cd src
+>	$ vi demo.cpp
+
+```
+#include <exec/application_client.h>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <iostream>
+#include <unistd.h>
+ 
+int main(int, char** argv)
+{
+    namespace fs = boost::filesystem;
+ 
+    ara::exec::ApplicationClient app_client;
+    app_client.ReportApplicationState(ara::exec::ApplicationState::kRunning);
+ 
+    fs::path absolute_arg0 = fs::absolute(argv[0]);
+    std::cout << "Hello, " << absolute_arg0 << "\n";
+    sleep(5);
+ 
+    app_client.ReportApplicationState(ara::exec::ApplicationState::kTerminating);
+}
+```
+>	$ cd ..
+>	$ vi CMake1Lists.txt
+
+```
+cmake_minimum_required(VERSION 3.4)
+project(adaptive-demo VERSION 1.0.0 LANGUAGES CXX)
+ 
+# Set default build type, if none is given
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING
+        "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel."
+        FORCE)
+endif()
+ 
+# Set default language settings
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+# Set default compiler options
+if(CMAKE_COMPILER_IS_GNUCXX)
+    list(APPEND common_flags -pedantic -Wall -Wextra -Wdeprecated -Werror)
+    list(APPEND common_flags -Wshadow -Wunused -Wuninitialized)
+    list(APPEND common_flags -Wpointer-arith -Winit-self -Wfloat-equal)
+    list(APPEND common_flags -fno-strict-aliasing)
+    list(APPEND cxx_only_flags -Wsign-promo -Wnon-virtual-dtor -Wctor-dtor-privacy)
+    list(APPEND cxx_only_flags -Woverloaded-virtual -Wold-style-cast)
+ 
+    add_compile_options(${common_flags})
+    add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${cxx_only_flags}>")
+endif()
+ 
+set(APD_INSTALL_ROOT "" CACHE STRING "Install prefix for absolute paths")
+ 
+find_package(Boost REQUIRED COMPONENTS filesystem system)
+find_package(ARAExec REQUIRED)
+find_package(AdaptivePlatform REQUIRED)
+ 
+add_executable(${CMAKE_PROJECT_NAME} src/demo.cpp)
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    PRIVATE
+    ${ARAEXEC_LIBRARIES}
+    ${ADAPTIVEPLATFORM_LIBRARIES}
+    ${Boost_LIBRARIES}
+)
+target_include_directories(${CMAKE_PROJECT_NAME}
+    PRIVATE
+    ${Boost_INCLUDE_DIRS}
+)
+ 
+install(TARGETS ${CMAKE_PROJECT_NAME}
+    RUNTIME DESTINATION ${APD_INSTALL_ROOT}/opt/${CMAKE_PROJECT_NAME}/bin)
+```
+>	$ mkdir files && cd files
+>	$ vi MANIFEST.json
+```
+[
+    {
+        "key": "states",
+        "value": {
+            "string[]": [
+                "Driving"
+            ]
+        },
+        "checksum": 1639441683
+    }
+]
+```
+3. Building the demo 
+```
+demo$ mkdir build && cd build
+build$ cmake -DCMAKE_TOOLCHAIN_FILE=$OECORE_NATIVE_SYSROOT/usr/share/cmake/OEToolchainConfig.cmake /home/AUTOSAR/demo
+# [...]
+# Build files have been written to: /home/me/AUTOSAR/demo/build
+build$ make
+# [...]
+# [100%] Built target adaptive-demo
+
+```
+
+

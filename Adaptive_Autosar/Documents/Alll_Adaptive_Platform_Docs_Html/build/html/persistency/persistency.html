@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. Persistency &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Cryptography" href="../crypto/crypto.html" />
+    <link rel="prev" title="10. Execution Management (EM)" href="../em/em.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. <strong>Persistency</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-architecture-of-persistency">11.1. The Architecture of Persistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-value-storages">11.2. Key-Value Storages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-storages">11.3. File Storages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialization-and-shutdown-of-persistency">11.4. Initialization and Shutdown of Persistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parallel-access-to-persistent-data">11.5. Parallel Access to Persistent Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#security-concepts">11.6. Security Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redundancy-concepts">11.7. Redundancy Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-update-of-persistent-data">11.8. Installation and Update of Persistent Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resource-management-concepts">11.9. Resource Management Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">11.10. Configuration Methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#persistency-configuration">11.10.1. Persistency Configuration:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-of-persistent-key-value-storage">11.10.1.1. Deployment of Persistent Key-Value Storage:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-of-file-storage">11.10.1.2. Deployment of File Storage:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">11. </span><strong>Persistency</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/persistency/persistency.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="persistency">
+<h1><span class="section-number">11. </span><strong>Persistency</strong><a class="headerlink" href="#persistency" title="Link to this heading"></a></h1>
+<section id="the-architecture-of-persistency">
+<h2><span class="section-number">11.1. </span>The Architecture of Persistency<a class="headerlink" href="#the-architecture-of-persistency" title="Link to this heading"></a></h2>
+<p>The functional cluster Persistency offers two different mechanisms to access persistent memory:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Key-value storage</p></li>
+<li><p>File storage</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id1">
+<img alt="../_images/persistency.png" class="with-border" src="../_images/persistency.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Persistency</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Persistency usage of an Adaptive Application is modeled in the Execution Manifest as part of the AdaptiveApplicationSwComponentTypes of an Executable.</p>
+<p>The global functions of ara::per is to receive the identifier (the fully qualified shortName path) of a PortPrototype typed by a PersistencyInterface as an ara::core::InstanceSpecifier input parameter</p>
+<p>The manifest contains separate deployment data for each Process that references the Executable. The Process is bound to the deployment data by specialization of the class PersistencyPortPrototypeToDeploymentMapping, which refers to a PortPrototype typed by a PersistencyInterface, a PersistencyDeployment, and the Process.</p>
+<p><strong>Read Only</strong> if the PortPrototype is instantiated as RPortPrototype, or</p>
+<p><strong>Read/Write</strong> if the PortPrototype is instantiated as PRPortPrototype, or</p>
+<p><strong>Write Only</strong> if the PortPrototype is instantiated as PPortPrototype.</p>
+</section>
+<section id="key-value-storages">
+<h2><span class="section-number">11.2. </span>Key-Value Storages<a class="headerlink" href="#key-value-storages" title="Link to this heading"></a></h2>
+<p>Every Key-Value Storage is represented by a PortPrototype typed by a PersistencyKeyValueStorageInterface in the application design for the respective AdaptiveApplicationSwComponentType,and by a PersistencyKeyValueStorage containing deployment information.</p>
+<p>Key-Value Pairs can be added and removed at run-time by the Adaptive Application using the Persistency.</p>
+<p>A Key-Value Storage with predefined Key-Value Pairs can be deployed with default data during installation or update of an Adaptive Application. This operation is triggered by the UCM module and data is provided by softwarepackage.</p>
+<p>The link between application design and deployment information of a Key-Value Storage is represented by PersistencyPortPrototypeToKeyValueStorageMapping, which refers to a PortPrototype typed by a PersistencyKeyValueStorageInterface, the corresponding PersistencyKeyValueStorage, and a Process.</p>
+</section>
+<section id="file-storages">
+<h2><span class="section-number">11.3. </span>File Storages<a class="headerlink" href="#file-storages" title="Link to this heading"></a></h2>
+<p>Every File Storage is represented by a PortPrototype typed by a PersistencyFileStorageInterface in the application design for the respective AdaptiveApplicationSwComponentType,and by a PersistencyFileStorage containing deployment information.</p>
+<p>Every File Storage can hold multiple files</p>
+<p>File storage also can be deleted and created during runtime.</p>
+<p>The link between application design and deployment information of a File Storageis represented by PersistencyPortPrototypeToFileStorageMapping, which refers to a PortPrototype typed by a PersistencyFileStorageInterface, the corresponding PersistencyFileStorage, and a Process.</p>
+</section>
+<section id="initialization-and-shutdown-of-persistency">
+<h2><span class="section-number">11.4. </span>Initialization and Shutdown of Persistency<a class="headerlink" href="#initialization-and-shutdown-of-persistency" title="Link to this heading"></a></h2>
+<p>During Initialization of Application the Persistency shall read in the manifest information and prepare the access structures to all Key-Value Storages and File Storages that are defined in the manifest.</p>
+<p>During Deinitialization od Application the persistency shall ensure that all open files of persistent data shall be persisted and synced with application and closed.</p>
+</section>
+<section id="parallel-access-to-persistent-data">
+<h2><span class="section-number">11.5. </span>Parallel Access to Persistent Data<a class="headerlink" href="#parallel-access-to-persistent-data" title="Link to this heading"></a></h2>
+<p>The persistent data is local to one Process. Therefore, Persistency will never share persistent data between two (or more) Processes, even of the same Executable.</p>
+<p>If persistent data needs to be accessed by multiple Processes (of the same or different applications), it is the duty of the application designer to provide Service Interfaces for communication.</p>
+</section>
+<section id="security-concepts">
+<h2><span class="section-number">11.6. </span>Security Concepts<a class="headerlink" href="#security-concepts" title="Link to this heading"></a></h2>
+<p>The Persistency supports encryption and authentication of data stored in a Key-Value Storage or File Storage.</p>
+<p>The signed hash used for the authentication of a storage is likewise verified when opening a storage, and calculated during installation or when saving a Key-Value Storage or File Storage.</p>
+<p>In case of a read-only Key-Value Storage or File Storage, encryption is done only once during installation. A signed hash used for authentication of a read-only Key-Value Storage or File Storage (or a key or file therein) is either provided as PersistencyDeploymentToCryptoKeySlotMapping.verificationHash or PersistencyDeploymentElementToCryptoKeySlotMapping. verificationHash in the manifest, or calculated during installation.</p>
+</section>
+<section id="redundancy-concepts">
+<h2><span class="section-number">11.7. </span>Redundancy Concepts<a class="headerlink" href="#redundancy-concepts" title="Link to this heading"></a></h2>
+<p>The Persistency functional cluster shall take care of the integrity of the stored data. This can be achieved by calculating CRCs or hash values of the stored data, and by creating redundant copies.</p>
+<p>The Persistency cluster shall use the redundant information to detect data corruption in the persistent memory.</p>
+<p>The Persistency cluster shall use the redundant information to recover corrupted data if possible. If data is corrupted that cannot be restored using the redundant information, Persistency will fail with kValidationFailed.</p>
+<p><strong>Redundancy Types:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CRC</p></li>
+<li><p>HASH</p></li>
+<li><p>MoutN</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="installation-and-update-of-persistent-data">
+<h2><span class="section-number">11.8. </span>Installation and Update of Persistent Data<a class="headerlink" href="#installation-and-update-of-persistent-data" title="Link to this heading"></a></h2>
+<p>persistent data needs to be handled alongside the application. The Adaptive Application may trigger this handling explicitly by calling ara::per::UpdatePersistency during the verification phase that follows the installation or update, or rely on the Persistency cluster to do this implicitly when persistent data is accessed (ara::per::OpenKeyValueStorage/ara::per::-OpenFileStorage). In both cases, the Persistency cluster will compare the stored manifest version against the current manifest version, and perform the required action.</p>
+<p>Persistency compareds the executable version and software version during update and installation of persistent data.</p>
+<p>After an update of the Adaptive Application or the manifest, the Persistency cluster will create a backup of the persistent data, and then update the existing persistent data using one of the following strategies:</p>
+<p>Existing persistent data is kept unchanged (keepExisting).
+Existing persistent data is replaced (overwrite).
+Existing persistent data is removed (delete). New persistent data is added (keepExisting and overwrite).</p>
+</section>
+<section id="resource-management-concepts">
+<h2><span class="section-number">11.9. </span>Resource Management Concepts<a class="headerlink" href="#resource-management-concepts" title="Link to this heading"></a></h2>
+<p>The Persistency cluster supports configuration of both an upper and a lower limit for the resources used by a Key-Value Storage or a File Storage.</p>
+<p>The lower limit may already be defined by the application developer using PersistencyInterface.minimumSustainedSize.</p>
+<p>During deployment, the integrator may update the lower limit using PersistencyDeployment.minimumSustainedSize and add an upper limit using Persistency-Deployment.maximumAllowedSize.</p>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">11.10. </span>Configuration Methodology<a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<section id="persistency-configuration">
+<h3><span class="section-number">11.10.1. </span>Persistency Configuration:<a class="headerlink" href="#persistency-configuration" title="Link to this heading"></a></h3>
+<section id="deployment-of-persistent-key-value-storage">
+<h4><span class="section-number">11.10.1.1. </span>Deployment of Persistent Key-Value Storage:<a class="headerlink" href="#deployment-of-persistent-key-value-storage" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id2">
+<img alt="../_images/Deployment_of_Persistent_Key-Value_Storage.png" class="with-border" src="../_images/Deployment_of_Persistent_Key-Value_Storage.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Deployment of Persistent Key-Value Storage</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The modeling of PersistencyKeyValuePair aggregated in the role PersistencyKeyValueStorage, keyValuePair is optional.</p></li>
+<li><p>PersistencyPortPrototype-ToKeyValueStorageMapping has the ability to map a specific PortPrototype referenced in the role portPrototype to a PersistencyKeyValueStorage referenced in the role keyValueStorage.</p></li>
+<li><p>The reference PersistencyPortPrototypeToKeyValueStorageMapping portPrototype shall only be used for a PortPrototype typed by a PersistencyKeyValueStorageInterface.</p></li>
+<li><p>If a PersistencyKeyValueStorage contains PersistencyKeyValuePairs that do not correspond to any dataElements of the PersistencyKeyValueStorageInterface
+that is mapped (indirectly) via PersistencyPortPrototypeToKeyValueStorageMapping then those keyValuePairs are created within the PersistencyKeyValueStorage.</p></li>
+<li><p>Initial value for PersistencyKeyValuePair dIt ispossible to define an initial value for a given PersistencyKeyValuePair by means of the aggregation of ValueSpecification in the role initValue.</p></li>
+<li><p>PersistencyKeyValuePair.valueDataType shall match to AbstractImplementationDataType for the corresponding PersistencyDataElement.</p></li>
+<li><p>Each PersistencyKeyValueStorage shall only be referenced by at most one PersistencyPort-PrototypeToKeyValueStorageMapping.</p></li>
+</ul>
+</section>
+<section id="deployment-of-file-storage">
+<h4><span class="section-number">11.10.1.2. </span>Deployment of File Storage:<a class="headerlink" href="#deployment-of-file-storage" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id3">
+<img alt="../_images/Deployment_of_Persistent_File_Storage.png" class="with-border" src="../_images/Deployment_of_Persistent_File_Storage.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Deployment of Persistent File Storage</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Port-Prototype typed by a PersistencyFileStorageInterface actually builds an abstraction for an entire directory of files.</p></li>
+<li><p>Here PersistencyPortPrototypeToFileStorageMapping creates a mapping between a PortPrototype referenced in the role portPrototype to a PersistencyFileStorage referenced in the role fileStorage under consideration of a Process referenced in the role process.</p></li>
+<li><p>The usage of PersistencyFileStorage.file allows for the explicit modeling of elements of the PersistencyFileStorage.</p></li>
+<li><p>The creation of this aggregation is optional. It can be used to define the update strategy and/or initial content of selected files.</p></li>
+<li><p>The reference Persistency-PortPrototypeToFileStorageMapping portPrototype shall only be used for a PortPrototype typed by a PersistencyFileStorageInterface.</p></li>
+<li><p>Within the scope of any given PersistencyFileStorage, the value of all file.fileName shall be unique.</p></li>
+<li><p>Each PersistencyFileStorage shall only be referenced by at most one PersistencyPortPrototypeToFileStorageMapping.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../em/em.html" class="btn btn-neutral float-left" title="10. Execution Management (EM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../crypto/crypto.html" class="btn btn-neutral float-right" title="12. Cryptography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

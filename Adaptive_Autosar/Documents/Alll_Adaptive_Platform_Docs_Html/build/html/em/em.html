@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10. Execution Management (EM) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Persistency" href="../persistency/persistency.html" />
+    <link rel="prev" title="9. State Management (SM)" href="../sm/sm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. <strong>Execution Management (EM)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">10.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-em">10.2. Overview of EM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies-to-other-functional-clusters">10.3. Dependencies to other functional clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-aspect-of-execution-manager">10.4. Technical aspect of execution manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#application">10.4.1. Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adaptive-application">10.4.2. Adaptive Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executable">10.4.3. Executable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-manifest">10.4.4. Machine Manifest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine">10.4.5. Machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-management">10.4.6. Execution Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-states">10.4.7. Execution States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-manifest">10.4.8. Execution Manifest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process">10.4.9. Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-states">10.4.10. Process States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-dependency">10.4.11. Execution Dependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functiongroupstates">10.4.12. FunctionGroupStates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">10.5. Configuration Methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#startup-configuration">10.5.1. <strong>Startup Configuration</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#states">10.5.2. States</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#machine-state">10.5.2.1. Machine State :</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functional-group-state">10.5.2.2. Functional Group State :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#association-with-resource-group">10.5.3. <strong>Association with Resource Group</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.5.4. Execution Dependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource-consumption-boundaries">10.5.5. Resource Consumption Boundaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">10. </span><strong>Execution Management (EM)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/em/em.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="execution-management-em">
+<h1><span class="section-number">10. </span><strong>Execution Management (EM)</strong><a class="headerlink" href="#execution-management-em" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Execution Management is responsible for all aspects of system execution management including platform initialization and startup / shutdown of Applications. It performs these tasks using information contained within one or more Manifest files such as when and how Executables should be started. The Execution Management functional cluster is part of the Adaptive Platform.</p>
+<p>Execution Management works in conjunction with the Operating System. In particular, Execution Management is responsible for configuring the Operating System to perform run-time scheduling and resource monitoring of Applications.</p>
+<p>The Execution Manifest specifies the deployment related information of an Executable and describes in a standardized way the machine specific configuration of Process properties (startup parameters, resource group assignment, scheduling priorities etc.).</p>
+<p>Execution management is one of the main functional cluster in the adaptive platform. Execution management is responsible for initiating execution of the all the processes i.e., functional clusters, Adaptive AUTOSAR services, and Adaptive applications. Execution management performs how, when and the process it should be started. Execution Management is not responsible for run-time scheduling of Processes since this is the responsibility of the Operating System. Execution management will not directly communicate with other clusters, firstly connected with state management, and then state management will request to the EM. Execution Management performs the State transitions and controls the actual set of running Processes, depending on the current States. Execution management is depending upon the OS. Execution management provides information to all the functional clusters. Execution management controls to all the functional clusters in the adaptive platform.</p>
+</section>
+<section id="overview-of-em">
+<h2><span class="section-number">10.2. </span>Overview of EM<a class="headerlink" href="#overview-of-em" title="Link to this heading"></a></h2>
+<p>The purpose of the Execution Manifest is to provide information that is needed for the actual deployment of an application (formally modelled as an SwComponentType) onto the AUTOSAR adaptive platform.</p>
+<p>One aspect of the deployment information is the provision of information that could in principle be provided as part of the application software code, but which would make the application software code become very much bound to specific usage scenarios.</p>
+<p>The general idea is to keep the application software code as independent as possible from the deployment scenario in order to increase the odds that the application software can be reused in different deployment scenarios.</p>
+<p>The Execution Manifest focuses on the following aspects:</p>
+<p>Startup configuration to define how the application instance will be started. The startup includes the definition of startup options and access roles. Each startup may be dependent on machines states and/or function group states.</p>
+<p>Execution Management is responsible for all aspects of process lifecycle management, including:</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Machine startup and shutdown</strong> – Execution Management is the initial (“boot”) process of the operating system.</p></li>
+<li><p><strong>Required process hierarchy of started services, e.g., init and its child process.</strong> – The boot process in this case corresponds to machine init process.</p></li>
+<li><p><strong>Provision of process isolation with each instance of an Executable managed as a single process.</strong></p></li>
+<li><p><strong>Startup and shutdown of Applications.</strong> – Loading Executable based on a defined Execution Dependency. – Specific requirements until starting an Executable main function (i.e. entry point)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ensure that startup and shutdown dependencies between Executable instances are respected, if an execution dependency is specified in the Application Manifest of an Executable instance. If no execution dependency is specified between Executable instances, they can be started and stopped in an arbitrary order.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt><strong>Privileges and use of access control</strong> – Description and semantics of access control in manifest files</dt><dd><ul class="simple">
+<li><p>Allocate OS resource budgets for Executable and/or groups of Executables</p></li>
+<li><p>Authentication and authorization of Executables at startup of Executable</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>State management</strong> – Conditions for the execution of Applications</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="dependencies-to-other-functional-clusters">
+<h2><span class="section-number">10.3. </span>Dependencies to other functional clusters<a class="headerlink" href="#dependencies-to-other-functional-clusters" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Execution Management is dependent on the OS.</p></li>
+<li><p>The OS is used to control all the application executions.</p></li>
+<li><p>In the adaptive platform all the functional applications depends on the execution management.</p></li>
+<li><p>Execution Management might provide supporting process information to Platform Health Management.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="technical-aspect-of-execution-manager">
+<h2><span class="section-number">10.4. </span>Technical aspect of execution manager<a class="headerlink" href="#technical-aspect-of-execution-manager" title="Link to this heading"></a></h2>
+<section id="application">
+<h3><span class="section-number">10.4.1. </span>Application<a class="headerlink" href="#application" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Applications are developed to resolve a set of coherent functional requirements.</p></li>
+<li><p>An Application consists of executable software units, additional execution related items (e.g. data or parameter files), and descriptive information used for integration and execution (e.g. a formal model description based on the AUTOSAR meta model, test cases).</p></li>
+<li><p>Applications can be located on user level above the middleware or can be implementation of functional clusters of the Adaptive Platform.</p></li>
+<li><p>Applications might use all mechanisms and APIs provided by the operating system and other functional clusters of the Adaptive Platform, which in general restricts portability to other Adaptive Platforms.</p></li>
+<li><p>All Applications, including Adaptive Applications, are treated the same by Execution Management.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="adaptive-application">
+<h3><span class="section-number">10.4.2. </span>Adaptive Application<a class="headerlink" href="#adaptive-application" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>An Adaptive Application is a specific type of Application that fully complies with the AUTOSAR specification, i.e. it is restricted to use APIs standardized by AUTOSAR and needs to follow specific coding guidelines to allow reallocation between different Adaptive Platforms.</p></li>
+<li><p>Adaptive Applications are always located above the middleware. To allow portability and reuse, user level Applications should be Adaptive Applications whenever technically possible.</p></li>
+<li><p>An Adaptive Application is the result of functional development and is the unit of delivery for Machine specific configuration and integration.</p></li>
+<li><p>Some contracts and Service Interfaces to interact with other Adaptive Applications need to be agreed on beforehand.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="executable">
+<h3><span class="section-number">10.4.3. </span>Executable<a class="headerlink" href="#executable" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>An Executable is a software unit which is part of an Application. It has exactly one entry point (main function). An Application can be implemented in one or more Executables.</p></li>
+<li><p>Executables which belong to the same Adaptive Application might need to be deployed to different Machines, e.g. to one high performance Machine and one high safety Machine.</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Process Step</strong></p></td>
+<td><p><strong>Software</strong></p></td>
+<td><p><strong>Meta Information</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Development and Integration</p></td>
+<td><p>Linked, configured and calibrated binary
+for deployment onto the target Machine.
+The binary might contain code which was
+generated at integration time.</p></td>
+<td><p>Application Manifest and Service Instance
+Manifest (not used by Execution Management)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deployment and Removal</p></td>
+<td><p>Binary installed on the target Machine.</p></td>
+<td><p>Processed Manifests, stored in a
+platform-specific format which is
+efficiently readable at Machine startup.</p></td>
+</tr>
+<tr class="row-even"><td><p>Execution</p></td>
+<td><p>Process started as instance of the binary</p></td>
+<td><p>The Execution Management uses contents of
+the Processed Manifests to start up and
+configure each process individually.</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id2">
+<img alt="../_images/Executable_Lifecycle.png" class="with-border" src="../_images/Executable_Lifecycle.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Executable Lifecycle</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="machine-manifest">
+<h3><span class="section-number">10.4.4. </span>Machine Manifest<a class="headerlink" href="#machine-manifest" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Manifest is nothing but one type of file.</p></li>
+<li><p>In the adaptive platform one of the cluster is used it holds all the information in manifest how to start, how to run, how to stop all the mentioned in that file.</p></li>
+<li><p>Coming to machine manifest same as above how to start the machine, how to run , and how to stop.</p></li>
+<li><p>The Machine meta-class defines the entity on which one Adaptive AUTOSAR Software Stack is running with an operating system.</p></li>
+<li><p>The contents of a Machine Manifest includes the configuration of Machine properties and features (resources, safety, security, etc.), e.g. configured Machine States and Function Group States, resource groups, access right groups, scheduler configuration, SOME/IP configuration, memory segmentation</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="machine">
+<h3><span class="section-number">10.4.5. </span>Machine<a class="headerlink" href="#machine" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The Machine may be physical or virtual.</p></li>
+<li><p>The Machine is able to aggregate one or several Processors. And each Processor consists of one or several ProcessorCores.</p></li>
+<li><p>ProcessorCore provides attribute coreId that can be used e.g. in a bitmask to better control the utilization of processing resources.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="execution-management">
+<h3><span class="section-number">10.4.6. </span>Execution Management<a class="headerlink" href="#execution-management" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Execution Management determines when, and possibly in which order, to start or stop processes, i.e. instances of the deployed Executables, based on information in the Machine Manifest and Execution Manifests.</p></li>
+<li><p>Execution Management is not responsible for run-time scheduling of processes since this is the responsibility of the Operating System.</p></li>
+<li><p>Execution Management is responsible for initialization / configuration of the OS to enable it to perform the necessary run-time scheduling and resource management based on information extracted by Execution Management from the Machine Manifest and Execution Manifests.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="execution-states">
+<h3><span class="section-number">10.4.7. </span>Execution States<a class="headerlink" href="#execution-states" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Execution States characterizes the internal lifecycle of a process.</p></li>
+<li><p>They describe it from the point of view of a process that is executed.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id3">
+<img alt="../_images/Execution_States.png" class="with-border" src="../_images/Execution_States.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Execution States</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="execution-manifest">
+<h3><span class="section-number">10.4.8. </span>Execution Manifest<a class="headerlink" href="#execution-manifest" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The purpose of the execution manifest is to provide information that is needed for the actual deployment of an application onto the AUTOSAR adaptive platform.</p></li>
+<li><p>In particular, the usage of PortPrototypes as a means to express communication with the “outside” of the application software allows for abstracting away the details (the concrete service instance identification) of the service configuration.</p></li>
+<li><p>The API between the application and the middleware is represented by the PortPrototype.</p></li>
+<li><p>The Execution Manifest specifies the deployment related information of an Executable and describes in a standardized way the machine-specific configuration of Process properties (startup parameters, resource group assignment, scheduling priorities etc.).</p></li>
+<li><p>The Execution Manifest is bundled with the actual executable code in order to support the deployment of the executable code onto the Machine.</p></li>
+<li><p>Each instance of an Executable binary, i.e. each started Process, is individually configurable, with the option to use a different configuration set per Machine State or per Function Group State.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="process">
+<h3><span class="section-number">10.4.9. </span>Process<a class="headerlink" href="#process" title="Link to this heading"></a></h3>
+<p>The top-level element of the Execution Manifest definition is the Process, in reference to the fact that the unit of deployment on the AUTOSAR adaptive platform is a binary that, at runtime, makes a POSIX process.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ProcessStates</p></li>
+<li><p>StateDependentStartUpConfig</p></li>
+<li><p>StartupConfig</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="process-states">
+<h3><span class="section-number">10.4.10. </span>Process States<a class="headerlink" href="#process-states" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Process State is used by Execution Management to resolve Execution Dependencies, manage timeouts,etc.</p></li>
+<li><p>Process States represent Execution Management internal tracking of the Execution States</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id4">
+<img alt="../_images/Process_States.png" class="with-border" src="../_images/Process_States.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Process States</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="execution-dependency">
+<h3><span class="section-number">10.4.11. </span>Execution Dependency<a class="headerlink" href="#execution-dependency" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Execution Management can derive an ordering for the startup and termination of processes within State Management framework based on the declared Execution Dependencies.</p></li>
+<li><p>Since some processes shall reach a certain Execution State to be able to offer their services to other processes,</p></li>
+<li><p>The dependency information shall also refer to Process State of the process specified as dependency. With that in mind, the dependency information may be represented as a pair like:</p></li>
+<li><p>Processes are only started by Execution Management if they reference a requested Machine State or Function Group State, but not because of configured Execution Dependencies.</p></li>
+<li><p>Execution Dependencies are only used to control a startup or terminate sequence at state transitions.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="functiongroupstates">
+<h3><span class="section-number">10.4.12. </span>FunctionGroupStates<a class="headerlink" href="#functiongroupstates" title="Link to this heading"></a></h3>
+<p>The Function Groups mechanism is very flexible and is intended as a tool used to start and stop processes of Applications.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>In general, Machine States are used to control machine lifecycle (startup/shutdown/restart) and processes of platform level Applications, while other Function Group States individually control processes which belong to groups of functionally coherent user level Applications.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id5">
+<img alt="../_images/Interaction_between_states.png" class="with-border" src="../_images/Interaction_between_states.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Interaction between states</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">10.5. </span>Configuration Methodology<a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<section id="startup-configuration">
+<h3><span class="section-number">10.5.1. </span><strong>Startup Configuration</strong><a class="headerlink" href="#startup-configuration" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The configuration of startup behavior is an essential part of the execution manifest.</p></li>
+<li><p>The formal modeling of application startup behavior is implemented by means of the aggregation of meta-class StateDependentStartupConfig in the role Process.stateDependentStartupConfig.</p></li>
+</ul>
+<figure class="align-center" id="id6">
+<img alt="../_images/Content_of_a_Process.png" class="with-border" src="../_images/Content_of_a_Process.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Content of a Process</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="states">
+<h3><span class="section-number">10.5.2. </span>States<a class="headerlink" href="#states" title="Link to this heading"></a></h3>
+<section id="machine-state">
+<h4><span class="section-number">10.5.2.1. </span>Machine State :<a class="headerlink" href="#machine-state" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>Machine state is specific type of function group state which refer to the global state of the machine.</p></li>
+<li><p>Each Application would have an application manifest, which defines the machine state in which the application is allowed to execute.</p></li>
+<li><p>MachineStates: Enumerate the machine states.</p></li>
+<li><p>InitialState: Set the initial state of the machine.</p></li>
+<li><p>EventTriggers: Define events that trigger state transitions.</p></li>
+<li><p>Transitions: Specify conditions and actions associated with state transitions.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="functional-group-state">
+<h4><span class="section-number">10.5.2.2. </span>Functional Group State :<a class="headerlink" href="#functional-group-state" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>During diagnostic and error recover it is necessary to handle such application using functional group state.</p></li>
+<li><p>State Manager will obtain available functional group state and machine state from machine manifest.</p></li>
+<li><p>If there are multiple request from different application, State Manager would arbitrate based on priority and other factor before requesting Execution Manager for state change.</p></li>
+<li><p>FunctionGroupStates: Enumerate the states for function groups.</p></li>
+<li><p>InitialState: Set the initial state for each function group.</p></li>
+<li><p>Transitions: Define conditions and actions for transitions between function group states.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id7">
+<img alt="../_images/Configuration_of_Function_Groups1.png" class="with-border" src="../_images/Configuration_of_Function_Groups1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Configuration of Function Groups</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Machine Function Group</strong></p>
+<p>One functionGroup claimed by one SoftwareCluster of category PLATFORM_CORE takes the role of a “machine function group”.</p>
+<p>This functionGroup is required to have a dedicated shortName and it also is required to define a certain minimal, but extensible set of ModeDeclarations that also have standardized shortNames.</p>
+<p>Exactly one functionGroup shall exist that has the shortName “MachineFG” and that is typed by a ModeDeclarationGroup that defines at least the following list of ModeDeclarations with the shortNames</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Off,</p></li>
+<li><p>Verify,</p></li>
+<li><p>Startup,</p></li>
+<li><p>Shutdown, and</p></li>
+<li><p>Restart.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="association-with-resource-group">
+<h3><span class="section-number">10.5.3. </span><strong>Association with Resource Group</strong><a class="headerlink" href="#association-with-resource-group" title="Link to this heading"></a></h3>
+<p>Meta-class StateDependentStartupConfig also supports the specification of a relation to a resource group.</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/Modelling_Process.png" class="with-border" src="../_images/Modelling_Process.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of how Process relates to ResourceGroup</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id1">
+<h3><span class="section-number">10.5.4. </span>Execution Dependency<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The modeling of an execution dependency makes two Processes become associated to each other by means of the definition of an ExecutionDependency.</p>
+<p>But since the reference that defines the execution dependency is modeled as an &lt;&lt;instanceRef&gt;&gt; the referenced Process needs to be extracted from the context references in the &lt;&lt;instanceRef&gt;&gt;.</p>
+<figure class="align-center" id="id9">
+<img alt="../_images/Mode_Declaration.png" class="with-border" src="../_images/Mode_Declaration.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of how Process relates to ModeDeclaration owned by another Process</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="resource-consumption-boundaries">
+<h3><span class="section-number">10.5.5. </span>Resource Consumption Boundaries<a class="headerlink" href="#resource-consumption-boundaries" title="Link to this heading"></a></h3>
+<p>It is possible to specify boundaries for resource consumption, specifically in terms of memory consumption for system memory and heap, of a given startup configuration of a Process:</p>
+<ul class="simple">
+<li><p>The formalization of heap usage is represented by meta-class HeapUsage, aggregated via meta-class ResourceConsumption at StateDependentStartupConfig. The actual value of the heap usage is computed out of the sum of all aggregated ResourceConsumption.heapUsage.</p></li>
+<li><p>The formalization of system (i.e. kernel-space) memory usage is represented by meta-class SystemMemoryUsage, aggregated via meta-class Resource Consumption at StateDependentStartupConfig. The actual value of the system memory usage is computed out of the sum of all aggregated ResourceConsumption.systemMemoryUsage.</p></li>
+</ul>
+<p>The StateDependentStartupConfig.resourceConsumption allows for a fine-grained definition that can even observe the differences in resource consumption with respect to different startup configurations.</p>
+<figure class="align-center" id="id10">
+<img alt="../_images/Resource_Consumption.png" class="with-border" src="../_images/Resource_Consumption.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Modeling of resource consumption boundaries for a given Process</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../sm/sm.html" class="btn btn-neutral float-left" title="9. State Management (SM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../persistency/persistency.html" class="btn btn-neutral float-right" title="11. Persistency" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

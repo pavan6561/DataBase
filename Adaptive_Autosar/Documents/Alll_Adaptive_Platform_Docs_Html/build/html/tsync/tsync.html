@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. Time Synchronization (TSync) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Platform Health Management(PHM)" href="../phm/phm.html" />
+    <link rel="prev" title="4. Communication Management" href="../com/com.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/ap_introduction.html#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. <strong>Time Synchronization (TSync)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-case-of-tsync-sensor-data-fusion">5.1. Use Case Of TSync: Sensor Data Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autosar-tsync-protocol">5.2. AUTOSAR TSync Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ieee-802-1as-messages">5.3. IEEE 802.1AS Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autosar-messages">5.4. AUTOSAR Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-sync-mechanism">5.5. Time Sync Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synchronized-offset-time-base-provider">5.6. Synchronized &amp; Offset Time Base Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synchronized-time-base-consumer">5.7. Synchronized Time Base Consumer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-validation-support">5.8. Time Validation Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#precision-measurement-support">5.9. Precision Measurement Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">5.10. Configuration Methodology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span><strong>Time Synchronization (TSync)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tsync/tsync.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="time-synchronization-tsync">
+<h1><span class="section-number">5. </span><strong>Time Synchronization (TSync)</strong><a class="headerlink" href="#time-synchronization-tsync" title="Link to this heading"></a></h1>
+<p>Time Synchronization between different applications and/or ECUs is of paramount importance when correlation of different events across a distributed system is needed, either to be able to track such events in time or to trigger them at an accurate point in time.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/AUTOSAR_Arch.png" class="with-border" src="../_images/AUTOSAR_Arch.png" />
+<figcaption>
+<p><span class="caption-text"><strong>AUTOSAR Layered Architecture</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>The Time Synchronization functionality is then offered by means of different TimeBase Resources like:</dt><dd><ul class="simple">
+<li><p>Synchronized Master Time Base</p></li>
+<li><p>Offset Master Time Base</p></li>
+<li><p>Synchronized Slave Time Base</p></li>
+<li><p>Offset Slave Time Base</p></li>
+</ul>
+</dd>
+</dl>
+<p>Time Synchronization is using ara::core::SteadyClock as the basis for its interfaces and for synchronization with the daemon process realizing the time-sync protocol.</p>
+<dl class="simple">
+<dt>Time Base Application autonomously calls the TS either:</dt><dd><ul class="simple">
+<li><p>To read time information from the TBRs.</p></li>
+<li><p>To update the Time Base maintained by a TBR, according to application information.</p></li>
+</ul>
+</dd>
+</dl>
+<section id="use-case-of-tsync-sensor-data-fusion">
+<h2><span class="section-number">5.1. </span>Use Case Of TSync: Sensor Data Fusion<a class="headerlink" href="#use-case-of-tsync-sensor-data-fusion" title="Link to this heading"></a></h2>
+<p>For time critical applications proper synchronization of data from various sensors is required therefore, we use TSync.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/Usecase_TSync.png" class="with-border" src="../_images/Usecase_TSync.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TSync Example:Fusion of Video and LiDAR Images</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Figure 1.3 provides an example system view on time domains and their transportation over diverse networks. In the scope of the AUTOSAR adaptive platform the focus is put on the Ethernet interaction with the rest of the system.</p>
+<figure class="align-center" id="id3">
+<a class="with-border reference internal image-reference" href="../_images/Synchronized_Global_Time_AUTOSAR.png"><img alt="../_images/Synchronized_Global_Time_AUTOSAR.png" class="with-border" src="../_images/Synchronized_Global_Time_AUTOSAR.png" style="width: 814.4000000000001px; height: 619.2px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Synchronized Global Time in AUTOSAR</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="autosar-tsync-protocol">
+<h2><span class="section-number">5.2. </span>AUTOSAR TSync Protocol<a class="headerlink" href="#autosar-tsync-protocol" title="Link to this heading"></a></h2>
+<p>The time information of different ECUs is distributed over Ethernet  which is based on PTP(Precision Time Protocol) mechanism.</p>
+<dl class="simple">
+<dt>In the Automotive Ethernet network:</dt><dd><ul class="simple">
+<li><p>The role and functions of ECUs are predefined.</p></li>
+<li><p>The network is static  i.e. ECUs, switches and cable length is fixed.</p></li>
+</ul>
+</dd>
+</dl>
+<p>TSync protocol is used to synchronize the time bases.
+It measures time differences between ethernet frames for corresponding ethernet messages.
+No support of BMCA protocol, Announce and signaling messages.
+Transmissions of Sync messages do not require Pdelay_Req to be predefined.
+Rate Correction is carried out by TSync protocol and do not require Pdelay mechanism.
+TSync protocol will not maintain the  Ethernet H/W clock, but use as a source for Virtual Local Time.
+Supports VLANs when HW supports forwarding of reserved multicast addresses.</p>
+</section>
+<section id="ieee-802-1as-messages">
+<h2><span class="section-number">5.3. </span>IEEE 802.1AS Messages<a class="headerlink" href="#ieee-802-1as-messages" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>FieldName</strong></p></td>
+<td><p><strong>Size in Bytes</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>PTP Message Header</p></td>
+<td><p>34</p></td>
+<td><p>Sync Message information such as type, length ,domain etc</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reserved</p></td>
+<td><p>10</p></td>
+<td><p>Reserved bytes for future use cases.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>FieldName</strong></p></td>
+<td><p><strong>Size in Bytes</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>PTP Message Header</p></td>
+<td><p>34</p></td>
+<td><p>Follow-up Message information such as type, length, domain, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precision Origin
+Timestamp</p></td>
+<td><p>10</p></td>
+<td><p>Time stamp</p></td>
+</tr>
+<tr class="row-even"><td><p>Follow-up
+information TLV</p></td>
+<td><p>32</p></td>
+<td><p>TLV Information such as TLV type, length, ID, etc.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="autosar-messages">
+<h2><span class="section-number">5.4. </span>AUTOSAR Messages<a class="headerlink" href="#autosar-messages" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>FieldName</strong></p></td>
+<td><p><strong>Size in Bytes</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>PTP Message Header</p></td>
+<td><p>34</p></td>
+<td><p>Sync Message information such as type, length, domain, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reserved</p></td>
+<td><p>10</p></td>
+<td><p>Reserved bytes for future use cases.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>FieldName</strong></p></td>
+<td><p><strong>Size in Bytes</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>PTP Message Header</p></td>
+<td><p>34</p></td>
+<td><p>Sync Message information such as type, length, domain, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precision Origin Timestamp</p></td>
+<td><p>10</p></td>
+<td><p>Time stamp</p></td>
+</tr>
+<tr class="row-even"><td><p>AUTOSAR Follow-up information TLV</p></td>
+<td><p>32+10+sum(Sub-TLVs)</p></td>
+<td><p>TLV Information such as TLV type, length, ID, and sub-TLVs, etc.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>FieldName</strong></p></td>
+<td><p><strong>Size in Bytes</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Follow-up Information TLV</p></td>
+<td><p>32</p></td>
+<td><p>Follow-up Message information such as type, length, domain, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUTO SAR TLV Header</p></td>
+<td><p>10</p></td>
+<td><p>AUTOSAR TLV Type, Organization ID, length, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum Of Sub TLVs</p></td>
+<td><p>65</p></td>
+<td><p>Sub TLVs Information for AUTOSAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sub TLVs</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Time Secured</p></td>
+<td><p>5</p></td>
+<td><p>Length, CRC status while Time is Secured</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status Secured</p></td>
+<td><p>4</p></td>
+<td><p>Length, CRC status while Status is Secured</p></td>
+</tr>
+<tr class="row-even"><td><p>Status Not Secured</p></td>
+<td><p>4</p></td>
+<td><p>Reserved Flag while Status is Not Secured</p></td>
+</tr>
+<tr class="row-odd"><td><p>User Data Secured</p></td>
+<td><p>7</p></td>
+<td><p>User Data length, CRC while User Data is Secured</p></td>
+</tr>
+<tr class="row-even"><td><p>User data Not secured</p></td>
+<td><p>7</p></td>
+<td><p>CRC while User Data is Not Secured</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFS Secured</p></td>
+<td><p>19</p></td>
+<td><p>Types, length, OFS Domain while OFS is Secured</p></td>
+</tr>
+<tr class="row-even"><td><p>OFS Not Secured</p></td>
+<td><p>19</p></td>
+<td><p>Types, length, OFS Domain while OFS is Not Secured</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="time-sync-mechanism">
+<h2><span class="section-number">5.5. </span>Time Sync Mechanism<a class="headerlink" href="#time-sync-mechanism" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>Every Time Base has to provide a minimum set of functionality, as listed below:</dt><dd><ul class="simple">
+<li><p>offer possibility to obtain the current timestamp</p></li>
+<li><p>creating a snapshot of its parameters</p></li>
+</ul>
+</dd>
+</dl>
+<p>A Global Time network consists of a Time Master and at least one Time Slave. For each Time Domain, the Time Master is distributing the Global Time Base to the connected Time Slaves via Time Synchronization messages. The Time Slave corrects the received Global Time Base taking into account the Time Stamp at the transmitter   side and the own generated receiver Time Stamp.</p>
+<figure class="align-center" id="id4">
+<img alt="../_images/TimeSyncMechanism.png" class="with-border" src="../_images/TimeSyncMechanism.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Time Sync Mechanism</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>RPort Prototype to Time Base mapping at TSync Management</strong></p>
+<figure class="align-center" id="id5">
+<img alt="../_images/TimeSyncManagement.png" class="with-border" src="../_images/TimeSyncManagement.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Time Sync Management</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="synchronized-offset-time-base-provider">
+<h2><span class="section-number">5.6. </span>Synchronized &amp; Offset Time Base Provider<a class="headerlink" href="#synchronized-offset-time-base-provider" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Sl.No</strong></p></td>
+<td><p><strong>Functionality</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>Set, Update and Get Current Time</p></td>
+<td><p>Used to set and update a new time value for the clock,
+Also the access the time value which is updated.</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>Rate Correction</p></td>
+<td><p>Used to set and get the rate correction that will be applied to time
+values.</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>User Data set by Global Time
+Master</p></td>
+<td><p>Set and get user data from Global Time master.</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>Register and Unregister Time
+Validation</p></td>
+<td><p>Used to receive TSync parameters on every update.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Offset time base provider has similar functionality except:</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Si.No</strong></p></td>
+<td><p><strong>Functionality</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>Setting Offset Time</p></td>
+<td><p>Used to set a new offset time value for the clock.Setting a new time
+also triggers transmission on the bus.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="synchronized-time-base-consumer">
+<h2><span class="section-number">5.7. </span>Synchronized Time Base Consumer<a class="headerlink" href="#synchronized-time-base-consumer" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Sl.No</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>Gets current Time regardless of Sync Status</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>Used to set and get the rate correction that will be applied to time values</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>Gets snapshot of the current state of the clock</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>Notifies the Change in Status of time leap sync state etc.</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>Notifies The Change in Synchronization State</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+<td><p>Notifies Time Leap</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+<td><p>Used by time consumer applications to receive time sync parameters</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="time-validation-support">
+<h2><span class="section-number">5.8. </span>Time Validation Support<a class="headerlink" href="#time-validation-support" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>A Time Slave collects information on the time synchronization process, to predict e.g. the Sync Ingress based on its local instance of Global Time and check whether Master and Slave agree upon the current time.</p></li>
+<li><p>The prediction itself will be locally analysed by a separate Adaptive Application to detect any existing impairments.</p></li>
+<li><p>The information on the time synchronization process from Time Masters and Slaves is also shared with a Validator Adaptive Application which may run anywhere in the network, e.g. on the owner of Global Time.</p></li>
+<li><p>The Validator uses the information on the time synchronization process received from the Time Master and Time Slave Entities via a user defined feedback channel to reconstruct the whole synchronization process and check that a coherent time base is established among all peers.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id6">
+<img alt="../_images/Time_Validation_Mechanism.png" class="with-border" src="../_images/Time_Validation_Mechanism.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Time Validation Mechanism</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="precision-measurement-support">
+<h2><span class="section-number">5.9. </span>Precision Measurement Support<a class="headerlink" href="#precision-measurement-support" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameters</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>glbSeconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>glbNanoSeconds</p></td>
+</tr>
+<tr class="row-even"><td><p>timeBaseStatus</p></td>
+</tr>
+<tr class="row-odd"><td><p>virtualLocalTimeLow</p></td>
+</tr>
+<tr class="row-even"><td><p>rateDeviation</p></td>
+</tr>
+<tr class="row-odd"><td><p>locSeconds</p></td>
+</tr>
+<tr class="row-even"><td><p>locNanoSeconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>path Delay</p></td>
+</tr>
+</tbody>
+</table>
+<p>For Synchronized Time Base the precision Time notifier will update following  :</p>
+<ul class="simple">
+<li><p>Here it updates Local Time Base based on Global TimeBase.</p></li>
+<li><p>Here a snapshot is taken of all required data at the point in time, where a synchronization event takes place. Access is provided to those values by an actively pushed API function on each successful assembled data block.</p></li>
+</ul>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">5.10. </span>Configuration Methodology<a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<p><strong>System Configuration:</strong></p>
+<figure class="align-center" id="id7">
+<img alt="../_images/Configuration_Methodology.png" class="with-border" src="../_images/Configuration_Methodology.png" />
+<figcaption>
+<p><span class="caption-text"><strong>System Configuration</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As the AUTOSAR adaptive platform supports Ethernet as communication network also the time synchronization using Ethernet is supported.
+To support ethernet base communication the IPV4 address is configured as part EthGlobalTimeDomainProps in System Design.
+The Time slave and Time master properties like CRC, Sub Tlvs for global time domain is configured as part of GlobalTimeEthSlave and GlobalTimeEthMaster.</p>
+<p><strong>Machine Configuration:</strong></p>
+<figure class="align-center" id="id8">
+<img alt="../_images/Machine_Configuration.png" class="with-border" src="../_images/Machine_Configuration.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Machine Configuration</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The representation of the Time Synchronization functional cluster within one specific Machine is defined by the TimeSyncModuleInstantiation.
+The TimeSyncModuleInstantiation represents the actual instance of the Time Synchronization functional cluster executed on a specific Machine.
+The Time-Base Resources like Synchronized or Offset are defined in scope of TimeSyncModuleInstantiation.
+The sync correction parameters are also defined as part of Time base provider.</p>
+<p><strong>Connecting System and Machine:</strong></p>
+<figure class="align-center" id="id9">
+<img alt="../_images/Connecting_System_and_Machine.png" class="with-border" src="../_images/Connecting_System_and_Machine.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Connecting System and Machine</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The System Design and Machine Design are mapped through Ethernet communication connector.</p>
+<p><strong>Application Configuration:</strong></p>
+<figure class="align-center" id="id10">
+<img alt="../_images/Application_Configuration.png" class="with-border" src="../_images/Application_Configuration.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Application Configuration</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Time Synchronization functional cluster within the Adaptive Platform is responsible to provide various Time-Base Resources for the application to read from or to write to.
+In order to interface with the Time Synchronization foundation software an application developer needs to declare which kind of
+Time-Base Resource this application willinteract with.
+To interact with different Time base resource the port interface has to be configured.
+During application deployment, those PortPrototypes are mapped to actual Time-Base Resources in the Time-Sync Management</p>
+<p><strong>Application to Machine Mapping:</strong></p>
+<figure class="align-center" id="id11">
+<img alt="../_images/Application_to_Machine_Mapping.png" class="with-border" src="../_images/Application_to_Machine_Mapping.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Application to Machine Mapping</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>TimeSyncPortPrototypeToTimeBaseMapping is used to define a mapping between a TimeBaseResource and a RPortPrototype in process.
+The TimeSyncPortPrototypeToTimeBaseMapping takes the Process into account so that every instantiation of an Executable  can be mapped individually to TimeBaseResources.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../com/com.html" class="btn btn-neutral float-left" title="4. Communication Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../phm/phm.html" class="btn btn-neutral float-right" title="6. Platform Health Management(PHM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

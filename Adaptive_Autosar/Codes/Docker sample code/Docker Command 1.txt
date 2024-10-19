@@ -1,0 +1,39 @@
+>docker run <image_name>:<image_version>
+	>First will check if the image is present locally if not then it will fetch from docker hub
+	>Then it start downloading and configuration
+	> After downloading it will start running the container
+
+docker run -d <image_name>:<image_version>
+	>To run the contaier in detached mode
+
+>docker ps 
+	>List the running containers
+
+>docker pd -a
+	>ist the previous running containers
+
+>docker pull <image_name>:<image_verison>
+	>Fetch/pulls the image from dockerhub
+
+>docker images
+	>List the docker images present in the directory
+
+
+COMMANDS USING CONTAINER ID
+>docker start <ID_of_container>
+>docker stop <ID_of_container>
+
+>docker run -p5000:6379 -d redis
+	>Bind Laptop ports and Container Ports
+
+>docker run -d --name <CONTAINER_NAME> <image_name>:<image_version>
+	>To give Container a name
+
+DOCKER NETWORK
+>docker network ls
+	>List the network proesent
+
+>docker network create <NETWORK_NAME>
+	>To create our own network
+
+dckr_pat_JNySamRBNKDCUIo20VSaMLcsbUk

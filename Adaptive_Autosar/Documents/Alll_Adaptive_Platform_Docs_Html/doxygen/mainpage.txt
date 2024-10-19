@@ -1,0 +1,8 @@
+# Adaptive Platform wiki {#mainpage}
+
+## Contents
+
+*  [AUTOSAR Build Structure](@ref asrbuild_root)
+*  [Adaptive Platform](@ref adaptiveplatform_root)
+*  [Guidelines]
+

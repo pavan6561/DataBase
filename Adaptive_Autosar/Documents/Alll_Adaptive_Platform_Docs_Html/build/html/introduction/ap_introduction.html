@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Introduction to Software Defined Vehicle(SDVs) &mdash; Adaptive Platform Training  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=248367c1" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Overview of Function Clusters" href="fc_overview.html" />
+    <link rel="prev" title="Adaptive Platform Training" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Adaptive Platform Training
+              <img src="../_static/avin_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. <strong>Introduction to Software Defined Vehicle(SDVs)</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#current-in-vehicle-networking">1.1. <strong>Current In-Vehicle Networking</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-challenges-of-sdvs">1.2. <strong>Key Challenges of SDVs</strong>:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#driving-factors-of-sdvs">1.3. <strong>Driving Factors of SDVs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e-e-architecture-evolution">1.4. <strong>E/E Architecture Evolution</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-autosar-supports-zonal-architecture">1.4.1. <strong>How AUTOSAR Supports Zonal Architecture</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classic-vs-adaptive">1.4.2. <strong>Classic vs Adaptive</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-of-ecu-hardware">1.4.3. <strong>Types of ECU Hardware:</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#introduction-of-autosar-adaptive-platform">2. <strong>Introduction of AUTOSAR Adaptive Platform</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adaptive-platform-characteristics">2.1. <strong>Adaptive Platform Characteristics</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#service-oriented-architecture-soa">2.1.1. Service Oriented Architecture (SOA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-processing">2.1.2. Parallel Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leveraging-existing-standard">2.1.3. Leveraging existing standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#safety-and-security">2.1.4. Safety and Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planned-dynamics">2.1.5. Planned Dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agile">2.1.6. Agile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adaptive-platform-architecture">2.2. <strong>Adaptive Platform Architecture</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#application-lifecycle">2.2.1. Application Lifecycle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-methodology">2.3. <strong>Configuration Methodology</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fc_overview.html">3. <strong>Overview of Function Clusters</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../com/com.html">4. <strong>Communication Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsync/tsync.html">5. <strong>Time Synchronization (TSync)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phm/phm.html">6. <strong>Platform Health Management(PHM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nm/nm.html">7. <strong>Network Management(NM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ucm/ucm.html">8. <strong>Update and Configuration Management (UCM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sm/sm.html">9. <strong>State Management (SM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../em/em.html">10. <strong>Execution Management (EM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../persistency/persistency.html">11. <strong>Persistency</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/crypto.html">12. <strong>Cryptography</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../idsm/idsm.html">13. <strong>Intrusion Detection System Manager (IDSM)</strong></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adaptive Platform Training</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span><strong>Introduction to Software Defined Vehicle(SDVs)</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/introduction/ap_introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-software-defined-vehicle-sdvs">
+<h1><span class="section-number">1. </span><strong>Introduction to Software Defined Vehicle(SDVs)</strong><a class="headerlink" href="#introduction-to-software-defined-vehicle-sdvs" title="Link to this heading"></a></h1>
+<section id="current-in-vehicle-networking">
+<h2><span class="section-number">1.1. </span><strong>Current In-Vehicle Networking</strong><a class="headerlink" href="#current-in-vehicle-networking" title="Link to this heading"></a></h2>
+<p>Traditional ECU Characteristics:</p>
+<ul class="simple">
+<li><p>Deeply Embedded with real time, safe and secure system</p></li>
+<li><p>Static Network Configuration</p></li>
+<li><p>Static deployment of Application SWCs</p></li>
+<li><p>Low Computing Power</p></li>
+<li><p>Not scalable, Limited Bandwidth</p></li>
+<li><p>No standardized solution available for fail operational systems and updates over the air</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="with-border reference internal image-reference" href="../_images/In-VehicleNetworking.png"><img alt="../_images/In-VehicleNetworking.png" class="with-border" src="../_images/In-VehicleNetworking.png" style="width: 737.25px; height: 462.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>In Vehicle Networking</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Current and next generation vehicle functions/applications such as Electric Vehicle, Autonomous Car, Car-2-X, Software updates over the air, or Vehicles as part of the IoT, will introduce highly complex and computing resource demanding software into the vehicles and must fulfill strict integrity and security requirements. Such software realizes functions, such as environment perception, behavior planning, integrates the vehicle into external backend and infrastructure systems. The software in the vehicle needs to be changed during the life cycle of the vehicle, due to evolving external systems or improved functionality.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/FutureVehicle_new.png" class="with-border" src="../_images/FutureVehicle_new.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Computation Intensive Applications and Functions</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The rise of the SDV is a result of three automotive trends leading the paradigm shift: electrification, automation‌ , connectivity and shared.</p>
+<p>A software-defined vehicle (SDV) is a vehicle that is built primarily on software and where the functions of the vehicle are driven by software instead of hardware. In addition, the vehicle’s software plays a key role in enhancing existing features ‌and introducing new capabilities, allowing for customization of the vehicle without changing the underlying hardware.</p>
+</section>
+<section id="key-challenges-of-sdvs">
+<h2><span class="section-number">1.2. </span><strong>Key Challenges of SDVs</strong>:<a class="headerlink" href="#key-challenges-of-sdvs" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>E/E Architecture</strong>: Current EE architectures with domain controllers and a central gateway have grown over time and became very complex.</dt><dd><ul class="simple">
+<li><p>3rd heaviest part up to 80 kg</p></li>
+<li><p>Absolute length of up to 5 km</p></li>
+<li><p>3rd highest cost component, with a high cost of labor</p></li>
+<li><p>The new generation of vehicles will rely on and produce huge amounts of data that cannot be handled efficiently by the existing architecture used in traditional vehicles.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Safety and Security</strong>: As more software is introduced into vehicles, there are more opportunities for hackers to attack, putting the safety of drivers and passengers at risk. Developers must focus on creating cars that are secure by design to keep drivers and passengers safe, protect personal data and information, and ensure that the vehicle operates as intended.</p>
+<p><strong>In-Vehicle Networking</strong>: To operate efficiently, the different components must be able to communicate with each other quickly, effectively and synchronized way. Low latency and high bandwidth capabilities are imperative, along with the ability to balance power, manage heat, optimize storage, and ensure memory capacity.</p>
+<p><strong>The New Supply Chain</strong>: Traditionally, OEMs would acquire ECUs and the relevant software from the same Tier 1, and the software would be made specifically for each ECU. The supply chain for SDVs is different, giving OEMs the freedom to choose from a variety of software providers who must be able to produce software that can work with any type of hardware.</p>
+<p><strong>Decoupling Hardware and Software</strong>: In order to best take advantage of the new supply chain and its flexibility, hardware and software abstraction is crucial. This will consolidate the number of ECUs needed and will allow for the customization that customers crave.</p>
+</section>
+<section id="driving-factors-of-sdvs">
+<h2><span class="section-number">1.3. </span><strong>Driving Factors of SDVs</strong><a class="headerlink" href="#driving-factors-of-sdvs" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Reduced time to SOP</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Shorter &amp; Agile Development and Deployment</p></li>
+<li><p>Shorter time to market for new concepts</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>New revenue streams for OEM</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Roll-out new features Post-Sale of vehicle on subscription basis</p></li>
+<li><p>Vehicle data collected can be sold</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Increased Consumer demand for high compute features like</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Autonomous driving</p></li>
+<li><p>Digital cockpit</p></li>
+<li><p>Connected and shared cars</p></li>
+<li><p>Ability to have the latest features via Over the air updates</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Lower Development and Production Costs</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reduced micro-controllers, wiring and harness</p></li>
+<li><p>Shorter Supply chain</p></li>
+<li><p>Eliminating product recall for software defects</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="e-e-architecture-evolution">
+<h2><span class="section-number">1.4. </span><strong>E/E Architecture Evolution</strong><a class="headerlink" href="#e-e-architecture-evolution" title="Link to this heading"></a></h2>
+<p>The Automotive industry is undergoing rapid evolution and is currently at an inflection point. The vehicles which were predominantly mechanical machines are more and more shifting towards Electrical and Electronics.</p>
+<figure class="align-center" id="id3">
+<a class="with-border reference internal image-reference" href="../_images/ee_arch_evolution.png"><img alt="../_images/ee_arch_evolution.png" class="with-border" src="../_images/ee_arch_evolution.png" style="width: 689.5px; height: 432.59999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>E/E Architecture Evolution</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt><strong>Zonal Architecture</strong></dt><dd><ul class="simple">
+<li><p>Centralized Zonal Compute</p></li>
+<li><p>Service Oriented Architecture</p></li>
+<li><p>Redundant Computing Platform</p></li>
+<li><p>Concentrated I/O</p></li>
+<li><p>Intelligent Power Supply</p></li>
+</ul>
+</dd>
+</dl>
+<section id="how-autosar-supports-zonal-architecture">
+<h3><span class="section-number">1.4.1. </span><strong>How AUTOSAR Supports Zonal Architecture</strong><a class="headerlink" href="#how-autosar-supports-zonal-architecture" title="Link to this heading"></a></h3>
+<p>In a software defined vehicle the central computer nodes would run the AUTOSAR Adaptive platform and would be capable of interacting with the AUTOSAR Classic platform and Non-AUTOSAR ECUs via standardized protocols.</p>
+<figure class="align-center" id="id4">
+<a class="with-border reference internal image-reference" href="../_images/AUTOSAR_Zonal_Architecture.png"><img alt="../_images/AUTOSAR_Zonal_Architecture.png" class="with-border" src="../_images/AUTOSAR_Zonal_Architecture.png" style="width: 907.0px; height: 361.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Zonal Architecture Supported by AUTOSAR</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="classic-vs-adaptive">
+<h3><span class="section-number">1.4.2. </span><strong>Classic vs Adaptive</strong><a class="headerlink" href="#classic-vs-adaptive" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Classic Platform</p></th>
+<th class="head"><p>Adaptive Platform</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Based on OSEK OS</p></td>
+<td><p>Based on POSIX</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deep Real time Embedded System</p></td>
+<td><p>High Performance and Computation-intensive functionality</p></td>
+</tr>
+<tr class="row-even"><td><p>Developed in C</p></td>
+<td><p>Developed in C++</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal based communication</p></td>
+<td><p>Service based communication</p></td>
+</tr>
+<tr class="row-even"><td><p>Static Network, Task and Application SWC Configuration and Scheduling Strategy. Whole Stack compiled and linked to generate the full target image for the hardware</p></td>
+<td><p>Thread and not runnable based communication, Flexible Configuration, Dynamic Deployment of new functionalities without the need to generate the full target image for the hardware</p></td>
+</tr>
+<tr class="row-odd"><td><p>Same Address space for all the applications (MPU Support)</p></td>
+<td><p>Each Application run in it’s own protected address space (MMU Support)</p></td>
+</tr>
+<tr class="row-even"><td><p>Execution of code directly from ROM</p></td>
+<td><p>Application is loaded from persistence memory to RAM</p></td>
+</tr>
+<tr class="row-odd"><td><p>Real time (High in the range of microsecond), Safety critical (up to ASIL D), Low computing power</p></td>
+<td><p>Not so real time (in the range of millisecond), High Computing Power, Fail Safe Operational System, Highly secured</p></td>
+</tr>
+<tr class="row-even"><td><p>Supports up to ASIL D</p></td>
+<td><p>Supports up to ASIL B</p></td>
+</tr>
+<tr class="row-odd"><td><p>Example of Classic Platform such as Engine Control, Braking Control</p></td>
+<td><p>Example of Adaptive Platform such as ADAS, Digital Cockpit</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id5">
+<img alt="../_images/ClassicVsAdaptive.png" class="with-border" src="../_images/ClassicVsAdaptive.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Quick Comparison</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>While the communication protocols of the classical platform are based on signal based paradigm that is statically pre-configured before run-time (operation), while the adaptive platform is based service-oriented communication allowing dynamic initiation of communication paths. Similarly, the dynamic scheduling of applications would allow dynamic deployment of application during runtime. Another important characteristic is the Memory Management Unit, through which each process (task) executed by the operating system have its own virtual address and doesn’t recognize the existence of others. This assists the achievement of freedom from interference between applications, even after their deployment during runtime. All this is realized through a POSIX complaint operating system, to allow the compatibility between other applications.</p>
+</section>
+<section id="types-of-ecu-hardware">
+<h3><span class="section-number">1.4.3. </span><strong>Types of ECU Hardware:</strong><a class="headerlink" href="#types-of-ecu-hardware" title="Link to this heading"></a></h3>
+<p>Machine term has been newly introduced with the AUTOSAR Adaptive Platform. A machine is resembled to virtualized ECU, an entity where software can be deployed to. In this context, one real ECU could run several machines. In the simplest case the term machine is nothing but an ECU.</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/Machine_View.png" class="with-border" src="../_images/Machine_View.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Machine View</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Existence of Classic Platform:</strong>
+AUTOSAR has no intention of replacing the Classical Platform with the Adaptive Platform, but the aim is to have both platforms coexisting and functioning together on the same network without risking the stability of the existing classical architecture that has been proven over the years. The introduction of the Adaptive Platform intends to complement the automotive specific functionalities and sustain the domain’s fundamental attributes such as reliability, availability, maintainability and safety.</p>
+</section>
+</section>
+</section>
+<section id="introduction-of-autosar-adaptive-platform">
+<h1><span class="section-number">2. </span><strong>Introduction of AUTOSAR Adaptive Platform</strong><a class="headerlink" href="#introduction-of-autosar-adaptive-platform" title="Link to this heading"></a></h1>
+<p>The Adaptive platform contains the interfaces that required for the development of complex ECUs that demands high processing power such as autonomous driving and mostly running on multicore microprocessors for parallel computing.</p>
+<p>As compared to Classic platform, the Adaptive platform allows dynamic linking of services and clients during ECU runtime which makes it much more flexible for the application developers. The platform also utilizes C++14 to allow feature-rich and fast development of ARA applications.</p>
+<section id="adaptive-platform-characteristics">
+<h2><span class="section-number">2.1. </span><strong>Adaptive Platform Characteristics</strong><a class="headerlink" href="#adaptive-platform-characteristics" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Language C++</p></li>
+<li><p>SOA</p></li>
+<li><p>Parallel processing</p></li>
+<li><p>Leveraging existing standard</p></li>
+<li><p>Safety and security</p></li>
+<li><p>Planned dynamics</p></li>
+<li><p>Agile</p></li>
+</ul>
+</div></blockquote>
+<section id="service-oriented-architecture-soa">
+<h3><span class="section-number">2.1.1. </span>Service Oriented Architecture (SOA)<a class="headerlink" href="#service-oriented-architecture-soa" title="Link to this heading"></a></h3>
+<p>A service-oriented architecture (SOA) is an approach used to create a software architecture based on the use of services that is exchanged between application software components. It enables the idea of service reuse, no need to start from scratch when upgrades and other modifications are needed; which creates an efficient and flexible way to interconnect systems to perform a specific job increasing the system scalability and re-usability, and simultaneously eases the coexistence of different applications.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/serviceorientedarchitecture.png" class="with-border" src="../_images/serviceorientedarchitecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Service Oriented Architecture</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The exchange of services is based on a Service-Oriented Communication (SOC) paradigm, where “an application is interpreted as a set of data providing (sensors), data processing (application logic), and data consuming (actuators) services. As shown in the above figure, the communication paths follow a producer/consumer or client/server model, where some applications offer their services as producers, while other applications subscribe for services as consumers. This allows the introduction of new services independent of vendors, products, technologies, and without introducing changes in the underlying program, which further support the establishment of communication paths at run-time.</p>
+<p>Only the needed data is subscribed for and reaches the client; unlike the classical way where all the data is broadcasted regardless of the receiver. Moreover, SOME/IP can be implemented on different operating system and even embedded devices without an operating system; serving the intention of providing compatibility, and allowing stronger interactions with off-board systems and non-AUTOSAR applications.</p>
+<p>A service consists of a combination of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Events</p></li>
+<li><p>Methods</p></li>
+<li><p>Fields</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="parallel-processing">
+<h3><span class="section-number">2.1.2. </span>Parallel Processing<a class="headerlink" href="#parallel-processing" title="Link to this heading"></a></h3>
+<p>The distributed computing is inherently parallel. The SOA, as different applications uses different set of services, shares this characteristic. The advancement or many core processors and heterogeneous computing that offer parallel processing capability offers technological opportunities to harness the compute power to match the inherent parallelism. Thus, the AP possesses the architectural capability to scale its functionality and performance as the multicore-heterogeneous computing technologies advance.</p>
+</section>
+<section id="leveraging-existing-standard">
+<h3><span class="section-number">2.1.3. </span>Leveraging existing standard<a class="headerlink" href="#leveraging-existing-standard" title="Link to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reuse existing (non-automotive) standards</p></li>
+<li><p>Ease software development</p></li>
+<li><p>Support automotive use-cases and protocols</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id8">
+<img alt="../_images/RefArchitecture.png" class="with-border" src="../_images/RefArchitecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Reuse existing standard</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="safety-and-security">
+<h3><span class="section-number">2.1.4. </span>Safety and Security<a class="headerlink" href="#safety-and-security" title="Link to this heading"></a></h3>
+<p>The systems that AP targets often require highest level of safety and security. To cope with the challenge, AP combines architectural, functional, and procedural approaches. The architecture is based on distributed computing based on SOA, which inherently makes each component more independent and free of unintended interference, dedicated functionalities to assist achieving safety and security.</p>
+</section>
+<section id="planned-dynamics">
+<h3><span class="section-number">2.1.5. </span>Planned Dynamics<a class="headerlink" href="#planned-dynamics" title="Link to this heading"></a></h3>
+<p>The AP supports incremental deployment of applications, where resources and communications are managed dynamically to reduce the effort for software development and integration, enabling short iteration cycles. Incremental deployment also supports explorative software development phases. AP allows the system integrator to carefully limit dynamic behavior to reduce the risk of unwanted or adverse effects allowing safety qualification. Dynamic behavior of an application will be limited by constraints stated in the Application Manifest.</p>
+<figure class="align-center" id="id9">
+<img alt="../_images/PlannedDynamics.png" class="with-border" src="../_images/PlannedDynamics.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Planned Dynamics</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Configuration of communication paths can happen at design-, at startup- or at run-time and is therefore considered either static or dynamic.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Full static configuration:</strong> service discovery is not needed at all as the server knows all clients and clients know the server.</p></li>
+<li><p><strong>No discovery by application code:</strong> the clients know the server but the server does not know the clients. Event subscription is the only dynamic communication pattern in the application.</p></li>
+<li><p><strong>Full service discovery in the application:</strong> No communication paths are known at configuration time. An API for Service discovery allows the application code to choose the service instance at runtime.</p></li>
+</ul>
+</div></blockquote>
+<p>Examples of Planned Dynamics are</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pre-determination of service discovery process</p></li>
+<li><p>Restriction of dynamic memory allocation to startup phase only</p></li>
+<li><p>Fair scheduling policy in addition to priority-based scheduling</p></li>
+<li><p>Fixed allocation of processes to CPU cores</p></li>
+<li><p>Access to pre-existing files in the file-system only</p></li>
+<li><p>Constraints for AP API usage by Applications</p></li>
+<li><p>Execution of authenticated code only</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="agile">
+<h3><span class="section-number">2.1.6. </span>Agile<a class="headerlink" href="#agile" title="Link to this heading"></a></h3>
+<p>To support Agile Development process, it is important that underlying architecture e.g. Adaptive Platform is scalable with the possibility of updating the system after its deployment.</p>
+</section>
+</section>
+<section id="adaptive-platform-architecture">
+<h2><span class="section-number">2.2. </span><strong>Adaptive Platform Architecture</strong><a class="headerlink" href="#adaptive-platform-architecture" title="Link to this heading"></a></h2>
+<p>The AUTOSAR Adaptive architecture organizes the software of the AUTOSAR Adaptive foundation as functional clusters. These clusters offer common functionality as services to the applications. The Adaptive Application (AA) run on top of ARA, AUTOSAR Runtime for Adaptive applications. ARA consists of application interfaces provided by Functional Clusters, which belong to either Adaptive Platform Foundation or Adaptive Platform Services. Adaptive Platform Foundation provides fundamental functionalities of AP, and Adaptive Platform Services provide platform standard services of AP. The interface of Functional Clusters, either they are those of Adaptive Platform Foundation or Adaptive Platform Services, are indifferent from AA point of view.</p>
+<figure class="align-center" id="id10">
+<img alt="../_images/apd_architecture.png" class="with-border" src="../_images/apd_architecture.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Adaptive Platform Architecture</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="application-lifecycle">
+<h3><span class="section-number">2.2.1. </span>Application Lifecycle<a class="headerlink" href="#application-lifecycle" title="Link to this heading"></a></h3>
+<p>Each process running within the machine its lifecycle managed by the Execution Management Function cluster. The processes are initialized, monitored and shutdown as per the requirement.</p>
+<figure class="align-center">
+<img alt="../_images/app_lifecycle.png" class="with-border" src="../_images/app_lifecycle.png" />
+</figure>
+</section>
+</section>
+<section id="configuration-methodology">
+<h2><span class="section-number">2.3. </span><strong>Configuration Methodology</strong><a class="headerlink" href="#configuration-methodology" title="Link to this heading"></a></h2>
+<p>The AUTOSAR Adaptive Platform can be modeled from the meta-models defined by AUTOSAR. This provides seamless model data transfer from OEM to supplier and is supported by all AUTOSAR compliant toolchains.</p>
+<figure class="align-center" id="id11">
+<a class="with-border reference internal image-reference" href="../_images/Configuration_Process.png"><img alt="../_images/Configuration_Process.png" class="with-border" src="../_images/Configuration_Process.png" style="width: 631.5px; height: 550.0px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Configuration Process</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt><strong>System Design (OEM)</strong></dt><dd><p>The whole System including adaptive platform machines and classic platform ECUs shall be present in one single model</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/System_Design.png"><img alt="../_images/System_Design.png" class="with-border" src="../_images/System_Design.png" style="width: 347.0px; height: 154.0px;" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>Service Interface Design (Supplier)</strong></dt><dd><p>The Services provided by a supplier by their machine shall be present in this model</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/service_interface.png"><img alt="../_images/service_interface.png" class="with-border" src="../_images/service_interface.png" style="width: 122.0px; height: 140.0px;" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>Service Interface Deployment (OEM)</strong></dt><dd><p>The protocol specific deployment of the required or provided Services by the supplier shall be modeled</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/service_interface_deployment.png"><img alt="../_images/service_interface_deployment.png" class="with-border" src="../_images/service_interface_deployment.png" style="width: 169.0px; height: 142.0px;" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>Machine Design (Supplier)</strong></dt><dd><p>The individual machine shall be modeled with the Adaptive platform FC instantiations and Machine/Function group states</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/machine_design_config.png"><img alt="../_images/machine_design_config.png" class="with-border" src="../_images/machine_design_config.png" style="width: 244.0px; height: 80.5px;" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>Adaptive Application Design (Supplier)</strong></dt><dd><p>The Adaptive platform applications shall be created and relevant services to be mapped to the provided or required ports</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/app_design_config.png"><img alt="../_images/app_design_config.png" class="with-border" src="../_images/app_design_config.png" style="width: 341.5px; height: 274.0px;" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>Process Design (Supplier)</strong></dt><dd><p>The Adaptive platform application shall be provided mapped to respective process of underlying machine</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="with-border reference internal image-reference" href="../_images/proc_design_config.png"><img alt="../_images/proc_design_config.png" class="with-border" src="../_images/proc_design_config.png" style="width: 467.0px; height: 250.5px;" /></a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Adaptive Platform Training" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fc_overview.html" class="btn btn-neutral float-right" title="3. Overview of Function Clusters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AVIN Systems Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

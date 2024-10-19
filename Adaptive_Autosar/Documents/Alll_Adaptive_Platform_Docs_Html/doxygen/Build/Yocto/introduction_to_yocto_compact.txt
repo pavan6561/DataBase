@@ -1,0 +1,426 @@
+# Yocto Project overview {#yocto_intro}
+ The Yocto Project is an open source collaboration project that helps developers create custom Linux-based systems for embedded products, regardless of the hardware architecture.
+ * Develop using one common Linux OS for all major architectures
+ * Flexible framework allowing you to re-use your software stack with future devices
+    * Just update few lines in configuration and rebuild
+ * Start with a validated collection of software and libraries 
+ * Supports use of popular package formats i.e rpm, deb, ipk.
+ * App Development Tools including Eclipse plugin, performance, debug, SDK
+ * There are different releases of Yocto
+  * 2.5 Sumo
+  * 2.4 Rocko
+  * 2.3 Pyro
+  * 2.2 Morty
+  * 2.1 Krogoth  (Currently used by Adaptive Autosar)
+ ![Yocto Layers](images/yocto_layer.png) 
+  
+# What is Poky?
+  
+  > Poky = BitBake + Metadata
+  
+  * Poky - Build System used by the Yocto Project.
+  * Poky has its own git repository and Primary Poky layer consist of as follows:
+    * oe-core (poky/meta)
+    * meta-poky (poky/meta-poky)
+    * meta-yocto-bsp
+  * The core component of poky contains 
+    * Bitbake tool: A python-based build engine
+    * Build scripts (infrastructure)
+    * Foundation package recipes (oe-core)
+    * meta-poky (Contains distribution policy)
+    * Reference BSPs
+    * Yocto Project 
+      ![Poky Components](images/yocto_layer_details.png)
+  
+  
+# What is Metadata?
+ The Recipes are the most common form of Metadata. A Recipe provides a “list of ingredients” and “cooking instructions” and it defines settings and a set of tasks used by bitbake to build binary packages
+
+ Metadata exists in following general categories:
+ * **Recipes (*.bb):** Usually describes build instructions for a single package 
+ * **Classes (*.bbclass):** Inheritance mechanism for common functionality 
+ * **Configuration (*.conf):** Drives the overall behavior of the build process.
+ * **Append files (*.bbappend):** Define additional metadata for a similarly named .bb file, Can add or override previously set values
+ * **Include files (*.inc):** Files which are used with the include directive. Include files are typical found via the BBPATH variable
+
+# Layers
+* Metadata is provided in a series of layers which allow you to override any value without editing the originally provided files
+* A layer is a logical collection of metadata in the form of recipes
+* A layer is used to represent oe-core, a Board Support Package (BSP), an application stack, and new application layer
+* All layers have a priority and can override policy, metadata and config settings of layers with a lesser priority
+* Layers are added to your build by inserting them into the BBLAYERS variable within your bblayers file
+> $HOME/yocto/build/conf/bblayers.conf 
+````
+ BBLAYERS ?= "                           \
+      ${HOME}/yocto/poky/meta            \
+      ${HOME}/yocto/poky/meta-poky       \
+      ${HOME}/yocto/poky/meta-yocto-bsp  \
+      "
+````
+* Poky Host system layout
+```
+$HOME/yocto/
+|---build  (or whatever name you choose)
+  Project build directory
+|---downloads (DL_DIR)
+  Downloaded source cache
+|---poky   (Do Not Modify anything in here*)
+  Poky, bitbake, scripts, oe-core, metadata
+|---sstate-cache (SSTATE_DIR)
+  Binary build cache
+
+```
+* Poky layout are as follow
+```
+$HOME/yocto/poky/
+|---LICENSE
+|---README
+|---README.hardware
+|---bitbake/            (The build tool)
+|---documentation/
+|---meta/               (oe-core)
+|---meta-poky/          (Yocto distro metadata)
+|---meta-yocto-bsp/     (Yocto Reference BSPs)
+|---oe-init-build-env   (Project setup script)
+|---scripts/            (Scripts and utilities)
+
+```  
+
+# What is Bitbake?
+ * Bitbake is a Powerful and flexible build engine (Python) which reads metadata and determines dependencies then schedules tasks.
+ * Bitbake is a task executor and scheduler.
+  ![Bitbake and Metadata](images/bitbake_metadat.png)
+ * By default the build task for the specified recipe is executed
+> $ bitbake myrecipe
+ * You can indicate which task you want run
+> $ bitbake -c clean myrecipe
+ * You can get a list of tasks with
+> $ bitbake -c listtasks myrecipe 
+ * Bitbake builds recipes by scheduling build tasks in parallel
+> $ bitbake recipe
+ * Bitbake looks for recipe.bb in BBFILES
+ * Each recipe defines build tasks, each which can depend on other tasks
+ * Recipes can also depend on other recipes, meaning more than one recipe may be built
+ * Tasks from more than one recipe are often  executed in parallel at once on multi-cpu build machines
+ * Following are the bitbake task:
+ 
+|  Task  | Description            |
+|-------------------|-----------------------------------------------------------|
+| do fetch  | Locate and download source code       | 
+| do unpack  | Unpack source into working directory     | 
+| do patch  | Apply any patches          |
+| do configure | Perform any necessary pre-build configuration   |
+| do compile  | Compile the source code         | 
+| do install  | Installation of resulting build artifacts in WORKDIR |
+| do populate  | Copy artifacts to sysroot        |
+| do package  | Create binary package(s)        |
+
+
+
+# What is a Recipe?
+* A recipe is a set of instructions for building packages, including:
+ * Where to obtain the upstream sources and which patches to apply (this is called “fetching”)
+  * SRC_URI
+ * Dependencies (on libraries or other recipes)
+  * DEPENDS, RDEPENDS
+ * Configuration/compilation options
+  * EXTRA_OECONF, EXTRA_OEMAKE
+ * Define which files go into what output packages
+  * FILES_*
+* Build one or more packages from source code
+ * Host tools, compiler, utilities
+ * Bootloader, Kernel, etc
+ * Libraries, interpretors, etc
+ * Userspace applications
+* Package Groups
+* Full System Images
+
+## Bitbake variables and metadata
+* These are set automatically by bitbake
+ * TOPDIR – The build directory
+ * LAYERDIR – Current layer directory
+ * FILE – Path and filename of file being processed
+* Policy variables control the build 
+ * BUILD_ARCH – Host machine architecture
+ * TARGET_ARCH – Target architecture
+* Build time metadata
+ * PN – Pakage name (“myrecipe”)
+ * PV – Package version (1.0)
+ * PR – Package Release (r0)
+ * P = “${PN}-${PV}”
+ * PF = “${PN}-${PV}-${PR}”
+ * FILE_DIRNAME – Directory for FILE
+ * FILESPATH = "${FILE_DIRNAME}/${PF}:\
+ * ${FILE_DIRNAME}/${P}:\
+ * ${FILE_DIRNAME}/${PN}:\
+ * ${FILE_DIRNAME}/files:${FILE_DIRNAME}
+ * TOPDIR – The build directory
+ * TMPDIR = “${TOPDIR}/tmp”
+ * WORKDIR = ${TMPDIR}/work/${PF}”
+ * S = “${WORKDIR}/${P}”  (Source dir)
+ * B = “${S}”       (Build dir)
+ * D = “${WORKDIR}/${image}” (Destination dir)
+ * DEPLOY_DIR = “${TMPDIR}/deploy”
+ * DEPLOY_DIR_IMAGE = “${DEPLOY_DIR}/images”
+* Dependancy metadata
+ * Build time package variables
+  * DEPENDS – Build time package dependencies
+  * PROVIDES = “${P} ${PF} ${PN}”
+ * Runtime package variables
+  * RDEPENDS – Runtime package dependencies
+  * RRECOMMENDS – Runtime recommended packages
+  * RSUGGESTS – Runtime suggested packages
+  * RPROVIDES – Runtime provides
+  * RCONFLICTS – Runtime package conflicts
+  * RREPLACES – Runtime package replaces
+  
+## Recipe Operators
+* Basic Variable Setting
+ * The following example sets VARIABLE to "value". This assignment occurs immediately as the statement is parsed. It is a "hard" assignment. 
+```
+      VARIABLE = "value"
+```
+ * As expected, if you include leading or trailing spaces as part of an assignment, the spaces are retained: 
+```
+      VARIABLE = " value"
+      VARIABLE = "value "
+```   
+* Variable Expansion
+ * BitBake supports variables referencing one another's contents using a syntax that is similar to shell scripting. Following is an example that results in A containing "aval" and B evaluating to "preavalpost" based on that current value of A. 
+```
+      A = "aval"
+      B = "pre${A}post"
+```
+ * You should realize that whenever B is referenced, its evaluation will depend on the state of A at that time. Thus, later evaluations of B in the previous example could result in different values depending on the value of A.   
+* Setting a default value (?=)
+ * You can use the "?=" operator to achieve a "softer" assignment for a variable. This type of assignment allows you to define a variable if it is undefined when the statement is parsed, but to leave the value alone if the variable has a value. Here is an example: 
+```
+      A ?= "aval"
+```
+ * If A is set at the time this statement is parsed, the variable retains its value. However, if A is not set, the variable is set to "aval". 
+*  Setting a weak default value (??=)
+  * It is possible to use a "weaker" assignment than in the previous section by using the "??=" operator. This assignment behaves identical to "?=" except that the assignment is made at the end of the parsing process rather than immediately. Consequently, when multiple "??=" assignments exist, the last one is used. Also, any "=" or "?=" assignment will override the value set with "??=". Here is an example: 
+```
+      A ??= "somevalue"
+      A ??= "someothervalue"
+```
+  * If A is set before the above statements are parsed, the variable retains its value. If A is not set, the variable is set to "someothervalue". 
+  * Again, this assignment is a "lazy" or "weak" assignment because it does not occur until the end of the parsing process
+*  Immediate variable expansion (:=)
+  * The ":=" operator results in a variable's contents being expanded immediately, rather than when the variable is actually used: 
+```
+      T = "123"
+      A := "${B} ${A} test ${T}"
+      T = "456"
+      B = "${T} bval"
+      C = "cval"
+      C := "${C}append"        
+```
+  * In this example, A contains "test 123" because ${B} and ${A} at the time of parsing are undefined, which leaves "test 123". And, the variable C contains "cvalappend" since ${C} immediately expands to "cval". 
+* Appending (+=) and prepending (=+) With Spaces
+  * Appending and prepending values is common and can be accomplished using the "+=" and "=+" operators. These operators insert a space between the current value and prepended or appended value. Here are some examples: 
+```
+      B = "bval"
+      B += "additionaldata"
+      C = "cval"
+      C =+ "test"
+```
+  * The variable B contains "bval additionaldata" and C contains "test cval". 
+* Appending (.=) and Prepending (=.) Without Spaces
+  * If you want to append or prepend values without an inserted space, use the ".=" and "=." operators. Here are some examples: 
+```
+      B = "bval"
+      B .= "additionaldata"
+      C = "cval"
+      C =. "test"
+```
+  * The variable B contains "bvaladditionaldata" and C contains "testcval".
+* Appending and Prepending (Override Style Syntax)
+  * You can also append and prepend a variable's value using an override style syntax. When you use this syntax, no spaces are inserted. Here are some examples:
+```
+        B = "bval"
+        B_append = " additional data"
+        C = "cval"
+        C_prepend = "additional data "
+        D = "dval"
+        D_append = "additional data"
+```
+  * The variable B becomes "bval additional data" and C becomes "additional data cval". The variable D becomes "dvaladditional data". 
+  * The operators " append" and " prepend" differ from the operators ".=" and "=." in that they are deferred until after parsing completes rather than being immediately applied. 
+* Removal (Override Style Syntax)
+  * You can remove values from lists using the removal override style syntax. Specifying a value for removal causes all occurrences of that value to be removed from the variable. 
+  * When you use this syntax, BitBake expects one or more strings. Surrounding spaces are removed as well. Here is an example: 
+```
+      FOO = "123 456 789 123456 123 456 123 456"
+      FOO_remove = "123"
+      FOO_remove = "456"
+   FOO2 = "abc def ghi abcdef abc def abc def"
+      FOO2_remove = "abc def"
+```
+  * The variable FOO becomes "789 123456" and FOO2 becomes "ghi abcdef". 
+ 
+## Recipe Example
+ Following is an example recipe:
+````
+# This file was derived from the 'Hello World!' example recipe in the
+# Yocto Project Development Manual.
+#
+
+DESCRIPTION = "Simple helloworld application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+PR = "r0"
+
+SRC_URI = "file://helloworld.c"
+
+S = "${WORKDIR}"
+
+do_compile() {
+      ${CC} helloworld.c -o helloworld
+}
+
+do_install() {
+      install -d ${D}${bindir}
+      install -m 0755 helloworld ${D}${bindir}
+}
+
+````
+
+# SSTATE CACHE
+ Several bitbake tasks can use past versions of build artefacts if there have been no changes since the last time you built them
+ 
+| Task     | Description                           |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------|
+| do_packagedata  |Creates package metadata used by the build system to generate the final packages         |
+| do_package   |Analyzes the content of the holding area and splits it into subsets based on available packages and files   |
+| do_package_write_rpm |Creates the actual RPM packages and places them in the Package Feed area           |     
+| do_populate_lic  |Writes license information for the recipe that is collected later when the image is constructed     |
+| do_populate_sysroot |Copies a subset of files installed by do_install into the sysroot in order to make them available to other recipes |
+
+
+
+# Board Support Packages
+* BSPs are layers to enable support for specific hardware platforms
+* Defines machine configuration variables for the board (MACHINE)
+* Adds machine-specific recipes and customizations
+ * Boot loader
+ * Kernel config
+ * Graphics drivers (e.g, Xorg)
+ * Additional recipes to support hardware features
+* When doing development with Yocto, do not edit files within the Poky source tree
+* Use a new custom layer for modularity and maintainability
+* Layers also allow you to easily port from one version of Yocto/Poky to the next version
+
+# What is an Image?
+* Building an image creates an entire Linux distribution from source
+ * Compiler, tools, libraries
+ * BSP: Bootloader, Kernel
+ * Root filesystem:
+  * Base OS
+  * services
+  * Applications
+  * etc
+* You often need to create your own Image recipe in order to add new packages or functionality
+* With Yocto/OpenEmbedded it is always preferable to extend an existing recipe or inherit a class
+* The simplest way is to inherit the core-image bbclass
+* You add packages to the image by adding them to IMAGE_INSTALL
+
+# Work flow process
+* The work flow process steps of yocto build system are as follow:
+ 1. Fetch
+ 2. Extract
+ 3. Patch
+ 4. Configure
+ 5. Build
+ 6. Install
+ 7. Package   
+
+ ![Bitbake environment workflow](images/yocto-environment.png)
+* Source fetch:
+ * BitBake can retrieve sources
+  – Locally from the build host
+  – Remotely from the external repos via network
+ * Source file formats varies,
+  – Plain
+  – Compressed tarballs
+     * Frequently used formats are GZIP and BZIP
+ * Source file can be obtained using,
+  – File transfer protocols
+   * HTTP
+   * HTTPS
+   * FTP
+   * SFTP etc
+  – SCM such as git, svn etc...
+ * Some projects provides access to
+  * Released versions
+  * Development branches through, git, SVN etc
+ * Download packages contains,
+  * Source code
+  * Patch files
+  * Auxiliary files
+ * SRC_URI
+  – Contains the URI's of the source files
+  – Remotely from the external repos via network
+ *  Order in which queries are made,
+  – Local download directory
+   * Bitbake first checks this Dir to see whether correct version of the source files are already retrieved
+  – Premirrors
+   * List of mirror file servers
+  – Upstream repositories
+   * In open source, upstream refers to original authors or maintainers of the software packages.
+  – Postmirrors
+   * Second list of mirror servers 
+* Extract:
+ * After downloading into the local download directory, they are extracted into the local BE
+ * If source code obtained from the SCM, then extract refers to checking them out to the area where bitbake builds them  
+ 
+* Patch:
+ * Process of incrementally modifying the source code by adding, deleting or changing the source files 
+ * Build System needs to know where to copy the patch files
+ * Order in which patches are applied is important, because patches may be dependent on each other
+* Configure:
+ * Accurate configuration is very important for the cross build environment,
+  – CPU architecture of the build host is different from CPU architecture of the target host
+ * Many S/W packages uses AUTOTOOLS for configuration, these tools are hard to use
+ * OE–BS automates the configuration tasks
+ * Some S/W packages uses their own configuration system, OE-BS provides flexibility to adjust the configuration step accordingly 
+* Build:
+ * Source codes are converted into the binary images
+ * Some S/W packages will use utilities such as,
+  * Make
+  * CMake
+  * qmake
+ * OE uses bitbake to achieve this job 
+* Install:
+ * Copying the binaries, libraries, docs, configuration files to the correct location in the target machines.
+ * Examples,
+  * User programs should be installed in /usr/bin
+  * System programs should be installed in /usr/sbin
+  * Config files to be installed in /etc
+  * Libraries to be installed in /usr/lib
+ * Install target in the Makefile correctly written will do the job of installing
+ * Install utility also sets file permissions and the file ownership while copying the files to the target machine
+* Packaging:
+ * It the process of bundling the
+  * Software
+  * Binaries
+  * Auxiliary files into the single archive.
+ * This step is needed for the distribution purpose.
+  * RPM (Red hat package manager)
+  * Dpkg (Debian package manager)
+  * Opkg (Openmoko for the Embedded projects)
+
+# Bitbake execution environment 
+* BitBake first searches for the conf/bblayers.conf file.
+* Bitbake expects this file to contain the variable, BBLAYERS
+* Layers contained in this path is expected to contain conf/layer.conf file
+* The purpose of the layer.conf file is to set-up, BBPATH and BBFILES variables, so that bitbake can find recipes, classes, config files.
+* BBPATH : Contains path to classes(.bbclass files) and conf files(.conf files) in the sub-directories classes and the configuration DIR conf.
+* BBFILES : Contains path to recipes files  
+* After parsing conf/bblayers.conf, bitbake looks for conf/bitbake.conf which provides build system set-up.
+* After parsing conf/bitbake.conf and other .conf files, it locates and parses all classes.
+
+
+
+

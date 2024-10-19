@@ -1,0 +1,309 @@
+# Setup Adaptive platform demonstrator  {#adaptive_application}
+
+
+##	Prepare the linux environment
+```			
+>	~$ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm
+```
+
+##	Setup the build environment
+*	To setup the build environment necessary setup has to be downloaded and configuration has be done.
+			
+*	setup a folder for the source code of adaptive demonstrator
+```			
+>	~$ mkdir ara-project && cd ara-project	
+```
+
+*	obtain the demonstartor code i.e adaptive demonstarator release zip and extract it into the newly created folder and the folder structure will be like below
+```
+	ara-project$ tree -L 1
+	 ├── ara-api
+	 ├── sample-applications
+	 └── yocto-layers
+```
+
+*	The Demonstrator has additional dependencies, which are handled by the Yocto build system. In order to provide it with the recipes for building a complete operating system
+```
+>	$ git clone https://git.yoctoproject.org/git/poky
+>	$ git clone https://github.com/openembedded/meta-openembedded
+>	$ git -C poky checkout krogoth
+>	$ git -C meta-openembedded checkout krogoth
+```		
+		after the above step the directory will look like below
+```
+	ara-project$ tree -L 1
+	 ├── ara-api
+	 ├── meta-openembedded
+	 ├── poky
+	 ├── sample-applications
+	 └── yocto-layers	
+```
+*	To build the right target some configuration has to be done, create initial build directory
+```
+>	ara-project$ source poky/oe-init-build-env
+```		
+*	This command also changes the directory now here we add layer additional board support package (BSP) and adaptive autosar layer like meta-ara, meta-oe, meta-pyhton in bblayers.conf
+```
+>		$build$ bitbake-layers add-layer ../yocto-layers/meta-ara
+>		$build$ bitbake-layers add-layer ../meta-openembedded/meta-oe
+>		$build$ bitbake-layers add-layer ../meta-openembedded/meta-python
+```		
+*	Finally add target and  download/cache folder to conf/local.conf
+```
+>		build$ echo "MACHINE ??= \"qemux86\"" >> conf/local.conf 
+>		build$ echo "DL_DIR = \"$HOME/yocto/downloads\"" >> conf/local.conf 
+>		build$ echo "SSTATE_DIR = \"$HOME/yocto/sstate-cache\"" >> conf/local.conf 
+```
+
+##	Building development image
+*	Go to the initial poky source directory (named ara-project in the steps above) and execute the following commands for building the default image core-image-apd-devel 
+```
+>		ara-project$ source poky/oe-init-build-env
+>		build$ bitbake core-image-apd-devel
+```
+*	Now the build process starts and it will take a couple of hours to finish it the first time. When the build finishes, there should be the following files in the directory tmp/deploy/images/qemux86/: 
+```
+		core-image-apd-devel-qemux86-<datetime>.rootfs.ext4
+		core-image-apd-devel-qemux86-<datetime>.rootfs.manifest
+		core-image-apd-devel-qemux86-<datetime>.rootfs.tar.bz2
+		
+```
+			
+# Creating an Adaptive Application
+*	Create a meta-mylayer for helloworld program in ara-project dir
+```
+>        $ cd ara-project
+>        $ source poky/oe-init-build-env
+>        $ cd ..
+>        $ yocto-layer create mylayer
+```
+```
+   Note: when asked for example recipe creation : yes
+	  When askd for recipe name             :  demo
+```
+*	Ads the meta-mylayer in bblayer.conf
+```
+>  $ bitbake-layers add-layer "$HOME/ara-project/meta-mylayer" 
+```
+
+*	Go to meta-mylayer/recipes-exzmple/example/demo-0.1 and remove the helloworld.c and add demo.cpp
+```
+>	$ rm hello.c
+>	$ vi demo.cpp
+```
+```{.cpp}
+#include <exec/application_client.h>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/operations.hpp>
+#include <iostream>
+#include <unistd.h>
+
+int main(int, char** argv)
+{
+    namespace fs = boost::filesystem;
+
+    ara::exec::ApplicationClient app_client;
+    app_client.ReportApplicationState(ara::exec::ApplicationState::kRunning);
+
+    fs::path absolute_arg0 = fs::absolute(argv[0]);
+    std::cout << "Hello, " << absolute_arg0 << "\n";
+    sleep(5);
+
+    app_client.ReportApplicationState(ara::exec::ApplicationState::kTerminating);
+}
+  
+```
+
+*	Now add Cmake file
+```
+>	$ vi CMakeLists.txt
+```
+```
+set(CMAKE_CXX_STANDARD 11)
+
+find_package(ARAExec REQUIRED)
+find_package(AdaptivePlatform REQUIRED)
+find_package(Boost REQUIRED COMPONENTS filesystem system)
+
+add_executable(demo1 demo.cpp)
+
+target_link_libraries(demo1 ${ARAEXEC_LIBRARIES} ${ADAPTIVEPLATFORM_LIBRARIES} ${Boost_LIBRARIES})
+target_include_directories(demo1  PRIVATE ${Boost_INCLUDE_DIRS})
+
+install(TARGETS demo1 RUNTIME DESTINATION opt/demo1/bin)
+install(FILES MANIFEST-demo1.json PERMISSIONS OWNER_READ GROUP_READ WORLD_READ DESTINATION opt/demo1/etc RENAME MANIFEST.json)
+
+```
+
+*	Add a manifest file
+```
+>	$ vi MANIFST-demo1.json
+```
+````  {.json} 
+ [
+    {
+        "key": "platform_application",
+        "value": {
+            "bool": false
+        },
+        "checksum": 1639441683
+    },
+    {
+        "key": "application_states",
+        "value": {
+            "string[]": [ ]
+        },
+        "checksum": 1639441683
+    },
+    {
+        "key": "timer_resolution_ns",
+        "value": {
+            "uint32": 1000
+        },
+        "checksum": 1405615546
+    },
+    {
+        "key": "startup_configs",
+        "value": {
+            "object[]": [
+                {
+                    "key": "Machine: Startup, Driving, Parking",
+                    "value": {
+                        "object[]": [
+                            {
+                                "key": "depends",
+                                "value": {
+                                    "string[]": [ ]
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "machine_states",
+                                "value": {
+                                    "string[]": [ "Startup", "Driving", "Parking" ]
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "function_group_states",
+                                "value": {
+                                    "string[]": [ ]
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "resource_group",
+                                "value": {
+                                    "string": "Resource group 1"
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "scheduling_policy",
+                                "value": {
+                                    "string": "Round Robin"
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "scheduling_priority",
+                                "value": {
+                                    "uint32": 12
+                                },
+                                "checksum": 2301152528
+                            },
+                            {
+                                "key": "arguments",
+                                "value": {
+                                    "string[]": [ "--dbg", "arg2", "arg3" ]
+                                },
+                                "checksum": 2301152528
+                            }
+                        ]
+                    },
+                    "checksum": 870226170
+                }
+            ]
+        },
+        "checksum": 870226170
+    }
+]
+
+
+````
+*	Edit the demo_0.1.bb file
+```
+>	$ vi demo_0.1.bb
+```
+```
+SUMMARY = "Simple helloworld application"
+SECTION = "examples"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+
+inherit externalsrc
+EXTERNALSRC := "/path /to /meta-mylayer/recipes-example/example/demo-0.1"
+
+
+DEPENDS = "ara-exec-api"
+
+inherit cmake
+
+EXTRA_OECMAKE += "\
+        -DCMAKE_INSTALL_PREFIX=/ \
+"
+
+python do_package_qa() {
+   pass
+}
+
+# Add test applications to package
+FILES_${PN} += "\
+        /opt/demo1 \
+"
+
+FILES_${PN}-dbg += "\
+        /opt/demo1/bin/.debug \
+        "
+
+do_install_append() {
+  mkdir ${D}/opt/demo1/run/
+  mkfifo -m 0666 ${D}/opt/demo1/run/sysstate-client-fifo
+}
+
+
+```
+
+*	Add the application in core-image-apd-minimal.bb file below rootfs-open in IMAGE_INSTALL
+```
+>	$ cd /ara-project/yocto-layers/meta-ara/recipes-core/images
+>	$ vi core-image-apd-minimal.bb
+```
+````
+ IMAGE_INSTALL += " \
+        vsomeip \
+        vsomeip-examples \
+        ara-genivi-dlt \
+        diagnostic-manager \
+        ucm-package-manager \
+        diag-calculator-example \
+        diag-seedkey-example \
+        per-examples \
+        network-init \
+        filesys-init \
+        execution-manager \
+        access-manager \
+        emo-samples \
+        machine-manifest \
+        system-shutdown \
+        system-restart \
+        rootfs-open \
+        demo \
+"
+````
+8.	Bitbake the image
+```
+>	$ bitbake core-image-apd-minimal
+```
+

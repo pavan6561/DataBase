@@ -1,0 +1,211 @@
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Execution_Management}{Execution Management}}
+\item \mbox{\hyperlink{Execution_practical}{Execution Management practical}} 
+\end{DoxyItemize}\hypertarget{Execution_Management}{}\section{Execution Management}\label{Execution_Management}
+\subsection*{Architecture overview}
+
+In order to offer all the features described in the Execution Management specification, the current ara\+::exec implementation provides the following Demonstrator artifacts\+:  • Execution Manager software component is responsible for all aspects of system execution management including platform initialization and startup / shutdown of Applications. Execution Management works in conjunction with the Operating System to perform run-\/time scheduling of Applications.
+
+• A\+R\+A\+Exec library offering the specified public ara\+::exec A\+PI.
+
+• In addition to the above mentioned main deliverables two more auxiliary libraries are implemented\+:
+
+
+\begin{DoxyItemize}
+\item Adaptive\+Config library is an abstract layer on top of Persistency A\+PI, to handle the content of Machine Manifest and Application Manifest.
+\item lib\+Platform library offers low levels Named Pipe communication primitives and several generic utilities.
+\end{DoxyItemize}
+
+\subsection*{Execution Manager}
+
+Execution Manager is the main deliverable provided by Execution Management functional cluster. It implements most of the features described in the Execution Management specification. This application takes form of \char`\"{}init\char`\"{} process, the first process which is executed after system start-\/up, and the parent of all other applications/processes.  ~\newline
+ The Demonstrator implementation of Adaptive Platform is build on top of Linux, having the applications running temporally and spatially separated. One of the key aspects which has been stressed during the Adaptive Platform standardization process, was the opportunity of having the applications running isolated from each other, free from any form of interferences. P\+O\+S\+IX processes and the associated mechanisms offered by Linux fit then perfectly into this picture. The following P\+O\+S\+IX mechanisms offered by Linux are used to implement application life-\/cycle in an effective fashion.
+
+
+\begin{DoxyEnumerate}
+\item The combination of P\+O\+S\+IX calls fork()/execv() is used to execute application. fork() function will create a new child process derived from Execution Manager. execv() call binds the application binary to the newly created process. For illustration purposes the implementation of the application execution is shown below. 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} Application::Start() \{
+    \textcolor{keywordflow}{if} (pid\_ != 0) \{
+        \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Process already started"});
+    \}
+
+    state\_ = ProcessState::kStarting;
+
+    pid\_ = fork();
+    \textcolor{keywordflow}{if} (pid\_ == 0) \{
+        \textcolor{comment}{// child process}
+        \textcolor{comment}{// Change working directory to application root}
+        \textcolor{keywordflow}{if} (-1 == chdir(GetPrefix().c\_str())) \{
+            \textcolor{keywordflow}{throw} ErrnoException(errno);
+    \}
+
+        \textcolor{comment}{//execute the application executable with the required arguments}
+        execv(this->executable\_.c\_str(), this->arguments\_);
+
+        \textcolor{comment}{// When execv is successful, current process is replaced by child.}
+        \textcolor{comment}{// Otherwise, the following code will be reached.}
+        \textcolor{keywordflow}{throw} exception::ExecFailedException(errno, executable\_);
+    \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pid\_ < 0) \{
+        \textcolor{keywordflow}{throw} exception::ForkFailedException(errno, executable\_);
+    \} \textcolor{keywordflow}{else} \{
+        \textcolor{comment}{// parent process: child launched successfully}
+        TRACE\_INFO(\textcolor{stringliteral}{"EM: Forked child ’"} << executable\_ << \textcolor{stringliteral}{"’ with PID "} << pid\_ );
+    \}
+\}
+\end{DoxyCode}
+
+\item Application termination is implemented by sending the combination of S\+I\+G\+T\+ER -\/ M/\+S\+I\+G\+K\+I\+LL to the Application supposed to terminate. The initial assumption is\+: all Applications shall run in an cooperative fashion, meaning that they shall react on receiving the S\+I\+G\+T\+E\+RM and cleanly exit in a certain amount of time. If by any chance this thing doesn\textquotesingle{}t happen in the specified time interval the S\+I\+G\+K\+I\+LL signal will be issued for forcibly terminating the Application.
+
+The Execution Management is a functional cluster contained in the Adaptive Platform Foundation. The set of programming interfaces to the Adaptive Applications is called A\+RA.
+\end{DoxyEnumerate}
+
+Execution Management, in common with other Applications is assumed to be a process executed on a P\+O\+S\+IX compliant operating system. Execution Management is responsible for initiating execution of the processes in all the Functional Clusters, Adaptive A\+U\+T\+O\+S\+AR Services, and Adaptive Applications. The launching order must be given to the Execution Management according to the specification defined in this document to ensure proper startup of the system.
+
+The Adaptive A\+U\+T\+O\+S\+AR Services are provided via the Communication Management functional cluster of the Adaptive Platform Foundation. In order to use the Adaptive A\+U\+T\+O\+S\+AR Services, the functional clusters in the Foundation must be properly initialized beforehand.
+
+\subsection*{Execution manager fuctional overview}
+
+The A\+U\+T\+O\+S\+AR Adaptive Platform provides services to influence the lifecycle of Applications based on configuration. This document therefore includes requirements that determine the facilities provided by Execution Management to affect the machine-\/wide startup, shutdown and restart of an Application based on configuration.
+
+The Execution Management is responsible for all aspects of platform lifecycle management and application lifecycle management, including\+:
+\begin{DoxyItemize}
+\item  Machine startup, and Machine shutdown.
+\item Required process hierarchy of started services, e.\+g., init and its child process.
+\begin{DoxyItemize}
+\item after booting\+: The boot process in this case corresponds to machine init process.
+\end{DoxyItemize}
+\item The Execution Management is the initial (“boot”) process of the operating system and is responsible for Machine startup.
+\begin{DoxyItemize}
+\item bounded time and time variance of the boot process
+\end{DoxyItemize}
+\item The Execution Management enforces process isolation with each instance of an Executable managed as a single process.
+\item Startup and shutdown of Applications, including platform-\/level Applications and Adaptive Applications.
+\begin{DoxyItemize}
+\item Loading Executable based on a defined precedence
+\item Specific requirements until starting an Executable main function (i.\+e. entry point)
+\end{DoxyItemize}
+\item Privileges and use of access control
+\begin{DoxyItemize}
+\item description and semantics of access control in manifest files
+\end{DoxyItemize}
+\item Machine state management
+\begin{DoxyItemize}
+\item conditions for the execution of Applications
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Techinical aspect of execution manager}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Application} Applications are developed to resolve a set of coherent functional requirements. An Application consists of executable software units, additional execution related items (e.\+g. data or parameter files), and descriptive information used for integration end execution (e.\+g. a formal model description based on the A\+U\+T\+O\+S\+AR meta model, test cases). Applications can be located on user level above the middleware or can implement functional clusters of the Adaptive Platform (located on the level of the middleware), Applications might use all mechanisms and A\+P\+Is provided by the operating system and other functional clusters of the Adaptive Platform, which in general restricts portability to other Adaptive Platforms. All Applications, including Adaptive Applications (see below), are treated the same by Execution Management.
+\item {\bfseries Adaptive Application} An Adaptive Application is a specific type of Application. The implementation of an Adaptive Application fully complies with the A\+U\+T\+O\+S\+AR specification, i.\+e. it is restricted to use A\+P\+Is standardized by A\+U\+T\+O\+S\+AR and needs to follow specific coding guidelines to allow reallocation between different Adaptive Platforms. Adaptive Applications are always located above the middleware. To allow portability and reuse, user level Applications should be Adaptive Applications whenever technically possible. ~\newline
+ An Adaptive Application is the result of functional development and is the unit of delivery for Machine specific configuration and integration. Some contracts (e.\+g. concerning used libraries) and Service Interfaces to interact with other Adaptive Applications need to be agreed on beforehand.
+\item {\bfseries Executable} An Executable is a software unit which is part of an Application. It has exactly one entry point (main function), see \mbox{[}S\+W\+S\+\_\+\+O\+S\+I\+\_\+01300\mbox{]}. An Application can be implemented in one or more Executables. Executables which belong to the same Adaptive Application might need to be deployed to different Machines, e.\+g. to one high performance Machine and one high safety Machine. ~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Process Step  }&\textbf{ Software  }&\textbf{ Meta Information   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Process Step  }&\textbf{ Software  }&\textbf{ Meta Information   }\\\cline{1-3}
+\endhead
+Development and Integration  &Linked, configured and calibrated binary for deployment onto the target Machine. The binary might contain code which was generated at integration time.  &Application Manifest, see 7.\+1.\+5 and \mbox{[}2\mbox{]}, and Service Instance. Manifest (not used by Execution Management)   \\\cline{1-3}
+Deployment and Removal  &Binary installed on the target Machine.  &Processed Manifests, stored in a platform-\/specific format which is efficiently readable at Machine startup   \\\cline{1-3}
+Execution  &Process started as instance of the binary.  &The Execution Management uses contents of the Processed Manifests to start up and configure each process individually.   \\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyItemize}
+
+ ~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries Process} A Process is a started instance of an Executable. For details on how Execution Management starts and stops Processes see 7.\+4. Remark\+: In this release of this document it is assumed, that processes are selfcontained, i.\+e. that they take care of controlling thread creation and scheduling by calling A\+P\+Is from within the code. Execution Management only starts and terminates the processes and while the processes are running, Execution Management only interacts with the processes by using State Management mechanisms (see 7.\+5).
+\item {\bfseries Application Manifest} The Application Manifest consists of parts of the Application design information which is provided by the application developer in an application description, and additional machine-\/specific information which is added at integration time. For details on the Application Manifest contents see chapter 7.\+9. A formal specification can be found in \mbox{[}2\mbox{]}. An Application Manifest is created together with a Service Instance Manifest (not used by Execution Management) at integration time and deployed onto a Machine together with the Executable it is attached to. It describes in a standardized way the machine-\/specific configuration of Process properties (startup parameters, resource group assignment, priorities etc.). Each instance of an Executable binary, i.\+e. each started process, is individually configurable, with the option to use a different configuration set per Machine State or per Function Group State
+\item {\bfseries Machine Manifest} The Machine Manifest is also created at integration time for a specific Machine and is deployed like Application Manifests whenever its contents change. The Machine Manifest holds all configuration information which cannot be assigned to a specific Executable, i.\+e. which is not already covered by an Application Manifest or a Service Instance Manifest. The contents of a Machine Manifest includes the configuration of Machine properties and features (resources, safety, security, etc.), e.\+g. configured Machine States and Function Group States, resource groups, access right groups, scheduler configuration, S\+O\+M\+E/\+IP configuration, memory segmentation. For details see \mbox{[}2\mbox{]}.
+\item {\bfseries Manifest format} The Application Manifests and the Machine Manifest can be transformed into a platform-\/specific format (called Processed Manifest), which is efficiently readable at Machine startup. The format transformation can be done either off board at integration time or at deployment time, or on the Machine (by SW Configuration Management) at installation time.
+\item {\bfseries Execution Management Responsibilities} Execution Management is responsible for all aspects of Adaptive Platform execution management and Application execution management including\+:
+\begin{DoxyItemize}
+\item Platform Lifecycle Management\+: Execution Management is started as part of the Adaptive Platform startup phase and is responsible for the initialization of the Adaptive Platform and deployed Applications. During execution, Execution Management monitors the Adaptive Platform and, when required, the ordered shutdown of the Adaptive Platform.
+\item Application Lifecycle Management\+: ~\newline
+ The Execution Management is responsible for the ordered startup and shutdown of the deployed Applications. The Execution Management determines when, and possibly in which order, to start or stop the deployed Applications, based on information in the Machine Manifest and Application Manifests. Depending on the Machine State or on a Function Group State, deployed Applications are started during Adaptive Platform startup or later, however it is not expected that all will begin active work immediately since many Applications will provide services to other Applications and therefore wait and “listen” for incoming service requests. The Execution Management derives an ordering for startup/shutdown within the State Management framework, based on declared Application dependencies. The dependencies are described in the Application Manifests, see
+\end{DoxyItemize}
+
+The Execution Management is not responsible for run-\/time scheduling of Applications since this is the responsibility of the Operating System. However the Execution Management is responsible for initialization configuration of the OS to enable it to perform the necessary run-\/time scheduling based on information extracted by the Execution Management from the Machine Manifest and Application Manifests.
+\item {\bfseries Platform Lifecycle Management} The Execution Management controls the ordered startup and shutdown of the Adaptive Platform. The Platform Lifecycle Management characterize different stages of the Adaptive Platform including\+:
+\begin{DoxyItemize}
+\item Platform startup\+: The Execution Manager as part of Execution Management is started as the “init” process by the Operating System and then takes over responsibility for subsequent initialization of the Adaptive Platform and deployed Application Executables. Start of Application\+: Execution Management shall be solely responsible for initiating execution of Applications.
+\item Platform monitoring\+: The Execution Management can perform Application monitoring, also in conjunction with the Platform Health Management.
+\item Platform shutdown\+: The Execution Manager performs the ordered shutdown of the Adaptive Platform based on the dependencies, with the exception that already terminated Applications do not represent an error in the order.
+\end{DoxyItemize}
+\item {\bfseries Application Lifecycle Management}
+\begin{DoxyItemize}
+\item Process States\+: From the execution stand point, Process States characterize the lifecycle of any Application Executable. Note that each instance (i.\+e. process) of an Application Executable is independent and therefore has its own Process State.
+\begin{DoxyItemize}
+\item Idle Process State\+: The Idle Process State shall be the Process state prior to creation of the Applications process and resource allocation.
+\item Starting Process State\+: The Starting Process State shall apply when the Application’s process has been created and resources have been allocated.
+\item Running Process State\+: The Running Process State shall apply to an Applications process after it has been scheduled and it has reported Running State to the Execution Manager.
+\item Terminating Process State\+: The Terminating Process State shall apply either after an Applications process has received the termination indication from the Execution Manager or after it has decided to self-\/terminate and informed the Execution Manager. The termination indication uses the Report\+Application\+State A\+PI On entering the Terminating Process State the Applications process performs persistent storage of the working data, frees all Applications process internal resources, and exits.
+\item Terminated Process State\+: The Terminated Process State shall apply after the Applications process has been terminated and the process resources have been freed. For that, Execution Manager shall observe the exit status of all Applications processes, with the P\+O\+S\+IX waitpid() command. From the resource allocation stand point, Terminated state is similar to the Idle state as there is no process running and no resources are allocated anymore. From the execution stand point, Terminated state is different from the Idle state since it tells that the Applications process has already been executed and terminated. This is relevant for one shot Applications Processes which are supposed to run only once. Once they have reached their Terminated state, they shall stay in that state and never go back in any other state. E.\+g. System Initialization Applications process is supposed to run only once before any other application execution.
+\end{DoxyItemize}
+\item Startup sequence\+: When the Machine is started, the OS will be initialized first and then Execution Manager is launched as one of the O\+S’s initial processes1. Other functional clusters and platform-\/level Applications of the Adaptive Platform Foundation are then launched by Execution Management. After the Adaptive Platform Foundation is up and running, Execution Management continues to launch userlevel Applications.
+\begin{DoxyItemize}
+\item Startup order d The startup order of the platform-\/level Applications is determined by the Execution Management, based on Machine Manifest and Application Manifest information. 
+\end{DoxyItemize}
+\item Application dependency\+: The Execution Management provides support to the Adaptive Platform for ordered startup and shutdown of Applications. This ensures that Applications are started before dependent Applications use the services that they provide and, likewise, that Applications are shutdown only when their provided services are no longer required. In this release, this only applies to platform-\/level Applications at machine startup and shutdown.
+
+The startup dependencies, are configured in the Application Manifests, which is created at integration time based on information provided by the Application developer.
+
+User-\/level applications use service discovery mechanisms of the Communication Management and should not depend on startup dependencies. Which Executable instances are running depends on the current Machine State and on the current Function Group States, see 7.\+5. The integrator must ensure that all service dependencies are mapped to State Management configuration, i.\+e. that all dependent Executable instances are running when needed.
+
+In real life, specifying a simple dependency to an Application might not be sufficient to ensure that the depending service is actually provided. Since some Applications shall reach a certain Application State to be able to offer their services to other Applications, the dependency information shall also refer to Application State of the Application specified as dependency. With that in mind, the dependency information may be represented as a pair like\+: $<$\+Application$>$.$<$\+Application\+State$>$.
+
+The following dependency use-\/cases have been identified\+:
+
+$\ast$ In case Application B has a simple dependency on Application A, the Running Application State of Application A is specified in the dependency section of Application B’s Application Manifest.
+
+$\ast$ In case Application B depends on One-\/\+Shot Application A, the Terminated Application State of Application A is specified in the dependency section of Application B’s Application Manifest.
+
+Processes are only started by the Execution Manager if they reference a requested Machine State or Function Group State, but not because of configured Execution Dependencies. Execution Dependencies are only used to control a startup or terminate sequence at state transitions or at machine startup/shutdown.
+\end{DoxyItemize}
+\item {\bfseries State Management}
+\begin{DoxyItemize}
+\item Overview State Management provides a mechanism to define the state of the operation for an Adaptive Platform. The Application Manifest allows definition in which states the Application Executable instances have to run . State Management grants full control over the set of Applications to be executed and ensures that Applications are only executed (and hence resources allocated) when actually needed. Four different states are relevant for Execution Management\+: $\ast$ Application State $\ast$ Process State Process States are managed by an Execution Management internal state machine. $\ast$ Machine State
+\item Application State\+: The Application State characterizes the internal lifecycle of any instance of an Application Executable. The states are defined by the Application\+State enumeration. 
+\begin{DoxyItemize}
+\item Application State Running\+: Once the initialization of an Application Executable instance is complete, it shall switch to the Running state by setting the state to k\+Running
+\item Application State Termination\+:  The switch from the Running state to Terminating shall be initiated by the P\+O\+S\+IX Signal S\+I\+G\+T\+E\+RM or by any Application internal functionality causing this state change.
+
+ On Reception of that Signal, the Application Executable instance shall switch to the Terminating state and update it’s state to the k\+Terminating enumeration value.  ~\newline
+ During the Terminating state, the Application shall free internally used resources. \+When the Terminating state finishes, the Application Executable instance shall exit.
+\item Application State Reporting\+: An Application Executable instance shall report its state to the Execution Management using the Application\+Client\+:\+: Report\+Application\+State interface. It has to be reported immediately after it has been changed.
+\end{DoxyItemize}
+\item Machine State Requesting and reaching a Machine State is, besides using Function Group States, one way to define the current set of running Application Executable instances. It is significantly influenced by vehicle-\/wide events and modes. Each Application can declare in its Application Manifest in which Machine States it has to be active. There are several mandatory machine states specified in this document that have to be present on each machine. Additional Machine States can be defined on a machine specific basis and are therefore not standardized.
+\begin{DoxyItemize}
+\item Machine States\+: A Mode\+Declaration for each required Machine State has to be defined in the Machine Manifest. The Execution Manager shall obtain the Machine States from the Machine Manifest. The A\+PI specification shall use the short\+Name for identification of the Machine State. The Machine States are determined and requested by the State Manager,
+\item Startup
+\begin{DoxyItemize}
+\item Machine State Startup\+: The Startup Machine State shall be the first state to be active after the startup of Execution Manager. Therefore, a Mode\+Declaration for the Startup has to be defined in the Machine Manifest.
+\item Machine State Startup behavior\+: The following behavior apply for the Startup Machine State\+:  $\ast$ All platform-\/level Applications configured for Startup shall be started. Applications configured for Startup are based on the reference from the Applications Processes to the Mode\+Dependent\+Startup\+Config in the role Process.\+mode\+Dependent\+Startup\+Config with the instance\+Ref to the Mode\+Declaration in the role Mode\+Dependent\+Startup\+Config.\+machine\+Mode that belongs to the Startup Machine State.  $\ast$ For startup of Applications, the startup requirements of section 7.\+4 apply.  $\ast$ The Execution Manager shall wait for all started Applications until their Application State Running is reported.  $\ast$ If that is the case, the Execution Manager shall notify the State Manager that the Startup Machine State is ready to be changed.  $\ast$ The Execution Manager shall not change the Machine State by itself until a new state is requested by the State Manager.
+\end{DoxyItemize}
+\item Shutdown
+\begin{DoxyItemize}
+\item Machine State Shutdown\+: The Shutdown Machine State shall be active after the Shutdown Machine State is requested by the State Manager. Therefore, a Mode\+Declaration for the Shutdown has to be defined in the Machine Manifest.
+\item Machine State Shutdown behavior\+: The following behavior apply for the Shutdown Machine State\+: $\ast$ All Applications, including the platform-\/level Applications, that have a Process State different than Idle or Terminated shall be shutdown. $\ast$ For shutdown of Applications, the shutdown requirements of section 7.\+4 apply. $\ast$ When Process State of all Applications is Idle or Terminated, all Applications configured for Shutdown shall be started. Applications configured for Shutdown are based on the reference from the Applications Processes to the Mode\+Dependent\+Startup\+Config in the role Process.\+mode\+De-\/pendent\+Startup\+Config with the instance\+Ref to the Mode\+Declaration in the role Mode\+Dependent\+Startup\+Config.\+machine\+Mode that belongs to the Shutdown Machine State.
+\item Shutdown of the Operating System\+: There shall be at least one Application consisting of at least one Process that has a Mode\+Dependent\+Startup\+Config in the role Process.\+mode\+Dependent\+Startup\+Config with the instance\+Ref to the Mode\+Declaration in the role Mode\+Dependent\+Startup\+Config. machine\+Mode that belongs to the Shutdown Machine State. This Application shall contain the actual mechanism(s) to initiate shutdown of the Operating System.
+\end{DoxyItemize}
+\item Restart
+\begin{DoxyItemize}
+\item Machine State Restart\+: The Restart Machine State shall be active after the Restart Machine State is requested by the State Manager. Therefore, a Mode\+Declaration for the Restart has to be defined in the Machine Manifest.
+\item Machine State Restart behavior\+: The following behavior applies for the Restart Machine State\+:  $\ast$ All Applications, including the platform-\/level Applications, that have a Process State different than Idle or Terminated shall be shutdown.  $\ast$ For shutdown of Applications, the shutdown requirements of Section 7.\+4 apply.  $\ast$ When Process State of all Applications is Idle or Terminated, all Applications configured for Restart shall be started. Applications configured for Restart are based on the reference from the Applications Processes to the Mode\+Dependent\+Startup\+Config in the role Process.\+mode\+Dependent\+Startup\+Config with the instance\+Ref to the Mode\+Declaration in the role Mode\+Dependent\+Startup\+Config.\+machine\+Mode that belongs to the Restart Machine State.
+\begin{DoxyItemize}
+\item Restart of the Operating System\+: There shall be at least one Application consisting of at least one Process that has a Mode\+Dependent\+Startup\+Config in the role Process.\+mode\+Dependent\+Startup\+Config with the instance\+Ref to the Mode\+Declaration in the role Mode\+Dependent\+Startup\+Config. machine\+Mode that belongs to the Restart Machine State. This Application shall contain the actual mechanism(s) to initiate restart of the Operating System. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{Execution_practical}{}\section{Execution Management practical}\label{Execution_practical}

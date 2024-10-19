@@ -1,0 +1,4 @@
+/home/pavan/UDP/build/CMakeFiles/server.dir
+/home/pavan/UDP/build/CMakeFiles/client.dir
+/home/pavan/UDP/build/CMakeFiles/edit_cache.dir
+/home/pavan/UDP/build/CMakeFiles/rebuild_cache.dir
