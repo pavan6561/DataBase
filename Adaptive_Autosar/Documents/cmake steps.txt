@@ -1,0 +1,10 @@
+cmake steps:
+mkdir MyProject
+cd MyProject
+create .cpp and .h files
+Create a file named CMakeLists.txt
+mkdir build
+cd build
+cmake ..
+cmake --build .
+./MyProject

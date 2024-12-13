@@ -244,7 +244,7 @@ int main(){
    if ( (a ^ b) )
       cout<<"a is not equal to b";
    else
-      cout<<"a is else to b";
+      cout<<"a is equal to b";
       return 0;
 }
 ...............................................................
@@ -289,7 +289,7 @@ using namespace std;
 int main(){
    int n = 128;
    cout<<n<<"divided by 4 = ";
-   n = n >> 2;
+   n = n >> 2; // right shift 128/2 power of 2
    cout<< n;
    return 0;
 }
@@ -798,4 +798,17 @@ for(pos = 7 ; pos>=0 ;pos--)
 int ret =num>>pos&1;
 printf ( "%d ",ret );
 }
-                                                                                                                                               vf
+#include <stdio.h>
+
+int main() {
+    unsigned char original = 0xAB; // The original value
+    unsigned char swapped;
+
+    // Swap the nibbles
+    swapped = ((original & 0x0F) << 4) | ((original & 0xF0) >> 4);
+
+    printf("Original: 0x%X\n", original);
+    printf("Swapped: 0x%X\n", swapped);
+
+    return 0;
+}
