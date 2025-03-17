@@ -1,48 +1,56 @@
-static violation rules:
+Static Violation Rules:
 -----------------------
-1. The header should be named as a type it declares.
+1. Header File Naming
+The header file should be named after the type it declares.
 Example:
 // Person.h
 class Person {
     // class definition
 };
 
-2. camel case, pascal case,
-Example:
--> CamelCase:
-CamelCase is typically used for variables, function names, and sometimes for member functions.
+2. Naming Conventions
+Camel Case:
+-----------
+Used for variables, function names, and sometimes for member functions.
 The first letter is lowercase, and the first letter of each subsequent concatenated word is capitalized.
+Example:
 // Variables
 int employeeCount;
 double interestRate;
+
 // Functions
 void calculateInterest();
 
--> PascalCase:
+Pascal Case:
+------------
+Used for class names, struct names, and typedefs.
+The first letter of each word is capitalized.
+Example:
 // Class names
 class BankAccount {
     // class definition
 };
+
 // Struct names
 struct EmployeeRecord {
     // struct definition
 };
+
 // Typedefs
 typedef unsigned long TimeStamp;
 
-3. data member should be private(Member data in non-POD class types shall be private.)
+3. Data Members Should Be Private
+Member data in non-POD class types shall be private.
 Example:
-
 private:
-    // Private data members
     std::string ownerName;
     double balance;
 	
-	
-4. declared function is not called
+4. Declared Function is Not Called
+Any declared function should be called to avoid warnings or confusion.
 Example:
-
 #include <iostream>
+
 // Function declaration
 void declaredButNotCalled();
 
@@ -50,7 +58,6 @@ int main() {
     std::cout << "This function will not be called." << std::endl;
 
     // Note: The declaredButNotCalled() function is not called here
-
     return 0;
 }
 
@@ -59,32 +66,71 @@ void declaredButNotCalled() {
     std::cout << "This message will never be displayed because the function is not called." << std::endl;
 }
 
-5. every class should have Rule of 5(copy, copy, move and assignment operators)
-The Rule of Five in C++ is a best practice guideline which states that if a class requires a user-defined destructor, copy constructor, copy assignment operator, move constructor, or move assignment operator, 
-it should probably explicitly define all five of these special member functions. This helps manage resources properly and avoid common pitfalls related to resource management, especially with dynamic memory.
+5. Rule of Five
+The Rule of Five in C++ is a best practice guideline which states that if a class requires a user-defined:
+Destructor
+Copy Constructor
+Copy Assignment Operator
+Move Constructor
+Move Assignment Operator
+Then it should explicitly define all five of these special member functions to ensure proper resource management, especially for dynamic memory.
 
-6. Do not use trailing whitespace. and line should not cross 110 characters
+Example:
+class Example {
+public:
+    // Constructor
+    Example();
 
-7. The header should be named as a type it declares.
-Example: Person.h
+    // Destructor
+    ~Example();
+
+    // Copy Constructor
+    Example(const Example& other);
+
+    // Copy Assignment Operator
+    Example& operator=(const Example& other);
+
+    // Move Constructor
+    Example(Example&& other) noexcept;
+
+    // Move Assignment Operator
+    Example& operator=(Example&& other) noexcept;
+};
+
+6. Trailing Whitespace and Line Length
+Do not use trailing whitespace.
+The line length should not exceed 110 characters.
+
+7. Include Guards
+Header files should have include guards to prevent multiple inclusions.
+The header file should match the type name.
+Example:
+// Person.h
 #ifndef PERSON_H
 #define PERSON_H
+
+class Person {
+    // class definition
+};
+
 #endif // PERSON_H
 
-8. Braced-initialization {}, without equals sign, shall be used for variable initialization.
+8. Braced Initialization
+Braced initialization {} without an equals sign = shall be used for variable initialization.
 Example:
 // Constructor
-Person::Person(const char* name, int age) : name{nullptr}, age{age}
+Person::Person(const char* name, int age) : name{nullptr}, age{age} {}
 
-9. Use of magic literal.
+9. Magic Literals
+Hard-coded values should be replaced with named constants to improve readability and maintainability.
 Example:
-A "magic literal" refers to the use of hard-coded values directly in the code, which can make the code harder to understand and maintain. These literals can be replaced with named constants to improve readability and maintainability.
 // Define constants for default ages
 const int DEFAULT_AGE = 30;
 const int JANE_DOE_AGE = 25;
 const int MIKE_SMITH_AGE = 40;
 
-10. Return value of function discarded.
+10. Return Value of Function Discarded
+The return value of a function should not be ignored unless explicitly required.
 Example:
 int calculateSomething() {
     // Some calculation
@@ -96,5 +142,39 @@ int main() {
     return 0;
 }
 
-11. Last if in the if-cascade has no else.
-12 .Last else in the if-cascade must not be empty or contain a comment.
+11. Last if in the if-Cascade Has No else
+Every if-cascade should end with an else block to handle any undefined cases.
+Example:
+if (x > 0) {
+    // do something
+} else if (x < 0) {
+    // do something else
+} else {
+    // handle case where x == 0
+}
+
+12. Last else in the if-Cascade Must Not Be Empty
+The last else should have a meaningful statement instead of being left empty or containing only a comment.
+Incorrect Example:
+if (x > 0) {
+    // do something
+} else if (x < 0) {
+    // do something else
+} else {
+    // Do nothing
+}
+Correct Example:
+if (x > 0) {
+    // do something
+} else if (x < 0) {
+    // do something else
+} else {
+    handleZeroCase(); // Proper handling instead of leaving it empty
+}
+
+
+
+
+
+
+
