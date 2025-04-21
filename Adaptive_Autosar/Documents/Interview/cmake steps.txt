@@ -1,10 +1,34 @@
+CMakeLists.txt:
+---------------
+# Specify the minimum version of CMake required to build this project
+cmake_minimum_required(VERSION 3.10)
+
+# Set the name of the project
+project(InheritanceExample)
+
+# Set the C++ standard to C++14
+set(CMAKE_CXX_STANDARD 14)                # Use C++14 standard
+set(CMAKE_CXX_STANDARD_REQUIRED True)     # Make it mandatory
+
+# Include the 'src' directory so that headers inside 'src' can be found by the compiler
+include_directories(${PROJECT_SOURCE_DIR}/src)
+
+# Define the source files used in the project
+set(SOURCES
+    main.cpp
+    src/Base.cpp
+    src/Derived.cpp
+)
+
+# Define the executable target and the source files used to build it
+# This creates an executable named 'InheritanceExample'
+add_executable(InheritanceExample ${SOURCES})
+
+
 cmake steps:
-mkdir MyProject
-cd MyProject
-create .cpp and .h files
-Create a file named CMakeLists.txt
+------------
 mkdir build
 cd build
 cmake ..
-cmake --build .
-./MyProject
+make
+./InheritanceExample
