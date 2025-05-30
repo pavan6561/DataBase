@@ -30,7 +30,80 @@
             
 .SOFT LINK:  if we remove the original file(abc) ,we can not get the data from another file(def) (ln -s abc def)
             one file are regular another linked .inode numbers are not same .link count not are increment.    
+Example :
+ 1. Hard Link – Real-Time Example
+🧪 Step-by-Step
+bash
+Copy
+Edit
+# Step 1: Create a file
+echo "This is the original file" > original.txt
 
+# Step 2: Create a hard link
+ln original.txt hardlink.txt
+
+# Step 3: Check inode numbers
+ls -li original.txt hardlink.txt
+🔍 Expected Output
+bash
+Copy
+Edit
+123456 -rw-r--r-- 2 user user 28 May 28 10:00 hardlink.txt
+123456 -rw-r--r-- 2 user user 28 May 28 10:00 original.txt
+🔁 Both files share the same inode number (e.g., 123456), meaning they are hard-linked.
+
+🔥 Test Behavior
+bash
+Copy
+Edit
+# Edit the original
+echo "Modified via original" > original.txt
+
+# Read from the hard link
+cat hardlink.txt
+✅ Output
+nginx
+Copy
+Edit
+Modified via original
+🎯 Both files reflect the same content because they point to the same data on disk.
+
+✅ 2. Soft Link – Real-Time Example
+🧪 Step-by-Step
+bash
+Copy
+Edit
+# Step 1: Create another file
+echo "This is a new file" > fileB.txt
+
+# Step 2: Create a symbolic (soft) link
+ln -s fileB.txt symlink.txt
+
+# Step 3: List with details
+ls -l fileB.txt symlink.txt
+🔍 Expected Output
+bash
+Copy
+Edit
+-rw-r--r-- 1 user user 20 May 28 10:02 fileB.txt
+lrwxrwxrwx 1 user user  9 May 28 10:03 symlink.txt -> fileB.txt
+📎 symlink.txt just points to fileB.txt.
+
+🔥 Test Behavior
+bash
+Copy
+Edit
+# Delete the original
+rm fileB.txt
+
+# Try to access symlink
+cat symlink.txt
+❌ Output
+yaml
+Copy
+Edit
+cat: symlink.txt: No such file or directory
+🎯 Symlink is now broken because the target was deleted.
 
                                             fork()
                                             -------
@@ -38,6 +111,39 @@
 .orphan:parent execution complited and child is still execututing is called orphan.
 .zombie:child executed complited and parent is still executing is called zombie.
 
+| Signal | Name    | Description                               |
+| ------ | ------- | ----------------------------------------- |
+| 1      | SIGHUP  | Hangup detected                           |
+| 2      | SIGINT  | Interrupt (Ctrl+C)                        |
+| 3      | SIGQUIT | Quit                                      |
+| 9      | SIGKILL | Kill signal (cannot be caught or ignored) |
+| 15     | SIGTERM | Termination                               |
+| 18     | SIGCONT | Continue if stopped                       |
+| 19     | SIGSTOP | Stop process (cannot be caught)           |
+| 11     | SIGSEGV | Segmentation fault                        |
+
+
+
+
+File System and Storage
+Topics:
+Partitioning: fdisk, gdisk
+
+Formatting: mkfs.ext4, mkfs.vfat
+
+Mounting: mount, umount, fstab
+
+Disk usage: df, du, lsblk
+
+
+Commands:
+kill -9 <pid> – force kill
+
+kill -15 <pid> – graceful termination
+
+trap – capture signal in a shell script
+
+killall – send signal to multiple processes by name
                                             IPC: (Inter Process Communication.)
                                          ------------------------------------------
 Inter Process Communication is a mechanism that allows processes to communicate
