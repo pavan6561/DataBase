@@ -1,0 +1,650 @@
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i;
+    int j=10;
+    i=(j++, j+100, 999+j); 
+    std::cout<<i;// 1110
+    return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+
+class A{
+public:
+    virtual void a()=0;
+    A(){
+     cout<<"A ";
+    }
+};
+class B: public A
+{
+public:
+    B(){
+     cout<<"B ";
+    }
+};
+
+ 
+
+int main(){
+    A *a=new B();
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    Base() { cout << "Base Constructor\n"; }
+    ~Base() { cout << "Base Destructor\n"; }
+};
+
+
+class Derived : public Base {
+public:
+    Derived() { cout << "Derived Constructor\n"; }
+    ~Derived() { cout << "Derived Destructor\n"; }
+};
+
+int main() {
+    Derived *d = new Derived;
+    Base *b=d;
+    delete b;
+    return 0;
+}
+
+
+#include <vector>
+#include <thread>
+#include <future>
+#include <numeric>
+#include <iostream>
+#include <chrono>
+
+void accumulate(std::vector<int>::iterator first,
+                std::vector<int>::iterator last,
+                std::promise<int> accumulate_promise)
+{
+    int sum = std::accumulate(first, last, 0);
+    accumulate_promise.set_value(sum);
+}
+
+
+int main()
+{
+    std::vector<int> numbers = { 1, 2, 3, 4, 5, 6 };
+    std::promise<int> accumulate_promise;
+    std::future<int> accumulate_future = accumulate_promise.get_future();
+    std::thread work_thread(accumulate, numbers.begin(), numbers.end(),
+                            std::move(accumulate_promise));
+
+    std::cout << "result=" << accumulate_future.get() << '\n';
+ 
+    std::cout << "Getting value of result again =" << accumulate_future.get() << '\n';//}
+    work_thread.join();
+}
+
+
+
+
+
+#include <vector>
+#include <thread>
+#include <future>
+#include <numeric>
+#include <iostream>
+#include <chrono>
+
+void accumulate(std::vector<int>::iterator first,
+                std::vector<int>::iterator last,
+                std::promise<int> accumulate_promise)
+{
+    int sum = std::accumulate(first, last, 0);
+    accumulate_promise.set_value(sum);
+}
+
+ 
+
+int main()
+{
+    std::vector<int> numbers = { 1, 2, 3, 4, 5, 6 };
+    std::promise<int> accumulate_promise;
+    std::shared_future<int> accumulate_future = accumulate_promise.get_future();
+    std::thread work_thread(accumulate, numbers.begin(), numbers.end(),
+                            std::move(accumulate_promise));
+
+    std::cout << "result=" << accumulate_future.get() << '\n';//21
+
+    std::cout << "Getting value of result again =" << accumulate_future.get() << '\n';//}
+    work_thread.join();
+}
+
+
+
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+
+int main () {
+    
+    
+// auto lam = [ auto rem =unique(arr.begin(),arr.end())] (std::vector<int> arr) {
+    
+    
+// // auto rem    = unique(arr.begin(),arr.end());
+
+    
+//     // int k=0;
+//     // std::vector<int> arr1;
+//     // for(int i=0;i<arr.size();i++){
+//     //     bool isture = false;
+//     //      for(int j=0;j<i;j++){
+             
+//     //          if(arr[i] == arr[j]) {
+//     //          isture = true;
+//     //          break;
+//     //          }
+//     //      }
+         
+         
+//     //      if(!isture){
+             
+//     //          arr1[k]=arr[i];
+//     //          k++;
+//     //      }
+
+        
+//     // }
+    
+    
+    
+// cout << " after removing :";
+// for(auto& N :arr)
+// cout << N;
+    
+// };
+
+
+#include <iostream>
+#include<algorithm>
+#include<vector>
+
+int main() {
+std::vector<int> vec = {1, 2, 2, 2, 3, 4, 3, 2, 5};
+sort(vec.begin(), vec.end());
+auto pt = std::unique(vec.begin(), vec.end()); consicute elements
+vec.erase(pt,vec.end());
+
+// // auto last = std::unique(vec.begin(), vec.end(), [](int a, int b) {
+// //  return a == b; // Define your custom condition here
+ 
+// // });
+
+for(int i:vec)
+std::cout << i;
+
+}
+
+auto last = std::unique(vec.begin(), vec.end(), [](int a, int b) {
+ return a == b; // Define your custom condition here
+ 
+});
+
+for(auto& i:vec)
+cout << i;
+
+}
+
+
+
+#include<iostream>
+using namespace std;
+#include<vector>
+
+int main () {
+    
+auto lam = [] (std::vector<int>& arr) {
+    
+    int k=0;
+	std::vector<int>& arr1;
+    for(int i=0;i<arr.size();i++){
+        bool isture = false;
+         for(int j=0;j<i;j++){
+             
+             if(arr[i] == arrr[j]) {
+             isture = true;
+             break;
+             }
+         }
+         
+         
+         if(!isture){
+             
+             arr1[k]=arr[i];
+             k++;
+         }
+
+        
+    }
+    
+cout << " after removing :";
+for(auto& N :arr)
+cout << N;
+    
+};
+
+
+std::vector<int> vec = {1, 2, 2, 2, 3, 4, 3, 2, 5};
+
+lam(vec);
+
+
+}
+
+
+
+#include<iostream>
+using namespace std;
+
+class A{
+public:
+    virtual void a()=0;
+    A(){
+     cout<<"A ";
+    }
+};
+class B: public A
+{
+public:
+
+ void a() {
+     
+ }
+
+    B():A() {
+     cout<<"B ";
+    }
+};
+
+ 
+
+int main(){
+    A *a1=new B();
+    a1->
+
+    return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+
+ 
+
+class A{
+public:
+    virtual void a()=0;
+    A(){
+     cout<<"A ";
+    }
+};
+class B: public A
+{
+public:
+    B():A() {
+     cout<<"B ";
+    }
+};
+
+ 
+
+int main(){
+    A *a=new B();
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<int> vec = {1, 2, 2, 2, 3, 4, 3, 2, 5};
+
+    std::sort(vec.begin(), vec.end()); // Step 1: Sort the vector
+
+    // Step 2: Use std::unique with a lambda comparator
+    auto pt = std::unique(vec.begin(), vec.end(), [](int a, int b) {
+        std::cout << " a :" << a << " b : " << b << std::endl;
+        return a == b; // Lambda defines the duplicate condition
+    });
+    
+std::cout << "Unique values (vec.begin() to pt): ";
+    for (auto it = vec.begin(); it != pt; ++it) {
+        std::cout << *it << " ";
+    }
+    
+        std::cout << "\nGarbage values (pt to vec.end()): ";
+    for (auto it = pt; it != vec.end(); ++it) {
+        std::cout << *it << " ";
+    }
+
+    // Step 3: Erase the remaining duplicate elements
+    vec.erase(pt, vec.end());
+
+    // Output the result
+    for (int i : vec)
+        std::cout << i;
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    
+    string str = "abba";
+    string str1 = str;
+    int j;
+     int len = str.size();
+     
+     for(int i=len-1,j=0;j<i;i--,j++)
+     
+     {
+         
+         if(str[i]==str[j]) {
+             char ch = str[i];
+             str[i] = str[j];
+             str[j]=ch;
+             
+             
+         }
+         
+         
+     }
+     
+    if(str1 == str)
+    cout << " palindrome";
+    else
+    cout << " Not palindrome";
+    
+    
+    
+    // string str1 = str;
+    // string sum_str;
+    
+    // int len = str.size();
+    
+    // for(int i =len-1;i>=0;i--)
+    // {
+        
+    //     char ch = str[i];
+    //     sum_str = sum_str + ch;
+        
+        
+    // }
+    
+    // if(str1 == sum_str)
+    // cout << " palindrome";
+    // else
+    // cout << " Not palindrome";
+    
+    
+    
+
+
+    return 0;
+}
+
+
+
+
+
+C++ Code to Find the Longest Palindromic Substring
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to expand around the center and return the longest palindrome
+string expandAroundCenter(const string &s, int left, int right) {
+    while (left >= 0 && right < s.length() && s[left] == s[right]) {
+        --left;
+        ++right;
+    }
+    return s.substr(left + 1, right - left - 1);
+}
+
+// Main function to find the longest palindromic substring
+string longestPalindrome(const string &s) {
+    if (s.empty()) return "";
+
+    string longest;
+    for (int i = 0; i < s.length(); ++i) {
+        // Odd length palindromes
+        string p1 = expandAroundCenter(s, i, i);
+        // Even length palindromes
+        string p2 = expandAroundCenter(s, i, i + 1);
+
+        if (p1.length() > longest.length()) longest = p1;
+        if (p2.length() > longest.length()) longest = p2;
+    }
+    return longest;
+}
+
+int main() {
+    string input = "cbabacbbcbcaaabbaaaabcabccbaabbaaabbababababababababababcccccbababababaabcababbbcabcbabcaccabc";
+
+    string result = longestPalindrome(input);
+
+    cout << "Longest Palindromic Substring: " << result << endl;
+
+    return 0;
+}
+
+
+
+
+
+// Singly Linked List Implementation in C++
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+    Node(int data) {
+        this->data = data;
+        this->next = nullptr;
+    }
+};
+
+// Insert at the beginning
+void insertAtBeginning(Node*& head, int data) {
+    Node* newNode = new Node(data);
+    newNode->next = head;
+    head = newNode;
+}
+
+// Insert at the end
+void insertAtEnd(Node*& head, int data) {
+    Node* newNode = new Node(data);
+    if (!head) {
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next) temp = temp->next;
+    temp->next = newNode;
+}
+
+// Insert at a specific position (1-based index)
+void insertAtPosition(Node*& head, int position, int data) {
+    if (position == 1) {
+        insertAtBeginning(head, data);
+        return;
+    }
+    Node* newNode = new Node(data);
+    Node* temp = head;
+    for (int i = 1; temp != nullptr && i < position - 1; ++i) temp = temp->next;
+    if (!temp) return;
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+// Delete from beginning
+void deleteFromBeginning(Node*& head) {
+    if (!head) return;
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+}
+
+// Delete from end
+void deleteFromEnd(Node*& head) {
+    if (!head) return;
+    if (!head->next) {
+        delete head;
+        head = nullptr;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next->next) temp = temp->next;
+    delete temp->next;
+    temp->next = nullptr;
+}
+
+// Delete from specific position (1-based index)
+void deleteAtPosition(Node*& head, int position) {
+    if (!head) return;
+    if (position == 1) {
+        deleteFromBeginning(head);
+        return;
+    }
+    Node* temp = head;
+    for (int i = 1; temp && i < position - 1; ++i) temp = temp->next;
+    if (!temp || !temp->next) return;
+    Node* toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete toDelete;
+}
+
+// Search in the list
+bool search(Node* head, int key) {
+    Node* temp = head;
+    while (temp) {
+        if (temp->data == key) return true;
+        temp = temp->next;
+    }
+    return false;
+}
+
+// Find length of the list
+int getLength(Node* head) {
+    int length = 0;
+    Node* temp = head;
+    while (temp) {
+        length++;
+        temp = temp->next;
+    }
+    return length;
+}
+
+// Modify data at position
+void modifyAtPosition(Node* head, int position, int newData) {
+    Node* temp = head;
+    for (int i = 1; temp && i < position; ++i) temp = temp->next;
+    if (temp) temp->data = newData;
+}
+
+// Reverse the list
+void reverse(Node*& head) {
+    Node* prev = nullptr;
+    Node* current = head;
+    Node* next = nullptr;
+    while (current) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
+}
+
+// Traverse and print list
+void print(Node* head) {
+    Node* temp = head;
+    while (temp) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL\n";
+}
+
+int main() {
+    Node* head = nullptr;
+    insertAtBeginning(head, 10);
+    insertAtEnd(head, 20);
+    insertAtEnd(head, 30);
+    insertAtPosition(head, 2, 15);
+    print(head);
+
+    deleteFromBeginning(head);
+    deleteFromEnd(head);
+    deleteAtPosition(head, 2);
+    print(head);
+
+    cout << "Length: " << getLength(head) << endl;
+    cout << "Search 20: " << (search(head, 20) ? "Found" : "Not Found") << endl;
+
+    insertAtEnd(head, 25);
+    modifyAtPosition(head, 2, 100);
+    print(head);
+
+    reverse(head);
+    print(head);
+
+    return 0;
+}
